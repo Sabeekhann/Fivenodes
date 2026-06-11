@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-58DLVPQF');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Vibe Coding in Production: What Actually Happens | FiveNodes Blog</title>
+<meta name="description" content="AI coding tools can ship features in hours. They can also quietly introduce security holes and technical debt that takes months to fix. Here's the honest picture."/>
+<meta property="og:title" content="Vibe Coding in Production: What Actually Happens"/>
+<meta property="og:description" content="AI coding tools can ship features in hours. They can also quietly introduce security holes and technical debt. Here's the honest picture from real projects."/>
+<meta property="og:image" content="https://5ivenodes.com/images/og-default.png"/>
+<meta property="og:url" content="https://5ivenodes.com/blog/vibe-coding-reality/"/>
+<link rel="canonical" href="https://5ivenodes.com/blog/vibe-coding-reality/"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#05060E;--lime:#C8F135;--card:#0D0F1C;--border:#1E2035;--text:#E8EAF2;--muted:#8B8FA8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7}
+a{color:var(--lime);text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,6,14,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--lime)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-link{font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-link:hover{color:var(--text)}
+.nav-cta{background:var(--lime);color:#05060E;font-weight:700;padding:.5rem 1.25rem;border-radius:6px;font-size:.875rem}
+article{max-width:740px;margin:0 auto;padding:4rem 2rem 6rem}
+.back{font-size:.85rem;color:var(--muted);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.5rem;transition:color .2s}
+.back:hover{color:var(--lime)}
+.post-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
+h1{font-family:'Sora',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+.byline{color:var(--muted);font-size:.875rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+h2{font-family:'Sora',sans-serif;font-size:1.35rem;font-weight:700;margin:2.5rem 0 1rem}
+p{color:#C8CAD8;margin-bottom:1.25rem}
+ul,ol{color:#C8CAD8;margin:0 0 1.25rem 1.5rem}
+li{margin-bottom:.5rem}
+.callout{background:var(--card);border-left:3px solid var(--lime);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:2rem 0}
+.callout p{margin:0;color:var(--text)}
+.phase{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;margin:1rem 0}
+.phase-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:.4rem}
+.phase h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.phase p{margin:0;font-size:.9rem}
+code{background:rgba(200,241,53,.08);border:1px solid rgba(200,241,53,.15);border-radius:4px;padding:2px 7px;font-family:'Courier New',monospace;font-size:.82em;color:var(--lime)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){article{padding:2rem 1.25rem 4rem}.nav-links,.nav-cta{display:none}body{cursor:auto!important}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3FFZ8MQ4X1');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Vibe Coding in Production: What Actually Happens","description":"AI coding tools can ship features in hours. They can also quietly introduce security holes and technical debt. Here's the honest picture.","url":"https://5ivenodes.com/blog/vibe-coding-reality/","datePublished":"2026-06-01","dateModified":"2026-06-10","author":{"@type":"Organization","name":"FiveNodes Team"},"publisher":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com"},"keywords":"vibe coding, AI coding tools, Cursor, Claude Code, AI development, software engineering","inLanguage":"en-US"}</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','964144433261773');fbq('track','PageView');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" style="display:flex;align-items:center;gap:10px"><img src="/images/logo.jpg" alt="FiveNodes" style="height:36px;width:36px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</a>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="/">Home</a></li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link" href="/services/">Services</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/blog/">Blog</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<article>
+  <a href="/blog/" class="back">← Back to Blog</a>
+  <div class="post-tag">Engineering Culture</div>
+  <h1>Vibe Coding in Production: What Actually Happens</h1>
+  <div class="byline">By FiveNodes Team · June 2026 · 6 min read</div>
+
+  <p>"Vibe coding" — describing what you want to an AI and accepting whatever code comes out — has gone from Twitter joke to genuine engineering practice in under two years. Tools like Cursor, Claude Code, and GitHub Copilot can now write entire features from a prompt. We use them every day. They've genuinely made us faster.</p>
+
+  <p>They've also introduced bugs we didn't catch, security issues we had to audit out, and codebases that became unmaintainable faster than any we've seen before. Here's the honest picture — the gains, the traps, and how we actually use AI coding tools on production software.</p>
+
+  <div class="callout">
+    <p>AI coding tools are force multipliers — they amplify both your good instincts and your bad ones. A senior engineer with AI assistance ships faster and better. An inexperienced one ships faster and worse.</p>
+  </div>
+
+  <h2>Where AI coding tools genuinely save time</h2>
+  <p>The wins are real. Tasks that used to take an afternoon now take an hour:</p>
+  <ul>
+    <li><strong>Boilerplate generation</strong> — CRUD endpoints, form validation, API client wrappers, test fixtures. AI is excellent at this. The patterns are well-established and the output is usually correct.</li>
+    <li><strong>Refactoring to a new pattern</strong> — "Convert these 12 files from class components to hooks." AI handles mechanical transformations quickly and accurately.</li>
+    <li><strong>Writing tests for existing code</strong> — Describe the function, ask for unit tests covering edge cases. Usually produces a solid first draft that needs minor adjustment.</li>
+    <li><strong>Unfamiliar language/framework ramp-up</strong> — Working in a language you don't know well? AI explains patterns, translates idioms, and catches syntax errors faster than Stack Overflow.</li>
+    <li><strong>First draft of documentation</strong> — Generating JSDoc, README sections, and inline comments for existing code is tedious. AI does it well.</li>
+  </ul>
+
+  <h2>Where it creates problems you don't notice immediately</h2>
+  <p>This is the part nobody talks about enough.</p>
+
+  <div class="phase">
+    <div class="phase-label">Problem 1</div>
+    <h3>Security issues that look correct</h3>
+    <p>AI-generated authentication code, input validation, and SQL queries are often subtly wrong in security-relevant ways. We've seen generated code with SQL injection vectors, missing authorization checks, and hardcoded credentials — all wrapped in clean, well-formatted code that passes a quick review. Security vulnerabilities don't produce test failures. They hide until someone exploits them.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label">Problem 2</div>
+    <h3>Technically correct but architecturally wrong</h3>
+    <p>AI doesn't know your system's conventions, past decisions, or the reason a pattern was established. It generates code that works in isolation but violates the architecture — introducing a new state management approach when you already have one, adding a direct DB call in a layer that shouldn't have it, duplicating logic that exists elsewhere. The code compiles and tests pass. The codebase silently degrades.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label">Problem 3</div>
+    <h3>Confident errors in complex logic</h3>
+    <p>AI is weakest on novel, domain-specific logic — financial calculations, compliance rules, complex state machines. It produces plausible-looking code that is wrong in edge cases. Because it looks right, it often passes review. These bugs are the hardest to find and the most expensive to fix.</p>
+  </div>
+
+  <h2>The engineering practices that make AI coding work</h2>
+  <p>We haven't stopped using AI coding tools — we've built practices around them that capture the speed while managing the risk.</p>
+
+  <ul>
+    <li><strong>Never accept AI-generated security-sensitive code without a dedicated review pass.</strong> Auth, payments, data access, input handling — always human-reviewed by someone specifically looking for security issues, not just correctness.</li>
+    <li><strong>Write the architecture, let AI fill it in.</strong> We write the function signatures, interfaces, and module structure. AI fills in the implementation. This keeps AI in the "mechanical execution" lane, not the "design decisions" lane.</li>
+    <li><strong>Treat AI output as a first draft, always.</strong> The goal is not to accept AI code — it's to have a starting point that's 70% right and needs editing, rather than a blank file. The edit step is non-negotiable.</li>
+    <li><strong>Invest in context.</strong> AI tools with access to your full codebase (like Claude Code or Cursor with full repo indexing) produce dramatically better output than isolated completions. The more context the model has, the more architecturally consistent its suggestions are.</li>
+    <li><strong>Run a security audit before every release that touched AI-generated code.</strong> Not optional. Not just tests. An actual review for injection, auth bypass, and data exposure.</li>
+  </ul>
+
+  <h2>The skill that matters more now, not less</h2>
+  <p>The irony of AI coding tools is that they've made deep software engineering knowledge more valuable, not less. You need to understand what correct, secure, maintainable code looks like in order to review AI output competently. A developer who can't read the code they're accepting is flying blind — and flying fast.</p>
+  <p>The engineers who get the most from AI tools are the ones who use them for execution and maintain ownership of design, architecture, and review. They ship 3x faster because the AI handles the typing. They ship reliably because they never stop thinking.</p>
+
+  <div class="callout">
+    <p>The question isn't whether to use AI coding tools — it's whether your team has the engineering depth to use them safely. Speed without judgment is how you ship fast and break things in ways that matter.</p>
+  </div>
+</article>
+
+<footer>© 2026 FiveNodes. All rights reserved. · <a href="/blog/">Back to Blog</a></footer>
+</body>
+</html>

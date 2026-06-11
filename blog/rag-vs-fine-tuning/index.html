@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-58DLVPQF');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RAG vs Fine-Tuning: How to Actually Choose | FiveNodes Blog</title>
+<meta name="description" content="RAG and fine-tuning solve different problems. Most teams pick the wrong one. Here's the decision framework we use when building AI features for SaaS products."/>
+<meta property="og:title" content="RAG vs Fine-Tuning: How to Actually Choose"/>
+<meta property="og:description" content="RAG and fine-tuning solve different problems. Most teams pick the wrong one. Here's the decision framework we use with real-world SaaS products."/>
+<meta property="og:image" content="https://5ivenodes.com/images/og-default.png"/>
+<meta property="og:url" content="https://5ivenodes.com/blog/rag-vs-fine-tuning/"/>
+<link rel="canonical" href="https://5ivenodes.com/blog/rag-vs-fine-tuning/"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#05060E;--lime:#C8F135;--card:#0D0F1C;--border:#1E2035;--text:#E8EAF2;--muted:#8B8FA8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7}
+a{color:var(--lime);text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,6,14,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--lime)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-link{font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-link:hover{color:var(--text)}
+.nav-cta{background:var(--lime);color:#05060E;font-weight:700;padding:.5rem 1.25rem;border-radius:6px;font-size:.875rem}
+article{max-width:740px;margin:0 auto;padding:4rem 2rem 6rem}
+.back{font-size:.85rem;color:var(--muted);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.5rem;transition:color .2s}
+.back:hover{color:var(--lime)}
+.post-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
+h1{font-family:'Sora',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+.byline{color:var(--muted);font-size:.875rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+h2{font-family:'Sora',sans-serif;font-size:1.35rem;font-weight:700;margin:2.5rem 0 1rem}
+p{color:#C8CAD8;margin-bottom:1.25rem}
+ul,ol{color:#C8CAD8;margin:0 0 1.25rem 1.5rem}
+li{margin-bottom:.5rem}
+.callout{background:var(--card);border-left:3px solid var(--lime);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:2rem 0}
+.callout p{margin:0;color:var(--text)}
+.phase{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;margin:1rem 0}
+.phase-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:.4rem}
+.phase h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.phase p{margin:0;font-size:.9rem}
+code{background:rgba(200,241,53,.08);border:1px solid rgba(200,241,53,.15);border-radius:4px;padding:2px 7px;font-family:'Courier New',monospace;font-size:.82em;color:var(--lime)}
+.compare-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.875rem}
+.compare-table th{text-align:left;padding:10px 14px;background:var(--card);color:var(--lime);font-weight:600;border-bottom:1px solid var(--border)}
+.compare-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.05);color:#C8CAD8}
+.compare-table tr:last-child td{border-bottom:none}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){article{padding:2rem 1.25rem 4rem}.nav-links,.nav-cta{display:none}body{cursor:auto!important}.compare-table{font-size:.78rem}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3FFZ8MQ4X1');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"RAG vs Fine-Tuning: How to Actually Choose","description":"RAG and fine-tuning solve different problems. Here's the decision framework for SaaS products.","url":"https://5ivenodes.com/blog/rag-vs-fine-tuning/","datePublished":"2026-04-15","dateModified":"2026-06-10","author":{"@type":"Organization","name":"FiveNodes Team"},"publisher":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com"},"keywords":"RAG, fine-tuning, LLM, retrieval augmented generation, AI SaaS","inLanguage":"en-US"}</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','964144433261773');fbq('track','PageView');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" style="display:flex;align-items:center;gap:10px"><img src="/images/logo.jpg" alt="FiveNodes" style="height:36px;width:36px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</a>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="/">Home</a></li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link" href="/services/">Services</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/blog/">Blog</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<article>
+  <a href="/blog/" class="back">← Back to Blog</a>
+  <div class="post-tag">AI Engineering</div>
+  <h1>RAG vs Fine-Tuning: How to Actually Choose</h1>
+  <div class="byline">By FiveNodes Team · April 2026 · 7 min read</div>
+
+  <p>Every week a client asks us: "Should we RAG this or fine-tune?" It's the wrong question — not because one is always better, but because they solve fundamentally different problems. Choosing the wrong one wastes months and money. Choosing the right one ships a feature in weeks.</p>
+
+  <p>We've implemented both across dozens of SaaS products. Here's the decision framework we actually use.</p>
+
+  <div class="callout">
+    <p>RAG gives the model access to information. Fine-tuning changes how the model behaves. If your problem is about knowledge, use RAG. If your problem is about style, tone, or task format, consider fine-tuning.</p>
+  </div>
+
+  <h2>What RAG actually solves</h2>
+  <p>Retrieval Augmented Generation connects an LLM to a searchable knowledge base at query time. The model retrieves relevant chunks, then answers using them. Use RAG when:</p>
+  <ul>
+    <li>Your data changes frequently — product docs, support articles, internal knowledge bases</li>
+    <li>You need citations or traceability ("which document did this come from?")</li>
+    <li>The knowledge is too large to fit in a context window or training dataset</li>
+    <li>You need to update the knowledge without retraining</li>
+    <li>Different tenants need access to different knowledge stores</li>
+  </ul>
+  <p>RAG is almost always the right starting point for enterprise knowledge assistants, support bots, and document Q&amp;A. It's fast to build, easy to update, and you can inspect exactly what the model retrieved.</p>
+
+  <h2>What fine-tuning actually solves</h2>
+  <p>Fine-tuning adjusts the model's weights on your training data. The model permanently learns new patterns. Use fine-tuning when:</p>
+  <ul>
+    <li>You need a very specific output format that base models produce inconsistently</li>
+    <li>You're doing high-volume inference and need a smaller, cheaper model to match large-model quality</li>
+    <li>Your task is narrow and well-defined with thousands of labeled examples</li>
+    <li>You need to teach domain-specific vocabulary or notation the base model doesn't know</li>
+    <li>You're distilling a large model's behaviour into a smaller deployable model</li>
+  </ul>
+  <p>Fine-tuning is not a way to teach a model facts. It's a way to teach a model patterns. If you fine-tune on "our company's data," the model learns the structure of your data — not a reliable memory of it. Factual retrieval needs RAG.</p>
+
+  <h2>The decision table</h2>
+  <table class="compare-table">
+    <tr><th>Problem</th><th>RAG</th><th>Fine-Tuning</th></tr>
+    <tr><td>Answer questions from internal docs</td><td>✓ Right choice</td><td>✗ Wrong tool</td></tr>
+    <tr><td>Consistent JSON output format</td><td>Possible with prompting</td><td>✓ More reliable</td></tr>
+    <tr><td>Knowledge updated weekly</td><td>✓ Update the vector store</td><td>✗ Retrain needed</td></tr>
+    <tr><td>Reduce inference cost at scale</td><td>✗ Doesn't help</td><td>✓ Smaller model</td></tr>
+    <tr><td>Brand voice / writing style</td><td>Partial (few-shot)</td><td>✓ More consistent</td></tr>
+    <tr><td>Multi-tenant knowledge isolation</td><td>✓ Per-tenant namespaces</td><td>✗ Impractical</td></tr>
+    <tr><td>Domain jargon / notation</td><td>Partial</td><td>✓ Better internalization</td></tr>
+  </table>
+
+  <h2>The case for doing both</h2>
+  <p>The best production systems often use RAG and fine-tuning together. A common pattern:</p>
+
+  <div class="phase">
+    <div class="phase-label">Pattern</div>
+    <h3>Fine-tune for format, RAG for facts</h3>
+    <p>Fine-tune a smaller model on your desired output structure and tone. Then at inference time, use RAG to inject the relevant knowledge. The fine-tuned model knows how to format and reason; RAG ensures it has the right information. You get the cost efficiency of a small model with the accuracy of retrieval.</p>
+  </div>
+
+  <h2>Practical thresholds we use</h2>
+  <p>Before recommending fine-tuning to a client, we check three things:</p>
+  <ul>
+    <li><strong>Do you have 500+ labeled examples?</strong> Fine-tuning with fewer than this rarely beats a well-prompted base model. With &lt;500 examples, try few-shot prompting first.</li>
+    <li><strong>Is the task stable?</strong> If requirements change monthly, the training data goes stale and you're retraining constantly. RAG adapts without retraining.</li>
+    <li><strong>Have you maxed out prompt engineering?</strong> Fine-tuning is a last resort, not a first step. Most tasks can be solved with a well-designed system prompt. Exhaust that option first.</li>
+  </ul>
+
+  <h2>The overlooked option: long-context prompting</h2>
+  <p>With context windows now at 200K–1M tokens, many use cases that previously required RAG can now be handled by putting the entire knowledge base directly in the prompt. For smaller corpora (&lt;500 pages), test this first. It's simpler, requires no vector infrastructure, and often matches RAG accuracy for well-structured documents.</p>
+  <p>The cost is higher per call, but infrastructure complexity is zero. For low-volume internal tools, the simplicity trade-off is often worth it.</p>
+
+  <div class="callout">
+    <p>The best AI feature is the simplest one that solves the problem reliably. Reach for long-context prompting first, RAG second, fine-tuning third. Add complexity only when the simpler approach fails on your specific constraints.</p>
+  </div>
+</article>
+
+<footer>© 2026 FiveNodes. All rights reserved. · <a href="/blog/">Back to Blog</a></footer>
+</body>
+</html>

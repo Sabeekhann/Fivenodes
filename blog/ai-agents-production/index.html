@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-58DLVPQF');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Building AI Agents That Actually Work in Production | FiveNodes Blog</title>
+<meta name="description" content="AI agents fail in production for predictable reasons. Here's how to build reliable, observable multi-step AI agents that survive real-world usage."/>
+<meta property="og:title" content="Building AI Agents That Actually Work in Production"/>
+<meta property="og:description" content="AI agents fail in production for predictable reasons. Here's how to build reliable, observable multi-step AI agents that survive real-world usage."/>
+<meta property="og:image" content="https://5ivenodes.com/images/og-default.png"/>
+<meta property="og:url" content="https://5ivenodes.com/blog/ai-agents-production/"/>
+<link rel="canonical" href="https://5ivenodes.com/blog/ai-agents-production/"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#05060E;--lime:#C8F135;--card:#0D0F1C;--border:#1E2035;--text:#E8EAF2;--muted:#8B8FA8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7}
+a{color:var(--lime);text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,6,14,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--lime)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-link{font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-link:hover{color:var(--text)}
+.nav-cta{background:var(--lime);color:#05060E;font-weight:700;padding:.5rem 1.25rem;border-radius:6px;font-size:.875rem}
+article{max-width:740px;margin:0 auto;padding:4rem 2rem 6rem}
+.back{font-size:.85rem;color:var(--muted);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.5rem;transition:color .2s}
+.back:hover{color:var(--lime)}
+.post-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
+h1{font-family:'Sora',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+.byline{color:var(--muted);font-size:.875rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+h2{font-family:'Sora',sans-serif;font-size:1.35rem;font-weight:700;margin:2.5rem 0 1rem}
+p{color:#C8CAD8;margin-bottom:1.25rem}
+ul,ol{color:#C8CAD8;margin:0 0 1.25rem 1.5rem}
+li{margin-bottom:.5rem}
+.callout{background:var(--card);border-left:3px solid var(--lime);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:2rem 0}
+.callout p{margin:0;color:var(--text)}
+.phase{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;margin:1rem 0}
+.phase-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:.4rem}
+.phase h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.phase p{margin:0;font-size:.9rem}
+code{background:rgba(200,241,53,.08);border:1px solid rgba(200,241,53,.15);border-radius:4px;padding:2px 7px;font-family:'Courier New',monospace;font-size:.82em;color:var(--lime)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.8rem}
+@media(max-width:768px){article{padding:2rem 1.25rem 4rem}.nav-links,.nav-cta{display:none}body{cursor:auto!important}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3FFZ8MQ4X1');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Building AI Agents That Actually Work in Production","description":"AI agents fail in production for predictable reasons. Here's how to build reliable, observable multi-step AI agents.","url":"https://5ivenodes.com/blog/ai-agents-production/","datePublished":"2026-05-01","dateModified":"2026-06-10","author":{"@type":"Organization","name":"FiveNodes Team"},"publisher":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com"},"keywords":"AI agents, agentic AI, LLM production, autonomous AI, tool calling","inLanguage":"en-US"}</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','964144433261773');fbq('track','PageView');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" style="display:flex;align-items:center;gap:10px"><img src="/images/logo.jpg" alt="FiveNodes" style="height:36px;width:36px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</a>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="/">Home</a></li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link" href="/services/">Services</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/blog/">Blog</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<article>
+  <a href="/blog/" class="back">← Back to Blog</a>
+  <div class="post-tag">AI Agents</div>
+  <h1>Building AI Agents That Actually Work in Production</h1>
+  <div class="byline">By FiveNodes Team · May 2026 · 9 min read</div>
+
+  <p>Everyone is building AI agents. Most of them break within a week of going live. The demo looks flawless — the agent browses the web, writes code, sends emails, calls APIs. Then real users hit it and it loops forever, bills you $400 in a single afternoon, or confidently takes an action that can't be undone.</p>
+
+  <p>We've shipped agentic systems into production across fintech, HR automation, and e-commerce. Here's what we've actually learned — not what the framework README tells you.</p>
+
+  <div class="callout">
+    <p>An agent is only as reliable as its ability to fail gracefully. Build the failure paths before you build the happy path.</p>
+  </div>
+
+  <h2>1. The architecture decision that matters most: single-agent vs. multi-agent</h2>
+  <p>The first question isn't "which LLM?" It's "does this need one agent or many?" Single-agent systems are easier to debug, have lower latency, and are cheaper. Multi-agent systems make sense when:</p>
+  <ul>
+    <li>Tasks are genuinely parallelisable (research + writing + fact-checking at the same time)</li>
+    <li>Different sub-tasks require different tool access or permission scopes</li>
+    <li>You need a critic/verifier pattern — one agent produces output, another validates it</li>
+    <li>Context window limits make a single long-running agent impractical</li>
+  </ul>
+  <p>If you can't clearly articulate why you need multiple agents, use one. The coordination overhead of multi-agent is significant and adds failure surface.</p>
+
+  <h2>2. Tool design is where most agents fail</h2>
+  <p>Agents are only as good as the tools you give them. Poorly designed tools cause more production failures than model issues. Rules we follow:</p>
+
+  <div class="phase">
+    <div class="phase-label">Rule 1</div>
+    <h3>Every tool must be idempotent</h3>
+    <p>If an agent calls a tool twice with the same inputs, the second call should produce the same result without side effects. If your <code>sendEmail</code> tool isn't idempotent, a retry loop will spam your users. Use idempotency keys everywhere.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label">Rule 2</div>
+    <h3>Separate read tools from write tools</h3>
+    <p>Read tools (search, fetch, list) should never have side effects. Write tools (create, update, delete, send) should require explicit confirmation in the agent's reasoning before calling. This single rule prevents most catastrophic agent mistakes.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label">Rule 3</div>
+    <h3>Tool descriptions are prompts</h3>
+    <p>The description you write for each tool is part of the model's context. Be specific about edge cases, what the tool can't do, and what to do when the tool returns an error. Vague descriptions cause the model to guess — and guess wrong.</p>
+  </div>
+
+  <h2>3. Loop detection and cost controls are non-negotiable</h2>
+  <p>An agent that loops is an agent that bills you infinitely. Every agentic system needs hard stops:</p>
+  <ul>
+    <li><strong>Max steps</strong> — never more than N tool calls per run. We default to 25 for complex tasks, 10 for simple ones.</li>
+    <li><strong>Max tokens per run</strong> — cumulative token budget across all steps. Alert at 80%, hard stop at 100%.</li>
+    <li><strong>Cycle detection</strong> — if the agent calls the same tool with the same inputs twice in a row, stop and return a graceful failure.</li>
+    <li><strong>Wall-clock timeout</strong> — no agent run should exceed N minutes. Set this at the infrastructure level, not just in code.</li>
+  </ul>
+
+  <div class="callout">
+    <p>Always ask: what happens if this agent runs for 10x longer than expected? If the answer is "we get a very large bill," you haven't built the cost controls yet.</p>
+  </div>
+
+  <h2>4. Observability for agents is different from observability for APIs</h2>
+  <p>Traditional API monitoring (latency, error rate, status codes) tells you almost nothing useful about an agent. You need trace-level visibility into every step:</p>
+  <ul>
+    <li>The full input and output of every tool call</li>
+    <li>The model's reasoning at each step (if using chain-of-thought or extended thinking)</li>
+    <li>Total tokens and cost per run, broken down by step</li>
+    <li>Where in the step sequence failures or retries occurred</li>
+    <li>The final output and whether a human reviewed or corrected it</li>
+  </ul>
+  <p>We use LangSmith or a custom trace store. The key insight: when an agent produces a bad output, you need to replay the trace and see exactly where it went wrong. Without step-level logging you're debugging in the dark.</p>
+
+  <h2>5. Human-in-the-loop is an architectural pattern, not a UX afterthought</h2>
+  <p>For any agent that takes irreversible actions — sending emails, making payments, deleting data, publishing content — design a human approval step into the architecture from the start. Not as a patch, but as a first-class component.</p>
+  <p>The pattern looks like: agent generates an action plan → system persists the plan → human reviews and approves → agent executes. This gives you the speed of automation with the safety of human oversight. The approval step can be progressively removed as confidence in the agent grows.</p>
+
+  <h2>6. Start narrower than you think you should</h2>
+  <p>The most reliable agents we've shipped do one thing very well. The least reliable do many things loosely. Define the exact scope of the first version before you build. "An agent that drafts and sends follow-up emails after sales calls" is a product. "An AI assistant that helps with sales" is a hope.</p>
+  <p>Expand scope after the first version is stable in production — not before. Each new tool you add multiplies the number of states the agent can reach. Add one tool at a time, re-evaluate reliability, then add the next.</p>
+
+  <div class="callout">
+    <p>The agents that users trust are the ones that do exactly what they claim, every time. Breadth is the enemy of reliability. Pick a narrow use case and own it completely.</p>
+  </div>
+</article>
+
+<footer>© 2026 FiveNodes. All rights reserved. · <a href="/blog/">Back to Blog</a></footer>
+</body>
+</html>
