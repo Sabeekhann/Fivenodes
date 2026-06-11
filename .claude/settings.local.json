@@ -285,7 +285,10 @@
       "Bash(awk '{print $9, $5}')",
       "Bash(curl -s https://devsouq.com/)",
       "Bash(awk '{print $5, $9}')",
-      "Bash(curl -s https://devsouq.com/portfolio/)"
+      "Bash(curl -s https://devsouq.com/portfolio/)",
+      "Bash(git ls-remote *)",
+      "Bash(curl -s https://septemsystems.com/internet-of-things)",
+      "Bash(curl -s https://synavos.com/projects/)"
     ]
   }
 }
