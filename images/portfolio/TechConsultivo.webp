@@ -31,7 +31,7 @@
       }
     </script>
     <!-- is_embedded: False; context:  -->
-    <!-- navbar https://archive.org/web/navbar.php 0.06469s -->
+    <!-- navbar https://archive.org/web/navbar.php 0.10514s -->
     <!-- navbar script -->
     <script src="//archive.org/includes/athena.js?v=a50e2a7a" type="text/javascript"></script>
     <script src="//archive.org/includes/apollo.js?v=a50e2a7a" type="text/javascript"></script>
@@ -45,7 +45,7 @@
     <meta property="mediatype" content="">
     <meta property="primary_collection" content="">
     <!-- navbar end -->
-    <script type="text/javascript">if('archive_analytics' in window){var v=archive_analytics.values;v.path='/web';v.service='wb';v.server_name='wwwb-app206.us.archive.org';v.server_ms=67;archive_analytics.send_pageview_on_load()}</script>
+    <script type="text/javascript">if('archive_analytics' in window){var v=archive_analytics.values;v.path='/web';v.service='wb';v.server_name='wwwb-app206.us.archive.org';v.server_ms=107;archive_analytics.send_pageview_on_load()}</script>
     <link href="https://web-static.archive.org/_static/images/archive.ico" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -94,7 +94,7 @@
       class="js-donate-banner formdesign-psa"
       itemscope
       itemtype="http://schema.org/WPAdBlock"
-      data-donationSourceData="ctx=wb;uid=9ad3b33fb831093324196c8a6fc3a0d1"
+      data-donationSourceData="ctx=wb;uid=a6ea927f5aa4003b3bddcf70993dd7d5"
       data-exp="20260601JuneDeploy2"
       data-variant="WBjuneGFMPvanishPSA"
       data-platform="wb"
