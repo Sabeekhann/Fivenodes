@@ -288,7 +288,17 @@
       "Bash(curl -s https://devsouq.com/portfolio/)",
       "Bash(git ls-remote *)",
       "Bash(curl -s https://septemsystems.com/internet-of-things)",
-      "Bash(curl -s https://synavos.com/projects/)"
+      "Bash(curl -s https://synavos.com/projects/)",
+      "Bash(curl -m 30 -sL 'https://devsouq.com/wp-content/uploads/2026/01/01-1.webp' -o 'numerico.webp')",
+      "Bash(curl -m 30 -sL 'https://devsouq.com/wp-content/uploads/2026/01/02.webp' -o 'finqalab.webp')",
+      "Bash(curl -m 30 -sL 'https://devsouq.com/wp-content/uploads/2026/01/03.webp' -o 'everest.webp')",
+      "Bash(curl -m 30 -sL 'https://devsouq.com/wp-content/uploads/2026/01/04-2.webp' -o 'peacecoin.webp')",
+      "Bash(curl -m 30 -sL 'https://devsouq.com/wp-content/uploads/2026/01/05.webp' -o 'cheetay.webp')",
+      "Bash(cp gamification.webp recruitly.webp)",
+      "Bash(cp ticketlake.webp ullmanna.webp)",
+      "Bash(cp wisentic.webp annebarge.webp)",
+      "Bash(cp artisan.webp dravisstudio.webp)",
+      "Bash(cp simplysufi.webp esgroadmap.webp)"
     ]
   }
 }
