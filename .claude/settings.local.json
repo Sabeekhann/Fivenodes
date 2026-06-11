@@ -235,7 +235,15 @@
       "Bash(openssl x509 *)",
       "Bash(curl -sI --max-time 10 -H 'User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36' https://5ivenodes.com/)",
       "Bash(git init *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(curl -s https://5ivenodes.com)",
+      "Bash(curl -s -L https://5ivenodes.com)",
+      "Bash(curl -Ls https://5ivenodes.com)",
+      "Bash(timeout 10 curl -v https://5ivenodes.com)"
     ]
   }
 }
