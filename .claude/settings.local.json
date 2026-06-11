@@ -280,7 +280,12 @@
       "Bash(sed -i '' 's|/images/portfolio/smarty-men\\\\.png|/images/portfolio/smarty-men.webp|g' portfolio/index.html)",
       "Bash(sed -i '' 's|/images/portfolio/speedo-meter\\\\.png|/images/portfolio/speedo-meter.webp|g' portfolio/index.html)",
       "Bash(sed -i '' 's|/images/portfolio/syncona\\\\.png|/images/portfolio/syncona.webp|g' portfolio/index.html)",
-      "Bash(sed -i '' 's|/images/portfolio/tez-agents\\\\.png|/images/portfolio/tez-agents.webp|g' portfolio/index.html)"
+      "Bash(sed -i '' 's|/images/portfolio/tez-agents\\\\.png|/images/portfolio/tez-agents.webp|g' portfolio/index.html)",
+      "Bash(file *.png)",
+      "Bash(awk '{print $9, $5}')",
+      "Bash(curl -s https://devsouq.com/)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(curl -s https://devsouq.com/portfolio/)"
     ]
   }
 }
