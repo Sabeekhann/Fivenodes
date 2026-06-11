@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>How We Work — FiveNodes | Engagement Models & Process</title>
+<meta name="description" content="No black boxes. No surprises. Learn how FiveNodes engineers software — our process, engagement models, and what you can always expect when working with us.">
+<link rel="canonical" href="https://5ivenodes.com/how-we-work/">
+<meta name="theme-color" content="#05060E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://5ivenodes.com/how-we-work/">
+<meta property="og:title" content="How We Work — FiveNodes | Engagement Models & Process">
+<meta property="og:description" content="No black boxes. No surprises. Just software that ships. Our process, engagement models, and guarantees.">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--bg2:#030408;--card:#0D0F1C;--card2:#11142B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--dim:#3A394A;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);mix-blend-mode:difference}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:all 0.12s ease}
+body.cursor-hover #cursor{width:20px;height:20px}
+body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:600}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
+.nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
+.logo-mark{width:34px;height:34px;position:relative;flex-shrink:0}
+.nav-links{display:flex;align-items:center}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover{color:var(--text)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:96px 48px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-link{padding:14px 0;font-family:var(--fh);font-size:1.1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
+.mob-link:hover{color:var(--text)}
+/* SHARED */
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:160px 0 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 40%,rgba(200,241,53,0.05) 0%,transparent 65%);pointer-events:none}
+.hero-inner{text-align:center;max-width:900px;margin:0 auto;position:relative;z-index:2}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(200,241,53,0.07);border:1px solid rgba(200,241,53,0.15);border-radius:100px;padding:6px 16px;font-size:.75rem;font-weight:600;color:var(--lime);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:hdot 2s ease-in-out infinite}
+@keyframes hdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.hero h1{font-family:var(--fh);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:800;letter-spacing:-.05em;color:#fff;line-height:1.05;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.4)}
+.hero-body{font-size:1.0625rem;color:var(--muted);line-height:1.8;font-weight:300;max-width:580px;margin:0 auto 36px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+/* SECTION GENERAL */
+.section{padding:120px 0}
+.section-hdr{margin-bottom:72px}
+.section-hdr.center{text-align:center}
+.section-hdr h2{font-family:var(--fh);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05;margin-bottom:16px}
+.section-hdr h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.section-hdr p{font-size:.9375rem;color:var(--muted);line-height:1.78;max-width:520px;font-weight:300}
+.section-hdr.center p{margin:0 auto}
+/* PROCESS */
+.process-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
+.process-sticky{position:sticky;top:100px}
+.process-sticky h2{font-family:var(--fh);font-size:clamp(2.2rem,3.5vw,3rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05;margin-bottom:16px}
+.process-sticky h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.process-sticky p{font-size:.9375rem;color:var(--muted);line-height:1.78;font-weight:300;margin-bottom:32px}
+.process-steps{display:flex;flex-direction:column;gap:0}
+.process-step{display:flex;gap:28px;padding:40px 0;border-bottom:1px solid var(--border);transition:all .2s;position:relative}
+.process-step:last-child{border-bottom:none}
+.process-step:hover{background:transparent}
+.step-left{display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0}
+.step-num-badge{width:48px;height:48px;border-radius:12px;background:rgba(200,241,53,0.06);border:1px solid rgba(200,241,53,0.15);display:flex;align-items:center;justify-content:center;font-family:'Courier New',monospace;font-size:.7rem;font-weight:700;color:rgba(200,241,53,0.6);letter-spacing:.05em;flex-shrink:0;transition:all .25s}
+.process-step:hover .step-num-badge{background:rgba(200,241,53,0.1);border-color:rgba(200,241,53,0.3);color:var(--lime)}
+.step-connector{flex:1;width:1px;background:var(--border);margin-top:8px}
+.process-step:last-child .step-connector{display:none}
+.step-content{padding-bottom:8px}
+.step-tag{display:inline-block;font-size:.65rem;font-family:'Courier New',monospace;letter-spacing:.1em;color:rgba(200,241,53,0.4);text-transform:uppercase;margin-bottom:10px}
+.step-content h3{font-family:var(--fh);font-size:1.0625rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.step-content p{font-size:.875rem;color:var(--muted);line-height:1.72;font-weight:300;margin-bottom:14px}
+.step-details{display:flex;flex-wrap:wrap;gap:8px}
+.step-detail-chip{font-size:.7rem;color:rgba(200,241,53,0.5);border:1px solid rgba(200,241,53,0.12);border-radius:5px;padding:3px 10px;font-family:'Courier New',monospace;background:rgba(200,241,53,0.04)}
+/* ENGAGEMENT MODELS */
+.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.model-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:44px 36px;position:relative;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.model-card.featured{border-color:rgba(200,241,53,0.25)}
+.model-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--lime),rgba(200,241,53,0.3))}
+.model-card:hover{border-color:var(--border2);background:var(--card2);transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,0.4)}
+.model-card.featured:hover{border-color:rgba(200,241,53,0.4)}
+.model-icon{width:52px;height:52px;border-radius:14px;background:rgba(200,241,53,0.07);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:1.2rem;margin-bottom:24px;transition:background .25s}
+.model-card:hover .model-icon{background:rgba(200,241,53,0.12)}
+.model-badge{display:inline-block;font-size:.62rem;font-family:'Courier New',monospace;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,241,53,0.5);border:1px solid rgba(200,241,53,0.15);border-radius:4px;padding:3px 10px;margin-bottom:16px}
+.model-card h3{font-family:var(--fh);font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-.03em}
+.model-card>p{font-size:.9rem;color:var(--muted);line-height:1.72;font-weight:300;margin-bottom:20px;flex:1}
+.model-best{font-size:.78rem;color:rgba(200,241,53,0.6);padding:10px 14px;background:rgba(200,241,53,0.05);border-radius:8px;border:1px solid rgba(200,241,53,0.1);line-height:1.5}
+.model-best strong{color:var(--lime);font-weight:600;display:block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+/* EXPECTATIONS */
+.expectations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.expect-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px 28px;display:flex;align-items:flex-start;gap:16px;transition:all .2s}
+.expect-card:hover{border-color:var(--border2);background:var(--card2)}
+.expect-icon{width:40px;height:40px;border-radius:10px;background:rgba(200,241,53,0.06);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:.9rem;flex-shrink:0;transition:background .2s}
+.expect-card:hover .expect-icon{background:rgba(200,241,53,0.12)}
+.expect-card h4{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:6px}
+.expect-card p{font-size:.84rem;color:var(--muted);line-height:1.65}
+/* CTA BAND */
+.cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 0;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(200,241,53,0.04),transparent 70%);pointer-events:none}
+.cta-band-inner{text-align:center;position:relative;z-index:1}
+.cta-band-inner h2{font-family:var(--fh);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:16px}
+.cta-band-inner h2 em{font-style:italic;font-weight:300;color:var(--lime)}
+.cta-band-inner p{font-size:1rem;color:var(--muted);margin-bottom:40px;line-height:1.75;font-weight:300;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:18px}
+.logo-mark-footer{width:28px;height:28px;position:relative;flex-shrink:0}
+.footer-brand>p{font-size:.875rem;color:rgba(255,255,255,0.25);line-height:1.7;max-width:280px;margin-bottom:24px}
+.f-social{display:flex;gap:10px}
+.f-social-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:.875rem;transition:all .2s;cursor:none}
+.f-social-btn:hover{border-color:var(--border2);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:20px}
+.footer-links li{margin-bottom:12px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,0.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bot p,.footer-bot a{font-size:.8rem;color:rgba(255,255,255,0.18)}
+.footer-bot-links{display:flex;gap:24px}
+.footer-bot-links a:hover{color:rgba(255,255,255,0.4)}
+/* RESPONSIVE */
+@media(max-width:1024px){.container{padding:0 32px}.nav-inner{padding:0 32px}.nav-links{display:none}.hamburger{display:flex}.nav-book{display:none}.process-layout{grid-template-columns:1fr}.process-sticky{position:static}.models-grid{grid-template-columns:1fr}.expectations-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.container{padding:0 24px}.nav-inner{padding:0 24px}.footer-grid{grid-template-columns:1fr 1fr}.expectations-grid{grid-template-columns:1fr}.mob-menu{padding:96px 24px 40px}}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo.jpg" alt="FiveNodes" style="height:44px;width:44px;border-radius:7px;object-fit:cover;flex-shrink:0">FiveNodes</a>
+    <ul class="nav-links"><li><a class="nav-link" href="/services/">Services</a></li><li><a class="nav-link" href="/about/">About</a></li><li><a class="nav-link" href="/portfolio/">Portfolio</a></li><li><a class="nav-link" href="/blog/">Blog</a></li><li><a class="nav-link" href="/careers/">Careers</a></li><li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li></ul>
+    <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline btn-sm nav-book">Book a call <i class="far fa-calendar-alt" style="font-size:.7rem"></i></a>
+    <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="/services/" class="mob-link">Services</a><a href="/about/" class="mob-link">About</a><a href="/portfolio/" class="mob-link">Portfolio</a><a href="/contact/" class="mob-link">Contact</a>
+  <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:28px">Book a free call</a>
+  <a href="/contact/" class="btn btn-lime" style="margin-top:12px">Start a project</a>
+</div>
+
+<div class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-label reveal"><div class="hero-dot"></div>Transparency by default</div>
+        <h1 class="reveal reveal-d1">No black boxes.<br>No surprises.<br><em>Just software that ships.</em></h1>
+        <p class="hero-body reveal reveal-d2">Every engagement starts with a shared understanding of what we're building, how we'll build it, and how you'll know it's working. Here's exactly how we operate.</p>
+        <div class="hero-ctas reveal reveal-d3">
+          <a href="/contact/" class="btn btn-lime">Start a project <i class="fas fa-arrow-right" style="font-size:.75rem"></i></a>
+          <a href="#engagement-models" class="btn btn-outline">See engagement models</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PROCESS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="process-layout">
+        <div class="process-sticky reveal">
+          <span class="section-label">Step by step</span>
+          <h2>Our <em>process</em></h2>
+          <p>Six phases, every time. We don't skip discovery to save a week. We don't skip documentation to ship faster. Shortcuts cost you later — we've seen it enough times to be stubborn about this.</p>
+          <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Walk through it with us <i class="far fa-calendar-alt" style="font-size:.7rem"></i></a>
+        </div>
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <div class="step-left">
+              <div class="step-num-badge">01</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">2 weeks &mdash; Discovery</span>
+              <h3>Discovery &amp; Architecture</h3>
+              <p>We don't start writing code until we understand the system we're building. This phase covers a deep requirements dive, system design sessions, risk identification, and producing architecture decision records (ADRs) that become the blueprint for everything that follows.</p>
+              <div class="step-details">
+                <span class="step-detail-chip">Requirements deep-dive</span>
+                <span class="step-detail-chip">System design</span>
+                <span class="step-detail-chip">Risk identification</span>
+                <span class="step-detail-chip">Architecture decision records</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-d1">
+            <div class="step-left">
+              <div class="step-num-badge">02</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">Pre-sprint &mdash; Planning</span>
+              <h3>Sprint Planning</h3>
+              <p>Before every sprint cycle, we run a structured planning session. Backlog items are groomed, estimated, and prioritized against capacity. Dependencies are mapped so nothing blocks the team mid-sprint. You see the board, always.</p>
+              <div class="step-details">
+                <span class="step-detail-chip">Backlog grooming</span>
+                <span class="step-detail-chip">Capacity planning</span>
+                <span class="step-detail-chip">Dependency mapping</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-d2">
+            <div class="step-left">
+              <div class="step-num-badge">03</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">Ongoing &mdash; Delivery</span>
+              <h3>Iterative Delivery</h3>
+              <p>Two-week sprints. Every sprint closes with a live demo — not a status update, but working software you can click through. Between demos, async daily updates keep you informed without requiring your calendar. Scope changes don't derail us; they're just the next sprint's input.</p>
+              <div class="step-details">
+                <span class="step-detail-chip">2-week sprints</span>
+                <span class="step-detail-chip">Live demos every cycle</span>
+                <span class="step-detail-chip">Async daily updates</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-d3">
+            <div class="step-left">
+              <div class="step-num-badge">04</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">Continuous &mdash; Quality</span>
+              <h3>Quality &amp; Security</h3>
+              <p>Every PR gets reviewed before merge — no exceptions, no "we'll clean it up later." Automated test coverage runs on every commit. Security scanning catches vulnerabilities before they reach staging. The staging environment mirrors production so surprises at launch are rare.</p>
+              <div class="step-details">
+                <span class="step-detail-chip">PR reviews</span>
+                <span class="step-detail-chip">Automated tests</span>
+                <span class="step-detail-chip">Security scanning</span>
+                <span class="step-detail-chip">Staging environment</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-step reveal">
+            <div class="step-left">
+              <div class="step-num-badge">05</div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">Go-live &mdash; Launch</span>
+              <h3>Launch &amp; Handover</h3>
+              <p>Production deployment is planned, staged, and executed — not just pushed and hoped. Every project ships with documentation, runbooks, and a structured knowledge transfer session. You should be able to operate what we built without us in the room.</p>
+              <div class="step-details">
+                <span class="step-detail-chip">Production deployment</span>
+                <span class="step-detail-chip">Documentation</span>
+                <span class="step-detail-chip">Runbooks</span>
+                <span class="step-detail-chip">Knowledge transfer</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-d1">
+            <div class="step-left">
+              <div class="step-num-badge">06</div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">Post-launch &mdash; Partnership</span>
+              <h3>Ongoing Partnership</h3>
+              <p>Most of our best clients started with a fixed-scope project and moved to a retainer once they saw how we work. Retainer engagements include dedicated team capacity, performance tuning, and architectural guidance as your product scales and evolves.</p>
+              <div class="step-details">
+                <span class="step-detail-chip">Retainer support</span>
+                <span class="step-detail-chip">Performance tuning</span>
+                <span class="step-detail-chip">Architectural guidance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT MODELS -->
+  <section class="section" style="padding-top:0" id="engagement-models">
+    <div class="container">
+      <div class="section-hdr center reveal">
+        <span class="section-label">How we engage</span>
+        <h2>Engagement <em>models</em></h2>
+        <p>Three ways to work with us, depending on what you're building and how much you already know about it.</p>
+      </div>
+      <div class="models-grid">
+        <div class="model-card reveal reveal-d1">
+          <div class="model-icon"><i class="fas fa-bullseye"></i></div>
+          <div class="model-badge">Fixed Price</div>
+          <h3>Fixed Price</h3>
+          <p>For well-scoped projects with clear deliverables. We agree on scope, timeline, and price up front — no surprise invoices, no scope creep debates. You know exactly what you're getting before a single line of code is written.</p>
+          <div class="model-best">
+            <strong>Best for</strong>
+            MVPs and defined-scope builds where requirements are stable and the goal is clear from day one.
+          </div>
+        </div>
+        <div class="model-card featured reveal reveal-d2">
+          <div class="model-icon"><i class="fas fa-rotate"></i></div>
+          <div class="model-badge">Most Popular</div>
+          <h3>Monthly Retainer</h3>
+          <p>Ongoing product development with a dedicated team. You get consistent velocity, architectural continuity, and a team that knows your codebase as well as their own. Cancel anytime — no lock-in.</p>
+          <div class="model-best">
+            <strong>Best for</strong>
+            Growing products that need consistent engineering velocity and a long-term technical partner.
+          </div>
+        </div>
+        <div class="model-card reveal reveal-d3">
+          <div class="model-icon"><i class="fas fa-flask"></i></div>
+          <div class="model-badge">Time &amp; Materials</div>
+          <h3>Time &amp; Materials</h3>
+          <p>For exploratory work, R&amp;D, and architecture consulting where scope evolves as you learn. Billed weekly with transparent reporting — you see every hour and what it produced. Ideal when you're still figuring out what to build.</p>
+          <div class="model-best">
+            <strong>Best for</strong>
+            Exploratory work, technical due diligence, R&amp;D sprints, and architecture consulting.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-hdr center reveal">
+        <span class="section-label">Our standard</span>
+        <h2>What you can <em>always</em> expect</h2>
+        <p>Regardless of engagement model or project size, these are non-negotiables — every client, every time.</p>
+      </div>
+      <div class="expectations-grid">
+        <div class="expect-card reveal reveal-d1">
+          <div class="expect-icon"><i class="fas fa-file-contract"></i></div>
+          <div>
+            <h4>NDA before kickoff</h4>
+            <p>We sign your NDA or provide ours before any discovery call. Your ideas, architecture, and business logic stay confidential.</p>
+          </div>
+        </div>
+        <div class="expect-card reveal reveal-d2">
+          <div class="expect-icon"><i class="fas fa-desktop"></i></div>
+          <div>
+            <h4>Weekly demos</h4>
+            <p>Every sprint closes with a live demo of working software — not a slide deck. You always know where we are against the plan.</p>
+          </div>
+        </div>
+        <div class="expect-card reveal reveal-d3">
+          <div class="expect-icon"><i class="fas fa-table-columns"></i></div>
+          <div>
+            <h4>Open Jira board access</h4>
+            <p>Your project board is shared from day one. Every task, every status, every blocker — visible in real time without asking.</p>
+          </div>
+        </div>
+        <div class="expect-card reveal reveal-d1">
+          <div class="expect-icon"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <h4>Direct engineer access</h4>
+            <p>No PM layers, no account managers. You talk directly to the engineers building your product. Fast decisions, no telephone game.</p>
+          </div>
+        </div>
+        <div class="expect-card reveal reveal-d2">
+          <div class="expect-icon"><i class="fas fa-book-open"></i></div>
+          <div>
+            <h4>Architecture documentation</h4>
+            <p>Every project ships with architecture decision records, system diagrams, and onboarding documentation written for the next engineer.</p>
+          </div>
+        </div>
+        <div class="expect-card reveal reveal-d3">
+          <div class="expect-icon"><i class="fas fa-life-ring"></i></div>
+          <div>
+            <h4>Post-launch support SLA</h4>
+            <p>We don't disappear at go-live. Every project includes a defined post-launch support window with response time guarantees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner reveal">
+        <span class="section-label">Ready to build?</span>
+        <h2>Let's figure out the right<br><em>engagement for you.</em></h2>
+        <p>A 30-minute call is usually enough to scope the work and recommend an engagement model. No commitment, no sales pitch.</p>
+        <div class="cta-btns">
+          <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-lime"><i class="far fa-calendar-alt" style="font-size:.8rem"></i> Book a free call</a>
+          <a href="/contact/" class="btn btn-outline">Start a project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <div class="logo-mark-footer" style="position:relative"><img src="/images/logo.jpg" alt="FiveNodes" style="width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0"></div>
+            FiveNodes
+          </div>
+          <p>AI-powered software engineering. We build SaaS products that scale, from architecture through production.</p>
+          <div class="f-social">
+            <a href="https://www.linkedin.com/company/5-nodes/" target="_blank" rel="noopener" class="f-social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener" class="f-social-btn"><i class="fab fa-github"></i></a>
+            <a href="mailto:Sabee@5ivenodes.com" class="f-social-btn"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="/services/">All Services</a></li>
+            <li><a href="/services/saas-product-engineering/">SaaS Engineering</a></li>
+            <li><a href="/services/api-integration/">API Integration</a></li>
+            <li><a href="/services/ui-ux-design/">UI/UX Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/careers/">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="/how-we-work/">How We Work</a></li>
+            <li><a href="/technologies/">Technologies</a></li>
+            <li><a href="/industries/">Industries</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="/contact/">Start a project</a></li>
+            <li><a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener">Book a call</a></li>
+            <li><a href="mailto:Sabee@5ivenodes.com">Sabee@5ivenodes.com</a></li>
+            <li><a href="https://wa.me/15126785641" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot">
+        <p>&copy; 2026 FiveNodes LLC. Albuquerque, NM. All rights reserved.</p>
+        <div class="footer-bot-links">
+          <a href="/legal/privacy/">Privacy</a>
+          <a href="/legal/terms/">Terms</a>
+          <a href="/legal/cookies/">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}lerpCursor();
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+(function(){const c=document.getElementById('bg-canvas');if(!c)return;const ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}resize();window.addEventListener('resize',()=>{resize();init()});function init(){pts=[];const n=Math.floor((W*H)/16000);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.3,vy:(Math.random()-.5)*0.3,r:Math.random()*1.5+0.5});}init();let mouseX=W/2,mouseY=H/2;window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});function draw(){ctx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<140){const a=(1-d/140)*0.35;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,241,53,${a*0.3})`;ctx.lineWidth=0.5;ctx.stroke();}}}for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,241,53,0.4)';ctx.fill();}for(const p of pts){const dx=mouseX-p.x,dy=mouseY-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<200){p.vx+=dx/d*0.01;p.vy+=dy/d*0.01;}p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}requestAnimationFrame(draw);}draw();})();
+function buildLogo(c,s,sp){if(!c)return;const ctx=c.getContext('2d');c.width=s;c.height=s;let r=0;const n=[{x:.6,y:-.7,z:.2},{x:.9,y:0,z:-.3},{x:.55,y:.75,z:.1},{x:-.55,y:.75,z:.1},{x:-.9,y:0,z:-.3},{x:0,y:-.25,z:.8},{x:.4,y:.2,z:-.7},{x:-.4,y:.2,z:-.7}],e=[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5],[0,6],[1,6],[2,7],[3,7],[4,6],[5,6],[5,7],[6,7]];function proj(x,y,z,ry){const cY=Math.cos(ry),sY=Math.sin(ry),x1=x*cY+z*sY,z1=-x*sY+z*cY,cX=Math.cos(.3),sX=Math.sin(.3),y1=y*cX-z1*sX,z2=y*sX+z1*cX,sc=2.5/(2.5+z2),rd=s*.38;return{px:s/2+x1*rd*sc,py:s/2+y1*rd*sc,z:z2,sc};}function draw(){ctx.clearRect(0,0,s,s);r+=sp;const p=n.map(nd=>proj(nd.x,nd.y,nd.z,r));const se=[...e].sort((a,b)=>(p[a[0]].z+p[a[1]].z)/2-(p[b[0]].z+p[b[1]].z)/2);for(const[i,j]of se){const a=p[i],b=p[j];const al=Math.max(0,(0.8+(a.z+b.z)/2*0.4)*0.55);ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);ctx.strokeStyle=`rgba(200,241,53,${al})`;ctx.lineWidth=.8;ctx.stroke();}for(const pt of p){const zN=(pt.z+1)/2,rd=4.5*pt.sc*(.5+zN*.7);ctx.beginPath();ctx.arc(pt.px,pt.py,rd,0,Math.PI*2);ctx.fillStyle=`rgba(200,241,53,${.6+zN*.4})`;ctx.fill();}requestAnimationFrame(draw);}draw();}
+buildLogo(document.getElementById('logo-canvas-nav'),68,.008);buildLogo(document.getElementById('logo-canvas-footer'),56,.01);
+const nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+document.addEventListener('click',e=>{if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

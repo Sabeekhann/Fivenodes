@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Recruitly Case Study — HR Tech SaaS | FiveNodes</title>
+<meta name="description" content="How FiveNodes scaled a recruitment SaaS from zero to 400+ agencies in 14 months — multi-tenant architecture, ATS core, integrations, and infrastructure.">
+<link rel="canonical" href="https://5ivenodes.com/work/recruitly/">
+<meta name="theme-color" content="#05060E">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--card:#0D0F1C;--card2:#11142B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--dim:#3A394A;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);will-change:transform}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:all 0.12s ease;will-change:transform}
+body.cursor-hover #cursor{width:20px;height:20px}
+body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform;transform:translateZ(0)}
+.wrap{position:relative;z-index:1}
+.container{max-width:1100px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:600}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
+.nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
+.logo-mark{width:34px;height:34px;position:relative;flex-shrink:0}
+.nav-links{display:flex;align-items:center}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:96px 48px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-link{padding:14px 0;font-family:var(--fh);font-size:1.1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
+.mob-link:hover{color:var(--text)}
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.5s cubic-bezier(.4,0,.2,1),transform 0.5s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+.cs-hero{padding:160px 0 80px;position:relative}
+.cs-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(200,241,53,0.04),transparent 65%);pointer-events:none}
+.cs-back{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);margin-bottom:40px;transition:color .2s}
+.cs-back:hover{color:var(--lime)}
+.cs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,241,53,0.07);border:1px solid rgba(200,241,53,0.18);border-radius:100px;padding:5px 16px;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:24px}
+.cs-badge span{width:5px;height:5px;border-radius:50%;background:var(--lime)}
+.cs-hero h1{font-family:var(--fh);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.1;margin-bottom:20px;max-width:820px}
+.cs-hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.4)}
+.cs-hero-sub{font-size:.9375rem;color:var(--muted);line-height:1.75;max-width:640px;margin-bottom:48px}
+.cs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:14px;overflow:hidden;border:1px solid var(--border);max-width:720px}
+.cs-stat{background:var(--card);padding:24px 20px}
+.cs-stat-n{font-family:var(--fh);font-size:2rem;font-weight:700;letter-spacing:-.05em;color:var(--lime);line-height:1}
+.cs-stat-n span{font-size:1.2rem}
+.cs-stat-l{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.4}
+.cs-section{padding:72px 0;border-top:1px solid var(--border)}
+.cs-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.cs-lead{font-size:1.0625rem;color:var(--text);line-height:1.78;font-weight:300}
+.cs-p{font-size:.9375rem;color:var(--muted);line-height:1.8;margin-top:16px}
+.cs-h2{font-family:var(--fh);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.1;margin-bottom:16px}
+.cs-h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.step-list{display:flex;flex-direction:column;gap:0}
+.step-item{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--border)}
+.step-item:first-child{padding-top:8px}
+.step-item:last-child{border-bottom:none}
+.step-n{font-family:'Courier New',monospace;font-size:.65rem;font-weight:600;letter-spacing:.1em;color:rgba(200,241,53,0.4);min-width:28px;padding-top:4px}
+.step-item h4{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:6px}
+.step-item p{font-size:.875rem;color:var(--muted);line-height:1.7}
+.tech-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.tech-tag{font-size:.75rem;font-family:'Courier New',monospace;color:rgba(200,241,53,0.7);border:1px solid rgba(200,241,53,0.15);border-radius:6px;padding:6px 14px;background:rgba(200,241,53,0.03)}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.result-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden}
+.result-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--lime),transparent)}
+.result-n{font-family:var(--fh);font-size:2.6rem;font-weight:700;letter-spacing:-.06em;color:var(--lime);line-height:1;margin-bottom:8px}
+.result-n span{font-size:1.6rem}
+.result-title{font-size:.875rem;font-weight:600;color:#fff;margin-bottom:6px}
+.result-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
+.cs-quote{background:var(--card);border:1px solid rgba(200,241,53,0.12);border-radius:16px;padding:40px 44px;position:relative}
+.cs-quote::before{content:'\201C';font-family:var(--fh);font-size:5rem;color:rgba(200,241,53,0.12);position:absolute;top:8px;left:28px;line-height:1}
+.cs-quote p{font-size:1.0625rem;font-style:italic;color:var(--text);line-height:1.75;margin-bottom:20px;padding-top:24px}
+.cs-quote-author{display:flex;align-items:center;gap:12px}
+.cs-quote-av{width:40px;height:40px;border-radius:50%;background:rgba(200,241,53,0.12);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:.8rem;font-weight:700;color:var(--lime);flex-shrink:0}
+.cs-quote-name{font-size:.875rem;font-weight:600;color:#fff}
+.cs-quote-role{font-size:.78rem;color:var(--muted)}
+.cta-band{background:var(--card);border:1px solid var(--border2);border-radius:20px;padding:56px 60px;text-align:center;position:relative;overflow:hidden;margin:80px 0}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(200,241,53,0.05),transparent 65%);pointer-events:none}
+.cta-band h2{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:14px;line-height:1.1}
+.cta-band h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.cta-band p{font-size:.9375rem;color:var(--muted);max-width:480px;margin:0 auto 32px;line-height:1.75}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{background:#030408;border-top:1px solid var(--border);padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:18px}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,0.25);line-height:1.7;max-width:260px;margin-bottom:20px}
+.f-social{display:flex;gap:10px}
+.f-social-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:.875rem;transition:all .2s;cursor:none}
+.f-social-btn:hover{border-color:var(--border2);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:16px}
+.footer-links li{margin-bottom:10px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,0.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bot p{font-size:.8rem;color:rgba(255,255,255,0.18)}
+@media(max-width:900px){.cs-grid-2{grid-template-columns:1fr;gap:40px}.cs-stats{grid-template-columns:repeat(2,1fr)}.results-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.cta-band{padding:40px 28px}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta,.nav-book{display:none}.hamburger{display:flex}.cs-stats{grid-template-columns:1fr 1fr}}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Recruitly — HR Tech SaaS","url":"https://5ivenodes.com/work/recruitly/","creator":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com"},"description":"A FiveNodes case study: Recruitly — HR Tech SaaS"}</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cursor"></div><div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="wrap">
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="FiveNodes" style="height:44px;width:44px;border-radius:7px;object-fit:cover;flex-shrink:0">FiveNodes
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a class="nav-link" href="/services/">Services</a></li>
+      <li><a class="nav-link" href="/industries/">Industries</a></li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link active" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/products/">Products</a></li>
+      <li><a class="nav-link" href="/blog/">Blog</a></li>
+      <li><a class="nav-link" href="/careers/">Careers</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline btn-sm nav-book">Book a call <i class="far fa-calendar-alt" style="font-size:.7rem"></i></a>
+    <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="/services/" class="mob-link">Services</a>
+  <a href="/about/" class="mob-link">About</a>
+  <a href="/case-studies/" class="mob-link">Case Studies</a>
+  <a href="/products/" class="mob-link">Products</a>
+  <a href="/contact/" class="mob-link">Contact</a>
+  <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:28px">Book a free call</a>
+  <a href="/contact/" class="btn btn-lime" style="margin-top:12px">Start a project</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="container">
+    <a href="/case-studies/" class="cs-back reveal"><i class="fas fa-arrow-left" style="font-size:.75rem"></i> Back to case studies</a>
+    <div class="cs-badge reveal"><span></span>Case Study &nbsp;·&nbsp; HR Tech SaaS</div>
+    <h1 class="reveal">How we scaled a recruitment SaaS from zero to <em>400+ agencies</em> without a single incident</h1>
+    <p class="cs-hero-sub reveal">A 14-month product engineering engagement — multi-tenant architecture, ATS core, integrations, and infrastructure.</p>
+    <div class="cs-stats reveal">
+      <div class="cs-stat"><div class="cs-stat-n">400<span>+</span></div><div class="cs-stat-l">Agencies onboarded</div></div>
+      <div class="cs-stat"><div class="cs-stat-n">3<span>×</span></div><div class="cs-stat-l">Faster placements</div></div>
+      <div class="cs-stat"><div class="cs-stat-n">60<span>%</span></div><div class="cs-stat-l">Less admin time</div></div>
+      <div class="cs-stat"><div class="cs-stat-n">99.9<span>%</span></div><div class="cs-stat-l">Uptime since launch</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="cs-section">
+  <div class="container">
+    <div class="cs-grid-2">
+      <div class="reveal">
+        <span class="section-label">Overview</span>
+        <h2 class="cs-h2">One platform, 400 agencies, <em>zero data bleed</em></h2>
+        <p class="cs-lead">Recruitly is a cloud-based applicant tracking system built for staffing agencies. When they came to FiveNodes they had a product concept, a small pilot group, and no scalable infrastructure. Every agency needed to feel like they were on their own isolated system while sharing one codebase.</p>
+        <p class="cs-p">The multi-tenant challenge was real: agencies had overlapping candidate pools and privacy requirements that made cross-contamination a legal risk — not just a UX problem.</p>
+        <p class="cs-p">We designed a strict tenant isolation model from day one — every query scoped to a tenantId at the ORM layer, row-level security enforced in Postgres, and per-tenant feature flags for rolling out new capabilities.</p>
+      </div>
+      <div class="reveal reveal-d2">
+        <span class="section-label">What they needed</span>
+        <div class="step-list">
+          <div class="step-item">
+            <span class="step-n">01</span>
+            <div><h4>Multi-tenant ATS Core</h4><p>Full applicant tracking with pipeline stages, candidate profiles, and job listings — all isolated per agency with zero data bleed between tenants.</p></div>
+          </div>
+          <div class="step-item">
+            <span class="step-n">02</span>
+            <div><h4>Job board integrations</h4><p>Live sync with LinkedIn, Indeed, and Reed. Candidates applied from any platform and landed directly in the right agency's pipeline.</p></div>
+          </div>
+          <div class="step-item">
+            <span class="step-n">03</span>
+            <div><h4>Analytics and reporting</h4><p>Real-time dashboards for time-to-fill, placement rate, and consultant performance — no SQL required.</p></div>
+          </div>
+          <div class="step-item">
+            <span class="step-n">04</span>
+            <div><h4>White-label capability</h4><p>Larger agencies serve their own clients under a branded subdomain. We built dynamic subdomain routing into the platform from month two.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="cs-section">
+  <div class="container">
+    <div class="cs-grid-2">
+      <div class="reveal">
+        <span class="section-label">How we built it</span>
+        <h2 class="cs-h2">Architecture designed for <em>isolation at scale</em></h2>
+        <p class="cs-lead">We ran a focused architecture sprint before writing application code. The key decision was Postgres row-level security for tenant isolation — giving us strong data guarantees without the operational overhead of per-tenant databases.</p>
+        <p class="cs-p">JWT tokens carried tenant context on every request, meaning the ORM-level scoping was enforced automatically — no chance of a developer accidentally querying across tenant boundaries.</p>
+        <p class="cs-p">White-label subdomain routing was added in month two and designed to be zero-config for agencies — a DNS CNAME and a logo upload was all it took.</p>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="step-list">
+          <div class="step-item">
+            <span class="step-n">01</span>
+            <div><h4>Architecture sprint (Weeks 1–3)</h4><p>DB schema with Postgres row-level security. Tenant provisioning system. JWT auth with tenant context embedded in every token.</p></div>
+          </div>
+          <div class="step-item">
+            <span class="step-n">02</span>
+            <div><h4>Core ATS (Months 1–5)</h4><p>Candidate management, drag-and-drop pipeline, job listing CRUD, multi-stage offer management, bulk email templates, consultant assignment workflows.</p></div>
+          </div>
+          <div class="step-item">
+            <span class="step-n">03</span>
+            <div><h4>Integrations and scale (Months 6–14)</h4><p>LinkedIn/Indeed/Reed API sync, Stripe billing, white-label subdomain routing, analytics with Metabase, AWS ECS auto-scaling.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="cs-section">
+  <div class="container reveal">
+    <span class="section-label">Technology</span>
+    <h2 class="cs-h2" style="margin-bottom:32px">A stack built for <em>multi-tenant reliability</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 20px">
+        <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Frontend</div>
+        <div class="tech-grid"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">TailwindCSS</span></div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 20px">
+        <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Backend</div>
+        <div class="tech-grid"><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Prisma ORM</span></div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 20px">
+        <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Integrations</div>
+        <div class="tech-grid"><span class="tech-tag">LinkedIn API</span><span class="tech-tag">Indeed API</span><span class="tech-tag">Stripe</span><span class="tech-tag">SendGrid</span></div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 20px">
+        <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Infrastructure</div>
+        <div class="tech-grid"><span class="tech-tag">AWS ECS</span><span class="tech-tag">RDS</span><span class="tech-tag">S3</span><span class="tech-tag">CloudFront</span><span class="tech-tag">GitHub Actions</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="cs-section">
+  <div class="container">
+    <div class="cs-grid-2" style="align-items:center">
+      <div class="reveal">
+        <span class="section-label">Results</span>
+        <h2 class="cs-h2">400 agencies live, <em>zero P1 incidents</em></h2>
+        <p class="cs-p">Self-service agency provisioning meant zero manual migrations — each agency onboarded themselves, configured their pipeline stages, and went live without touching a support ticket.</p>
+        <p class="cs-p" style="margin-top:16px">The biggest proof point was time-to-placement. Across pilot agencies, average placement time dropped from 18 days to 6 days within the first month. Consultants reported 60% less manual data entry within 30 days of launch.</p>
+      </div>
+      <div class="results-grid reveal reveal-d2">
+        <div class="result-card">
+          <div class="result-n">400<span>+</span></div>
+          <div class="result-title">Agencies onboarded</div>
+          <div class="result-desc">All onboarded without manual migration — self-service provisioning from day one.</div>
+        </div>
+        <div class="result-card">
+          <div class="result-n">3<span>×</span></div>
+          <div class="result-title">Faster placements</div>
+          <div class="result-desc">Average time-to-placement dropped from 18 days to 6 days across pilot agencies.</div>
+        </div>
+        <div class="result-card">
+          <div class="result-n">60<span>%</span></div>
+          <div class="result-title">Admin reduction</div>
+          <div class="result-desc">Consultants reported 60% less manual data entry within 30 days of launch.</div>
+        </div>
+        <div class="result-card">
+          <div class="result-n">0</div>
+          <div class="result-title">P1 incidents</div>
+          <div class="result-desc">Not a single critical production incident in 14 months post-launch.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="cs-section">
+  <div class="container reveal">
+    <div class="cs-quote">
+      <p>FiveNodes didn't just build what we asked for — they improved on our spec at every turn. The multi-tenant architecture they designed has let us onboard 400+ agencies without a single support ticket about data issues.</p>
+      <div class="cs-quote-author">
+        <div class="cs-quote-av">JH</div>
+        <div>
+          <div class="cs-quote-name">James Hartley</div>
+          <div class="cs-quote-role">CTO &middot; Recruitly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cs-section" style="border-bottom:none">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Ready to build your <em>SaaS?</em></h2>
+      <p>We've engineered SaaS products that scaled from zero to hundreds of customers. Tell us what you're building — we respond the same day.</p>
+      <div class="cta-band-btns">
+        <a href="/contact/" class="btn btn-lime">Start a conversation <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+        <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline">Book a free call</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><img src="/images/logo.jpg" alt="FiveNodes" style="width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</div>
+        <p>Purpose-built AI &amp; software engineering for growing companies. Since 2021.</p>
+        <div class="f-social">
+          <a href="https://www.linkedin.com/company/5-nodes/" class="f-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61590206948945" class="f-social-btn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/five.nodes/" class="f-social-btn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links">
+        <li><a href="/services/saas-product-engineering/">SaaS Engineering</a></li>
+        <li><a href="/services/cloud-devops/">Cloud &amp; DevOps</a></li>
+        <li><a href="/services/api-integration/">API Integration</a></li>
+        <li><a href="/services/ui-ux-design/">UI/UX Design</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links">
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul class="footer-links">
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li><a href="/legal/terms/">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bot"><p>2026 FiveNodes. All rights reserved.</p></div>
+  </div>
+</footer>
+</div>
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}lerpCursor();
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+(function(){const c=document.getElementById('bg-canvas');if(!c)return;const ctx=c.getContext('2d');let W,H,pts=[];
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}resize();window.addEventListener('resize',()=>{resize();init()});
+function init(){pts=[];const n=Math.floor((W*H)/16000);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.3,vy:(Math.random()-.5)*0.3,r:Math.random()*1.5+0.5});}init();
+let mouseX=W/2,mouseY=H/2;window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});
+function draw(){ctx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<140){const a=(1-d/140)*0.35;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,241,53,${a*0.3})`;ctx.lineWidth=0.5;ctx.stroke();}}}for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,241,53,0.4)';ctx.fill();}for(const p of pts){const dx=mouseX-p.x,dy=mouseY-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<200){p.vx+=dx/d*0.01;p.vy+=dy/d*0.01;}p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}requestAnimationFrame(draw);}draw();})();
+const nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+document.addEventListener('click',e=>{if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

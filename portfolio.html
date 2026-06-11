@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Portfolio | FiveNodes</title>
+<meta name="description" content="Real projects. Real results. Explore FiveNodes' portfolio of SaaS products, platforms, and enterprise software delivered since 2021.">
+<link rel="canonical" href="https://5ivenodes.com/portfolio/">
+<meta name="theme-color" content="#05060E">
+<meta property="og:title" content="Portfolio | FiveNodes">
+<meta property="og:description" content="Real projects. Real results. SaaS platforms, cloud systems, and enterprise software delivered since 2021.">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--bg2:#090B16;--card:#0D0F1C;--card2:#11142B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--dim:#3A394A;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);mix-blend-mode:difference}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:all 0.12s ease}
+body.cursor-hover #cursor{width:20px;height:20px}
+body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:600}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
+.nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
+.logo-mark{width:34px;height:34px;position:relative;flex-shrink:0}
+.logo-mark canvas{position:absolute;inset:0}
+.nav-links{display:flex;align-items:center}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.nav-dropdown{position:relative}
+.dd-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#0D0F1C;border:1px solid var(--border2);border-radius:14px;padding:8px;min-width:280px;opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 32px 80px rgba(0,0,0,0.6);pointer-events:none}
+.nav-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:var(--muted);font-size:.875rem;transition:all .15s;cursor:none}
+.dd-item:hover{background:rgba(200,241,53,0.06);color:var(--text)}
+.dd-item strong{color:var(--text);font-weight:500;font-size:.8125rem;display:block}
+.dd-item small{color:var(--dim);font-size:.75rem}
+.dd-icon{width:30px;height:30px;border-radius:7px;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:.7rem;flex-shrink:0}
+.dd-2col{min-width:340px;display:grid;grid-template-columns:1fr 1fr}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:96px 48px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-link{padding:14px 0;font-family:var(--fh);font-size:1.1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
+.mob-link:hover{color:var(--text)}
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+footer{background:#030408;border-top:1px solid var(--border);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:18px}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,0.25);line-height:1.7;max-width:280px;margin-bottom:24px}
+.f-social{display:flex;gap:10px}
+.f-social-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:.875rem;transition:all .2s;cursor:none}
+.f-social-btn:hover{border-color:var(--border2);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:20px}
+.footer-links li{margin-bottom:12px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,0.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bot p,.footer-bot a{font-size:.8rem;color:rgba(255,255,255,0.18)}
+.footer-bot-links{display:flex;gap:24px}
+.footer-bot-links a:hover{color:rgba(255,255,255,0.4)}
+
+/* PAGE HERO */
+.page-hero{padding:160px 0 100px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(200,241,53,0.04) 0%,transparent 70%);pointer-events:none}
+.page-hero-inner{position:relative;z-index:2}
+.breadcrumb{display:flex;align-items:center;gap:10px;font-size:.75rem;color:var(--dim);margin-bottom:24px;font-family:'Courier New',monospace}
+.breadcrumb a{color:var(--dim);transition:color .2s}.breadcrumb a:hover{color:var(--lime)}
+.page-h1{font-family:var(--fh);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05;margin-bottom:20px}
+.page-h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.45)}
+.page-desc{font-size:1.125rem;color:var(--muted);max-width:600px;line-height:1.75;font-weight:300;margin-bottom:36px}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;padding:32px 0 0}
+.filter-btn{padding:8px 18px;border-radius:100px;border:1px solid var(--border);font-size:.8rem;color:var(--muted);cursor:none;transition:all .2s;background:none;font-family:var(--ff)}
+.filter-btn:hover{border-color:var(--border2);color:var(--text)}
+.filter-btn.active{background:var(--lime);border-color:var(--lime);color:#05060E;font-weight:600}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden;border:1px solid var(--border);margin:80px 0 64px}
+.stat-box{background:var(--card);padding:32px}
+.stat-num{font-family:var(--fh);font-size:2.2rem;font-weight:700;letter-spacing:-.05em;color:#fff;line-height:1}
+.stat-num span{color:var(--lime)}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:6px}
+
+/* MOCKUP */
+.case-mockup{height:220px;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden;flex-shrink:0}
+.case-card.featured .case-mockup{height:280px}
+.case-mockup canvas{position:absolute;inset:0;width:100%;height:100%}
+
+/* CASE STUDY CARDS */
+.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:80px}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:none;display:flex;flex-direction:column}
+.case-card:hover{border-color:rgba(200,241,53,0.2);transform:translateY(-6px);box-shadow:0 40px 80px rgba(0,0,0,0.4)}
+.case-card.featured{grid-column:span 2}
+.case-header{padding:44px 44px 32px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.case-header::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.case-card:hover .case-header::before{transform:scaleX(1)}
+.case-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.case-industry{display:inline-flex;align-items:center;gap:6px;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);background:rgba(200,241,53,0.07);border:1px solid rgba(200,241,53,0.15);border-radius:100px;padding:4px 12px}
+.case-year{font-size:.7rem;font-family:'Courier New',monospace;color:var(--dim)}
+.case-header h2{font-family:var(--fh);font-size:1.4rem;font-weight:700;letter-spacing:-.03em;color:#fff;margin-bottom:10px;line-height:1.2}
+.case-card.featured .case-header h2{font-size:1.8rem}
+.case-tagline{font-size:.9375rem;color:var(--muted);line-height:1.65;max-width:680px}
+.case-metrics{display:flex;gap:0;padding:28px 44px;border-bottom:1px solid var(--border)}
+.case-metric{padding-right:32px;margin-right:32px;border-right:1px solid var(--border)}
+.case-metric:last-child{border-right:none;margin-right:0;padding-right:0}
+.case-metric-n{font-family:var(--fh);font-size:1.6rem;font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1}
+.case-metric-n span{color:var(--lime)}
+.case-metric-l{font-size:.72rem;color:var(--muted);margin-top:4px}
+.case-body{padding:32px 44px 40px;flex:1;display:flex;flex-direction:column;gap:24px}
+.case-section h4{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;font-family:'Courier New',monospace}
+.case-section p{font-size:.875rem;color:var(--muted);line-height:1.75}
+.case-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.stack-tag{font-size:.7rem;color:var(--dim);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-family:'Courier New',monospace;transition:all .2s}
+.case-card:hover .stack-tag{border-color:rgba(200,241,53,0.2);color:rgba(200,241,53,0.6)}
+.case-footer{padding:0 44px 40px;margin-top:auto}
+.case-link{display:inline-flex;align-items:center;gap:8px;font-size:.8125rem;font-weight:500;color:var(--lime);transition:gap .2s}
+.case-card:hover .case-link{gap:14px}
+
+/* FEATURED LAYOUT */
+.case-card.featured .case-body{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.case-card.featured .case-footer{padding-top:0}
+
+/* OUTREACH STRIP */
+.outreach-strip{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:64px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;margin-bottom:80px}
+.outreach-strip h2{font-family:var(--fh);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:12px;line-height:1.1}
+.outreach-strip h2 em{font-style:italic;font-weight:300;color:var(--lime)}
+.outreach-strip p{font-size:.9375rem;color:var(--muted);line-height:1.7;max-width:520px}
+.outreach-btns{display:flex;gap:12px;flex-shrink:0;flex-direction:column}
+
+@media(max-width:900px){.portfolio-grid{grid-template-columns:1fr}.case-card.featured{grid-column:span 1}.case-card.featured .case-body{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-grid .footer-brand{grid-column:1/-1}.outreach-strip{grid-template-columns:1fr;gap:24px}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta{display:none}.hamburger{display:flex}.case-header{padding:28px 28px 24px}.case-metrics{padding:20px 28px;flex-wrap:wrap;gap:16px}.case-metric{border-right:none;padding-right:0;margin-right:0}.case-body{padding:24px 28px 28px}.case-footer{padding:0 28px 28px}.stats-row{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}.outreach-strip{padding:36px 28px}}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cursor"></div><div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="wrap">
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="FiveNodes" style="height:44px;width:44px;border-radius:7px;object-fit:cover;flex-shrink:0">FiveNodes
+    </a>
+    <ul class="nav-links" role="list">
+      <li class="nav-dropdown"><a class="nav-link" href="/services/">Services</a>
+        <div class="dd-menu" role="menu">
+          <a href="/services/saas-product-engineering/" class="dd-item"><span class="dd-icon"><i class="fas fa-layer-group"></i></span><div><strong>SaaS Engineering</strong><small>Full-stack platforms</small></div></a>
+          <a href="/services/cloud-devops/" class="dd-item"><span class="dd-icon"><i class="fas fa-cloud"></i></span><div><strong>Cloud &amp; DevOps</strong><small>AWS, GCP, Kubernetes</small></div></a>
+          <a href="/services/api-integration/" class="dd-item"><span class="dd-icon"><i class="fas fa-plug"></i></span><div><strong>API &amp; Integration</strong><small>REST, GraphQL, events</small></div></a>
+          <a href="/services/ui-ux-design/" class="dd-item"><span class="dd-icon"><i class="fas fa-pen-nib"></i></span><div><strong>UI/UX Design</strong><small>Design systems</small></div></a>
+          <a href="/services/data-analytics/" class="dd-item"><span class="dd-icon"><i class="fas fa-chart-line"></i></span><div><strong>Data Engineering</strong><small>Pipelines &amp; BI</small></div></a>
+          <a href="/services/maintenance-scaling/" class="dd-item"><span class="dd-icon"><i class="fas fa-shield-halved"></i></span><div><strong>Maintenance</strong><small>Support &amp; scaling</small></div></a>
+        </div>
+      </li>
+      <li class="nav-dropdown"><a class="nav-link" href="/industries/">Industries</a>
+        <div class="dd-menu dd-2col" role="menu">
+          <a href="/industries/healthcare/" class="dd-item">Healthcare</a><a href="/industries/edtech/" class="dd-item">EdTech</a>
+          <a href="/industries/logistics/" class="dd-item">Logistics</a><a href="/industries/real-estate/" class="dd-item">Real Estate</a>
+          <a href="/industries/hr-workforce/" class="dd-item">HR Tech</a><a href="/industries/retail-ecommerce/" class="dd-item">Retail</a>
+          <a href="/industries/legaltech/" class="dd-item">LegalTech</a><a href="/industries/govtech/" class="dd-item">GovTech</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link active" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="/services/saas-product-engineering/" class="mob-link">SaaS Engineering</a>
+  <a href="/services/cloud-devops/" class="mob-link">Cloud &amp; DevOps</a>
+  <a href="/services/api-integration/" class="mob-link">API Integration</a>
+  <a href="/services/ui-ux-design/" class="mob-link">UI/UX Design</a>
+  <a href="/about/" class="mob-link">About</a>
+  <a href="/portfolio/" class="mob-link">Portfolio</a>
+  <a href="/products/" class="mob-link">Products</a>
+  <a href="/contact/" class="mob-link">Contact</a>
+  <a href="/contact/" class="btn btn-lime" style="margin-top:28px">Start a project</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb"><a href="/">Home</a> <span style="opacity:.3">/</span> <span>Portfolio</span></nav>
+    <span class="section-label">Our work</span>
+    <h1 class="page-h1">Projects we're <em>proud of</em></h1>
+    <p class="page-desc">Since 2021, we've designed, built, and shipped software across healthcare, logistics, edtech, retail, and more. Here's a selection of what we've delivered.</p>
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All projects</button>
+      <button class="filter-btn" data-filter="saas">SaaS</button>
+      <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+      <button class="filter-btn" data-filter="logistics">Logistics</button>
+      <button class="filter-btn" data-filter="edtech">EdTech</button>
+      <button class="filter-btn" data-filter="retail">Retail</button>
+      <button class="filter-btn" data-filter="api">API &amp; Integration</button>
+    </div>
+  </div>
+</section>
+
+<section style="padding:80px 0 0">
+  <div class="container">
+
+    <!-- STATS -->
+    <div class="stats-row reveal">
+      <div class="stat-box"><div class="stat-num">35<span>+</span></div><div class="stat-label">Projects delivered</div></div>
+      <div class="stat-box"><div class="stat-num">8</div><div class="stat-label">Industries served</div></div>
+      <div class="stat-box"><div class="stat-num">4<span>yr</span></div><div class="stat-label">In operation since 2021</div></div>
+      <div class="stat-box"><div class="stat-num">95<span>%</span></div><div class="stat-label">Client retention rate</div></div>
+    </div>
+
+    <!-- PORTFOLIO GRID -->
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- 1. FEATURED — ClinicFlow -->
+      <div class="case-card featured reveal" data-tags="healthcare saas">
+        <div class="case-mockup"><canvas id="mock-clinicflow"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-heart-pulse"></i> Healthcare</span>
+            <span class="case-year">2022 – 2023</span>
+          </div>
+          <h2>ClinicFlow — Patient &amp; Appointment Management Platform</h2>
+          <p class="case-tagline">A multi-clinic SaaS platform replacing paper-based workflows with digital appointment scheduling, patient records, and billing — built to HIPAA-ready standards.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">3<span>x</span></div><div class="case-metric-l">Faster patient check-in</div></div>
+          <div class="case-metric"><div class="case-metric-n">12<span>+</span></div><div class="case-metric-l">Clinics onboarded at launch</div></div>
+          <div class="case-metric"><div class="case-metric-n">40<span>%</span></div><div class="case-metric-l">Reduction in no-shows</div></div>
+          <div class="case-metric"><div class="case-metric-n">6<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>The client was managing 12 clinics across two cities using spreadsheets and WhatsApp. No unified patient records, constant double-bookings, and zero visibility into revenue per location.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>Multi-tenant SaaS with role-based access for clinic owners, doctors, and receptionists. Real-time appointment scheduling with SMS reminders, patient history, invoicing, and a central analytics dashboard for the owner group.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">Next.js</span><span class="stack-tag">Node.js</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Redis</span><span class="stack-tag">AWS</span><span class="stack-tag">Twilio SMS</span><span class="stack-tag">Stripe</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+      <!-- 2. CargoTrack -->
+      <div class="case-card reveal reveal-d1" data-tags="logistics api">
+        <div class="case-mockup"><canvas id="mock-cargotrack"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-truck"></i> Logistics</span>
+            <span class="case-year">2023</span>
+          </div>
+          <h2>CargoTrack — Fleet &amp; Shipment Visibility Platform</h2>
+          <p class="case-tagline">Real-time fleet tracking and shipment management for a regional logistics operator, replacing manual phone-based dispatch with a live operations dashboard.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">60<span>%</span></div><div class="case-metric-l">Less time on dispatch calls</div></div>
+          <div class="case-metric"><div class="case-metric-n">200<span>+</span></div><div class="case-metric-l">Vehicles tracked live</div></div>
+          <div class="case-metric"><div class="case-metric-n">4<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>Dispatch team managing 200+ vehicles entirely via phone calls and paper manifests. No live visibility into driver location, delivery status, or fuel usage across routes.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>GPS-integrated fleet dashboard with live driver tracking, automated route assignment, delivery confirmation with e-signature, and a customer-facing shipment tracking portal.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">React</span><span class="stack-tag">Node.js</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Google Maps API</span><span class="stack-tag">WebSockets</span><span class="stack-tag">AWS EC2</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+      <!-- 3. LearnBridge -->
+      <div class="case-card reveal" data-tags="edtech saas">
+        <div class="case-mockup"><canvas id="mock-learnbridge"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-graduation-cap"></i> EdTech</span>
+            <span class="case-year">2022</span>
+          </div>
+          <h2>LearnBridge — Tutoring Marketplace &amp; LMS</h2>
+          <p class="case-tagline">A two-sided marketplace connecting students with tutors, with built-in scheduling, video sessions, progress tracking, and subscription billing.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">800<span>+</span></div><div class="case-metric-l">Students in first 3 months</div></div>
+          <div class="case-metric"><div class="case-metric-n">150<span>+</span></div><div class="case-metric-l">Tutors onboarded</div></div>
+          <div class="case-metric"><div class="case-metric-n">5<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>Client had a manual tutoring business — student-tutor matching done via email, sessions via random video tools, payments via bank transfer. No data, no retention loop.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>Full marketplace with tutor profiles, student onboarding, smart matching, in-app scheduling, Zoom integration, session notes, and Stripe subscription management.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">Next.js</span><span class="stack-tag">NestJS</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Stripe</span><span class="stack-tag">Zoom SDK</span><span class="stack-tag">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+      <!-- 4. ShelfSync -->
+      <div class="case-card reveal reveal-d1" data-tags="retail saas">
+        <div class="case-mockup"><canvas id="mock-shelfsync"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-bag-shopping"></i> Retail &amp; E-commerce</span>
+            <span class="case-year">2023 – 2024</span>
+          </div>
+          <h2>ShelfSync — Inventory &amp; Order Management System</h2>
+          <p class="case-tagline">A centralised inventory platform for a multi-location retail chain, syncing stock across physical stores and an online storefront in real time.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">70<span>%</span></div><div class="case-metric-l">Less stockout incidents</div></div>
+          <div class="case-metric"><div class="case-metric-n">5</div><div class="case-metric-l">Locations synced live</div></div>
+          <div class="case-metric"><div class="case-metric-n">4<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>Five retail branches running separate Excel sheets. Online store showing wrong stock. Orders arriving from three channels with no unified view — leading to overselling and customer complaints.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>Unified inventory dashboard with live stock sync across all branches and Shopify, automated low-stock alerts, supplier PO generation, and sales-by-location analytics.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">React</span><span class="stack-tag">Node.js</span><span class="stack-tag">MongoDB</span><span class="stack-tag">Shopify API</span><span class="stack-tag">Redis</span><span class="stack-tag">AWS</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+      <!-- 5. PropertyHub -->
+      <div class="case-card reveal" data-tags="saas api">
+        <div class="case-mockup"><canvas id="mock-propertyhub"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-building"></i> Real Estate</span>
+            <span class="case-year">2023</span>
+          </div>
+          <h2>PropertyHub — Agent CRM &amp; Listing Platform</h2>
+          <p class="case-tagline">A custom CRM and property listing platform for a real estate agency, replacing a patchwork of spreadsheets and a costly off-the-shelf tool that didn't fit their workflow.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">2x</div><div class="case-metric-l">Agent productivity</div></div>
+          <div class="case-metric"><div class="case-metric-n">500<span>+</span></div><div class="case-metric-l">Active listings managed</div></div>
+          <div class="case-metric"><div class="case-metric-n">3<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>Agents were managing leads in WhatsApp groups, listings in spreadsheets, and viewings in paper diaries. The team had no pipeline visibility and deals were slipping through the gaps.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>CRM with lead pipeline, property listings with image galleries and virtual tour links, automated follow-up reminders, contract status tracking, and a client-facing search portal.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">Next.js</span><span class="stack-tag">Node.js</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">AWS S3</span><span class="stack-tag">Resend</span><span class="stack-tag">Mapbox</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+      <!-- 6. HireSync -->
+      <div class="case-card reveal reveal-d1" data-tags="saas api">
+        <div class="case-mockup"><canvas id="mock-hiresync"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-users"></i> HR &amp; Workforce</span>
+            <span class="case-year">2024</span>
+          </div>
+          <h2>HireSync — Applicant Tracking &amp; Onboarding System</h2>
+          <p class="case-tagline">End-to-end hiring platform for a staffing firm — from job posting and applicant screening to offer letters, document collection, and onboarding task management.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">50<span>%</span></div><div class="case-metric-l">Faster time-to-hire</div></div>
+          <div class="case-metric"><div class="case-metric-n">300<span>+</span></div><div class="case-metric-l">Candidates processed/month</div></div>
+          <div class="case-metric"><div class="case-metric-n">4<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>HR team receiving CVs via email, tracking candidates in shared Google Sheets, and sending offer letters manually. Onboarding was inconsistent — new hires often missed day-one essentials.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>ATS with job board integration, candidate pipeline, interview scheduling with calendar sync, automated offer letter generation, e-signature collection, and structured onboarding checklists per role.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">React</span><span class="stack-tag">NestJS</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">DocuSign API</span><span class="stack-tag">Google Calendar</span><span class="stack-tag">AWS</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+      <!-- 7. FEATURED — DataPulse -->
+      <div class="case-card featured reveal" data-tags="saas api">
+        <div class="case-mockup"><canvas id="mock-datapulse"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-chart-line"></i> Data &amp; Analytics</span>
+            <span class="case-year">2024</span>
+          </div>
+          <h2>DataPulse — Multi-Source Business Intelligence Dashboard</h2>
+          <p class="case-tagline">A unified analytics platform pulling data from Shopify, a custom ERP, and Google Ads into a single real-time BI dashboard — giving the exec team a single source of truth for the first time.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">6</div><div class="case-metric-l">Data sources connected</div></div>
+          <div class="case-metric"><div class="case-metric-n">Real<span>-time</span></div><div class="case-metric-l">Data refresh rate</div></div>
+          <div class="case-metric"><div class="case-metric-n">80<span>%</span></div><div class="case-metric-l">Less time on manual reports</div></div>
+          <div class="case-metric"><div class="case-metric-n">3<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>The team was pulling data from 6 separate systems each Monday, manually copying figures into a master spreadsheet, and spending 4+ hours building a weekly report that was already out of date by the time it circulated.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>An automated ETL pipeline feeding a centralised warehouse, with a React-based dashboard showing revenue, ad spend, inventory, and ops KPIs in real time. Role-based views for executives, ops, and marketing. Weekly report auto-generated and emailed every Monday at 8am.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">React</span><span class="stack-tag">Python</span><span class="stack-tag">Airflow</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Redshift</span><span class="stack-tag">Shopify API</span><span class="stack-tag">Google Ads API</span><span class="stack-tag">AWS Lambda</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+      <!-- 8. LexDraft -->
+      <div class="case-card reveal" data-tags="saas api">
+        <div class="case-mockup"><canvas id="mock-lexdraft"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-scale-balanced"></i> LegalTech</span>
+            <span class="case-year">2024</span>
+          </div>
+          <h2>LexDraft — Contract Automation &amp; e-Signature Platform</h2>
+          <p class="case-tagline">A contract generation and e-signature platform for a law firm, cutting turnaround time on standard agreements from days to minutes using smart templates.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">90<span>%</span></div><div class="case-metric-l">Faster contract turnaround</div></div>
+          <div class="case-metric"><div class="case-metric-n">40<span>+</span></div><div class="case-metric-l">Templates automated</div></div>
+          <div class="case-metric"><div class="case-metric-n">3<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>Associates were spending 2–3 hours on each standard NDA or service agreement — copy-pasting from old documents, reformatting, emailing PDFs back and forth for signatures.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>Template builder with dynamic fields, clause library, client intake forms, PDF generation, and integrated e-signature. Full audit trail and document version history.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">React</span><span class="stack-tag">Node.js</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">PDF-lib</span><span class="stack-tag">AWS S3</span><span class="stack-tag">Resend</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+      <!-- 9. GovPortal -->
+      <div class="case-card reveal reveal-d1" data-tags="saas">
+        <div class="case-mockup"><canvas id="mock-citizendesk"></canvas></div>
+        <div class="case-header">
+          <div class="case-meta">
+            <span class="case-industry"><i class="fas fa-landmark"></i> GovTech</span>
+            <span class="case-year">2023</span>
+          </div>
+          <h2>CitizenDesk — Public Service Request &amp; Tracking Portal</h2>
+          <p class="case-tagline">A citizen-facing portal for a municipal authority to submit, track, and resolve public service requests — replacing a phone-only system with a transparent online workflow.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><div class="case-metric-n">45<span>%</span></div><div class="case-metric-l">Drop in repeat enquiry calls</div></div>
+          <div class="case-metric"><div class="case-metric-n">2,000<span>+</span></div><div class="case-metric-l">Requests handled at launch</div></div>
+          <div class="case-metric"><div class="case-metric-n">5<span>mo</span></div><div class="case-metric-l">Delivered in</div></div>
+        </div>
+        <div class="case-body">
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>Citizens had no way to track submitted requests. Staff were fielding hundreds of status-check calls weekly. No data on resolution times or repeat issues by area.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>Public request submission portal with category routing, live status tracking, automated SMS/email updates, internal case management for staff, and a heat-map analytics dashboard by district.</p>
+          </div>
+          <div class="case-section">
+            <h4>Tech stack</h4>
+            <div class="case-stack">
+              <span class="stack-tag">Next.js</span><span class="stack-tag">Node.js</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Twilio</span><span class="stack-tag">Mapbox</span><span class="stack-tag">AWS</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <a href="/contact/" class="case-link">Build something similar <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+        </div>
+      </div>
+
+    </div><!-- /portfolio-grid -->
+
+    <!-- OUTREACH STRIP -->
+    <div class="outreach-strip reveal">
+      <div>
+        <h2>Seen enough? Let's talk about <em>your project</em></h2>
+        <p>Every project on this page started with a conversation. Tell us what you're building — we respond the same day with honest thoughts, no obligations.</p>
+      </div>
+      <div class="outreach-btns">
+        <a href="/contact/" class="btn btn-lime">Start a conversation <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+        <a href="/services/" class="btn btn-outline">View our services</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><img src="/images/logo.jpg" alt="FiveNodes" style="width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</div>
+        <p>Purpose-built software engineering for growing companies. Delivered across healthcare, logistics, edtech, and more — since 2021.</p>
+        <div class="f-social">
+          <a href="https://www.linkedin.com/company/5-nodes/" class="f-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61590206948945" class="f-social-btn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/five.nodes/" class="f-social-btn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links">
+        <li><a href="/services/saas-product-engineering/">SaaS Engineering</a></li>
+        <li><a href="/services/cloud-devops/">Cloud &amp; DevOps</a></li>
+        <li><a href="/services/api-integration/">API Integration</a></li>
+        <li><a href="/services/ui-ux-design/">UI/UX Design</a></li>
+        <li><a href="/services/data-analytics/">Data Engineering</a></li>
+        <li><a href="/services/maintenance-scaling/">Maintenance</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Industries</h4><ul class="footer-links">
+        <li><a href="/industries/healthcare/">Healthcare</a></li><li><a href="/industries/edtech/">EdTech</a></li>
+        <li><a href="/industries/logistics/">Logistics</a></li><li><a href="/industries/real-estate/">Real Estate</a></li>
+        <li><a href="/industries/hr-workforce/">HR Tech</a></li><li><a href="/industries/retail-ecommerce/">Retail</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links">
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul class="footer-links">
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li><a href="/legal/terms/">Terms of Service</a></li>
+        <li><a href="/legal/cookies/">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bot"><p>2026 FiveNodes. All rights reserved.</p>
+      <div class="footer-bot-links"><a href="/legal/privacy/">Privacy</a><a href="/legal/terms/">Terms</a><a href="/legal/cookies/">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}lerpCursor();
+document.querySelectorAll('a,button,.case-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+(function(){const c=document.getElementById('bg-canvas');if(!c)return;const ctx=c.getContext('2d');let W,H,pts=[];
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}resize();window.addEventListener('resize',()=>{resize();init()});
+function init(){pts=[];const n=Math.floor((W*H)/14000);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.3,vy:(Math.random()-.5)*0.3,r:Math.random()*1.5+0.5});}init();
+let mouseX=W/2,mouseY=H/2;window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});
+function draw(){ctx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<140){const a=(1-d/140)*0.35;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,241,53,${a*0.3})`;ctx.lineWidth=0.5;ctx.stroke();}}}for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,241,53,0.4)';ctx.fill();}for(const p of pts){const dx=mouseX-p.x,dy=mouseY-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<200){p.vx+=dx/d*0.01;p.vy+=dy/d*0.01;}p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}requestAnimationFrame(draw);}draw();})();
+function buildLogo(canvas,size,speed){if(!canvas)return;const ctx=canvas.getContext('2d');canvas.width=size;canvas.height=size;let rot=0;
+const nodes=[{x:.6,y:-.7,z:.2},{x:.9,y:0,z:-.3},{x:.55,y:.75,z:.1},{x:-.55,y:.75,z:.1},{x:-.9,y:0,z:-.3},{x:0,y:-.25,z:.8},{x:.4,y:.2,z:-.7},{x:-.4,y:.2,z:-.7}];
+const edges=[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5],[0,6],[1,6],[2,7],[3,7],[4,6],[5,6],[5,7],[6,7]];
+function proj(x,y,z,ry){const cY=Math.cos(ry),sY=Math.sin(ry);const x1=x*cY+z*sY,z1=-x*sY+z*cY;const cX=Math.cos(.3),sX=Math.sin(.3);const y1=y*cX-z1*sX,z2=y*sX+z1*cX;const sc=2.5/(2.5+z2),r=size*.38;return{px:size/2+x1*r*sc,py:size/2+y1*r*sc,z:z2,sc};}
+function draw(){ctx.clearRect(0,0,size,size);rot+=speed;const p=nodes.map(n=>proj(n.x,n.y,n.z,rot));
+const se=[...edges].sort((a,b)=>(p[a[0]].z+p[a[1]].z)/2-(p[b[0]].z+p[b[1]].z)/2);
+for(const[i,j]of se){const a=p[i],b=p[j];const alpha=Math.max(0,(0.8+(a.z+b.z)/2*0.4)*0.55);ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);ctx.strokeStyle=`rgba(200,241,53,${alpha})`;ctx.lineWidth=.8;ctx.stroke();}
+for(const pt of p){const zN=(pt.z+1)/2,r=4.5*pt.sc*(.5+zN*.7);ctx.beginPath();ctx.arc(pt.px,pt.py,r,0,Math.PI*2);ctx.fillStyle=`rgba(200,241,53,${.6+zN*.4})`;ctx.fill();}requestAnimationFrame(draw);}draw();}
+buildLogo(document.getElementById('logo-canvas-nav'),68,.008);
+buildLogo(document.getElementById('logo-canvas-footer'),56,.01);
+const nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+document.addEventListener('click',e=>{if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Filter logic
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter=btn.dataset.filter;
+    document.querySelectorAll('.case-card').forEach(card=>{
+      const tags=card.dataset.tags||'';
+      if(filter==='all'||tags.includes(filter)){card.style.display='flex';card.style.opacity='1';}
+      else{card.style.display='none';}
+    });
+    // Re-span featured cards when visible
+    document.querySelectorAll('.case-card.featured').forEach(card=>{
+      card.style.gridColumn=card.style.display==='none'?'':'span 2';
+    });
+  });
+});
+document.querySelectorAll('.btn').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.2}px)`;});btn.addEventListener('mouseleave',()=>btn.style.transform='');});
+
+/* ── MOCKUP DRAWING FUNCTIONS ─────────────────────── */
+const LIME='#C8F135',BG='#05060E',CARD='#0D0F1C',CARD2='#11142B',BORDER='rgba(255,255,255,0.07)',MUTED='#6B6A80',DIM='#3A394A',WHITE='#E2E0F0';
+function initCanvas(id){const el=document.getElementById(id);if(!el)return null;const p=el.parentElement;el.width=p.offsetWidth*window.devicePixelRatio||p.offsetWidth;el.height=p.offsetHeight*window.devicePixelRatio||p.offsetHeight;el.style.width='100%';el.style.height='100%';const ctx=el.getContext('2d');ctx.scale(window.devicePixelRatio||1,window.devicePixelRatio||1);return{ctx,w:p.offsetWidth,h:p.offsetHeight};}
+function pill(ctx,x,y,w,h,r,fill){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fillStyle=fill;ctx.fill();}
+function txt(ctx,str,x,y,size,color,weight='400',align='left'){ctx.font=`${weight} ${size}px Inter,sans-serif`;ctx.fillStyle=color;ctx.textAlign=align;ctx.fillText(str,x,y);}
+function navBar(ctx,w){ctx.fillStyle='#090B16';ctx.fillRect(0,0,w,36);pill(ctx,12,10,60,16,4,'#1A1C2E');pill(ctx,80,10,100,16,4,'#1A1C2E');pill(ctx,188,10,70,16,4,'#1A1C2E');pill(ctx,w-80,10,68,16,8,LIME);txt(ctx,'Dashboard',18,22,9,MUTED);txt(ctx,'Appointments',86,22,9,MUTED);txt(ctx,'Patients',194,22,9,MUTED);txt(ctx,'+ New',w-72,22,9,BG,'600');}
+
+// 1. ClinicFlow — calendar + appointment list
+(function(){const m=initCanvas('mock-clinicflow');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+// sidebar
+ctx.fillStyle='#090B16';ctx.fillRect(0,36,160,h-36);
+const sItems=['Overview','Appointments','Patients','Billing','Reports'];
+sItems.forEach((s,i)=>{
+  if(i===1){ctx.fillStyle='rgba(200,241,53,0.1)';ctx.fillRect(0,60+i*30,160,24);txt(ctx,s,16,77+i*30,9,LIME,'600');}
+  else txt(ctx,s,16,77+i*30,9,MUTED);
+});
+// calendar grid
+const gx=172,gy=44;const days=['MON','TUE','WED','THU','FRI','SAT','SUN'];
+days.forEach((d,i)=>{txt(ctx,d,gx+i*(w-gx-8)/7+4,gy+12,8,DIM,'600');});
+const slotColors=['rgba(200,241,53,0.15)','rgba(100,180,255,0.12)','rgba(200,241,53,0.08)','rgba(255,150,100,0.12)'];
+for(let row=0;row<4;row++){
+  for(let col=0;col<7;col++){
+    if(Math.random()>0.45){
+      const sx=gx+col*(w-gx-8)/7+2,sy=gy+22+row*36,sw=(w-gx-8)/7-4,sh=28;
+      const fill=slotColors[Math.floor(Math.random()*slotColors.length)];
+      pill(ctx,sx,sy,sw,sh,4,fill);
+      if(Math.random()>0.3)pill(ctx,sx+2,sy+8,3,12,1,LIME);
+    }
+  }
+}
+// stat cards at bottom
+const stats=[['12','Clinics'],['48','Today\'s appts'],['3','Pending'],['94%','Confirmed']];
+stats.forEach((s,i)=>{
+  const sx=gx+(i*(w-gx-8)/4)+2,sy=h-52,sw=(w-gx-8)/4-4;
+  pill(ctx,sx,sy,sw,40,6,CARD2);
+  txt(ctx,s[0],sx+10,sy+16,13,s[0].includes('%')?LIME:WHITE,'700');
+  txt(ctx,s[1],sx+10,sy+30,7,MUTED);
+});
+})();
+
+// 2. CargoTrack — live map with truck pins
+(function(){const m=initCanvas('mock-cargotrack');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle='#080B14';ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+// map background grid
+ctx.strokeStyle='rgba(255,255,255,0.04)';ctx.lineWidth=1;
+for(let x=0;x<w;x+=24){ctx.beginPath();ctx.moveTo(x,36);ctx.lineTo(x,h);ctx.stroke();}
+for(let y=36;y<h;y+=24){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
+// roads
+ctx.strokeStyle='rgba(255,255,255,0.07)';ctx.lineWidth=3;
+[[0.1,0.3,0.9,0.5],[0.2,0.1,0.4,0.95],[0.5,0.2,0.8,0.8],[0.05,0.7,0.95,0.6]].forEach(([x1,y1,x2,y2])=>{
+  ctx.beginPath();ctx.moveTo(x1*w,(y1*(h-36))+36);ctx.lineTo(x2*w,(y2*(h-36))+36);ctx.stroke();
+});
+// truck pins
+const trucks=[[0.2,0.4,'#C8F135'],[0.5,0.3,'#C8F135'],[0.75,0.6,'#C8F135'],[0.35,0.7,'rgba(200,241,53,0.5)'],[0.6,0.8,'rgba(200,241,53,0.5)'],[0.85,0.35,'rgba(200,241,53,0.3)']];
+trucks.forEach(([rx,ry,col])=>{
+  const px=rx*w,py=ry*(h-36)+36;
+  ctx.fillStyle=col;ctx.beginPath();ctx.arc(px,py,6,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='rgba(200,241,53,0.15)';ctx.beginPath();ctx.arc(px,py,12,0,Math.PI*2);ctx.fill();
+});
+// info panel
+pill(ctx,w-120,44,112,h-52,'#0D0F1Cdd');
+txt(ctx,'LIVE FLEET',w-112,62,7,LIME,'600');
+txt(ctx,'200 vehicles',w-112,78,8,WHITE);
+['En route: 142','Idle: 38','Delayed: 20'].forEach((t,i)=>{txt(ctx,t,w-112,96+i*14,7,MUTED);});
+pill(ctx,w-112,h-56,96,18,4,'rgba(200,241,53,0.1)');
+txt(ctx,'● TRACKING LIVE',w-112+4,h-44,7,LIME,'600');
+})();
+
+// 3. LearnBridge — course grid + progress
+(function(){const m=initCanvas('mock-learnbridge');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+// sidebar
+ctx.fillStyle='#090B16';ctx.fillRect(0,36,130,h-36);
+['My Courses','Browse','Schedule','Progress','Messages'].forEach((s,i)=>{
+  if(i===0){pill(ctx,4,56+i*28,122,22,4,'rgba(200,241,53,0.1)');txt(ctx,s,12,71+i*28,8,LIME,'600');}
+  else txt(ctx,s,12,71+i*28,8,MUTED);
+});
+// course cards
+const courses=[['Mathematics','●●●●○','82%'],['Physics','●●●○○','60%'],['Chemistry','●●○○○','40%'],['Biology','●●●●●','100%'],['English','●●●●○','75%'],['History','●○○○○','18%']];
+const cols=3,cw=(w-140)/cols,ch=54;
+courses.forEach((c,i)=>{
+  const col=i%cols,row=Math.floor(i/cols);
+  const cx=140+col*cw+4,cy=44+row*(ch+6);
+  pill(ctx,cx,cy,cw-8,ch,6,CARD2);
+  pill(ctx,cx+6,cy+6,20,20,4,'rgba(200,241,53,0.1)');
+  txt(ctx,'▶',cx+10,cy+20,10,LIME);
+  txt(ctx,c[0],cx+32,cy+18,9,WHITE,'600');
+  txt(ctx,c[1],cx+32,cy+30,7,LIME);
+  // progress bar bg
+  pill(ctx,cx+6,cy+ch-10,cw-20,5,3,'rgba(255,255,255,0.06)');
+  pill(ctx,cx+6,cy+ch-10,Math.max(4,(parseInt(c[2])/100)*(cw-20)),5,3,LIME);
+});
+})();
+
+// 4. ShelfSync — inventory table
+(function(){const m=initCanvas('mock-shelfsync');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+const headers=['Product','SKU','Branch A','Branch B','Online','Status'];
+const cws=[120,70,60,60,60,70];let cx=12;
+headers.forEach((hd,i)=>{txt(ctx,hd,cx+4,56,7,DIM,'600');cx+=cws[i];});
+ctx.fillStyle='rgba(255,255,255,0.04)';ctx.fillRect(12,60,w-24,1);
+const rows=[['Wireless Headphones','WH-001','24','18','12','OK'],['USB-C Hub 7-Port','UC-002','5','2','0','LOW'],['Laptop Stand Pro','LS-003','31','22','8','OK'],['Mechanical Keyboard','MK-004','0','3','1','OUT'],['Webcam 4K Ultra','WC-005','15','9','22','OK'],['Monitor Arm Deluxe','MA-006','8','11','4','OK']];
+rows.forEach((r,ri)=>{
+  if(ri%2===0){ctx.fillStyle='rgba(255,255,255,0.015)';ctx.fillRect(12,66+ri*20,w-24,20);}
+  let cx2=12;
+  r.forEach((cell,ci)=>{
+    let color=MUTED;
+    if(ci===5){if(cell==='OUT')color='#ff6b6b';else if(cell==='LOW')color='#ffa726';else color=LIME;}
+    if(ci===0)color=WHITE;
+    txt(ctx,cell,cx2+4,79+ri*20,8,color,ci===0?'500':'400');
+    cx2+=cws[ci];
+  });
+});
+// summary pills
+const summ=[['Total SKUs','42'],['Low Stock','3'],['Out of Stock','1'],['Branches','5']];
+summ.forEach((s,i)=>{
+  const sx=12+i*(w/4-6),sy=h-38;
+  pill(ctx,sx,sy,(w/4)-12,26,6,CARD2);
+  txt(ctx,s[0],sx+8,sy+11,7,MUTED);
+  txt(ctx,s[1],sx+8,sy+23,9,i===1?'#ffa726':i===2?'#ff6b6b':LIME,'700');
+});
+})();
+
+// 5. PropertyHub — property listings
+(function(){const m=initCanvas('mock-propertyhub');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+// search bar
+pill(ctx,12,44,w-100,28,6,'#0D0F1C');txt(ctx,'🔍  Search properties, agents, areas…',20,62,8,DIM);
+pill(ctx,w-80,44,68,28,6,LIME);txt(ctx,'Search',w-80+8,62,8,BG,'600');
+// property cards
+const props=[['3 Bed Villa','PKR 2.4Cr','Gulberg'],['Studio Flat','PKR 28L','DHA Ph5'],['Office Space','PKR 1.1Cr','Blue Area'],['2 Bed Apt','PKR 65L','Bahria'],['Shop Unit','PKR 80L','F-7'],['Land Plot','PKR 3.2Cr','E-11']];
+const pcw=(w-24)/3,pch=72;
+props.forEach((p,i)=>{
+  const col=i%3,row=Math.floor(i/3);
+  const px=12+col*pcw+2,py=80+row*(pch+4);
+  pill(ctx,px,py,pcw-4,pch,6,CARD2);
+  // image placeholder
+  pill(ctx,px+6,py+6,44,44,4,'#1A1C2E');
+  ctx.fillStyle='rgba(200,241,53,0.2)';ctx.beginPath();ctx.arc(px+28,py+28,10,0,Math.PI*2);ctx.fill();
+  txt(ctx,'⌂',px+22,py+32,12,LIME);
+  txt(ctx,p[0],px+56,py+20,9,WHITE,'600');
+  txt(ctx,p[1],px+56,py+34,8,LIME,'700');
+  txt(ctx,p[2],px+56,py+46,7,MUTED);
+  pill(ctx,px+pcw-50,py+8,42,16,4,'rgba(200,241,53,0.08)');
+  txt(ctx,'Active',px+pcw-46,py+19,7,LIME,'600');
+});
+})();
+
+// 6. HireSync — kanban pipeline
+(function(){const m=initCanvas('mock-hiresync');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+const cols2=['Applied','Screening','Interview','Offer','Hired'];
+const colW=(w-16)/cols2.length;
+const candidates=[['Sarah K.','UX Designer'],['Ahmed R.','Backend Dev'],['Priya M.','PM'],['John D.','Frontend'],['Lisa T.','DevOps'],['Raza A.','Full Stack'],['Nadia B.','Designer'],['Tom W.','Data Eng']];
+const placements=[[0,0],[0,1],[1,0],[1,1],[2,0],[2,1],[3,0],[4,0]];
+cols2.forEach((col,ci)=>{
+  const cx=8+ci*colW;
+  ctx.fillStyle='rgba(255,255,255,0.03)';ctx.beginPath();ctx.roundRect(cx,40,colW-6,h-48,6);ctx.fill();
+  txt(ctx,col.toUpperCase(),cx+8,57,7,ci===4?LIME:DIM,'600');
+  const count=placements.filter(p=>p[0]===ci).length;
+  pill(ctx,cx+colW-30,42,22,16,8,'rgba(200,241,53,0.1)');
+  txt(ctx,String(count),cx+colW-24,53,8,LIME,'600');
+});
+placements.forEach(([ci,ri],idx)=>{
+  const cx=8+ci*colW+4,cy=64+ri*46;
+  pill(ctx,cx,cy,colW-14,38,4,CARD2);
+  pill(ctx,cx+6,cy+6,24,24,12,'rgba(200,241,53,0.12)');
+  txt(ctx,candidates[idx][0].split(' ').map(s=>s[0]).join(''),cx+9,cy+21,9,LIME,'700');
+  txt(ctx,candidates[idx][0],cx+36,cy+17,8,WHITE,'600');
+  txt(ctx,candidates[idx][1],cx+36,cy+29,7,MUTED);
+  if(ci===4){pill(ctx,cx+6,cy+28,colW-26,8,3,LIME);}
+});
+})();
+
+// 7. DataPulse — charts dashboard
+(function(){const m=initCanvas('mock-datapulse');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+// sidebar
+ctx.fillStyle='#090B16';ctx.fillRect(0,36,120,h-36);
+['Revenue','Ad Spend','Inventory','Orders','Customers'].forEach((s,i)=>{
+  if(i===0){pill(ctx,4,52+i*26,112,20,4,'rgba(200,241,53,0.1)');txt(ctx,s,12,65+i*26,8,LIME,'600');}
+  else txt(ctx,s,12,65+i*26,8,MUTED);
+});
+const gx=128;
+// KPI row
+const kpis=[['$48.2K','Revenue'],['$6.1K','Ad Spend'],['2,840','Orders'],['94%','ROAS']];
+kpis.forEach((k,i)=>{
+  const kx=gx+(i*(w-gx-8)/4)+2,ky=44;
+  pill(ctx,kx,ky,(w-gx-8)/4-4,32,4,CARD2);
+  txt(ctx,k[0],kx+8,ky+14,11,i===3?LIME:WHITE,'700');
+  txt(ctx,k[1],kx+8,ky+26,7,MUTED);
+});
+// bar chart
+const barData=[38,54,42,68,75,60,82,71,65,88,74,90];
+const chartX=gx,chartY=84,chartW=w-gx-8,chartH=h-chartY-12;
+const barW=(chartW/barData.length)-3;
+barData.forEach((v,i)=>{
+  const bh=(v/100)*chartH*0.85;
+  const bx=chartX+i*(barW+3),by=chartY+chartH-bh;
+  pill(ctx,bx,by,barW,bh,3,'rgba(200,241,53,0.15)');
+  if(i===barData.length-1||i===7){
+    pill(ctx,bx,by,barW,bh,3,LIME);
+  }
+});
+// trend line overlay
+ctx.beginPath();ctx.strokeStyle='rgba(200,241,53,0.6)';ctx.lineWidth=1.5;
+barData.forEach((v,i)=>{
+  const x=chartX+i*(barW+3)+barW/2,y=chartY+chartH-(v/100)*chartH*0.85;
+  i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+});
+ctx.stroke();
+// month labels
+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'].forEach((mo,i)=>{
+  if(i%2===0)txt(ctx,mo,chartX+i*(barW+3),h-2,6,DIM);
+});
+})();
+
+// 8. LexDraft — document editor
+(function(){const m=initCanvas('mock-lexdraft');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+// toolbar
+ctx.fillStyle='#090B16';ctx.fillRect(0,36,w,26);
+['B','I','U','—','≡','≡','≡','—','⊞','⊟'].forEach((t,i)=>{txt(ctx,t,14+i*22,52,10,i<3?WHITE:MUTED,'600');});
+pill(ctx,w-120,40,52,18,4,'rgba(200,241,53,0.1)');txt(ctx,'Save',w-112,52,8,LIME,'600');
+pill(ctx,w-60,40,50,18,4,LIME);txt(ctx,'Sign ✍',w-56,52,7,BG,'600');
+// doc body
+const docX=w*0.18,docW=w*0.64;
+ctx.fillStyle='#0A0C18';ctx.fillRect(docX,62,docW,h-62);
+// title
+pill(ctx,docX+16,70,docW-32,3,2,LIME);
+txt(ctx,'SERVICE AGREEMENT',docX+16,84,10,WHITE,'700');
+txt(ctx,'Between FiveNodes Ltd and [Client Name]',docX+16,97,8,MUTED);
+// section headings & lines
+const sections=['1. Scope of Work','2. Payment Terms','3. Intellectual Property','4. Confidentiality'];
+sections.forEach((s,i)=>{
+  txt(ctx,s,docX+16,116+i*26,8,LIME,'600');
+  for(let l=0;l<2;l++){pill(ctx,docX+16,122+i*26+l*7,Math.random()*60+docW-100,4,2,'rgba(255,255,255,0.06)');}
+});
+// highlight box
+pill(ctx,docX+16,h-52,docW-32,28,4,'rgba(200,241,53,0.06)');
+ctx.strokeStyle='rgba(200,241,53,0.3)';ctx.lineWidth=1;ctx.beginPath();ctx.roundRect(docX+16,h-52,docW-32,28,4);ctx.stroke();
+txt(ctx,'⚑  Review required: Clause 3.2 — IP assignment terms',docX+24,h-35,7,LIME);
+// sidebar outline
+const outX=docX+docW+4;
+txt(ctx,'OUTLINE',outX,70,6,DIM,'600');
+sections.forEach((s,i)=>{txt(ctx,s.substring(0,18),outX,84+i*14,7,i===0?LIME:MUTED);});
+})();
+
+// 9. CitizenDesk — request board
+(function(){const m=initCanvas('mock-citizendesk');if(!m)return;const{ctx,w,h}=m;
+ctx.fillStyle=BG;ctx.fillRect(0,0,w,h);
+navBar(ctx,w);
+// status columns
+const statuses=['New','In Progress','Resolved'];
+const statusColors=['rgba(255,200,50,0.15)','rgba(100,180,255,0.12)','rgba(200,241,53,0.1)'];
+const dotColors=['#ffc832','#64b4ff',LIME];
+const sw=(w-16)/3;
+statuses.forEach((s,si)=>{
+  const sx=8+si*sw;
+  ctx.fillStyle=statusColors[si];ctx.beginPath();ctx.roundRect(sx,40,sw-6,h-48,6);ctx.fill();
+  ctx.fillStyle=dotColors[si];ctx.beginPath();ctx.arc(sx+10,52,4,0,Math.PI*2);ctx.fill();
+  txt(ctx,s,sx+20,56,8,WHITE,'600');
+});
+const requests=[
+  [[0,0],'Road pothole','Sector G-11',[255,200,50]],
+  [[0,1],'Street light out','Blue Area',[255,200,50]],
+  [[0,2],'Garbage pickup','F-7/3',[255,200,50]],
+  [[1,0],'Water leak','E-11/2',[100,180,255]],
+  [[1,1],'Park maintenance','D-12',[100,180,255]],
+  [[2,0],'Noise complaint','G-9',[200,241,53]],
+  [[2,1],'Tree fallen','F-8/1',[200,241,53]],
+  [[2,2],'Signal repair','Blue Area',[200,241,53]],
+];
+requests.forEach(([pos,title,loc,col])=>{
+  const[si,ri]=pos,sx=12+si*sw,sy=66+ri*46;
+  pill(ctx,sx,sy,sw-12,38,4,CARD2);
+  txt(ctx,title,sx+8,sy+15,8,WHITE,'600');
+  txt(ctx,'📍 '+loc,sx+8,sy+27,7,MUTED);
+  txt(ctx,'#'+Math.floor(1000+Math.random()*9000),sx+sw-50,sy+15,7,`rgba(${col.join(',')},0.7)`);
+  pill(ctx,sx+sw-50,sy+24,38,10,3,`rgba(${col.join(',')},0.1)`);
+  txt(ctx,si===0?'New':si===1?'Active':'Done',sx+sw-47,sy+32,6,`rgb(${col.join(',')})` ,'600');
+});
+})();
+</script>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0D0F1C;border-top:1px solid #1E2035;padding:1rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:'Inter',sans-serif;font-size:.85rem;color:#8B8FA8">
+  <span>We use cookies to improve your experience. <a href="/legal/cookies/" style="color:#C8F135;text-decoration:none">Learn more</a></span>
+  <div style="display:flex;gap:.75rem">
+    <button onclick="dismissCookie(false)" style="background:transparent;border:1px solid #1E2035;color:#8B8FA8;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem">Decline</button>
+    <button onclick="dismissCookie(true)" style="background:#C8F135;border:none;color:#05060E;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem">Accept</button>
+  </div>
+</div>
+<!-- WHATSAPP BUTTON -->
+<script>
+(function(){
+  var b=document.getElementById('cookie-banner');
+  if(b&&!localStorage.getItem('fn_cookie_choice')){b.style.display='flex'}
+})();
+function dismissCookie(accepted){
+  localStorage.setItem('fn_cookie_choice',accepted?'accepted':'declined');
+  var b=document.getElementById('cookie-banner');
+  if(b)b.style.display='none';
+}
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body></html>

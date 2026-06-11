@@ -1,0 +1,37 @@
+Options -Indexes
+ErrorDocument 404 /404.html
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect old .html URLs to clean URLs (301 permanent for SEO)
+RewriteRule ^about\.html$ /about/ [R=301,L]
+RewriteRule ^contact\.html$ /contact/ [R=301,L]
+RewriteRule ^portfolio\.html$ /portfolio/ [R=301,L]
+
+RewriteRule ^legal/privacy\.html$ /legal/privacy/ [R=301,L]
+RewriteRule ^legal/terms\.html$ /legal/terms/ [R=301,L]
+RewriteRule ^legal/cookies\.html$ /legal/cookies/ [R=301,L]
+
+RewriteRule ^services/saas-product-engineering\.html$ /services/saas-product-engineering/ [R=301,L]
+RewriteRule ^services/cloud-devops\.html$ /services/cloud-devops/ [R=301,L]
+RewriteRule ^services/api-integration\.html$ /services/api-integration/ [R=301,L]
+RewriteRule ^services/ui-ux-design\.html$ /services/ui-ux-design/ [R=301,L]
+RewriteRule ^services/data-analytics\.html$ /services/data-analytics/ [R=301,L]
+RewriteRule ^services/maintenance-scaling\.html$ /services/maintenance-scaling/ [R=301,L]
+
+RewriteRule ^industries/healthcare\.html$ /industries/healthcare/ [R=301,L]
+RewriteRule ^industries/edtech\.html$ /industries/edtech/ [R=301,L]
+RewriteRule ^industries/logistics\.html$ /industries/logistics/ [R=301,L]
+RewriteRule ^industries/real-estate\.html$ /industries/real-estate/ [R=301,L]
+RewriteRule ^industries/hr-workforce\.html$ /industries/hr-workforce/ [R=301,L]
+RewriteRule ^industries/retail-ecommerce\.html$ /industries/retail-ecommerce/ [R=301,L]
+RewriteRule ^industries/legaltech\.html$ /industries/legaltech/ [R=301,L]
+RewriteRule ^industries/govtech\.html$ /industries/govtech/ [R=301,L]
+
+# Remove trailing slash inconsistencies (keep trailing slash)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ /$1/ [R=301,L]

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Case Studies | FiveNodes</title>
+<meta name="description" content="Real problems, real solutions, real results. Deep-dive case studies from FiveNodes — the engineering behind the numbers.">
+<link rel="canonical" href="https://5ivenodes.com/case-studies/">
+<meta name="theme-color" content="#05060E">
+<meta property="og:title" content="Case Studies | FiveNodes">
+<meta property="og:description" content="Deep-dive case studies: how FiveNodes engineers software that scales.">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--bg2:#090B16;--card:#0D0F1C;--card2:#11142B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--dim:#3A394A;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);will-change:transform}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .12s ease,height .12s ease,border-color .12s ease;will-change:transform}
+body.cursor-hover #cursor{width:20px;height:20px}
+body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform;transform:translateZ(0)}
+.wrap{position:relative;z-index:1}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:600}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
+.nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
+.nav-links{display:flex;align-items:center}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:96px 48px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-link{padding:14px 0;font-family:var(--fh);font-size:1.1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
+.mob-link:hover{color:var(--text)}
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+footer{background:#030408;border-top:1px solid var(--border);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:18px}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,0.25);line-height:1.7;max-width:280px;margin-bottom:24px}
+.f-social{display:flex;gap:10px}
+.f-social-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:.875rem;transition:all .2s;cursor:none}
+.f-social-btn:hover{border-color:var(--border2);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:20px}
+.footer-links li{margin-bottom:12px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,0.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bot p,.footer-bot a{font-size:.8rem;color:rgba(255,255,255,0.18)}
+.footer-bot-links{display:flex;gap:24px}
+.footer-bot-links a:hover{color:rgba(255,255,255,0.4)}
+/* PAGE HERO */
+.page-hero{padding:160px 0 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(200,241,53,0.04) 0%,transparent 70%);pointer-events:none}
+.page-h1{font-family:var(--fh);font-size:clamp(2.8rem,5.5vw,4.5rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05;margin-bottom:20px}
+.page-h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.4)}
+.page-desc{font-size:1.125rem;color:var(--muted);max-width:580px;line-height:1.75;font-weight:300;margin-bottom:0}
+/* STATS BAR */
+.hero-stats{display:flex;gap:48px;margin-top:52px;flex-wrap:wrap}
+.hero-stat-n{font-family:var(--fh);font-size:2rem;font-weight:700;letter-spacing:-.05em;color:var(--lime)}
+.hero-stat-l{font-size:.78rem;color:var(--muted);margin-top:2px}
+/* CASE STUDY CARDS */
+.cs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:64px;margin-bottom:80px}
+.cs-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:none;display:flex;flex-direction:column;text-decoration:none}
+.cs-card:hover{border-color:rgba(200,241,53,.2);transform:translateY(-6px);box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.cs-card-banner{height:220px;position:relative;overflow:hidden;background:linear-gradient(135deg,#0D0F1C 0%,#0a0c1a 100%);display:flex;align-items:center;justify-content:center}
+.cs-card-banner-inner{position:relative;z-index:2;text-align:center;padding:24px}
+.cs-card-icon{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 16px;border:1px solid rgba(255,255,255,0.08)}
+.cs-card-tag{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);font-family:'Courier New',monospace;opacity:.8}
+.cs-card-body{padding:28px 32px;flex:1;display:flex;flex-direction:column}
+.cs-card-industry{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:10px;font-family:'Courier New',monospace}
+.cs-card-title{font-family:var(--fh);font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3}
+.cs-card-desc{font-size:.875rem;color:var(--muted);line-height:1.65;margin-bottom:20px;flex:1}
+.cs-card-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;padding:16px;background:rgba(255,255,255,.025);border-radius:10px;border:1px solid var(--border)}
+.cs-card-metric-n{font-family:var(--fh);font-size:1.2rem;font-weight:700;letter-spacing:-.04em;color:var(--lime);line-height:1}
+.cs-card-metric-l{font-size:.68rem;color:var(--muted);margin-top:4px;line-height:1.3}
+.cs-card-link{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--lime);transition:gap .2s;margin-top:auto}
+.cs-card-link:hover{gap:12px}
+/* FEATURED (full-width) */
+.cs-card-featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;min-height:360px}
+.cs-card-featured .cs-card-banner{height:auto;min-height:360px}
+.cs-card-featured .cs-card-body{padding:40px 44px}
+.cs-card-featured .cs-card-title{font-size:1.6rem}
+.cs-card-featured .cs-card-metrics{grid-template-columns:repeat(4,1fr)}
+/* BREADCRUMB */
+.breadcrumb{display:flex;align-items:center;gap:10px;font-size:.75rem;color:var(--dim);margin-bottom:24px;font-family:'Courier New',monospace}
+.breadcrumb a{color:var(--dim);transition:color .2s}.breadcrumb a:hover{color:var(--lime)}
+/* CTA BAND */
+.cta-band{background:var(--card);border:1px solid var(--border2);border-radius:20px;padding:64px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;margin:0 0 80px}
+.cta-band h2{font-family:var(--fh);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:12px;line-height:1.1}
+.cta-band h2 em{font-style:italic;font-weight:300;color:var(--lime)}
+.cta-band p{font-size:.9375rem;color:var(--muted);line-height:1.7;max-width:480px}
+.cta-btns{display:flex;gap:12px;flex-shrink:0;flex-direction:column}
+@media(max-width:900px){.cs-grid{grid-template-columns:1fr}.cs-card-featured{grid-template-columns:1fr}.cs-card-featured .cs-card-banner{min-height:200px}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-grid .footer-brand{grid-column:1/-1}.cta-band{grid-template-columns:1fr;gap:24px;padding:40px 32px}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta{display:none}.hamburger{display:flex}.hero-stats{gap:28px}.cs-card-metrics{grid-template-columns:1fr 1fr}.cs-card-featured .cs-card-metrics{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3FFZ8MQ4X1');</script>
+<!-- Meta Pixel Code -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','964144433261773');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="cursor"></div><div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="wrap">
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="FiveNodes" style="height:44px;width:44px;border-radius:7px;object-fit:cover;flex-shrink:0">FiveNodes
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a class="nav-link" href="/services/">Services</a></li>
+      <li><a class="nav-link" href="/industries/">Industries</a></li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link active" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="/services/" class="mob-link">Services</a>
+  <a href="/about/" class="mob-link">About</a>
+  <a href="/case-studies/" class="mob-link">Case Studies</a>
+  <a href="/portfolio/" class="mob-link">Portfolio</a>
+  <a href="/contact/" class="mob-link">Contact</a>
+  <a href="/contact/" class="btn btn-lime" style="margin-top:28px">Start a project</a>
+</div>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="/">Home</a> <span style="opacity:.3">/</span> <span>Case Studies</span></nav>
+    <span class="section-label">Deep dives</span>
+    <h1 class="page-h1">Real problems.<br><em>Real results.</em></h1>
+    <p class="page-desc">We don't just ship code — we solve hard problems. Each case study shows you exactly what we built, why, and what happened after launch.</p>
+    <div class="hero-stats reveal">
+      <div><div class="hero-stat-n">50<span style="color:#fff;font-size:1.4rem">+</span></div><div class="hero-stat-l">Projects shipped</div></div>
+      <div><div class="hero-stat-n">98<span style="color:#fff;font-size:1.4rem">%</span></div><div class="hero-stat-l">Client retention rate</div></div>
+      <div><div class="hero-stat-n">6</div><div class="hero-stat-l">Industries served</div></div>
+      <div><div class="hero-stat-n">4<span style="color:#fff;font-size:1.4rem">yr</span></div><div class="hero-stat-l">Average engagement length</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:60px 0 0">
+  <div class="container">
+
+    <div class="cs-grid">
+
+      <!-- FEATURED: Recruitly -->
+      <a href="/work/recruitly/" class="cs-card cs-card-featured reveal">
+        <div class="cs-card-banner" style="background:linear-gradient(135deg,#080e1a 0%,#0a1222 100%)">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(200,241,53,0.07),transparent 70%)"></div>
+          <div class="cs-card-banner-inner">
+            <div class="cs-card-icon" style="background:rgba(200,241,53,0.08);color:var(--lime)"><i class="fas fa-users"></i></div>
+            <div class="cs-card-tag">HR Tech · SaaS · ATS</div>
+            <div style="font-family:var(--fh);font-size:1.8rem;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-.04em">Recruitly</div>
+          </div>
+        </div>
+        <div class="cs-card-body">
+          <div class="cs-card-industry">HR Tech · SaaS</div>
+          <div class="cs-card-title">Scaling a recruitment SaaS from 0 to 400+ agencies with zero downtime</div>
+          <p class="cs-card-desc">Recruitly needed a fully-featured applicant tracking system built fast for staffing agencies. We designed the architecture, built the core product, and shipped it — growing to 400+ agencies without a single major incident.</p>
+          <div class="cs-card-metrics">
+            <div><div class="cs-card-metric-n">400<span style="font-size:.85rem">+</span></div><div class="cs-card-metric-l">Agencies onboarded</div></div>
+            <div><div class="cs-card-metric-n">3<span style="font-size:.85rem">×</span></div><div class="cs-card-metric-l">Faster placements</div></div>
+            <div><div class="cs-card-metric-n">60<span style="font-size:.85rem">%</span></div><div class="cs-card-metric-l">Less admin time</div></div>
+            <div><div class="cs-card-metric-n">99.9<span style="font-size:.85rem">%</span></div><div class="cs-card-metric-l">Uptime since launch</div></div>
+          </div>
+          <span class="cs-card-link">Read full case study <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+        </div>
+      </a>
+
+      <!-- Numerico -->
+      <a href="/work/numerico/" class="cs-card reveal">
+        <div class="cs-card-banner" style="background:linear-gradient(135deg,#06100a 0%,#081410 100%)">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(200,241,53,0.06),transparent 70%)"></div>
+          <div class="cs-card-banner-inner">
+            <div class="cs-card-icon" style="background:rgba(200,241,53,0.08);color:var(--lime)"><i class="fas fa-coins"></i></div>
+            <div class="cs-card-tag">Fintech · Blockchain</div>
+            <div style="font-family:var(--fh);font-size:1.6rem;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-.04em">Numerico</div>
+          </div>
+        </div>
+        <div class="cs-card-body">
+          <div class="cs-card-industry">Fintech · Blockchain</div>
+          <div class="cs-card-title">Building a high-throughput blockchain finance platform from scratch</div>
+          <p class="cs-card-desc">Numerico needed a scalable fintech platform processing thousands of blockchain transactions per day — with sub-200ms response times and enterprise-grade security.</p>
+          <div class="cs-card-metrics">
+            <div><div class="cs-card-metric-n">&lt;200<span style="font-size:.75rem">ms</span></div><div class="cs-card-metric-l">Transaction speed</div></div>
+            <div><div class="cs-card-metric-n">10K<span style="font-size:.75rem">+</span></div><div class="cs-card-metric-l">Daily transactions</div></div>
+            <div><div class="cs-card-metric-n">99.9<span style="font-size:.75rem">%</span></div><div class="cs-card-metric-l">Platform uptime</div></div>
+          </div>
+          <span class="cs-card-link">Read full case study <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+        </div>
+      </a>
+
+      <!-- Cheetay -->
+      <a href="/work/cheetay/" class="cs-card reveal reveal-d1">
+        <div class="cs-card-banner" style="background:linear-gradient(135deg,#100808 0%,#140a08 100%)">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(200,241,53,0.05),transparent 70%)"></div>
+          <div class="cs-card-banner-inner">
+            <div class="cs-card-icon" style="background:rgba(200,241,53,0.08);color:var(--lime)"><i class="fas fa-bolt"></i></div>
+            <div class="cs-card-tag">On-Demand · Logistics</div>
+            <div style="font-family:var(--fh);font-size:1.6rem;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-.04em">Cheetay</div>
+          </div>
+        </div>
+        <div class="cs-card-body">
+          <div class="cs-card-industry">On-Demand · Logistics</div>
+          <div class="cs-card-title">Engineering Pakistan's fastest on-demand delivery platform at scale</div>
+          <p class="cs-card-desc">Cheetay needed a complete on-demand delivery ecosystem — customer app, rider app, vendor portal, and ops dashboard — all integrated with real-time GPS tracking and live order management.</p>
+          <div class="cs-card-metrics">
+            <div><div class="cs-card-metric-n">500K<span style="font-size:.75rem">+</span></div><div class="cs-card-metric-l">App downloads</div></div>
+            <div><div class="cs-card-metric-n">1M<span style="font-size:.75rem">+</span></div><div class="cs-card-metric-l">Orders processed</div></div>
+            <div><div class="cs-card-metric-n">1K<span style="font-size:.75rem">+</span></div><div class="cs-card-metric-l">Active vendors</div></div>
+          </div>
+          <span class="cs-card-link">Read full case study <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+        </div>
+      </a>
+
+      <!-- EVEREST -->
+      <a href="/work/everest/" class="cs-card reveal reveal-d2">
+        <div class="cs-card-banner" style="background:linear-gradient(135deg,#080a14 0%,#0a0c1a 100%)">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(100,120,255,0.06),transparent 70%)"></div>
+          <div class="cs-card-banner-inner">
+            <div class="cs-card-icon" style="background:rgba(100,120,255,0.12);color:#8899ff"><i class="fas fa-shield-halved"></i></div>
+            <div class="cs-card-tag">Fintech · Compliance · Identity</div>
+            <div style="font-family:var(--fh);font-size:1.6rem;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-.04em">EVEREST</div>
+          </div>
+        </div>
+        <div class="cs-card-body">
+          <div class="cs-card-industry">Fintech · Compliance</div>
+          <div class="cs-card-title">Global identity verification and cross-border payment infrastructure</div>
+          <p class="cs-card-desc">EVEREST needed a compliant financial infrastructure platform handling identity tokenization, KYC/AML screening, and cross-border payments across 150+ countries — built to enterprise security standards.</p>
+          <div class="cs-card-metrics">
+            <div><div class="cs-card-metric-n">150<span style="font-size:.75rem">+</span></div><div class="cs-card-metric-l">Countries covered</div></div>
+            <div><div class="cs-card-metric-n">2M<span style="font-size:.75rem">+</span></div><div class="cs-card-metric-l">Identity verifications</div></div>
+            <div><div class="cs-card-metric-n">SOC2</div><div class="cs-card-metric-l">Compliance achieved</div></div>
+          </div>
+          <span class="cs-card-link">Read full case study <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+        </div>
+      </a>
+
+      <!-- ClinicFlow -->
+      <a href="/work/clinicflow/" class="cs-card reveal">
+        <div class="cs-card-banner" style="background:linear-gradient(135deg,#060e10 0%,#081214 100%)">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(0,200,150,0.06),transparent 70%)"></div>
+          <div class="cs-card-banner-inner">
+            <div class="cs-card-icon" style="background:rgba(0,200,150,0.1);color:#00c896"><i class="fas fa-hospital"></i></div>
+            <div class="cs-card-tag">Healthcare · SaaS</div>
+            <div style="font-family:var(--fh);font-size:1.6rem;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-.04em">ClinicFlow</div>
+          </div>
+        </div>
+        <div class="cs-card-body">
+          <div class="cs-card-industry">Healthcare · SaaS</div>
+          <div class="cs-card-title">Replacing spreadsheets across 12 clinics with one HIPAA-ready SaaS</div>
+          <p class="cs-card-desc">A multi-clinic group running on WhatsApp and Google Sheets needed a unified practice management SaaS — built and launched across all 12 locations in 6 months.</p>
+          <div class="cs-card-metrics">
+            <div><div class="cs-card-metric-n">3<span style="font-size:.75rem">×</span></div><div class="cs-card-metric-l">Faster check-in</div></div>
+            <div><div class="cs-card-metric-n">40<span style="font-size:.75rem">%</span></div><div class="cs-card-metric-l">Fewer no-shows</div></div>
+            <div><div class="cs-card-metric-n">6<span style="font-size:.75rem">mo</span></div><div class="cs-card-metric-l">Full delivery</div></div>
+          </div>
+          <span class="cs-card-link">Read full case study <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+        </div>
+      </a>
+
+      <!-- NeuralDesk -->
+      <a href="/work/neuraldesk/" class="cs-card reveal reveal-d1">
+        <div class="cs-card-banner" style="background:linear-gradient(135deg,#0a0610 0%,#0c0814 100%)">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(160,80,255,0.06),transparent 70%)"></div>
+          <div class="cs-card-banner-inner">
+            <div class="cs-card-icon" style="background:rgba(160,80,255,0.1);color:#a050ff"><i class="fas fa-brain"></i></div>
+            <div class="cs-card-tag">AI · SaaS · Productivity</div>
+            <div style="font-family:var(--fh);font-size:1.6rem;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-.04em">NeuralDesk</div>
+          </div>
+        </div>
+        <div class="cs-card-body">
+          <div class="cs-card-industry">AI · SaaS</div>
+          <div class="cs-card-title">Building an AI-powered enterprise productivity platform from prototype to scale</div>
+          <p class="cs-card-desc">NeuralDesk had a promising AI concept but no engineering team. We took it from prototype to a production SaaS handling 10,000+ daily active users — with real-time LLM inference at scale.</p>
+          <div class="cs-card-metrics">
+            <div><div class="cs-card-metric-n">10K<span style="font-size:.75rem">+</span></div><div class="cs-card-metric-l">Daily active users</div></div>
+            <div><div class="cs-card-metric-n">4mo</div><div class="cs-card-metric-l">MVP to launch</div></div>
+            <div><div class="cs-card-metric-n">92<span style="font-size:.75rem">%</span></div><div class="cs-card-metric-l">User retention</div></div>
+          </div>
+          <span class="cs-card-link">Read full case study <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+        </div>
+      </a>
+
+    </div><!-- /cs-grid -->
+
+    <!-- CTA -->
+    <div class="cta-band reveal">
+      <div>
+        <h2>Your project could be <em>next</em></h2>
+        <p>Every case study on this page started with one conversation. Tell us what you're building — we'll respond the same day with honest thoughts, no strings attached.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="/contact/" class="btn btn-lime">Start a conversation <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+        <a href="/portfolio/" class="btn btn-outline">See all projects</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><img src="/images/logo.jpg" alt="FiveNodes" style="width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</div>
+        <p>Purpose-built software engineering for growing companies. Delivered across healthcare, logistics, edtech, and more — since 2021.</p>
+        <div class="f-social">
+          <a href="https://www.linkedin.com/company/5-nodes/" class="f-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61590206948945" class="f-social-btn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/five.nodes/" class="f-social-btn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links">
+        <li><a href="/services/saas-product-engineering/">SaaS Engineering</a></li>
+        <li><a href="/services/cloud-devops/">Cloud &amp; DevOps</a></li>
+        <li><a href="/services/api-integration/">API Integration</a></li>
+        <li><a href="/services/ui-ux-design/">UI/UX Design</a></li>
+        <li><a href="/services/data-analytics/">Data Engineering</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Work</h4><ul class="footer-links">
+        <li><a href="/case-studies/">Case Studies</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/work/clinicflow/">ClinicFlow</a></li>
+        <li><a href="/work/neuraldesk/">NeuralDesk</a></li>
+        <li><a href="/work/recruitly/">Recruitly</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links">
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul class="footer-links">
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li><a href="/legal/terms/">Terms of Service</a></li>
+        <li><a href="/legal/cookies/">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bot"><p>2026 FiveNodes. All rights reserved.</p>
+      <div class="footer-bot-links"><a href="/legal/privacy/">Privacy</a><a href="/legal/terms/">Terms</a><a href="/legal/cookies/">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}lerpCursor();
+document.querySelectorAll('a,button,.cs-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+(function(){const c=document.getElementById('bg-canvas');if(!c)return;const ctx=c.getContext('2d');let W,H,pts=[],raf,lastT=0;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}resize();
+window.addEventListener('resize',()=>{resize();init()},{passive:true});
+function init(){pts=[];const n=Math.min(Math.floor((W*H)/28000),55);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.25,vy:(Math.random()-.5)*0.25,r:Math.random()*1.2+0.4});}init();
+let mouseX=W/2,mouseY=H/2;window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY},{passive:true});
+function draw(t){raf=requestAnimationFrame(draw);if(t-lastT<20)return;lastT=t;
+ctx.clearRect(0,0,W,H);
+for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=dx*dx+dy*dy;if(d<9000){const a=(1-Math.sqrt(d)/95)*0.18;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,241,53,${a})`;ctx.lineWidth=0.4;ctx.stroke();}}}
+for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,241,53,0.35)';ctx.fill();}
+for(const p of pts){const dx=mouseX-p.x,dy=mouseY-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){p.vx+=dx/d*0.008;p.vy+=dy/d*0.008;}p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}}
+draw(0);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);}else{draw(0);}});
+})();
+const nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body></html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Technologies | FiveNodes</title>
+<meta name="description" content="The full technology stack FiveNodes engineers with — from React and Node.js to GPT-4o, LangChain, Pinecone, AWS, and beyond.">
+<link rel="canonical" href="https://5ivenodes.com/technologies/">
+<meta property="og:title" content="Technologies | FiveNodes">
+<meta property="og:image" content="https://5ivenodes.com/images/og-default.png">
+<meta name="theme-color" content="#05060E">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--card:#0D0F1C;--card2:#11142B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);mix-blend-mode:difference}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:all 0.12s ease}
+body.cursor-hover #cursor{width:20px;height:20px}body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}.wrap{position:relative;z-index:1}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:600}.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
+.nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
+.logo-mark{width:34px;height:34px;position:relative;flex-shrink:0}
+.nav-links{display:flex;align-items:center}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:96px 48px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-link{padding:14px 0;font-family:var(--fh);font-size:1.1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+.pg-hero{padding:160px 0 80px;position:relative}
+.pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(200,241,53,0.04),transparent 65%);pointer-events:none}
+.pg-hero h1{font-family:var(--fh);font-size:clamp(2.4rem,5vw,4rem);font-weight:700;letter-spacing:-.05em;color:#fff;line-height:1.05;margin-bottom:20px;max-width:700px}
+.pg-hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.pg-hero p{font-size:1.0625rem;color:var(--muted);line-height:1.78;max-width:560px;font-weight:300}
+.tech-sec{padding:72px 0;border-top:1px solid var(--border)}
+.tech-sec-hdr{margin-bottom:36px}
+.tech-sec-hdr h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;letter-spacing:-.03em;color:#fff;margin-bottom:8px}
+.tech-sec-hdr p{font-size:.875rem;color:var(--muted);max-width:540px;line-height:1.7}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px}
+.tech-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 18px;transition:border-color .2s,background .2s}
+.tech-card:hover{border-color:rgba(200,241,53,0.2);background:var(--card2)}
+.tc-icon{font-size:1.15rem;margin-bottom:12px;color:var(--lime);opacity:.75}
+.tech-card h4{font-size:.875rem;font-weight:600;color:#fff;margin-bottom:4px}
+.tech-card p{font-size:.75rem;color:var(--muted);line-height:1.55}
+.badge{display:inline-block;font-size:.56rem;background:rgba(200,241,53,0.1);color:var(--lime);border-radius:4px;padding:2px 6px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:8px}
+.cta-band{background:var(--card);border:1px solid var(--border2);border-radius:20px;padding:56px 60px;text-align:center;position:relative;overflow:hidden;margin:72px 0}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(200,241,53,0.05),transparent 65%);pointer-events:none}
+.cta-band h2{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:14px;line-height:1.1}
+.cta-band h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.cta-band p{font-size:.9375rem;color:var(--muted);max-width:480px;margin:0 auto 32px;line-height:1.75}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{background:#030408;border-top:1px solid var(--border);padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:16px}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,0.25);line-height:1.7;max-width:260px;margin-bottom:18px}
+.f-social{display:flex;gap:10px}
+.f-social-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:.875rem;transition:all .2s;cursor:none}
+.f-social-btn:hover{border-color:var(--border2);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:14px}
+.footer-links li{margin-bottom:10px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,0.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bot p{font-size:.8rem;color:rgba(255,255,255,0.18)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}.tech-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}.cta-band{padding:40px 28px}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta,.nav-book{display:none}.hamburger{display:flex}.tech-grid{grid-template-columns:1fr 1fr}}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cursor"></div><div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="wrap">
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo.jpg" alt="FiveNodes" style="height:44px;width:44px;border-radius:7px;object-fit:cover;flex-shrink:0">FiveNodes</a>
+    <ul class="nav-links"><li><a class="nav-link" href="/services/">Services</a></li><li><a class="nav-link" href="/industries/">Industries</a></li><li><a class="nav-link" href="/about/">About</a></li><li><a class="nav-link active" href="/technologies/">Technologies</a></li><li><a class="nav-link" href="/blog/">Blog</a></li><li><a class="nav-link" href="/careers/">Careers</a></li><li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li></ul>
+    <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline btn-sm nav-book">Book a call <i class="far fa-calendar-alt" style="font-size:.7rem"></i></a>
+    <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="/services/" class="mob-link">Services</a><a href="/about/" class="mob-link">About</a><a href="/portfolio/" class="mob-link">Portfolio</a><a href="/contact/" class="mob-link">Contact</a>
+  <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:28px">Book a free call</a>
+  <a href="/contact/" class="btn btn-lime" style="margin-top:12px">Start a project</a>
+</div>
+<main>
+<section class="pg-hero"><div class="container">
+  <span class="section-label reveal">Our stack</span>
+  <h1 class="reveal">We pick the right tool.<br><em>Not the trendy one.</em></h1>
+  <p class="reveal" style="margin-top:0">Every technology choice is architecture-driven. We default to proven, well-supported tools — and adopt newer ones only when they solve a real problem better than what already exists.</p>
+</div></section>
+
+<section class="tech-sec"><div class="container">
+  <div class="tech-sec-hdr reveal"><span class="section-label">AI &amp; Machine Learning</span><h2>The intelligence layer</h2><p>Production-grade LLM integrations, RAG pipelines, and AI agents — not demos. Everything observable and improvable.</p></div>
+  <div class="tech-grid">
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fas fa-brain"></i></div><h4>OpenAI GPT-4o</h4><p>Primary LLM for reasoning, drafting, and classification.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-robot"></i></div><h4>Anthropic Claude</h4><p>Long-context tasks, document analysis, safety-sensitive apps.</p></div>
+    <div class="tech-card reveal reveal-d2"><div class="tc-icon"><i class="fas fa-link"></i></div><h4>LangChain</h4><p>Orchestration for chains, agents, and tool-use workflows.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d3"><div class="tc-icon"><i class="fas fa-database"></i></div><h4>Pinecone</h4><p>Vector database for semantic search and RAG at scale.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fas fa-search"></i></div><h4>Weaviate</h4><p>Open-source vector DB for self-hosted RAG deployments.</p></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-sliders"></i></div><h4>Fine-tuning</h4><p>Custom model training via OpenAI and Hugging Face.</p></div>
+    <div class="tech-card reveal reveal-d2"><div class="tc-icon"><i class="fas fa-chart-bar"></i></div><h4>LangSmith</h4><p>LLM observability, prompt versioning, eval pipelines.</p></div>
+    <div class="tech-card reveal reveal-d3"><div class="tc-icon"><i class="fas fa-eye"></i></div><h4>Prompt Engineering</h4><p>Structured design, chain-of-thought, adversarial testing.</p></div>
+  </div>
+</div></section>
+
+<section class="tech-sec"><div class="container">
+  <div class="tech-sec-hdr reveal"><span class="section-label">Frontend</span><h2>Interfaces that perform</h2><p>Product UIs that feel fast and accessible — built to last, not just look good in Figma.</p></div>
+  <div class="tech-grid">
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fab fa-react"></i></div><h4>React</h4><p>Primary UI library for complex stateful web apps.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-bolt"></i></div><h4>Next.js</h4><p>Full-stack React with SSR, ISR, and edge rendering.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d2"><div class="tc-icon"><i class="fab fa-vuejs"></i></div><h4>Vue.js</h4><p>Lightweight, progressive framework for dashboards.</p></div>
+    <div class="tech-card reveal reveal-d3"><div class="tc-icon"><i class="fas fa-code"></i></div><h4>TypeScript</h4><p>Type-safe JavaScript. Non-negotiable on every project.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fas fa-wind"></i></div><h4>Tailwind CSS</h4><p>Utility-first CSS for fast, consistent UI implementation.</p></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-vial"></i></div><h4>Playwright / Cypress</h4><p>E2E test coverage as a delivery standard.</p></div>
+  </div>
+</div></section>
+
+<section class="tech-sec"><div class="container">
+  <div class="tech-sec-hdr reveal"><span class="section-label">Backend</span><h2>APIs built to outlast hype cycles</h2></div>
+  <div class="tech-grid">
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fab fa-node-js"></i></div><h4>Node.js</h4><p>Default backend for most SaaS — fast iteration, rich ecosystem.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fab fa-python"></i></div><h4>Python</h4><p>AI/ML services, data pipelines, scientific computing.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d2"><div class="tc-icon"><i class="fas fa-bolt"></i></div><h4>FastAPI</h4><p>High-performance async Python. Standard for AI backends.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d3"><div class="tc-icon"><i class="fas fa-code-branch"></i></div><h4>Go</h4><p>High-throughput microservices where performance is critical.</p></div>
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fas fa-project-diagram"></i></div><h4>GraphQL</h4><p>Flexible API layer for complex, relationship-heavy data models.</p></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-exchange-alt"></i></div><h4>REST / OpenAPI</h4><p>Documented, versioned REST APIs as standard on every project.</p><span class="badge">Core</span></div>
+  </div>
+</div></section>
+
+<section class="tech-sec"><div class="container">
+  <div class="tech-sec-hdr reveal"><span class="section-label">Data &amp; Storage</span><h2>Data that's queryable, reliable, and fast</h2></div>
+  <div class="tech-grid">
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fas fa-database"></i></div><h4>PostgreSQL</h4><p>Default relational DB. Rock-solid with excellent JSON support.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-bolt"></i></div><h4>Redis</h4><p>Caching, session management, pub/sub, rate limiting.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d2"><div class="tc-icon"><i class="fas fa-leaf"></i></div><h4>MongoDB</h4><p>Document store for unstructured and semi-structured data.</p></div>
+    <div class="tech-card reveal reveal-d3"><div class="tc-icon"><i class="fas fa-stream"></i></div><h4>Apache Kafka</h4><p>Event streaming for high-volume distributed pipelines.</p></div>
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fas fa-snowflake"></i></div><h4>Snowflake</h4><p>Cloud data warehouse for analytics at scale.</p></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-search"></i></div><h4>Elasticsearch</h4><p>Full-text search, log analytics, complex filtering.</p></div>
+  </div>
+</div></section>
+
+<section class="tech-sec"><div class="container">
+  <div class="tech-sec-hdr reveal"><span class="section-label">Cloud &amp; Infrastructure</span><h2>Infrastructure that doesn't wake you up at 3am</h2></div>
+  <div class="tech-grid">
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fab fa-aws"></i></div><h4>AWS</h4><p>Primary cloud — EC2, ECS, Lambda, RDS, S3, CloudFront, SQS.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fab fa-google"></i></div><h4>Google Cloud</h4><p>GKE, BigQuery, Vertex AI, and Firebase for select workloads.</p></div>
+    <div class="tech-card reveal reveal-d2"><div class="tc-icon"><i class="fas fa-dharmachakra"></i></div><h4>Kubernetes</h4><p>Container orchestration for scalable microservices.</p></div>
+    <div class="tech-card reveal reveal-d3"><div class="tc-icon"><i class="fab fa-docker"></i></div><h4>Docker</h4><p>Containerisation standard on all projects.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fas fa-code"></i></div><h4>Terraform</h4><p>Infrastructure as code — every env reproducible and version-controlled.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-infinity"></i></div><h4>GitHub Actions</h4><p>CI/CD with automated testing, security scanning, and deployment.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d2"><div class="tc-icon"><i class="fas fa-chart-area"></i></div><h4>Datadog / Grafana</h4><p>Full-stack observability — metrics, logs, traces, alerting.</p></div>
+  </div>
+</div></section>
+
+<section class="tech-sec" style="border-bottom:none"><div class="container">
+  <div class="tech-sec-hdr reveal"><span class="section-label">Mobile</span><h2>Cross-platform done right</h2></div>
+  <div class="tech-grid">
+    <div class="tech-card reveal"><div class="tc-icon"><i class="fab fa-react"></i></div><h4>React Native</h4><p>Cross-platform apps sharing logic with your web codebase.</p><span class="badge">Core</span></div>
+    <div class="tech-card reveal reveal-d1"><div class="tc-icon"><i class="fas fa-feather"></i></div><h4>Flutter</h4><p>Native-performance cross-platform when UI fidelity matters most.</p></div>
+    <div class="tech-card reveal reveal-d2"><div class="tc-icon"><i class="fas fa-mobile-alt"></i></div><h4>Expo</h4><p>Managed React Native workflow for faster mobile delivery.</p></div>
+  </div>
+  <div class="cta-band reveal" style="margin-top:72px">
+    <h2>Don't see your stack? <em>Let's talk.</em></h2>
+    <p>Technology choices are architecture-driven. Tell us what you are building and we will recommend the right tools for it.</p>
+    <div class="cta-btns">
+      <a href="/contact/" class="btn btn-lime">Start a conversation <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+      <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline">Book a free call</a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo-row"><img src="/images/logo.jpg" alt="FiveNodes" style="width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</div><p>Purpose-built AI &amp; software engineering. Since 2021.</p><div class="f-social"><a href="https://www.linkedin.com/company/5-nodes/" class="f-social-btn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="f-social-btn"><i class="fab fa-twitter"></i></a></div></div>
+    <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="/services/saas-product-engineering/">SaaS Engineering</a></li><li><a href="/services/cloud-devops/">Cloud &amp; DevOps</a></li><li><a href="/services/api-integration/">API Integration</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="/about/">About</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul class="footer-links"><li><a href="/legal/privacy/">Privacy</a></li><li><a href="/legal/terms/">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bot"><p>&copy; 2026 FiveNodes. All rights reserved.</p></div>
+</div></footer>
+</div>
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}lerpCursor();
+document.querySelectorAll('a,button,.tech-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+(function(){const c=document.getElementById('bg-canvas');if(!c)return;const ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}resize();window.addEventListener('resize',()=>{resize();init()});function init(){pts=[];const n=Math.floor((W*H)/16000);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.3,vy:(Math.random()-.5)*0.3,r:Math.random()*1.5+0.5});}init();let mouseX=W/2,mouseY=H/2;window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});function draw(){ctx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<140){const a=(1-d/140)*0.35;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,241,53,${a*0.3})`;ctx.lineWidth=0.5;ctx.stroke();}}}for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,241,53,0.4)';ctx.fill();}for(const p of pts){const dx=mouseX-p.x,dy=mouseY-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<200){p.vx+=dx/d*0.01;p.vy+=dy/d*0.01;}p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}requestAnimationFrame(draw);}draw();})();
+function buildLogo(c,s,sp){if(!c)return;const ctx=c.getContext('2d');c.width=s;c.height=s;let r=0;const n=[{x:.6,y:-.7,z:.2},{x:.9,y:0,z:-.3},{x:.55,y:.75,z:.1},{x:-.55,y:.75,z:.1},{x:-.9,y:0,z:-.3},{x:0,y:-.25,z:.8},{x:.4,y:.2,z:-.7},{x:-.4,y:.2,z:-.7}],e=[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5],[0,6],[1,6],[2,7],[3,7],[4,6],[5,6],[5,7],[6,7]];function proj(x,y,z,ry){const cY=Math.cos(ry),sY=Math.sin(ry),x1=x*cY+z*sY,z1=-x*sY+z*cY,cX=Math.cos(.3),sX=Math.sin(.3),y1=y*cX-z1*sX,z2=y*sX+z1*cX,sc=2.5/(2.5+z2),rd=s*.38;return{px:s/2+x1*rd*sc,py:s/2+y1*rd*sc,z:z2,sc};}function draw(){ctx.clearRect(0,0,s,s);r+=sp;const p=n.map(nd=>proj(nd.x,nd.y,nd.z,r));const se=[...e].sort((a,b)=>(p[a[0]].z+p[a[1]].z)/2-(p[b[0]].z+p[b[1]].z)/2);for(const[i,j]of se){const a=p[i],b=p[j];const al=Math.max(0,(0.8+(a.z+b.z)/2*0.4)*0.55);ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);ctx.strokeStyle=`rgba(200,241,53,${al})`;ctx.lineWidth=.8;ctx.stroke();}for(const pt of p){const zN=(pt.z+1)/2,rd=4.5*pt.sc*(.5+zN*.7);ctx.beginPath();ctx.arc(pt.px,pt.py,rd,0,Math.PI*2);ctx.fillStyle=`rgba(200,241,53,${.6+zN*.4})`;ctx.fill();}requestAnimationFrame(draw);}draw();}
+buildLogo(document.getElementById('logo-canvas-nav'),68,.008);buildLogo(document.getElementById('logo-canvas-footer'),56,.01);
+const nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+document.addEventListener('click',e=>{if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

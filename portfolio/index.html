@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Portfolio | FiveNodes</title>
+<meta name="description" content="Real projects. Real results. Explore FiveNodes' portfolio of SaaS products, platforms, and enterprise software delivered since 2021.">
+<link rel="canonical" href="https://5ivenodes.com/portfolio/">
+<meta name="theme-color" content="#05060E">
+<meta property="og:title" content="Portfolio | FiveNodes">
+<meta property="og:description" content="Real projects. Real results. SaaS platforms, cloud systems, and enterprise software delivered since 2021.">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--bg2:#090B16;--card:#0D0F1C;--card2:#11142B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--dim:#3A394A;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);will-change:transform}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .12s ease,height .12s ease,border-color .12s ease;will-change:transform}
+body.cursor-hover #cursor{width:20px;height:20px}
+body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform;transform:translateZ(0)}
+.wrap{position:relative;z-index:1}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:600}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
+.nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
+.logo-mark{width:34px;height:34px;position:relative;flex-shrink:0}
+.logo-mark canvas{position:absolute;inset:0}
+.nav-links{display:flex;align-items:center}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.nav-dropdown{position:relative}
+.dd-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#0D0F1C;border:1px solid var(--border2);border-radius:14px;padding:8px;min-width:280px;opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 32px 80px rgba(0,0,0,0.6);pointer-events:none}
+.nav-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:var(--muted);font-size:.875rem;transition:all .15s;cursor:none}
+.dd-item:hover{background:rgba(200,241,53,0.06);color:var(--text)}
+.dd-item strong{color:var(--text);font-weight:500;font-size:.8125rem;display:block}
+.dd-item small{color:var(--dim);font-size:.75rem}
+.dd-icon{width:30px;height:30px;border-radius:7px;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:.7rem;flex-shrink:0}
+.dd-2col{min-width:340px;display:grid;grid-template-columns:1fr 1fr}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:96px 48px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-link{padding:14px 0;font-family:var(--fh);font-size:1.1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
+.mob-link:hover{color:var(--text)}
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+footer{background:#030408;border-top:1px solid var(--border);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:18px}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,0.25);line-height:1.7;max-width:280px;margin-bottom:24px}
+.f-social{display:flex;gap:10px}
+.f-social-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:.875rem;transition:all .2s;cursor:none}
+.f-social-btn:hover{border-color:var(--border2);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:20px}
+.footer-links li{margin-bottom:12px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,0.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bot p,.footer-bot a{font-size:.8rem;color:rgba(255,255,255,0.18)}
+.footer-bot-links{display:flex;gap:24px}
+.footer-bot-links a:hover{color:rgba(255,255,255,0.4)}
+
+/* PAGE HERO */
+.page-hero{padding:160px 0 100px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(200,241,53,0.04) 0%,transparent 70%);pointer-events:none}
+.page-hero-inner{position:relative;z-index:2}
+.breadcrumb{display:flex;align-items:center;gap:10px;font-size:.75rem;color:var(--dim);margin-bottom:24px;font-family:'Courier New',monospace}
+.breadcrumb a{color:var(--dim);transition:color .2s}.breadcrumb a:hover{color:var(--lime)}
+.page-h1{font-family:var(--fh);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05;margin-bottom:20px}
+.page-h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.45)}
+.page-desc{font-size:1.125rem;color:var(--muted);max-width:600px;line-height:1.75;font-weight:300;margin-bottom:36px}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;padding:32px 0 0}
+.filter-btn{padding:9px 22px;border-radius:100px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--border);color:var(--muted);transition:all .2s;cursor:none;background:transparent}
+.filter-btn:hover{border-color:var(--border2);color:var(--text)}
+.filter-btn.active{background:var(--lime);color:#05060E;border-color:var(--lime)}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden;border:1px solid var(--border);margin:80px 0 64px}
+.stat-box{background:var(--card);padding:32px}
+.stat-num{font-family:var(--fh);font-size:2.2rem;font-weight:700;letter-spacing:-.05em;color:#fff;line-height:1}
+.stat-num span{color:var(--lime)}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:6px}
+
+.outreach-strip{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:64px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;margin-bottom:80px}
+.outreach-strip h2{font-family:var(--fh);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:12px;line-height:1.1}
+.outreach-strip h2 em{font-style:italic;font-weight:300;color:var(--lime)}
+.outreach-strip p{font-size:.9375rem;color:var(--muted);line-height:1.7;max-width:520px}
+.outreach-btns{display:flex;gap:12px;flex-shrink:0;flex-direction:column}
+
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-grid .footer-brand{grid-column:1/-1}.outreach-strip{grid-template-columns:1fr;gap:24px}}
+.sec-divider{margin:40px 0 40px;padding-top:40px}
+.sec-divider h2{font-family:var(--fh);font-size:1.75rem;font-weight:700;color:#fff;margin-top:12px;margin-bottom:8px}
+.sec-divider p{font-size:.9375rem;color:var(--muted);max-width:600px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;margin-bottom:64px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:none;display:flex;flex-direction:column}
+.proj-card:hover{border-color:rgba(200,241,53,.2);transform:translateY(-5px);box-shadow:0 32px 72px rgba(0,0,0,.45)}
+.proj-img{width:100%;height:190px;object-fit:cover;display:block;background:#090B16;border-bottom:1px solid var(--border)}
+.proj-body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.proj-tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;font-family:'Courier New',monospace}
+.proj-title{font-family:var(--fh);font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.proj-desc{font-size:.8125rem;color:var(--muted);line-height:1.65;margin-bottom:12px;flex:1}
+.proj-hl{list-style:none;padding:0;margin:0 0 16px}
+.proj-hl li{font-size:.775rem;color:rgba(200,200,220,.65);padding:3px 0;display:flex;gap:7px;align-items:flex-start;line-height:1.4}
+.proj-hl li::before{content:'→';color:var(--lime);flex-shrink:0;margin-top:1px}
+.proj-link{font-size:.8rem;color:var(--lime);font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:gap .2s;margin-top:auto}
+.proj-link:hover{gap:10px}
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;margin-bottom:64px}
+.app-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:none;display:flex;flex-direction:column}
+.app-card:hover{border-color:rgba(200,241,53,.2);transform:translateY(-5px);box-shadow:0 32px 72px rgba(0,0,0,.45)}
+.app-img{width:100%;height:210px;object-fit:cover;display:block;background:#090B16;border-bottom:1px solid var(--border)}
+.app-body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.app-tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;font-family:'Courier New',monospace}
+.app-title{font-family:var(--fh);font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.app-tagline{font-size:.8125rem;color:var(--lime);font-weight:600;margin-bottom:8px}
+.app-hl{list-style:none;padding:0;margin:0 0 16px}
+.app-hl li{font-size:.775rem;color:rgba(200,200,220,.65);padding:3px 0;display:flex;gap:7px;align-items:flex-start;line-height:1.4}
+.app-hl li::before{content:'→';color:var(--lime);flex-shrink:0;margin-top:1px}
+.app-link{font-size:.8rem;color:var(--lime);font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:gap .2s;margin-top:auto}
+.app-link:hover{gap:10px}
+@media(max-width:900px){.proj-grid{grid-template-columns:1fr 1fr}.app-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.proj-grid{grid-template-columns:1fr}.app-grid{grid-template-columns:1fr}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta{display:none}.hamburger{display:flex}.case-header{padding:28px 28px 24px}.case-metrics{padding:20px 28px;flex-wrap:wrap;gap:16px}.case-metric{border-right:none;padding-right:0;margin-right:0}.case-body{padding:24px 28px 28px}.case-footer{padding:0 28px 28px}.stats-row{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}.outreach-strip{padding:36px 28px}}
+
+.sec-divider{margin:40px 0 40px;padding-top:40px}
+.sec-divider h2{font-family:var(--fh);font-size:1.75rem;font-weight:700;color:#fff;margin-top:12px;margin-bottom:8px}
+.sec-divider p{font-size:.9375rem;color:var(--muted);max-width:600px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;margin-bottom:64px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:none;display:flex;flex-direction:column}
+.proj-card:hover{border-color:rgba(200,241,53,.2);transform:translateY(-5px);box-shadow:0 32px 72px rgba(0,0,0,.45)}
+.proj-img{width:100%;height:190px;object-fit:cover;display:block;background:#090B16;border-bottom:1px solid var(--border)}
+.proj-body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.proj-tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;font-family:'Courier New',monospace}
+.proj-title{font-family:var(--fh);font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.proj-desc{font-size:.8125rem;color:var(--muted);line-height:1.65;margin-bottom:12px;flex:1}
+.proj-hl{list-style:none;padding:0;margin:0 0 16px}
+.proj-hl li{font-size:.775rem;color:rgba(200,200,220,.65);padding:3px 0;display:flex;gap:7px;align-items:flex-start;line-height:1.4}
+.proj-hl li::before{content:'→';color:var(--lime);flex-shrink:0;margin-top:1px}
+.proj-link{font-size:.8rem;color:var(--lime);font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:gap .2s;margin-top:auto}
+.proj-link:hover{gap:10px}
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;margin-bottom:64px}
+.app-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1);cursor:none;display:flex;flex-direction:column}
+.app-card:hover{border-color:rgba(200,241,53,.2);transform:translateY(-5px);box-shadow:0 32px 72px rgba(0,0,0,.45)}
+.app-img{width:100%;height:210px;object-fit:cover;display:block;background:#090B16;border-bottom:1px solid var(--border)}
+.app-body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.app-tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;font-family:'Courier New',monospace}
+.app-title{font-family:var(--fh);font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.app-tagline{font-size:.8125rem;color:var(--lime);font-weight:600;margin-bottom:8px}
+.app-hl{list-style:none;padding:0;margin:0 0 16px}
+.app-hl li{font-size:.775rem;color:rgba(200,200,220,.65);padding:3px 0;display:flex;gap:7px;align-items:flex-start;line-height:1.4}
+.app-hl li::before{content:'→';color:var(--lime);flex-shrink:0;margin-top:1px}
+.app-link{font-size:.8rem;color:var(--lime);font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:gap .2s;margin-top:auto}
+.app-link:hover{gap:10px}
+@media(max-width:900px){.proj-grid{grid-template-columns:1fr 1fr}.app-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.proj-grid{grid-template-columns:1fr}.app-grid{grid-template-columns:1fr}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta{display:none}.hamburger{display:flex}.case-header{padding:28px 28px 24px}.case-metrics{padding:20px 28px;flex-wrap:wrap;gap:16px}.case-metric{border-right:none;padding-right:0;margin-right:0}.case-body{padding:24px 28px 28px}.case-footer{padding:0 28px 28px}.stats-row{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}.outreach-strip{padding:36px 28px}}
+
+/* ═══════════════════ CSS PRODUCT MOCKUPS ═══════════════════ */
+.mock-bar{height:30px;display:flex;align-items:center;padding:0 14px;gap:5px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.05)}
+.mock-d{width:9px;height:9px;border-radius:50%}
+.mock-d-r{background:#FF5F56}.mock-d-y{background:#FFBD2E}.mock-d-g{background:#27C93F}
+.mock-url{flex:1;height:18px;border-radius:4px;background:rgba(255,255,255,.05);margin:0 12px}
+
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Portfolio | FiveNodes","url":"https://5ivenodes.com/portfolio/","description":"Real projects. Real results. FiveNodes portfolio of SaaS platforms, AI products, and enterprise software.","creator":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com"},"hasPart":[{"@type":"CreativeWork","name":"Numerico — Fintech Platform","url":"https://numerico.ai/en"},{"@type":"CreativeWork","name":"Recruitly — Recruitment Management","url":"https://recruitly.io/"},{"@type":"CreativeWork","name":"EVEREST — Compliant Financial Infrastructure","url":"https://everest.org/"},{"@type":"CreativeWork","name":"FINQALAB — Investment Platform","url":"https://finqalab.com/"},{"@type":"CreativeWork","name":"Cheetay — On-Demand App"},{"@type":"CreativeWork","name":"Kashat — Micro-Finance App"},{"@type":"CreativeWork","name":"Anne Barge — Luxury Bridal Fashion"},{"@type":"CreativeWork","name":"Fast Accounts — Accounting Platform"}]}</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cursor"></div><div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="wrap">
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="FiveNodes" style="height:44px;width:44px;border-radius:7px;object-fit:cover;flex-shrink:0">FiveNodes
+    </a>
+    <ul class="nav-links" role="list">
+      <li class="nav-dropdown"><a class="nav-link" href="/services/">Services</a>
+        <div class="dd-menu" role="menu">
+          <a href="/services/saas-product-engineering/" class="dd-item"><span class="dd-icon"><i class="fas fa-layer-group"></i></span><div><strong>SaaS Engineering</strong><small>Full-stack platforms</small></div></a>
+          <a href="/services/cloud-devops/" class="dd-item"><span class="dd-icon"><i class="fas fa-cloud"></i></span><div><strong>Cloud &amp; DevOps</strong><small>AWS, GCP, Kubernetes</small></div></a>
+          <a href="/services/api-integration/" class="dd-item"><span class="dd-icon"><i class="fas fa-plug"></i></span><div><strong>API &amp; Integration</strong><small>REST, GraphQL, events</small></div></a>
+          <a href="/services/ui-ux-design/" class="dd-item"><span class="dd-icon"><i class="fas fa-pen-nib"></i></span><div><strong>UI/UX Design</strong><small>Design systems</small></div></a>
+          <a href="/services/data-analytics/" class="dd-item"><span class="dd-icon"><i class="fas fa-chart-line"></i></span><div><strong>Data Engineering</strong><small>Pipelines &amp; BI</small></div></a>
+          <a href="/services/maintenance-scaling/" class="dd-item"><span class="dd-icon"><i class="fas fa-shield-halved"></i></span><div><strong>Maintenance</strong><small>Support &amp; scaling</small></div></a>
+        </div>
+      </li>
+      <li class="nav-dropdown"><a class="nav-link" href="/industries/">Industries</a>
+        <div class="dd-menu dd-2col" role="menu">
+          <a href="/industries/healthcare/" class="dd-item">Healthcare</a><a href="/industries/edtech/" class="dd-item">EdTech</a>
+          <a href="/industries/logistics/" class="dd-item">Logistics</a><a href="/industries/real-estate/" class="dd-item">Real Estate</a>
+          <a href="/industries/hr-workforce/" class="dd-item">HR Tech</a><a href="/industries/retail-ecommerce/" class="dd-item">Retail</a>
+          <a href="/industries/legaltech/" class="dd-item">LegalTech</a><a href="/industries/govtech/" class="dd-item">GovTech</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link active" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="/services/saas-product-engineering/" class="mob-link">SaaS Engineering</a>
+  <a href="/services/cloud-devops/" class="mob-link">Cloud &amp; DevOps</a>
+  <a href="/services/api-integration/" class="mob-link">API Integration</a>
+  <a href="/services/ui-ux-design/" class="mob-link">UI/UX Design</a>
+  <a href="/about/" class="mob-link">About</a>
+  <a href="/portfolio/" class="mob-link">Portfolio</a>
+  <a href="/products/" class="mob-link">Products</a>
+  <a href="/contact/" class="mob-link">Contact</a>
+  <a href="/contact/" class="btn btn-lime" style="margin-top:28px">Start a project</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb"><a href="/">Home</a> <span style="opacity:.3">/</span> <span>Portfolio</span></nav>
+    <span class="section-label">Our work</span>
+    <h1 class="page-h1">Projects we're <em>proud of</em></h1>
+    <p class="page-desc">Since 2021, we've designed, built, and shipped software across healthcare, logistics, edtech, retail, and more. Here's a selection of what we've delivered.</p>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="fintech">Fintech</button>
+      <button class="filter-btn" data-filter="iot">IoT</button>
+      <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+      <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+      <button class="filter-btn" data-filter="hr">HR &amp; Workforce</button>
+      <button class="filter-btn" data-filter="events">Events &amp; Social</button>
+      <button class="filter-btn" data-filter="enterprise">Web &amp; Enterprise</button>
+    </div>
+  </div>
+</section>
+
+<section style="padding:40px 0 0">
+  <div class="container">
+
+
+    <!-- ══ FINTECH ══ -->
+    <div class="sec-divider reveal" data-section="fintech">
+      <span class="section-label">Fintech</span>
+      <h2>Financial platforms we've built</h2>
+      <p>Blockchain, compliance, investment, crypto and micro-lending — production fintech delivered globally.</p>
+    </div>
+    <div class="proj-grid" data-section="fintech">
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/numerico.png" alt="Numerico" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Fintech · Blockchain</div><div class="proj-title">Numerico</div>
+          <p class="proj-desc">A modern fintech platform focused on secure and efficient financial transactions — scalable blockchain-based solutions enhancing security, transparency, and performance for digital finance.</p>
+          <ul class="proj-hl"><li>Secure blockchain architecture</li><li>High-performance transaction processing</li><li>User-focused financial dashboard</li></ul>
+          <a href="https://numerico.ai/en" target="_blank" rel="noopener" class="proj-link" style="margin-right:16px">Visit site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a><a href="/work/numerico/" class="proj-link">Case study <i class="fas fa-book-open" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/finqalab.png" alt="FINQALAB" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Fintech · Investment</div><div class="proj-title">FINQALAB</div>
+          <p class="proj-desc">An investment-focused platform helping users analyze, manage, and grow their financial portfolios with powerful analytics and an intuitive interface.</p>
+          <ul class="proj-hl"><li>Smart investment insights</li><li>Portfolio management tools</li><li>Clean and responsive UI</li></ul>
+          <a href="https://finqalab.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/everest.png" alt="EVEREST" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Fintech · Compliance</div><div class="proj-title">EVEREST</div>
+          <p class="proj-desc">A global platform for secure and compliant financial infrastructure — enabling identity verification, tokenization, and cross-border payments with full regulatory compliance.</p>
+          <ul class="proj-hl"><li>Digital identity and compliance</li><li>Tokenized financial ecosystem</li><li>Secure global payment infrastructure</li></ul>
+          <a href="https://everest.org/" target="_blank" rel="noopener" class="proj-link" style="margin-right:16px">Visit site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a><a href="/work/everest/" class="proj-link">Case study <i class="fas fa-book-open" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/peace-coin.png" alt="Peace Coin" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Crypto · E-Commerce</div><div class="proj-title">Peace Coin</div>
+          <p class="proj-desc">A digital platform combining cryptocurrency innovation with an online marketplace — letting users explore digital assets, shop products, and engage with a crypto-powered ecosystem.</p>
+          <ul class="proj-hl"><li>Cryptocurrency and digital commerce</li><li>Integrated online shop experience</li><li>Modern interactive design</li></ul>
+          <a href="https://peacecoin.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/next-capital.png" alt="Next Capital" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Finance · Brokerage</div><div class="proj-title">Next CAPITAL</div>
+          <p class="proj-desc">A financial services platform providing brokerage and corporate advisory solutions — presenting complex financial services clearly in a professional, trustworthy digital experience.</p>
+          <ul class="proj-hl"><li>Online brokerage and advisory</li><li>Professional corporate website</li><li>Clear financial service presentation</li></ul>
+          <a href="https://www.nextcapital.com.pk/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/kashat.png" alt="Kashat" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Fintech · Micro-Lending</div><div class="proj-title">Kashat</div>
+          <p class="proj-desc">A micro-lending mobile app giving users instant access to small loans with minimal paperwork and bank-grade encryption protecting all financial data.</p>
+          <ul class="proj-hl"><li>Micro-loan access in minutes</li><li>Credit and repayment dashboard</li><li>Bank-grade data encryption</li></ul>
+          <a href="https://play.google.com/store/apps/details?id=eg.com.kashat" target="_blank" rel="noopener" class="proj-link">View on Play Store <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/seamless.webp" alt="Seamless" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Fintech · Distribution</div><div class="proj-title">Seamless</div>
+          <p class="proj-desc">Seamless Distribution Systems digitally revolutionizes financial transactions for the unbanked — a scalable managed IT infrastructure platform for global financial inclusion.</p>
+          <ul class="proj-hl"><li>Financial inclusion for unbanked users</li><li>Scalable distribution system architecture</li><li>Managed IT services backbone</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/fast-accounts.png" alt="Fast Accounts" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Accounting · SaaS</div><div class="proj-title">Fast Accounts</div>
+          <p class="proj-desc">An accounting and financial management SaaS platform simplifying bookkeeping with powerful automation, dashboards, and financial reporting tools for businesses of all sizes.</p>
+          <ul class="proj-hl"><li>Online accounting and bookkeeping</li><li>Financial dashboards and reporting</li><li>Clean, user-friendly interface</li></ul>
+          <a href="https://fastaccounts.io/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+    </div>
+
+    <!-- ══ IOT ══ -->
+    <div class="sec-divider reveal" data-section="iot">
+      <span class="section-label">Internet of Things</span>
+      <h2>IoT products we've engineered</h2>
+      <p>Smart home, connected devices, and energy systems — real-time IoT apps across Tuya, Zigbee, MQTT and more.</p>
+    </div>
+    <div class="proj-grid" data-section="iot">
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/primal-plunge.png" alt="Primal Plunge" loading="lazy" style="object-fit:contain;background:#090B16;padding:8px">
+        <div class="proj-body"><div class="proj-tag">IoT · Wellness · Tuya</div><div class="proj-title">Primal Plunge</div>
+          <p class="proj-desc">A mobile app to control cold plunge chillers, track recovery sessions, and access wellness content — powered by Tuya IoT with real-time device connectivity.</p>
+          <ul class="proj-hl"><li>Tuya IoT device control integration</li><li>Real-time session tracking & wellness data</li><li>Remote chiller control via mobile</li></ul>
+          <span class="proj-link" style="color:var(--muted);cursor:default">IoT Mobile App <i class="fas fa-microchip" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/klugar.png" alt="Klugar" loading="lazy" style="object-fit:contain;background:#090B16;padding:8px">
+        <div class="proj-body"><div class="proj-tag">IoT · Smart Home · Germany</div><div class="proj-title">Klugar</div>
+          <p class="proj-desc">A leading German smart home brand app with seamless local and remote control for 100+ products — a secure, scalable IoT solution with diverse automation support.</p>
+          <ul class="proj-hl"><li>Control 100+ smart home devices</li><li>Local & remote access via single app</li><li>Scalable IoT with automation</li></ul>
+          <span class="proj-link" style="color:var(--muted);cursor:default">Smart Home App <i class="fas fa-microchip" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/gtensor.png" alt="GTensor" loading="lazy" style="object-fit:contain;background:#090B16;padding:8px">
+        <div class="proj-body"><div class="proj-tag">IoT · Energy · Sustainability</div><div class="proj-title">GTensor</div>
+          <p class="proj-desc">Intelligent systems solving the global energy crisis — reducing waste and harnessing renewable resources through smart IoT-connected hardware and eco-friendly software platforms.</p>
+          <ul class="proj-hl"><li>Intelligent energy waste reduction</li><li>Renewable resource harnessing platform</li><li>Eco-friendly IoT hardware integration</li></ul>
+          <span class="proj-link" style="color:var(--muted);cursor:default">Energy IoT Platform <i class="fas fa-microchip" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/cayka.png" alt="Cayka" loading="lazy" style="object-fit:contain;background:#090B16;padding:8px">
+        <div class="proj-body"><div class="proj-tag">IoT · Smart Devices · MQTT</div><div class="proj-title">Cayka</div>
+          <p class="proj-desc">A flexible mobile app to control and monitor smart devices — adapters, switches, and lamps — via Wi-Fi, Bluetooth, and MQTT with real-time status and customizable control panels.</p>
+          <ul class="proj-hl"><li>Wi-Fi, Bluetooth & MQTT multi-protocol</li><li>Real-time device status & remote control</li><li>Customizable control panel UI</li></ul>
+          <span class="proj-link" style="color:var(--muted);cursor:default">Smart Device App <i class="fas fa-microchip" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/simi-connect.png" alt="Simi Connect" loading="lazy" style="object-fit:contain;background:#090B16;padding:8px">
+        <div class="proj-body"><div class="proj-tag">IoT · Home Automation</div><div class="proj-title">Simi Connect</div>
+          <p class="proj-desc">A multi-app platform including Simi Smart — enabling control of smart bulbs, cameras, thermostats, and plugs from one unified home automation interface.</p>
+          <ul class="proj-hl"><li>Unified smart home device hub</li><li>Smart bulbs, cameras & thermostat control</li><li>Multi-app ecosystem platform</li></ul>
+          <span class="proj-link" style="color:var(--muted);cursor:default">Home Automation <i class="fas fa-microchip" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/zimi.png" alt="Zimi" loading="lazy" style="object-fit:contain;background:#090B16;padding:8px">
+        <div class="proj-body"><div class="proj-tag">IoT · Smart Home · Eco</div><div class="proj-title">Zimi</div>
+          <p class="proj-desc">A smart home app focused on sustainability and simplicity — user-friendly, eco-conscious devices that seamlessly integrate into a unified smart living environment.</p>
+          <ul class="proj-hl"><li>Eco-conscious smart home ecosystem</li><li>Seamless multi-device integration</li><li>Sustainability-first IoT design</li></ul>
+          <span class="proj-link" style="color:var(--muted);cursor:default">Smart Home App <i class="fas fa-microchip" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/axxios.png" alt="Axxios" loading="lazy" style="object-fit:contain;background:#090B16;padding:8px">
+        <div class="proj-body"><div class="proj-tag">IoT · Home Automation · Multi-Protocol</div><div class="proj-title">Axxios</div>
+          <p class="proj-desc">A home automation app using Wi-Fi, IP, Bluetooth, Zigbee & Z-Wave to connect Philips Hue, Sengled bulbs, Yale locks, Nest cameras, and Ecobee thermostats.</p>
+          <ul class="proj-hl"><li>Zigbee & Z-Wave multi-protocol support</li><li>Philips Hue, Yale & Nest integration</li><li>Full home automation in one app</li></ul>
+          <span class="proj-link" style="color:var(--muted);cursor:default">Home Automation <i class="fas fa-microchip" style="font-size:.65rem"></i></span></div>
+      </div>
+    </div>
+
+    <!-- ══ E-COMMERCE & RETAIL ══ -->
+    <div class="sec-divider reveal" data-section="ecommerce">
+      <span class="section-label">E-Commerce &amp; Retail</span>
+      <h2>Commerce platforms we've launched</h2>
+      <p>Fashion, grocery, on-demand delivery, and marketplace platforms — built to scale from day one.</p>
+    </div>
+    <div class="proj-grid" data-section="ecommerce">
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/ullmanna.png" alt="Ullmanna" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Fashion · E-Commerce</div><div class="proj-title">Ullmanna</div>
+          <p class="proj-desc">A premium European fashion e-commerce platform delivering a sophisticated shopping experience with high-quality visuals, seamless navigation, and a strong brand identity.</p>
+          <ul class="proj-hl"><li>Premium fashion e-commerce</li><li>High-quality visual design</li><li>Seamless shopping experience</li></ul>
+          <a href="https://www.ullmanna.eu/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/anne-barge.png" alt="Anne Barge" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Fashion · Luxury Bridal</div><div class="proj-title">Anne Barge</div>
+          <p class="proj-desc">A premium bridal fashion website showcasing elegant wedding dress collections — sophisticated designs, high-quality visuals, and a seamless browsing experience.</p>
+          <ul class="proj-hl"><li>Elegant fashion-focused UI</li><li>High-quality product showcase</li><li>Responsive and visually rich design</li></ul>
+          <a href="https://www.annebarge.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/febys.webp" alt="Febys" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">E-Commerce · SaaS · SME</div><div class="proj-title">Febys</div>
+          <p class="proj-desc">A multi-vendor e-commerce marketplace SaaS platform helping SMEs and major corporations scale their commerce business with analytics and growth tools.</p>
+          <ul class="proj-hl"><li>Scalable multi-vendor marketplace</li><li>SME onboarding and seller tools</li><li>Commerce analytics and insights</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/vembla.webp" alt="Vembla" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Grocery · Eco Delivery</div><div class="proj-title">Vembla</div>
+          <p class="proj-desc">An e-commerce marketplace delivering groceries and everyday goods within an hour via eco-friendly transportation — sustainable last-mile at scale.</p>
+          <ul class="proj-hl"><li>Sub-1-hour grocery delivery</li><li>Eco-friendly delivery fleet integration</li><li>Neighborhood goods marketplace</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/delivery-basics.webp" alt="Delivery Basics" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Food Delivery · Marketplace</div><div class="proj-title">Delivery Basics</div>
+          <p class="proj-desc">A consumer goods and prepared foods delivery marketplace bringing people closer to their neighborhood Mom and Pop stores through last-mile delivery technology.</p>
+          <ul class="proj-hl"><li>Hyperlocal food and goods marketplace</li><li>Last-mile delivery and pickup</li><li>Local store discovery and ordering</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/cheetay.png" alt="Cheetay" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">On-Demand · Logistics</div><div class="proj-title">Cheetay</div>
+          <p class="proj-desc">A high-scale on-demand delivery platform connecting consumers to local vendors and global brands with live order tracking and optimized last-mile logistics.</p>
+          <ul class="proj-hl"><li>Wide vendor and brand marketplace</li><li>Live order tracking from store to door</li><li>Optimized last-mile logistics</li></ul>
+          <a href="https://play.google.com/store/apps/details?id=com.app.cheetay" target="_blank" rel="noopener" class="proj-link">View on Play Store <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/artisan.webp" alt="Artisan" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Marketplace · Home Services</div><div class="proj-title">Artisan</div>
+          <p class="proj-desc">A skill-brokerage marketplace allowing users to post home maintenance jobs and artisans to offer services — bridging homeowners and skilled tradespeople.</p>
+          <ul class="proj-hl"><li>Job posting and artisan bidding</li><li>Skill-matched service marketplace</li><li>Review and trust-rating system</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/mseco-banden.png" alt="Mseco Banden" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Automotive · E-Commerce</div><div class="proj-title">Mseco Banden</div>
+          <p class="proj-desc">An automotive service website focused on tire sales and services — providing easy access to product information, service details, and quick contact for professional tire solutions.</p>
+          <ul class="proj-hl"><li>Product-focused automotive website</li><li>Clear service and product listings</li><li>Mobile-friendly responsive layout</li></ul>
+          <a href="https://msecobanden.nl/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/smarty-men.png" alt="Smarty Men" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Fashion · AI · Mobile</div><div class="proj-title">Smarty Men</div>
+          <p class="proj-desc">A virtual style assistant app using AI to let users try jacket styles on their photo, browse premium outerwear, and get smart recommendations based on style and weather.</p>
+          <ul class="proj-hl"><li>AI virtual try-on for outerwear</li><li>Premium men's fashion catalog</li><li>Smart style recommendations</li></ul>
+          <a href="https://play.google.com/store/apps/details?id=com.las.smarty.jacket.editor" target="_blank" rel="noopener" class="proj-link">View on Play Store <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+    </div>
+
+    <!-- ══ HEALTHCARE ══ -->
+    <div class="sec-divider reveal" data-section="healthcare">
+      <span class="section-label">Healthcare</span>
+      <h2>Health platforms we've built</h2>
+      <p>Telemedicine, health education, wellness, and life science — digital health solutions that make a real difference.</p>
+    </div>
+    <div class="proj-grid" data-section="healthcare">
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/hospitall.webp" alt="HospitALL" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Healthcare · Telemedicine</div><div class="proj-title">HospitALL</div>
+          <p class="proj-desc">A digital healthcare platform helping patients easily connect with doctors, choose providers based on verified reviews, and get e-consultations from anywhere.</p>
+          <ul class="proj-hl"><li>Doctor discovery with verified reviews</li><li>Telemedicine and e-consultation</li><li>Patient-doctor connection platform</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/organwise-guys.webp" alt="Organwise Guys" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">EdTech · Children's Health</div><div class="proj-title">Organwise Guys</div>
+          <p class="proj-desc">An e-learning platform helping children learn about physical health, nutrition, and healthy living in a creative, gamified manner — turning health education into an adventure.</p>
+          <ul class="proj-hl"><li>Interactive health education for kids</li><li>Gamified nutrition and wellness content</li><li>Age-appropriate creative learning</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/syncona.png" alt="Syncona" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Life Science · Investment</div><div class="proj-title">Syncona</div>
+          <p class="proj-desc">A leading life science investment platform building and scaling innovative healthcare companies — supporting breakthrough research, advanced therapies, and medical technologies.</p>
+          <ul class="proj-hl"><li>Life science investment platform</li><li>Corporate healthcare portfolio site</li><li>Research and therapy showcase</li></ul>
+          <a href="http://synconaltd.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/mardessa-s-mph.png" alt="Mardessa S.MPH" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Wellness · Personal Brand</div><div class="proj-title">Mardessa S.MPH</div>
+          <p class="proj-desc">A personal brand and wellness platform sharing health insights, lifestyle guidance, and professional expertise — designed for content, services, and a strong personal online presence.</p>
+          <ul class="proj-hl"><li>Personal health and wellness branding</li><li>Content-focused blog and services layout</li><li>Clean, modern, responsive design</li></ul>
+          <a href="https://mardessasmph.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+    </div>
+
+    <!-- ══ HR & WORKFORCE ══ -->
+    <div class="sec-divider reveal" data-section="hr">
+      <span class="section-label">HR &amp; Workforce</span>
+      <h2>Workforce platforms we've delivered</h2>
+      <p>Recruitment, field force management, and staffing platforms — built to manage people and operations at scale.</p>
+    </div>
+    <div class="proj-grid" data-section="hr">
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/recruitly.png" alt="Recruitly" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">HR Tech · SaaS · ATS</div><div class="proj-title">Recruitly</div>
+          <p class="proj-desc">A recruitment management SaaS for staffing agencies — streamlining hiring with candidate tracking, job pipeline management, and recruitment analytics in one system.</p>
+          <ul class="proj-hl"><li>Applicant tracking system (ATS)</li><li>Candidate and job pipeline management</li><li>Recruitment analytics and automation</li></ul>
+          <a href="https://recruitly.io/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/trb-recruitment.png" alt="TRB Recruitment" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Recruitment · Job Platform</div><div class="proj-title">TRB Recruitment</div>
+          <p class="proj-desc">A professional recruitment platform helping employers find the right talent and job seekers discover new career opportunities — a streamlined job search experience.</p>
+          <ul class="proj-hl"><li>Recruitment and job listing platform</li><li>Easy job search and application system</li><li>Clean, professional design</li></ul>
+          <a href="https://tbr-recruitment.co.uk/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/simply-sufi.webp" alt="Simply Sufi" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Field Force · Retail &amp; Distribution</div><div class="proj-title">Simply Sufi</div>
+          <p class="proj-desc">A 360-degree centralized field force management solution for retail and distribution — giving businesses complete operational visibility across distributed teams.</p>
+          <ul class="proj-hl"><li>Centralized field force management</li><li>Real-time distribution tracking</li><li>Retail operations analytics</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/tez-agents.png" alt="Tez Agents" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Operations · Field Management</div><div class="proj-title">Tez Agents</div>
+          <p class="proj-desc">A mobile field management app with a clean interface to track assignments, performance metrics, and communication between field agents and central operations hubs.</p>
+          <ul class="proj-hl"><li>Assignment and performance tracking</li><li>Real-time agent communication</li><li>Smart automation for field logs</li></ul>
+          <a href="https://play.google.com/store/apps/details?id=com.medznmore.salesagent" target="_blank" rel="noopener" class="proj-link">View on Play Store <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+    </div>
+
+    <!-- ══ EVENTS & SOCIAL ══ -->
+    <div class="sec-divider reveal" data-section="events">
+      <span class="section-label">Events &amp; Social</span>
+      <h2>Event and social platforms we've shipped</h2>
+      <p>Ticketing, event management, social networks, and media platforms — connecting people at scale.</p>
+    </div>
+    <div class="proj-grid" data-section="events">
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/ticketlake.webp" alt="Ticketlake" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Events · Ticketing</div><div class="proj-title">Ticketlake</div>
+          <p class="proj-desc">A modern event ticketing platform giving users a seamless way to find and buy tickets for all their favorite events — mobile-first with integrated payments.</p>
+          <ul class="proj-hl"><li>Event discovery and ticket purchasing</li><li>Mobile-first UI/UX</li><li>Integrated payment and booking flow</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/keyflow.webp" alt="Keyflow" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Events · Multi-vendor</div><div class="proj-title">Keyflow</div>
+          <p class="proj-desc">A multi-vendor event management platform for booking tables and buying tickets for nearby events — with geo-based discovery and integrated vendor dashboards.</p>
+          <ul class="proj-hl"><li>Multi-vendor table and ticket booking</li><li>Geo-based event discovery</li><li>Integrated vendor dashboards</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/sajilni.png" alt="Sajilni" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Events · Registration</div><div class="proj-title">Sajilni</div>
+          <p class="proj-desc">An event registration and management platform streamlining how organizers create events and attendees discover and register — all in one seamless digital workflow.</p>
+          <ul class="proj-hl"><li>Event creation and management</li><li>Attendee registration system</li><li>Intuitive organizer dashboard</li></ul>
+          <a href="https://www.sajilni.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/action-for-society.webp" alt="Action for Society" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Social Impact · Networking</div><div class="proj-title">Action for Society</div>
+          <p class="proj-desc">A social networking platform built to empower people and change society for the better — connecting communities around shared causes and collective action.</p>
+          <ul class="proj-hl"><li>Community empowerment network</li><li>Cause-based user groups</li><li>Impact-driven platform design</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/snikpic.webp" alt="Snikpic" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">B2B · Influencer Marketing</div><div class="proj-title">Snikpic</div>
+          <p class="proj-desc">A virtual meeting spot for brands and influencers — enabling lead generation, smart matchmaking, and B2B collaboration in the digital ecosystem.</p>
+          <ul class="proj-hl"><li>Brand-influencer matchmaking</li><li>Lead generation and campaign tools</li><li>B2B digital networking platform</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/watch-our-own.png" alt="Watch Our Own" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Media · Streaming</div><div class="proj-title">Watch Our Own</div>
+          <p class="proj-desc">A content streaming and media discovery platform connecting audiences with independent and diverse creators through an intuitive, modern viewing experience.</p>
+          <ul class="proj-hl"><li>Streaming and media platform</li><li>Content creator ecosystem</li><li>Modern, responsive viewing UI</li></ul>
+          <a href="https://www.watchourown.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+    </div>
+
+    <!-- ══ WEB & ENTERPRISE ══ -->
+    <div class="sec-divider reveal" data-section="enterprise">
+      <span class="section-label">Web &amp; Enterprise</span>
+      <h2>Enterprise platforms &amp; web solutions</h2>
+      <p>Real estate, consulting, sustainability, startups, and enterprise SaaS — professional platforms built to last.</p>
+    </div>
+    <div class="proj-grid" data-section="enterprise">
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/reiltics.png" alt="Reiltics" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Real Estate · Analytics</div><div class="proj-title">Reiltics</div>
+          <p class="proj-desc">A real estate analytics platform helping investors identify profitable property opportunities through data-driven insights and market analysis tools.</p>
+          <ul class="proj-hl"><li>Real estate market analytics</li><li>Location-based investment insights</li><li>Investor-friendly dashboard</li></ul>
+          <a href="https://www.reilitics.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/yahuda.webp" alt="Yahuda" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Real Estate · Marketplace</div><div class="proj-title">Yahuda</div>
+          <p class="proj-desc">A real estate listings marketplace designed as the 360-degree solution for all property needs — from search to purchase, rental, and property management.</p>
+          <ul class="proj-hl"><li>Full-cycle real estate marketplace</li><li>Property search, listing, management</li><li>360-degree property solutions</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/esg-roadmap.png" alt="ESG Roadmap" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Sustainability · SaaS</div><div class="proj-title">ESG Roadmap</div>
+          <p class="proj-desc">A sustainability SaaS platform helping businesses plan, track, and communicate their ESG goals with clarity, compliance-ready reporting, and clean data visualization.</p>
+          <ul class="proj-hl"><li>ESG planning and tracking platform</li><li>Compliance-ready reporting tools</li><li>Clean data visualization</li></ul>
+          <a href="https://esgroadmap.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/tech-consultivo.png" alt="Tech Consultivo" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Technology · Consulting</div><div class="proj-title">Tech Consultivo</div>
+          <p class="proj-desc">A technology consulting firm website communicating expertise, services, and value to enterprise clients — professional, conversion-focused, and built for authority.</p>
+          <ul class="proj-hl"><li>Enterprise consulting website</li><li>Services and expertise showcase</li><li>Professional, conversion-focused layout</li></ul>
+          <a href="https://www.techconsultivo.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/wisentic.webp" alt="Wisentic" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Insurance · Enterprise SaaS</div><div class="proj-title">Wisentic</div>
+          <p class="proj-desc">An insurance process management SaaS streamlining administrative workflows, document management, and compliance with role-based access control.</p>
+          <ul class="proj-hl"><li>Insurance admin process automation</li><li>Document and workflow management</li><li>Role-based access and compliance</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/gamified-e-learning.webp" alt="Gamified E-learning" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">EdTech · Enterprise SaaS</div><div class="proj-title">Gamified E-learning</div>
+          <p class="proj-desc">An enterprise learning platform for digitized organizations — delivering gamified, centralized learning software that boosts knowledge retention for today's modern learners.</p>
+          <ul class="proj-hl"><li>Gamified learning modules and tracking</li><li>Centralized content management</li><li>Engaging UX for modern learners</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/aao-sulah-karen.webp" alt="Aao Sulah Karen" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">NGO · Case Management</div><div class="proj-title">Aao Sulah Karen</div>
+          <p class="proj-desc">A nonprofit case management system ("let's reconcile") — built for an NGO to manage applications, track cases, and support community dispute resolution at scale.</p>
+          <ul class="proj-hl"><li>NGO case and application management</li><li>Dispute resolution workflows</li><li>Role-based access for nonprofit teams</li></ul>
+          <span class="proj-link" style="color:var(--muted);pointer-events:none;cursor:default">Custom Platform <i class="fas fa-lock" style="font-size:.65rem"></i></span></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/paragon-oak.png" alt="Paragon Oak" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Architecture · Construction</div><div class="proj-title">Paragon Oak</div>
+          <p class="proj-desc">A construction and architecture website for handcrafted oak-framed buildings — stunning project galleries, detailed services, and a high-end brand presence.</p>
+          <ul class="proj-hl"><li>Architecture and project showcase</li><li>Elegant portfolio-style layout</li><li>Optimised for performance</li></ul>
+          <a href="https://www.paragonoak.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/dravis-studio.png" alt="Dravis Studio" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Creative · Agency</div><div class="proj-title">Dravis Studio</div>
+          <p class="proj-desc">A creative agency portfolio website with a bold visual identity — showcasing design and production work through an immersive, performance-optimized digital experience.</p>
+          <ul class="proj-hl"><li>Creative agency portfolio</li><li>Bold visual identity design</li><li>Performance-optimized experience</li></ul>
+          <a href="https://dravisstudio.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/pak-saudi-startup-hub.png" alt="Pak-Saudi Startup Hub" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Startup · Ecosystem</div><div class="proj-title">Pak-Saudi Startup Hub</div>
+          <p class="proj-desc">A bilateral startup ecosystem platform connecting Pakistani and Saudi entrepreneurs, investors, and innovation hubs to foster cross-border collaboration and venture growth.</p>
+          <ul class="proj-hl"><li>Startup ecosystem platform</li><li>Cross-border collaboration tools</li><li>Investor and founder network</li></ul>
+          <a href="https://paksaudihub.com/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/sultan-impex.png" alt="Sultan Impex" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Import / Export · B2B</div><div class="proj-title">Sultan Impex</div>
+          <p class="proj-desc">A professional import and export business website establishing a strong B2B digital presence — clearly communicating product categories, services, and global trade capabilities.</p>
+          <ul class="proj-hl"><li>B2B trade platform website</li><li>Product and service showcase</li><li>Professional global brand presence</li></ul>
+          <a href="https://sultanimpex.pk/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d2">
+        <img class="proj-img" src="/images/portfolio/parwaz.png" alt="Parwaz" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Social Impact · Platform</div><div class="proj-title">Parwaz</div>
+          <p class="proj-desc">A dynamic platform showcasing initiatives and services for social and economic development — providing information, resources, and digital solutions for community growth.</p>
+          <ul class="proj-hl"><li>Social impact platform</li><li>Clean, responsive website design</li><li>User-friendly content management</li></ul>
+          <a href="https://parwaaz.com.pk/" target="_blank" rel="noopener" class="proj-link">Visit live site <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal">
+        <img class="proj-img" src="/images/portfolio/speedo-meter.png" alt="Speedo Meter" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Utilities · GPS · Mobile</div><div class="proj-title">Speedo Meter</div>
+          <p class="proj-desc">A precision GPS HUD app projecting speed onto the windshield, tracking top speed and distance, and keeping a digital trip log with high-accuracy sensors.</p>
+          <ul class="proj-hl"><li>Windshield HUD speed projection</li><li>GPS top speed and distance tracking</li><li>Digital trip log with sensors</li></ul>
+          <a href="https://play.google.com/store/apps/details?id=com.valueapps.utilities.speedometer" target="_blank" rel="noopener" class="proj-link">View on Play Store <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+      <div class="proj-card reveal reveal-d1">
+        <img class="proj-img" src="/images/portfolio/screen-mirroring.png" alt="Screen Mirroring" loading="lazy">
+        <div class="proj-body"><div class="proj-tag">Entertainment · Streaming · Mobile</div><div class="proj-title">Screen Mirroring</div>
+          <p class="proj-desc">A zero-lag screen mirroring app casting in full 1080p or 4K, capturing both game audio and microphone input — the ultimate mobile gaming stream companion.</p>
+          <ul class="proj-hl"><li>Zero-lag real-time screen mirroring</li><li>1080p and 4K cast support</li><li>Game audio and mic capture</li></ul>
+          <a href="https://play.google.com/store/apps/details?id=screen.mirroring.screenmirroring" target="_blank" rel="noopener" class="proj-link">View on Play Store <i class="fas fa-arrow-right" style="font-size:.65rem"></i></a></div>
+      </div>
+    </div>
+
+    <!-- OUTREACH STRIP -->
+    <div class="outreach-strip reveal">
+      <div>
+        <h2>Seen enough? Let's talk about <em>your project</em></h2>
+        <p>Every project on this page started with a conversation. Tell us what you're building — we respond the same day with honest thoughts, no obligations.</p>
+      </div>
+      <div class="outreach-btns">
+        <a href="/contact/" class="btn btn-lime">Start a conversation <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+        <a href="/services/" class="btn btn-outline">View our services</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><img src="/images/logo.jpg" alt="FiveNodes" style="width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</div>
+        <p>Purpose-built software engineering for growing companies. Delivered across healthcare, logistics, edtech, and more — since 2021.</p>
+        <div class="f-social">
+          <a href="https://www.linkedin.com/company/5-nodes/" class="f-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61590206948945" class="f-social-btn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/five.nodes/" class="f-social-btn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links">
+        <li><a href="/services/saas-product-engineering/">SaaS Engineering</a></li>
+        <li><a href="/services/cloud-devops/">Cloud &amp; DevOps</a></li>
+        <li><a href="/services/api-integration/">API Integration</a></li>
+        <li><a href="/services/ui-ux-design/">UI/UX Design</a></li>
+        <li><a href="/services/data-analytics/">Data Engineering</a></li>
+        <li><a href="/services/maintenance-scaling/">Maintenance</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Industries</h4><ul class="footer-links">
+        <li><a href="/industries/healthcare/">Healthcare</a></li><li><a href="/industries/edtech/">EdTech</a></li>
+        <li><a href="/industries/logistics/">Logistics</a></li><li><a href="/industries/real-estate/">Real Estate</a></li>
+        <li><a href="/industries/hr-workforce/">HR Tech</a></li><li><a href="/industries/retail-ecommerce/">Retail</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links">
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul class="footer-links">
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li><a href="/legal/terms/">Terms of Service</a></li>
+        <li><a href="/legal/cookies/">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bot"><p>2026 FiveNodes. All rights reserved.</p>
+      <div class="footer-bot-links"><a href="/legal/privacy/">Privacy</a><a href="/legal/terms/">Terms</a><a href="/legal/cookies/">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}lerpCursor();
+document.querySelectorAll('a,button,.proj-card,.app-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+(function(){const c=document.getElementById('bg-canvas');if(!c)return;const ctx=c.getContext('2d',{alpha:true});let W,H,pts=[],raf,lastT=0;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}resize();window.addEventListener('resize',()=>{resize();init()},{passive:true});
+function init(){pts=[];const n=Math.min(Math.floor((W*H)/28000),55);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.25,vy:(Math.random()-.5)*0.25,r:Math.random()*1.2+0.4});}init();
+let mouseX=W/2,mouseY=H/2;window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY},{passive:true});
+function draw(t){raf=requestAnimationFrame(draw);if(t-lastT<20)return;lastT=t;
+ctx.clearRect(0,0,W,H);
+for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=dx*dx+dy*dy;if(d<9000){const a=(1-Math.sqrt(d)/95)*0.18;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,241,53,${a})`;ctx.lineWidth=0.4;ctx.stroke();}}}
+for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,241,53,0.35)';ctx.fill();}
+for(const p of pts){const dx=mouseX-p.x,dy=mouseY-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){p.vx+=dx/d*0.008;p.vy+=dy/d*0.008;}p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}}
+draw(0);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);}else{draw(0);}});
+})();
+function buildLogo(canvas,size,speed){if(!canvas)return;const ctx=canvas.getContext('2d');canvas.width=size;canvas.height=size;let rot=0;
+const nodes=[{x:.6,y:-.7,z:.2},{x:.9,y:0,z:-.3},{x:.55,y:.75,z:.1},{x:-.55,y:.75,z:.1},{x:-.9,y:0,z:-.3},{x:0,y:-.25,z:.8},{x:.4,y:.2,z:-.7},{x:-.4,y:.2,z:-.7}];
+const edges=[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5],[0,6],[1,6],[2,7],[3,7],[4,6],[5,6],[5,7],[6,7]];
+function proj(x,y,z,ry){const cY=Math.cos(ry),sY=Math.sin(ry);const x1=x*cY+z*sY,z1=-x*sY+z*cY;const cX=Math.cos(.3),sX=Math.sin(.3);const y1=y*cX-z1*sX,z2=y*sX+z1*cX;const sc=2.5/(2.5+z2),r=size*.38;return{px:size/2+x1*r*sc,py:size/2+y1*r*sc,z:z2,sc};}
+function draw(){ctx.clearRect(0,0,size,size);rot+=speed;const p=nodes.map(n=>proj(n.x,n.y,n.z,rot));
+const se=[...edges].sort((a,b)=>(p[a[0]].z+p[a[1]].z)/2-(p[b[0]].z+p[b[1]].z)/2);
+for(const[i,j]of se){const a=p[i],b=p[j];const alpha=Math.max(0,(0.8+(a.z+b.z)/2*0.4)*0.55);ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);ctx.strokeStyle=`rgba(200,241,53,${alpha})`;ctx.lineWidth=.8;ctx.stroke();}
+for(const pt of p){const zN=(pt.z+1)/2,r=4.5*pt.sc*(.5+zN*.7);ctx.beginPath();ctx.arc(pt.px,pt.py,r,0,Math.PI*2);ctx.fillStyle=`rgba(200,241,53,${.6+zN*.4})`;ctx.fill();}requestAnimationFrame(draw);}draw();}
+buildLogo(document.getElementById('logo-canvas-nav'),68,.008);
+buildLogo(document.getElementById('logo-canvas-footer'),56,.01);
+const nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+document.addEventListener('click',e=>{if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+document.querySelectorAll('.btn').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.2}px)`;});btn.addEventListener('mouseleave',()=>btn.style.transform='');});
+
+// ── Category Filter ──
+(function(){
+  var btns=document.querySelectorAll('.filter-btn');
+  var sections=document.querySelectorAll('[data-section]');
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btns.forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      var filter=btn.dataset.filter;
+      sections.forEach(function(el){
+        if(filter==='all'||el.dataset.section===filter){
+          el.style.display='';
+          el.querySelectorAll('.reveal:not(.vis)').forEach(function(r){obs.observe(r);});
+        }else{
+          el.style.display='none';
+        }
+      });
+      // scroll to first visible section
+      if(filter!=='all'){
+        var first=document.querySelector('[data-section="'+filter+'"]');
+        if(first){setTimeout(function(){first.scrollIntoView({behavior:'smooth',block:'start'});},50);}
+      }
+    });
+  });
+  // cursor hover on filter buttons
+  btns.forEach(function(el){el.addEventListener('mouseenter',function(){document.body.classList.add('cursor-hover');});el.addEventListener('mouseleave',function(){document.body.classList.remove('cursor-hover');});});
+})();
+
+</script>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0D0F1C;border-top:1px solid #1E2035;padding:1rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:'Inter',sans-serif;font-size:.85rem;color:#8B8FA8">
+  <span>We use cookies to improve your experience. <a href="/legal/cookies/" style="color:#C8F135;text-decoration:none">Learn more</a></span>
+  <div style="display:flex;gap:.75rem">
+    <button onclick="dismissCookie(false)" style="background:transparent;border:1px solid #1E2035;color:#8B8FA8;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem">Decline</button>
+    <button onclick="dismissCookie(true)" style="background:#C8F135;border:none;color:#05060E;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem">Accept</button>
+  </div>
+</div>
+<!-- WHATSAPP BUTTON -->
+<script>
+(function(){
+  var b=document.getElementById('cookie-banner');
+  if(b&&!localStorage.getItem('fn_cookie_choice')){b.style.display='flex'}
+})();
+function dismissCookie(accepted){
+  localStorage.setItem('fn_cookie_choice',accepted?'accepted':'declined');
+  var b=document.getElementById('cookie-banner');
+  if(b)b.style.display='none';
+}
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body></html>

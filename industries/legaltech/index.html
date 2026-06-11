@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LegalTech | FiveNodes</title>
+<meta name="description" content="Contract lifecycle management, e-signature, matter management, and document automation for law firms and in-house legal teams.">
+<link rel="canonical" href="https://5ivenodes.com/industries/legaltech.html">
+<meta name="theme-color" content="#05060E">
+<meta property="og:title" content="LegalTech | FiveNodes"><meta property="og:description" content="Contract lifecycle management, e-signature, matter management, and document automation for law firms and in-house legal teams.">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--bg2:#090B16;--card:#0D0F1C;--card2:#11142B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--dim:#3A394A;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);mix-blend-mode:difference}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:all 0.12s ease}
+body.cursor-hover #cursor{width:20px;height:20px}
+body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:600}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
+.nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
+.logo-mark{width:34px;height:34px;position:relative;flex-shrink:0}
+.logo-mark canvas{position:absolute;inset:0}
+.nav-links{display:flex;align-items:center}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover{color:var(--text)}
+.nav-dropdown{position:relative}
+.dd-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#0D0F1C;border:1px solid var(--border2);border-radius:14px;padding:8px;min-width:280px;opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 32px 80px rgba(0,0,0,0.6);pointer-events:none}
+.nav-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:var(--muted);font-size:.875rem;transition:all .15s;cursor:none}
+.dd-item:hover{background:rgba(200,241,53,0.06);color:var(--text)}
+.dd-item strong{color:var(--text);font-weight:500;font-size:.8125rem;display:block}
+.dd-item small{color:var(--dim);font-size:.75rem}
+.dd-icon{width:30px;height:30px;border-radius:7px;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:.7rem;flex-shrink:0}
+.dd-2col{min-width:340px;display:grid;grid-template-columns:1fr 1fr}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:96px 48px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-link{padding:14px 0;font-family:var(--fh);font-size:1.1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
+.mob-link:hover{color:var(--text)}
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+footer{background:#030408;border-top:1px solid var(--border);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:18px}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,0.25);line-height:1.7;max-width:280px;margin-bottom:24px}
+.f-social{display:flex;gap:10px}
+.f-social-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:.875rem;transition:all .2s;cursor:none}
+.f-social-btn:hover{border-color:var(--border2);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:20px}
+.footer-links li{margin-bottom:12px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,0.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bot p,.footer-bot a{font-size:.8rem;color:rgba(255,255,255,0.18)}
+.footer-bot-links{display:flex;gap:24px}
+.footer-bot-links a:hover{color:rgba(255,255,255,0.4)}
+.page-hero{padding:160px 0 100px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(200,241,53,0.04) 0%,transparent 70%);pointer-events:none}
+.page-hero-inner{position:relative;z-index:2}
+.breadcrumb{display:flex;align-items:center;gap:10px;font-size:.75rem;color:var(--dim);margin-bottom:24px;font-family:'Courier New',monospace}
+.breadcrumb a{color:var(--dim);transition:color .2s}.breadcrumb a:hover{color:var(--lime)}
+.page-h1{font-family:var(--fh);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05;margin-bottom:20px}
+.page-h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.45)}
+.page-desc{font-size:1.125rem;color:var(--muted);max-width:580px;line-height:1.75;font-weight:300;margin-bottom:36px}
+.tag-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(200,241,53,0.07);border:1px solid rgba(200,241,53,0.15);border-radius:100px;padding:6px 16px;font-size:.75rem;font-weight:600;color:var(--lime);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+.tag-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:tdot 2s ease-in-out infinite}
+@keyframes tdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.p-section{padding:100px 0}
+.p-section+.p-section{border-top:1px solid var(--border)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sec-h2{font-family:var(--fh);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05;margin-bottom:16px}
+.sec-h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.4)}
+.sec-p{font-size:1rem;color:var(--muted);line-height:1.75;font-weight:300}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px;transition:all .25s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.card:hover{background:var(--card2);border-color:var(--border2)}
+.card:hover::before{transform:scaleX(1)}
+.card h3{font-family:var(--fh);font-size:1rem;font-weight:600;color:#fff;letter-spacing:-.02em;margin-bottom:10px}
+.card p{font-size:.875rem;color:var(--muted);line-height:1.7}
+.card-n{font-size:.7rem;font-family:'Courier New',monospace;color:var(--dim);letter-spacing:.06em;margin-bottom:20px}
+.list-clean{display:flex;flex-direction:column}
+.list-item{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}
+.list-item:last-child{border-bottom:none}
+.list-item-n{font-size:.7rem;font-family:'Courier New',monospace;color:var(--dim);min-width:24px;padding-top:3px}
+.list-item h3{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:4px}
+.list-item p{font-size:.875rem;color:var(--muted);line-height:1.65}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden;border:1px solid var(--border);margin:60px 0}
+.stat-box{background:var(--card);padding:32px}
+.stat-num{font-family:var(--fh);font-size:2.5rem;font-weight:700;letter-spacing:-.05em;color:#fff;line-height:1}
+.stat-num span{color:var(--lime)}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:6px}
+.stack-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.stack-tag{font-size:.75rem;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:'Courier New',monospace;transition:all .2s}
+.stack-tag:hover{border-color:rgba(200,241,53,0.3);color:rgba(200,241,53,0.7)}
+.cta-band{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:80px;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,241,53,0.04) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)}
+.cta-band h2{font-family:var(--fh);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:16px}
+.cta-band h2 em{font-style:italic;font-weight:300;color:var(--lime)}
+.cta-band p{font-size:1rem;color:var(--muted);max-width:440px;margin:0 auto 36px;line-height:1.7;font-weight:300}
+.cta-band-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;cursor:none;text-align:left}
+.faq-q h3{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;transition:all .3s;flex-shrink:0}
+.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--lime);color:var(--lime)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{font-size:.9rem;color:var(--muted);line-height:1.75;padding-bottom:22px}
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;padding-bottom:36px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-28px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--lime);border:2px solid var(--bg)}
+.tl-year{font-size:.7rem;font-family:'Courier New',monospace;color:var(--lime);letter-spacing:.06em;margin-bottom:6px}
+.tl-item h3{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:4px}
+.tl-item p{font-size:.8125rem;color:var(--muted);line-height:1.6}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:20px;overflow:hidden;border:1px solid var(--border);margin-top:60px}
+.value-card{background:var(--card);padding:40px;transition:background .2s}
+.value-card:hover{background:var(--card2)}
+.value-card h3{font-family:var(--fh);font-size:1rem;font-weight:600;color:#fff;margin-bottom:12px}
+.value-card p{font-size:.875rem;color:var(--muted);line-height:1.7}
+.value-bar{width:28px;height:2px;background:rgba(200,241,53,0.35);margin-bottom:20px}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;transition:all .25s}
+.team-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+.team-av{width:72px;height:72px;border-radius:50%;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:1.4rem;font-weight:700;color:var(--lime);margin:0 auto 16px;border:1px solid rgba(200,241,53,0.15)}
+.team-card h3{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:4px}
+.team-role{font-size:.75rem;font-family:'Courier New',monospace;color:var(--lime);letter-spacing:.06em;margin-bottom:12px}
+.team-card p{font-size:.8rem;color:var(--muted);line-height:1.6}
+.legal-layout{display:grid;grid-template-columns:220px 1fr;gap:64px;align-items:start}
+.legal-toc{position:sticky;top:100px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
+.legal-toc h4{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
+.toc-link{display:block;padding:8px 10px;border-radius:6px;font-size:.8125rem;color:var(--muted);transition:all .15s;margin-bottom:2px}
+.toc-link:hover{color:var(--text);background:rgba(200,241,53,0.06)}
+.legal-content h2{font-family:var(--fh);font-size:1.4rem;font-weight:700;color:#fff;margin:48px 0 14px;padding-bottom:12px;border-bottom:1px solid var(--border);scroll-margin-top:100px}
+.legal-content h2:first-child{margin-top:0}
+.legal-content h3{font-size:.9375rem;font-weight:600;color:#fff;margin:24px 0 8px}
+.legal-content p{font-size:.9375rem;color:var(--muted);line-height:1.8;margin-bottom:14px}
+.legal-content ul{margin:0 0 14px;padding:0}
+.legal-content ul li{font-size:.9375rem;color:var(--muted);line-height:1.7;padding:4px 0 4px 20px;position:relative}
+.legal-content ul li::before{content:'—';position:absolute;left:0;color:var(--dim);font-size:.8rem}
+.legal-content a{color:var(--lime)}
+.legal-hl{background:rgba(200,241,53,0.04);border-left:2px solid rgba(200,241,53,0.3);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
+.legal-hl p{margin:0;font-size:.875rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
+.c-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px;margin-bottom:16px}
+.c-card h3{font-family:var(--fh);font-size:1rem;font-weight:600;color:#fff;margin-bottom:20px}
+.c-method{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.c-method:last-child{border-bottom:none}
+.c-method-icon{width:36px;height:36px;border-radius:9px;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:.8rem;flex-shrink:0}
+.c-method h4{font-size:.68rem;font-family:'Courier New',monospace;letter-spacing:.06em;color:var(--dim);margin-bottom:4px}
+.c-method p,.c-method a{font-size:.9rem;color:var(--text)}
+.c-method a:hover{color:var(--lime)}
+.c-form{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:48px}
+.c-form h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:6px}
+.c-form > p{font-size:.875rem;color:var(--muted);margin-bottom:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;font-family:'Courier New',monospace}
+.fc{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:var(--ff);font-size:.875rem;outline:none;transition:border-color .2s}
+.fc:focus{border-color:rgba(200,241,53,0.4)}
+.fc::placeholder{color:var(--dim)}
+textarea.fc{min-height:130px;resize:vertical}
+.success-msg{display:none;background:rgba(200,241,53,0.06);border:1px solid rgba(200,241,53,0.2);border-radius:10px;padding:18px 20px;color:var(--lime);font-size:.875rem;margin-top:16px;align-items:center;gap:12px}
+.success-msg.show{display:flex}
+.proc-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;padding-top:60px;border-top:1px solid var(--border)}
+.ps{position:relative;padding-left:44px}
+.ps::before{content:attr(data-n);position:absolute;left:0;top:0;font-size:.65rem;font-family:'Courier New',monospace;color:var(--lime);letter-spacing:.06em}
+.ps h3{font-family:var(--fh);font-size:.875rem;font-weight:600;color:#fff;margin-bottom:4px}
+.ps p{font-size:.8rem;color:var(--muted);line-height:1.6}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr;gap:40px}.grid-3{grid-template-columns:1fr 1fr}.legal-layout{grid-template-columns:1fr}.legal-toc{display:none}.contact-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr 1fr}.values-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-grid .footer-brand{grid-column:1/-1}.form-row{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr 1fr}.proc-strip{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta{display:none}.hamburger{display:flex}.cta-band{padding:48px 28px}.footer-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr 1fr}.stat-grid{grid-template-columns:1fr 1fr}}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cursor"></div><div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="wrap">
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="FiveNodes" style="height:44px;width:44px;border-radius:7px;object-fit:cover;flex-shrink:0">FiveNodes
+    </a>
+    <ul class="nav-links" role="list">
+      <li class="nav-dropdown"><a class="nav-link" href="/services/">Services</a>
+        <div class="dd-menu" role="menu">
+          <a href="/services/saas-product-engineering/" class="dd-item"><span class="dd-icon"><i class="fas fa-layer-group"></i></span><div><strong>SaaS Engineering</strong><small>Full-stack platforms</small></div></a>
+          <a href="/services/cloud-devops/" class="dd-item"><span class="dd-icon"><i class="fas fa-cloud"></i></span><div><strong>Cloud &amp; DevOps</strong><small>AWS, GCP, Kubernetes</small></div></a>
+          <a href="/services/api-integration/" class="dd-item"><span class="dd-icon"><i class="fas fa-plug"></i></span><div><strong>API &amp; Integration</strong><small>REST, GraphQL, events</small></div></a>
+          <a href="/services/ui-ux-design/" class="dd-item"><span class="dd-icon"><i class="fas fa-pen-nib"></i></span><div><strong>UI/UX Design</strong><small>Design systems</small></div></a>
+          <a href="/services/data-analytics/" class="dd-item"><span class="dd-icon"><i class="fas fa-chart-line"></i></span><div><strong>Data Engineering</strong><small>Pipelines &amp; BI</small></div></a>
+          <a href="/services/maintenance-scaling/" class="dd-item"><span class="dd-icon"><i class="fas fa-shield-halved"></i></span><div><strong>Maintenance</strong><small>Support &amp; scaling</small></div></a>
+        </div>
+      </li>
+      <li class="nav-dropdown"><a class="nav-link" href="/industries/">Industries</a>
+        <div class="dd-menu dd-2col" role="menu">
+          <a href="/industries/healthcare/" class="dd-item">Healthcare</a><a href="/industries/edtech/" class="dd-item">EdTech</a>
+          <a href="/industries/logistics/" class="dd-item">Logistics</a><a href="/industries/real-estate/" class="dd-item">Real Estate</a>
+          <a href="/industries/hr-workforce/" class="dd-item">HR Tech</a><a href="/industries/retail-ecommerce/" class="dd-item">Retail</a>
+          <a href="/industries/legaltech/" class="dd-item">LegalTech</a><a href="/industries/govtech/" class="dd-item">GovTech</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li><li><a class="nav-link" href="/products/">Products</a></li><li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="/services/saas-product-engineering/" class="mob-link">SaaS Engineering</a>
+  <a href="/services/cloud-devops/" class="mob-link">Cloud &amp; DevOps</a>
+  <a href="/services/api-integration/" class="mob-link">API Integration</a>
+  <a href="/services/ui-ux-design/" class="mob-link">UI/UX Design</a>
+  <a href="/about/" class="mob-link">About</a>
+  <a href="/contact/" class="mob-link">Contact</a>
+  <a href="/contact/" class="btn btn-lime" style="margin-top:28px">Start a project</a>
+</div>
+<main><section class="page-hero">
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb"><a href="/">Home</a> <span style="opacity:.3">/</span> <a href="/industries/">Industries</a> <span style="opacity:.3">/</span> <span>LegalTech</span></nav>
+    <div class="tag-pill"><span class="tag-dot"></span>Industry Expertise</div>
+    <h1 class="page-h1">Legal<em>Tech</em></h1>
+    <p class="page-desc">Contract lifecycle management, e-signature, matter management, and document automation for law firms and in-house legal teams.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap"><a href="/contact/" class="btn btn-lime">Discuss your project <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a><a href="/industries/" class="btn btn-outline">All industries</a></div>
+  </div>
+</section>
+<section class="p-section">
+  <div class="container">
+    <div class="grid-2">
+      <div class="reveal">
+        <span class="section-label">The challenge</span>
+        <h2 class="sec-h2">What makes this <em>hard</em></h2>
+        <p class="sec-p" style="margin-top:16px">Every industry has its own engineering traps. Here are the ones that catch most teams building in this space.</p>
+      </div>
+      <div class="list-clean"><div class="list-item reveal"><div class="list-item-n">01</div><div><h3>Contracts live in email threads and shared drives</h3><p>No version control, no reminders, no visibility into what has been signed versus what is in negotiation.</p></div></div><div class="list-item reveal"><div class="list-item-n">02</div><div><h3>Manual document assembly is slow and error-prone</h3><p>Template-based contract generation requires specialised tooling to do reliably at scale.</p></div></div><div class="list-item reveal"><div class="list-item-n">03</div><div><h3>Audit trails are a compliance requirement</h3><p>Regulatory and litigation requirements mean every document action needs to be logged immutably.</p></div></div><div class="list-item reveal"><div class="list-item-n">04</div><div><h3>Matter management is often just a spreadsheet</h3><p>Without proper tooling, matter tracking, billing, and client communication are fragmented across disconnected tools.</p></div></div></div>
+    </div>
+  </div>
+</section>
+<section class="p-section">
+  <div class="container">
+    <div style="margin-bottom:60px" class="reveal"><span class="section-label">What we deliver</span><h2 class="sec-h2">Our <em>capabilities</em> in this space</h2></div>
+    <div class="grid-3"><div class="card reveal reveal-d0"><div class="card-n">01</div><h3>Contract lifecycle management</h3><p>End-to-end CLM with contract requests, drafting, negotiation tracking, approval workflows, e-signature, and renewal alerts.</p></div><div class="card reveal reveal-d1"><div class="card-n">02</div><h3>Document automation</h3><p>Template-based contract generation with conditional logic, clause libraries, and integration with CRM and ERP systems.</p></div><div class="card reveal reveal-d2"><div class="card-n">03</div><h3>E-signature integration</h3><p>DocuSign and Adobe Sign integrations, or custom e-signature implementations with full audit trails and certificate generation.</p></div><div class="card reveal reveal-d0"><div class="card-n">04</div><h3>Immutable audit logging</h3><p>Append-only audit logs with cryptographic verification for all document actions, meeting regulatory and litigation hold requirements.</p></div><div class="card reveal reveal-d1"><div class="card-n">05</div><h3>Matter management</h3><p>Case tracking, document management, billing integration, and client communication portals for law firms and in-house teams.</p></div><div class="card reveal reveal-d2"><div class="card-n">06</div><h3>AI contract analysis</h3><p>LLM-powered clause extraction, obligation identification, and risk flagging for contract review workflows.</p></div></div>
+  </div>
+</section>
+<section class="p-section">
+  <div class="container">
+    <div class="grid-2 reveal">
+      <div>
+        <span class="section-label">Case study</span>
+        <h2 class="sec-h2">CLM platform for a Fortune 500 legal team</h2>
+        <p class="sec-p" style="margin-top:16px">Replaced a manual contract process with an automated CLM platform that reduced average contract cycle time from 23 days to 4.</p>
+        <a href="/contact/" class="btn btn-lime" style="margin-top:28px">Discuss your project <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center">
+        <div style="text-align:center;padding:60px 40px;background:var(--card);border:1px solid var(--border);border-radius:20px;width:100%">
+          <div style="font-family:var(--fh);font-size:3rem;font-weight:700;letter-spacing:-.05em;color:#fff;line-height:1.1">23 → 4</div>
+          <div style="font-size:.8rem;color:var(--muted);margin-top:8px">day contract cycle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="p-section">
+  <div class="container reveal">
+    <span class="section-label">Technology</span>
+    <h2 class="sec-h2" style="margin-bottom:8px">Stack we use in <em>this vertical</em></h2>
+    <div class="stack-tags"><span class="stack-tag">React</span><span class="stack-tag">Node.js</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">AWS</span><span class="stack-tag">DocuSign</span><span class="stack-tag">OpenAI</span><span class="stack-tag">Elasticsearch</span><span class="stack-tag">Redis</span><span class="stack-tag">Snowflake</span><span class="stack-tag">Temporal</span></div>
+  </div>
+</section>
+<section class="p-section">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Ready to build in <em>this space?</em></h2><p>We respond within four hours with honest thoughts on your architecture.</p>
+      <div class="cta-band-btns">
+        <a href="/contact/" class="btn btn-lime">Start a project <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+        <a href="/services/" class="btn btn-outline">Our services</a>
+      </div>
+    </div>
+  </div>
+</section></main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><img src="/images/logo.jpg" alt="FiveNodes" style="width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</div>
+        <p>Purpose-built software engineering for growing companies. Delivered across healthcare, logistics, edtech, and more — since 2021.</p>
+        <div class="f-social">
+          <a href="https://www.linkedin.com/company/5-nodes/" class="f-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61590206948945" class="f-social-btn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/five.nodes/" class="f-social-btn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links">
+        <li><a href="/services/saas-product-engineering/">SaaS Engineering</a></li>
+        <li><a href="/services/cloud-devops/">Cloud &amp; DevOps</a></li>
+        <li><a href="/services/api-integration/">API Integration</a></li>
+        <li><a href="/services/ui-ux-design/">UI/UX Design</a></li>
+        <li><a href="/services/data-analytics/">Data Engineering</a></li>
+        <li><a href="/services/maintenance-scaling/">Maintenance</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Industries</h4><ul class="footer-links">
+        <li><a href="/industries/healthcare/">Healthcare</a></li><li><a href="/industries/edtech/">EdTech</a></li>
+        <li><a href="/industries/logistics/">Logistics</a></li><li><a href="/industries/real-estate/">Real Estate</a></li>
+        <li><a href="/industries/hr-workforce/">HR Tech</a></li><li><a href="/industries/retail-ecommerce/">Retail</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links">
+        <li><a href="/about/">About Us</a></li><li><a href="#">Case Studies</a></li>
+        <li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul class="footer-links">
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li><a href="/legal/terms/">Terms of Service</a></li>
+        <li><a href="/legal/cookies/">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bot"><p>2026 FiveNodes. All rights reserved.</p>
+      <div class="footer-bot-links"><a href="/legal/privacy/">Privacy</a><a href="/legal/terms/">Terms</a><a href="/legal/cookies/">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+</div>
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}lerpCursor();
+document.querySelectorAll('a,button,.card,.faq-q,.team-card,.value-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+(function(){const c=document.getElementById('bg-canvas');if(!c)return;const ctx=c.getContext('2d');let W,H,pts=[];
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}resize();window.addEventListener('resize',()=>{resize();init()});
+function init(){pts=[];const n=Math.floor((W*H)/14000);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.3,vy:(Math.random()-.5)*0.3,r:Math.random()*1.5+0.5});}init();
+let mouseX=W/2,mouseY=H/2;window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});
+function draw(){ctx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<140){const a=(1-d/140)*0.35;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,241,53,${a*0.3})`;ctx.lineWidth=0.5;ctx.stroke();}}}for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,241,53,0.4)';ctx.fill();}for(const p of pts){const dx=mouseX-p.x,dy=mouseY-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<200){p.vx+=dx/d*0.01;p.vy+=dy/d*0.01;}p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}requestAnimationFrame(draw);}draw();})();
+function buildLogo(canvas,size,speed){if(!canvas)return;const ctx=canvas.getContext('2d');canvas.width=size;canvas.height=size;let rot=0;
+const nodes=[{x:.6,y:-.7,z:.2},{x:.9,y:0,z:-.3},{x:.55,y:.75,z:.1},{x:-.55,y:.75,z:.1},{x:-.9,y:0,z:-.3},{x:0,y:-.25,z:.8},{x:.4,y:.2,z:-.7},{x:-.4,y:.2,z:-.7}];
+const edges=[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5],[0,6],[1,6],[2,7],[3,7],[4,6],[5,6],[5,7],[6,7]];
+function proj(x,y,z,ry){const cY=Math.cos(ry),sY=Math.sin(ry);const x1=x*cY+z*sY,z1=-x*sY+z*cY;const cX=Math.cos(.3),sX=Math.sin(.3);const y1=y*cX-z1*sX,z2=y*sX+z1*cX;const sc=2.5/(2.5+z2),r=size*.38;return{px:size/2+x1*r*sc,py:size/2+y1*r*sc,z:z2,sc};}
+function draw(){ctx.clearRect(0,0,size,size);rot+=speed;const p=nodes.map(n=>proj(n.x,n.y,n.z,rot));
+const se=[...edges].sort((a,b)=>(p[a[0]].z+p[a[1]].z)/2-(p[b[0]].z+p[b[1]].z)/2);
+for(const[i,j]of se){const a=p[i],b=p[j];const alpha=Math.max(0,(0.8+(a.z+b.z)/2*0.4)*0.55);ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);ctx.strokeStyle=`rgba(200,241,53,${alpha})`;ctx.lineWidth=.8;ctx.stroke();}
+for(const pt of p){const zN=(pt.z+1)/2,r=4.5*pt.sc*(.5+zN*.7);ctx.beginPath();ctx.arc(pt.px,pt.py,r,0,Math.PI*2);ctx.fillStyle=`rgba(200,241,53,${.6+zN*.4})`;ctx.fill();}requestAnimationFrame(draw);}draw();}
+buildLogo(document.getElementById('logo-canvas-nav'),68,.008);
+buildLogo(document.getElementById('logo-canvas-footer'),56,.01);
+const nav=document.getElementById('mainNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+document.addEventListener('click',e=>{if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');});if(!open)item.classList.add('open');});});
+document.querySelectorAll('.btn').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.2}px)`;});btn.addEventListener('mouseleave',()=>btn.style.transform='');});
+</script>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0D0F1C;border-top:1px solid #1E2035;padding:1rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:'Inter',sans-serif;font-size:.85rem;color:#8B8FA8">
+  <span>We use cookies to improve your experience. <a href="/legal/cookies/" style="color:#C8F135;text-decoration:none">Learn more</a></span>
+  <div style="display:flex;gap:.75rem">
+    <button onclick="dismissCookie(false)" style="background:transparent;border:1px solid #1E2035;color:#8B8FA8;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem">Decline</button>
+    <button onclick="dismissCookie(true)" style="background:#C8F135;border:none;color:#05060E;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem">Accept</button>
+  </div>
+</div>
+<!-- WHATSAPP BUTTON -->
+<script>
+(function(){
+  var b=document.getElementById('cookie-banner');
+  if(b&&!localStorage.getItem('fn_cookie_choice')){b.style.display='flex'}
+})();
+function dismissCookie(accepted){
+  localStorage.setItem('fn_cookie_choice',accepted?'accepted':'declined');
+  var b=document.getElementById('cookie-banner');
+  if(b)b.style.display='none';
+}
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body></html>

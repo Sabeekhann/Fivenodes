@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FiveNodes — Enterprise Software Engineering</title>
+<meta name="description" content="FiveNodes engineers enterprise SaaS products from architecture through scale. 20+ projects delivered across healthcare, logistics, edtech, and more.">
+<link rel="canonical" href="https://5ivenodes.com/">
+<meta name="theme-color" content="#05060E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://5ivenodes.com/">
+<meta property="og:title" content="FiveNodes — AI & Enterprise Software Engineering">
+<meta property="og:description" content="We engineer AI-powered SaaS products from architecture through scale. 20+ projects delivered since 2021 in Albuquerque, NM.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FiveNodes — AI & Enterprise Software Engineering">
+<meta name="twitter:description" content="We engineer AI-powered SaaS products from architecture through scale.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--bg2:#030408;--card:#0D0F1C;--card2:#11142B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--dim:#3A394A;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);will-change:transform}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .12s ease,height .12s ease,border-color .12s ease;will-change:transform}
+body.cursor-hover #cursor{width:20px;height:20px}
+body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform;transform:translateZ(0)}
+.wrap{position:relative;z-index:1}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:600}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
+.nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
+.logo-mark{width:34px;height:34px;position:relative;flex-shrink:0}
+.nav-links{display:flex;align-items:center}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover{color:var(--text)}
+.nav-dropdown{position:relative;padding-bottom:20px;margin-bottom:-20px}
+.dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-6px);background:#0D0F1C;border:1px solid var(--border2);border-radius:14px;padding:8px;min-width:280px;opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease,visibility .2s ease;box-shadow:0 32px 80px rgba(0,0,0,0.6);pointer-events:none;padding-top:20px;margin-top:0}
+.dd-menu::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px}
+.nav-dropdown.dd-open .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:var(--muted);font-size:.875rem;transition:all .15s;cursor:none}
+.dd-item:hover{background:rgba(200,241,53,0.06);color:var(--text)}
+.dd-item strong{color:var(--text);font-weight:500;font-size:.8125rem;display:block}
+.dd-item small{color:var(--dim);font-size:.75rem}
+.dd-icon{width:30px;height:30px;border-radius:7px;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:.7rem;flex-shrink:0}
+.dd-2col{min-width:340px;display:grid;grid-template-columns:1fr 1fr}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:96px 48px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-link{padding:14px 0;font-family:var(--fh);font-size:1.1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
+.mob-link:hover{color:var(--text)}
+/* SHARED */
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 60% 40%,rgba(200,241,53,0.05) 0%,transparent 65%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(200,241,53,0.07);border:1px solid rgba(200,241,53,0.15);border-radius:100px;padding:6px 16px;font-size:.75rem;font-weight:600;color:var(--lime);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:hdot 2s ease-in-out infinite}
+@keyframes hdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+#hero-cycle{display:inline;white-space:nowrap;transition:opacity .45s ease,transform .45s cubic-bezier(.4,0,.2,1)}
+#hero-cycle.exit{opacity:0;transform:translateY(-16px)}
+#hero-cycle.enter{opacity:0;transform:translateY(16px);transition:none}
+.hero h1{font-family:var(--fh);font-size:clamp(3rem,6vw,5.5rem);font-weight:800;letter-spacing:-.05em;color:#fff;line-height:1.0;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.4)}
+.hero-body{font-size:1.0625rem;color:var(--muted);line-height:1.8;font-weight:300;max-width:460px;margin-bottom:36px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.hero-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.metric{background:var(--card);padding:24px 20px}
+.metric-num{font-family:var(--fh);font-size:2rem;font-weight:700;letter-spacing:-.05em;color:#fff;line-height:1}
+.metric-num span{color:var(--lime)}
+.metric-label{font-size:.75rem;color:var(--muted);margin-top:4px}
+.hero-visual{display:flex;align-items:center;justify-content:center;position:relative}
+.hero-canvas-wrap{width:420px;height:420px;position:relative;flex-shrink:0}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero-glow{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(200,241,53,0.06) 0%,transparent 65%);pointer-events:none}
+/* TRUSTED BY */
+.trusted-sec{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;position:relative}
+.trusted-label{text-align:center;padding:48px 0 36px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:600}
+.logos-wrap{overflow:hidden;position:relative;padding-bottom:48px}
+.logos-wrap{overflow:hidden;position:relative;padding-bottom:28px}
+.logos-wrap::before,.logos-wrap::after{content:'';position:absolute;top:0;bottom:0;width:160px;z-index:2;pointer-events:none}
+.logos-wrap::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.logos-wrap::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.logos-track{display:flex;gap:120px;animation:mscroll 45s linear infinite;white-space:nowrap;width:max-content;align-items:center}
+.cl-logo{display:inline-flex;align-items:center;justify-content:center;opacity:0.55;transition:opacity .35s;flex-shrink:0;cursor:default}
+.cl-logo:hover{opacity:1}
+.cl-logo img{height:160px;width:auto;max-width:320px;object-fit:contain;filter:grayscale(100%) brightness(3)}
+@keyframes mscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* AI BANNER */
+.ai-banner{background:var(--card);border:1px solid rgba(200,241,53,0.18);border-radius:16px;padding:48px 52px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;margin-bottom:20px;position:relative;overflow:hidden}
+.ai-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--lime),rgba(200,241,53,0.2))}
+.ai-banner::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 90% 50%,rgba(200,241,53,0.04),transparent 70%);pointer-events:none}
+.ai-banner-left{}
+.ai-banner-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(200,241,53,0.08);border:1px solid rgba(200,241,53,0.2);border-radius:100px;padding:5px 14px;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:18px}
+.ai-banner-tag span{width:5px;height:5px;border-radius:50%;background:var(--lime);animation:hdot 2s ease-in-out infinite}
+.ai-banner h3{font-family:var(--fh);font-size:1.6rem;font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:12px;line-height:1.1}
+.ai-banner h3 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.4)}
+.ai-banner > div > p{font-size:.9375rem;color:var(--muted);line-height:1.72;max-width:560px}
+.ai-caps{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.ai-cap{font-size:.72rem;color:rgba(200,241,53,0.6);border:1px solid rgba(200,241,53,0.15);border-radius:5px;padding:4px 12px;font-family:'Courier New',monospace}
+.ai-banner-right{display:flex;flex-direction:column;gap:10px;min-width:180px;position:relative;z-index:1}
+.ai-stat{background:rgba(200,241,53,0.05);border:1px solid rgba(200,241,53,0.12);border-radius:10px;padding:16px 20px}
+.ai-stat-n{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:var(--lime);letter-spacing:-.04em;line-height:1}
+.ai-stat-l{font-size:.7rem;color:var(--muted);margin-top:4px}
+/* SERVICES */
+.services-sec{padding:140px 0}
+.sec-hdr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
+.sec-hdr h2{font-family:var(--fh);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05}
+.sec-hdr h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.sec-hdr > p{font-size:.9375rem;color:var(--muted);line-height:1.78;font-weight:300;max-width:420px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.svc-card{background:var(--card);padding:40px 36px;position:relative;overflow:hidden;transition:background .2s}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.svc-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(200,241,53,0.04),transparent 60%);opacity:0;transition:opacity .3s}
+.svc-card:hover{background:var(--card2)}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-card:hover::after{opacity:1}
+.svc-n{font-size:.65rem;font-family:'Courier New',monospace;letter-spacing:.1em;color:rgba(200,241,53,0.3);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.svc-n::after{content:'';flex:1;height:1px;background:var(--border);max-width:40px}
+.svc-card h3{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff;letter-spacing:-.01em;margin-bottom:10px}
+.svc-card > p{font-size:.85rem;color:var(--muted);line-height:1.72;margin-bottom:24px}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
+.svc-tag{font-size:.65rem;color:rgba(200,241,53,0.4);border:1px solid var(--border);border-radius:5px;padding:3px 10px;font-family:'Courier New',monospace;transition:all .2s}
+.svc-card:hover .svc-tag{border-color:rgba(200,241,53,0.2);color:rgba(200,241,53,0.65)}
+.svc-link{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--lime);display:inline-flex;align-items:center;gap:8px;opacity:.65;transition:gap .2s,opacity .2s}
+.svc-card:hover .svc-link{gap:14px;opacity:1}
+/* INDUSTRIES */
+.ind-sec{padding:0 0 140px}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.ind-card{background:var(--card);padding:28px 24px;transition:background .2s;cursor:none;position:relative;overflow:hidden}
+.ind-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,241,53,0.25),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.ind-card:hover{background:var(--card2)}
+.ind-card:hover::before{transform:scaleX(1)}
+.ind-n{font-size:.6rem;font-family:'Courier New',monospace;letter-spacing:.1em;color:rgba(200,241,53,0.25);margin-bottom:16px}
+.ind-bar{width:24px;height:1.5px;background:rgba(200,241,53,0.25);margin-bottom:14px;border-radius:1px;transition:width .35s,background .35s}
+.ind-card:hover .ind-bar{width:40px;background:var(--lime)}
+.ind-card h3{font-family:var(--fh);font-size:.875rem;font-weight:600;color:#fff;margin-bottom:6px}
+.ind-card p{font-size:.78rem;color:var(--muted);line-height:1.6}
+/* PROCESS */
+.proc-sec{padding:0 0 140px}
+.proc-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.proc-left h2{font-family:var(--fh);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05;margin-bottom:18px}
+.proc-left h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.proc-left > p{font-size:.9375rem;color:var(--muted);line-height:1.78;font-weight:300;margin-bottom:36px}
+.p-steps{display:flex;flex-direction:column}
+.p-step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--border)}
+.p-step:last-child{border-bottom:none}
+.p-step-n{font-size:.65rem;font-family:'Courier New',monospace;letter-spacing:.06em;color:rgba(200,241,53,0.3);min-width:28px;padding-top:3px;transition:color .2s}
+.p-step:hover .p-step-n{color:var(--lime)}
+.p-step h3{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:5px}
+.p-step > div > p{font-size:.84rem;color:var(--muted);line-height:1.65}
+.proc-right{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:8px}
+.p-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .25s}
+.p-card:hover{border-color:var(--border2);background:var(--card2)}
+.p-card-icon{width:40px;height:40px;border-radius:10px;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:.9rem;margin-bottom:16px}
+.p-card h4{font-family:var(--fh);font-size:.875rem;font-weight:600;color:#fff;margin-bottom:6px}
+.p-card p{font-size:.78rem;color:var(--muted);line-height:1.6}
+/* TESTIMONIALS */
+.testi-sec{padding:0 0 140px}
+.testi-hdr{text-align:center;margin-bottom:64px}
+.testi-hdr h2{font-family:var(--fh);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.05}
+.testi-hdr h2 em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:36px;transition:border-color .2s;position:relative;overflow:hidden}
+.testi-card::before{content:'"';position:absolute;top:-10px;left:26px;font-size:8rem;line-height:1;color:rgba(200,241,53,0.04);font-family:Georgia,serif;pointer-events:none}
+.testi-card:hover{border-color:var(--border2)}
+.testi-text{font-size:.9rem;color:rgba(255,255,255,0.55);line-height:1.82;font-weight:300;margin-bottom:28px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border)}
+.testi-av{width:36px;height:36px;border-radius:50%;background:rgba(200,241,53,0.08);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:.65rem;font-weight:700;color:var(--lime);flex-shrink:0}
+.testi-name{font-family:var(--fh);font-size:.875rem;font-weight:600;color:#fff;margin-bottom:2px}
+.testi-role{font-size:.7rem;font-family:'Courier New',monospace;color:var(--muted);letter-spacing:.04em}
+/* CTA */
+.cta-sec{padding:140px 0;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,241,53,0.04) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cta-inner{position:relative;z-index:1}
+.cta-inner h2{font-family:var(--fh);font-size:clamp(2.8rem,6vw,5rem);font-weight:700;letter-spacing:-.05em;color:#fff;line-height:1;margin-bottom:20px}
+.cta-inner h2 em{font-style:italic;font-weight:300;color:var(--lime)}
+.cta-inner > p{font-size:1rem;color:var(--muted);max-width:400px;margin:0 auto 40px;line-height:1.75;font-weight:300}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:18px}
+.footer-brand > p{font-size:.875rem;color:rgba(255,255,255,0.25);line-height:1.7;max-width:280px;margin-bottom:24px}
+.f-social{display:flex;gap:10px}
+.f-social-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:.875rem;transition:all .2s;cursor:none}
+.f-social-btn:hover{border-color:var(--border2);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:20px}
+.footer-links li{margin-bottom:12px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,0.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bot p,.footer-bot a{font-size:.8rem;color:rgba(255,255,255,0.18)}
+.footer-bot-links{display:flex;gap:24px}
+.footer-bot-links a:hover{color:rgba(255,255,255,0.4)}
+/* COMPARISON */
+.cmp-sec{padding:100px 0}
+.cmp-wrap{overflow-x:auto;margin-top:52px;border-radius:16px;border:1px solid var(--border)}
+.cmp-table{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;min-width:640px}
+.cmp-hd{padding:20px 24px;font-size:.75rem;font-weight:700;letter-spacing:.04em;color:var(--muted);background:var(--card);border-bottom:2px solid var(--border);text-transform:uppercase}
+.cmp-hd.hl{background:rgba(200,241,53,0.05);color:var(--lime);border-bottom-color:var(--lime)}
+.cmp-hd .tag{display:inline-block;background:var(--lime);color:#05060E;font-size:.58rem;padding:2px 7px;border-radius:4px;font-weight:700;margin-left:6px;letter-spacing:.06em}
+.cmp-row{display:contents}
+.cmp-cell{padding:14px 24px;border-bottom:1px solid var(--border);font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:8px;background:var(--card)}
+.cmp-cell.label{color:var(--text);font-weight:500;background:rgba(5,6,14,0.6)}
+.cmp-cell.hl{background:rgba(200,241,53,0.025)}
+.cmp-yes{color:var(--lime);font-size:.75rem}
+.cmp-no{color:rgba(255,255,255,0.15);font-size:.75rem}
+.cmp-mid{color:rgba(255,255,255,0.35);font-size:.75rem}
+/* FAQ */
+.faq-sec{padding:100px 0}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:52px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:rgba(200,241,53,0.2)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:none;font-weight:500;font-size:.9rem;color:var(--text);gap:16px;transition:color .2s}
+.faq-q:hover{color:#fff}
+.faq-arrow{color:var(--lime);transition:transform .25s;flex-shrink:0;font-size:.7rem}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:.875rem;color:var(--muted);line-height:1.75;padding:0 24px}
+.faq-item.open .faq-a{max-height:300px;padding:0 24px 20px}
+/* NEWSLETTER */
+.nl-sep{border-top:1px solid var(--border);margin-top:32px;padding-top:28px}
+.nl-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-weight:500}
+.nl-row{display:flex;gap:8px;flex-wrap:wrap;max-width:420px;margin:0 auto}
+.nl-input{flex:1;min-width:180px;background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:8px;padding:11px 16px;font-size:.875rem;color:var(--text);font-family:var(--ff);outline:none;transition:border-color .2s;cursor:text}
+.nl-input:focus{border-color:rgba(200,241,53,0.4)}
+.nl-input::placeholder{color:var(--dim)}
+.nl-btn{background:rgba(200,241,53,0.1);border:1px solid rgba(200,241,53,0.25);color:var(--lime);border-radius:8px;padding:11px 18px;font-size:.8125rem;font-weight:600;cursor:none;transition:all .2s;white-space:nowrap}
+.nl-btn:hover{background:rgba(200,241,53,0.18)}
+.nl-ok{display:none;font-size:.8125rem;color:var(--lime);margin-top:8px}
+/* EXIT POPUP */
+.exit-popup{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(5,6,14,0.88);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.exit-popup.show{opacity:1;visibility:visible}
+.exit-card{background:#0D0F1C;border:1px solid rgba(200,241,53,0.15);border-radius:20px;padding:48px 44px;max-width:460px;width:90%;position:relative;text-align:center;transform:translateY(16px);transition:transform .35s}
+.exit-popup.show .exit-card{transform:translateY(0)}
+.exit-close{position:absolute;top:14px;right:14px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.05);color:var(--muted);cursor:none;border:none;font-size:.7rem;transition:all .2s}
+.exit-close:hover{background:rgba(255,255,255,0.1);color:#fff}
+.exit-tag{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:16px}
+.exit-card h3{font-family:var(--fh);font-size:1.5rem;font-weight:700;letter-spacing:-.03em;color:#fff;margin-bottom:12px;line-height:1.15}
+.exit-card p{font-size:.875rem;color:var(--muted);line-height:1.7;margin-bottom:28px}
+.exit-btns{display:flex;flex-direction:column;gap:10px;align-items:center}
+.exit-dismiss{font-size:.78rem;color:var(--dim);cursor:none;background:none;border:none;font-family:var(--ff);transition:color .2s;margin-top:4px}
+.exit-dismiss:hover{color:var(--muted)}
+/* CLUTCH BADGE */
+.clutch-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,63,63,0.07);border:1px solid rgba(255,63,63,0.18);border-radius:8px;padding:8px 14px;margin-top:16px}
+.clutch-logo{font-size:.7rem;font-weight:800;letter-spacing:.04em;color:#ff3f3f}
+.clutch-stars{color:#ff3f3f;font-size:.6rem;letter-spacing:1px}
+.clutch-text{font-size:.68rem;color:rgba(255,255,255,0.3)}
+/* RESPONSIVE */
+/* Awards grid class */
+.awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1100px){.hero-inner{grid-template-columns:1fr}.hero-visual{display:none}.sec-hdr{grid-template-columns:1fr;gap:20px}.proc-inner{grid-template-columns:1fr;gap:48px}}
+@media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}.ind-grid{grid-template-columns:1fr 1fr}.testi-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-grid .footer-brand{grid-column:1/-1}.proc-right{grid-template-columns:1fr}.awards-grid{grid-template-columns:1fr 1fr}.cl-logo img{height:100px;max-width:200px}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta,.nav-book{display:none}.hamburger{display:flex}.hero-metrics{grid-template-columns:1fr 1fr}.svc-grid{grid-template-columns:1fr}.ind-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}.ai-banner{grid-template-columns:1fr;padding:28px 24px;gap:24px}.ai-banner-right{flex-direction:row;flex-wrap:wrap;min-width:0}.ai-stat{flex:1 1 calc(50% - 5px);min-width:120px}.ai-banner h3{font-size:1.25rem}.ai-banner > div > p{max-width:100%}.faq-grid{grid-template-columns:1fr}.nl-row{max-width:100%}.awards-grid{grid-template-columns:1fr 1fr;gap:12px}.cl-logo img{height:70px;max-width:140px}.logos-track{gap:60px}.hero-metrics{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.awards-grid{grid-template-columns:1fr 1fr}.cl-logo img{height:55px;max-width:110px}}
+@media(max-width:900px){.ai-banner{padding:36px 32px;gap:28px}}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","LocalBusiness"],"name":"FiveNodes","legalName":"FiveNodes LLC","url":"https://5ivenodes.com","logo":"https://5ivenodes.com/images/logo.jpg","image":"https://5ivenodes.com/images/og-default.png","description":"AI-powered software engineering agency specialising in SaaS products, LLM integration, and cloud architecture. Based in Albuquerque, NM.","email":"Sabee@5ivenodes.com","telephone":"+15126785641","address":{"@type":"PostalAddress","streetAddress":"1209 Mountain Road Pl NE, Ste N","addressLocality":"Albuquerque","addressRegion":"NM","postalCode":"87110","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":30.2672,"longitude":-97.7431},"openingHours":"Mo-Fr 09:00-18:00","priceRange":"$$$","sameAs":["https://www.linkedin.com/company/5-nodes/","https://www.facebook.com/profile.php?id=61590206948945","https://www.instagram.com/five.nodes/"],"foundingDate":"2021","numberOfEmployees":{"@type":"QuantitativeValue","minValue":5,"maxValue":20},"serviceArea":{"@type":"Place","name":"Worldwide"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Software Development Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"SaaS Product Engineering"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI & LLM Integration"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cloud & DevOps"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"API & Integration"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"UI/UX Design"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Data & Analytics"}}]}}</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cursor"></div><div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="wrap">
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="FiveNodes" style="height:34px;width:34px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes
+    </a>
+    <ul class="nav-links" role="list">
+      <li class="nav-dropdown"><a class="nav-link" href="/services/">Services</a>
+        <div class="dd-menu" role="menu">
+          <a href="/services/saas-product-engineering/" class="dd-item"><span class="dd-icon"><i class="fas fa-layer-group"></i></span><div><strong>SaaS Engineering</strong><small>Full-stack platforms</small></div></a>
+          <a href="/services/cloud-devops/" class="dd-item"><span class="dd-icon"><i class="fas fa-cloud"></i></span><div><strong>Cloud &amp; DevOps</strong><small>AWS, GCP, Kubernetes</small></div></a>
+          <a href="/services/api-integration/" class="dd-item"><span class="dd-icon"><i class="fas fa-plug"></i></span><div><strong>API &amp; Integration</strong><small>REST, GraphQL, events</small></div></a>
+          <a href="/services/ui-ux-design/" class="dd-item"><span class="dd-icon"><i class="fas fa-pen-nib"></i></span><div><strong>UI/UX Design</strong><small>Design systems</small></div></a>
+          <a href="/services/data-analytics/" class="dd-item"><span class="dd-icon"><i class="fas fa-chart-line"></i></span><div><strong>Data Engineering</strong><small>Pipelines &amp; BI</small></div></a>
+          <a href="/services/maintenance-scaling/" class="dd-item"><span class="dd-icon"><i class="fas fa-shield-halved"></i></span><div><strong>Maintenance</strong><small>Support &amp; scaling</small></div></a>
+        </div>
+      </li>
+      <li class="nav-dropdown"><a class="nav-link" href="/industries/">Industries</a>
+        <div class="dd-menu dd-2col" role="menu">
+          <a href="/industries/healthcare/" class="dd-item">Healthcare</a><a href="/industries/edtech/" class="dd-item">EdTech</a>
+          <a href="/industries/logistics/" class="dd-item">Logistics</a><a href="/industries/real-estate/" class="dd-item">Real Estate</a>
+          <a href="/industries/hr-workforce/" class="dd-item">HR Tech</a><a href="/industries/retail-ecommerce/" class="dd-item">Retail</a>
+          <a href="/industries/legaltech/" class="dd-item">LegalTech</a><a href="/industries/govtech/" class="dd-item">GovTech</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/products/">Products</a></li>
+      <li><a class="nav-link" href="/blog/">Blog</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline btn-sm nav-book">Book a call <i class="far fa-calendar-alt" style="font-size:.7rem"></i></a>
+    <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="/services/saas-product-engineering/" class="mob-link">SaaS Engineering</a>
+  <a href="/services/cloud-devops/" class="mob-link">Cloud &amp; DevOps</a>
+  <a href="/services/api-integration/" class="mob-link">API Integration</a>
+  <a href="/services/ui-ux-design/" class="mob-link">UI/UX Design</a>
+  <a href="/about/" class="mob-link">About</a>
+  <a href="/portfolio/" class="mob-link">Portfolio</a>
+  <a href="/blog/" class="mob-link">Blog</a>
+  <a href="/contact/" class="mob-link">Contact</a>
+  <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:28px">Book a free call <i class="far fa-calendar-alt" style="font-size:.8rem"></i></a>
+  <a href="/contact/" class="btn btn-lime" style="margin-top:12px">Start a project</a>
+</div>
+
+<!-- HERO -->
+<header>
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-label"><span class="hero-dot"></span>AI &amp; Enterprise Software Engineering</div>
+        <h1>We Engineer<br><em id="hero-cycle">AI Powered</em><br>products</h1>
+        <p class="hero-body">From LLM integration to full-stack SaaS — FiveNodes builds intelligent software that automates, predicts, and scales with your business.</p>
+        <div class="hero-ctas">
+          <a href="/contact/" class="btn btn-lime">Start a project <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+          <a href="#services" class="btn btn-outline">Our services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-canvas-wrap">
+          <canvas id="hero-canvas" width="420" height="420"></canvas>
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</header>
+
+<!-- TRUSTED BY / OUR CLIENTS -->
+<section class="trusted-sec">
+  <p class="trusted-label">Our Clients</p>
+  <div class="logos-wrap">
+    <div class="logos-track">
+      <div class="cl-logo"><img src="/images/clients/fastaccounts.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/recruitly.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/peacecoin.png" alt="Client" loading="lazy"></div>
+
+
+      <div class="cl-logo"><img src="/images/clients/cheetay.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/finqalab.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/everest.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/annebarge.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/numerico.png" alt="Client" loading="lazy"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="cl-logo"><img src="/images/clients/fastaccounts.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/recruitly.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/peacecoin.png" alt="Client" loading="lazy"></div>
+
+
+      <div class="cl-logo"><img src="/images/clients/cheetay.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/finqalab.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/everest.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/annebarge.png" alt="Client" loading="lazy"></div>
+      <div class="cl-logo"><img src="/images/clients/numerico.png" alt="Client" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-sec" id="services">
+  <div class="container">
+    <div class="sec-hdr reveal">
+      <div>
+        <span class="section-label">What we do</span>
+        <h2>Engineering services<br>built for <em>scale</em></h2>
+      </div>
+      <p>Every engagement starts with a thorough architecture review. We build systems designed to outlast hype cycles and absorb growth without breaking.</p>
+    </div>
+    <!-- AI Engineering highlight -->
+    <div class="ai-banner reveal">
+      <div class="ai-banner-left">
+        <div class="ai-banner-tag"><span></span>New practice</div>
+        <h3>AI Engineering &amp; <em>LLM Integration</em></h3>
+        <p>We design and ship AI-native products — from RAG pipelines and fine-tuned models to full agentic workflows embedded in your SaaS. Every implementation is production-grade, observable, and built to integrate with your existing stack.</p>
+        <div class="ai-caps">
+          <span class="ai-cap">LLM Integration</span><span class="ai-cap">RAG Pipelines</span><span class="ai-cap">Fine-tuning</span><span class="ai-cap">AI Agents</span><span class="ai-cap">OpenAI / Anthropic</span><span class="ai-cap">Vector DBs</span><span class="ai-cap">Prompt Engineering</span>
+        </div>
+      </div>
+      <div class="ai-banner-right">
+        <div class="ai-stat"><div class="ai-stat-n">18+</div><div class="ai-stat-l">AI projects delivered</div></div>
+        <div class="ai-stat"><div class="ai-stat-n">40%</div><div class="ai-stat-l">Avg. ops cost reduction</div></div>
+        <a href="/contact/" class="btn btn-lime btn-sm" style="margin-top:4px;justify-content:center">Build with AI <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-n">01</div>
+        <h3>SaaS Product Engineering</h3>
+        <p>Full-stack platform development from zero to production. We own the architecture, delivery, and long-term maintainability.</p>
+        <div class="svc-tags"><span class="svc-tag">React</span><span class="svc-tag">Node.js</span><span class="svc-tag">PostgreSQL</span><span class="svc-tag">AWS</span></div>
+        <a href="/services/saas-product-engineering/" class="svc-link">Learn more about SaaS Product Engineering <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-d1">
+        <div class="svc-n">02</div>
+        <h3>Cloud &amp; DevOps</h3>
+        <p>Infrastructure as code, CI/CD pipelines, Kubernetes orchestration, and 24/7 observability across AWS, GCP, and Azure.</p>
+        <div class="svc-tags"><span class="svc-tag">Kubernetes</span><span class="svc-tag">Terraform</span><span class="svc-tag">AWS</span><span class="svc-tag">GCP</span></div>
+        <a href="/services/cloud-devops/" class="svc-link">Learn more about Cloud &amp; DevOps <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-d2">
+        <div class="svc-n">03</div>
+        <h3>API &amp; Integration</h3>
+        <p>RESTful and GraphQL APIs, event-driven microservices, and third-party integrations built for reliability and developer experience.</p>
+        <div class="svc-tags"><span class="svc-tag">REST</span><span class="svc-tag">GraphQL</span><span class="svc-tag">Kafka</span><span class="svc-tag">Redis</span></div>
+        <a href="/services/api-integration/" class="svc-link">Learn more about API Integration <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-n">04</div>
+        <h3>UI/UX Design</h3>
+        <p>Design systems, component libraries, and user research. We ship interfaces that convert and retain — not just impress in Figma.</p>
+        <div class="svc-tags"><span class="svc-tag">Figma</span><span class="svc-tag">Design Systems</span><span class="svc-tag">Prototyping</span></div>
+        <a href="/services/ui-ux-design/" class="svc-link">Learn more about UI/UX Design <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-d1">
+        <div class="svc-n">05</div>
+        <h3>Data Engineering</h3>
+        <p>ETL pipelines, data warehouses, real-time analytics, and business intelligence dashboards that turn data into decisions.</p>
+        <div class="svc-tags"><span class="svc-tag">Spark</span><span class="svc-tag">dbt</span><span class="svc-tag">Snowflake</span><span class="svc-tag">Looker</span></div>
+        <a href="/services/data-analytics/" class="svc-link">Learn more about Data Analytics <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-d2">
+        <div class="svc-n">06</div>
+        <h3>Maintenance &amp; Scaling</h3>
+        <p>Ongoing engineering support, performance tuning, security patching, and architectural evolution as your product grows.</p>
+        <div class="svc-tags"><span class="svc-tag">Monitoring</span><span class="svc-tag">Performance</span><span class="svc-tag">Security</span></div>
+        <a href="/services/maintenance-scaling/" class="svc-link">Learn more about Maintenance &amp; Scaling <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ind-sec">
+  <div class="container">
+    <div class="sec-hdr reveal" style="margin-bottom:48px">
+      <div>
+        <span class="section-label">Industries</span>
+        <h2>Domain expertise<br>across <em>every vertical</em></h2>
+      </div>
+      <p>We have built production systems in regulated industries — healthcare, fintech, logistics — and we know what compliance, scale, and reliability really mean.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card reveal"><div class="ind-n">01</div><div class="ind-bar"></div><h3>Healthcare</h3><p>HIPAA-compliant platforms, EHR integrations, patient portals, and clinical workflow automation.</p></div>
+      <div class="ind-card reveal reveal-d1"><div class="ind-n">02</div><div class="ind-bar"></div><h3>EdTech</h3><p>LMS platforms, adaptive learning engines, video delivery infrastructure, and assessment tools.</p></div>
+      <div class="ind-card reveal reveal-d2"><div class="ind-n">03</div><div class="ind-bar"></div><h3>Logistics</h3><p>Real-time tracking, route optimisation, warehouse management systems, and IoT integrations.</p></div>
+      <div class="ind-card reveal reveal-d3"><div class="ind-n">04</div><div class="ind-bar"></div><h3>Real Estate</h3><p>Property management platforms, listing APIs, CRM systems, and automated valuation models.</p></div>
+      <div class="ind-card reveal"><div class="ind-n">05</div><div class="ind-bar"></div><h3>HR &amp; Workforce</h3><p>ATS systems, payroll integrations, workforce analytics, and employee experience platforms.</p></div>
+      <div class="ind-card reveal reveal-d1"><div class="ind-n">06</div><div class="ind-bar"></div><h3>Retail &amp; eCommerce</h3><p>Headless commerce, inventory systems, recommendation engines, and omnichannel platforms.</p></div>
+      <div class="ind-card reveal reveal-d2"><div class="ind-n">07</div><div class="ind-bar"></div><h3>LegalTech</h3><p>Document automation, contract lifecycle management, e-signature workflows, and legal AI.</p></div>
+      <div class="ind-card reveal reveal-d3"><div class="ind-n">08</div><div class="ind-bar"></div><h3>GovTech</h3><p>Citizen portals, permitting systems, compliance reporting, and public-sector digital transformation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="proc-sec">
+  <div class="container">
+    <div class="proc-inner">
+      <div>
+        <span class="section-label">How we work</span>
+        <h2>Process built for<br><em>predictability</em></h2>
+        <p>No black boxes. Weekly demos, open boards, and honest communication from discovery to deployment.</p>
+        <div class="p-steps">
+          <div class="p-step reveal"><span class="p-step-n">01</span><div><h3>Discovery &amp; Architecture</h3><p>We start with a deep technical review of your requirements, constraints, and existing systems before writing a single line of code.</p></div></div>
+          <div class="p-step reveal reveal-d1"><span class="p-step-n">02</span><div><h3>Iterative Delivery</h3><p>Two-week sprints with live demos. You see real progress every cycle — no six-month silence before a big reveal.</p></div></div>
+          <div class="p-step reveal reveal-d2"><span class="p-step-n">03</span><div><h3>Quality &amp; Security</h3><p>Every pull request includes automated tests, code review, and security scanning before it touches production.</p></div></div>
+          <div class="p-step reveal reveal-d3"><span class="p-step-n">04</span><div><h3>Long-term Partnership</h3><p>We stay accountable after launch. Retainer engagements, performance tuning, and architectural guidance as you scale.</p></div></div>
+        </div>
+      </div>
+      <div class="proc-right">
+        <div class="p-card reveal"><div class="p-card-icon"><i class="fas fa-shield-halved"></i></div><h4>Security First</h4><p>SOC 2 ready practices, secret scanning, and dependency audits on every project.</p></div>
+        <div class="p-card reveal reveal-d1"><div class="p-card-icon"><i class="fas fa-bolt"></i></div><h4>Fast Delivery</h4><p>Productive from day one. First sprint demo within two weeks of kickoff.</p></div>
+        <div class="p-card reveal reveal-d2"><div class="p-card-icon"><i class="fas fa-chart-line"></i></div><h4>Observability</h4><p>Full-stack monitoring, alerting, and SLA reporting included on every engagement.</p></div>
+        <div class="p-card reveal reveal-d3"><div class="p-card-icon"><i class="fas fa-users"></i></div><h4>Dedicated Team</h4><p>Your team — not a rotating pool of freelancers. Consistent ownership and context.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <div class="container">
+    <div class="testi-hdr reveal">
+      <span class="section-label">Client stories</span>
+      <h2>Built on trust,<br>measured in <em>outcomes</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-text">FiveNodes replaced a vendor who had been billing us for 18 months with nothing to show. They delivered a working MVP in eight weeks. The architecture has scaled to 40,000 users without a single major incident.</p>
+        <div class="testi-author">
+          <div class="testi-av">MK</div>
+          <div><div class="testi-name">Marcus Klein</div><div class="testi-role">CTO · Axiom Health</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-d1">
+        <p class="testi-text">What separates FiveNodes from every other firm I have worked with is how they think about architecture. They pushed back on our initial design, explained exactly why it would not scale, and proposed something far better.</p>
+        <div class="testi-author">
+          <div class="testi-av">SL</div>
+          <div><div class="testi-name">Sarah Liu</div><div class="testi-role">VP Engineering · Nexora</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-d2">
+        <p class="testi-text">Three years in, they still feel like co-founders. They proactively flag risks, suggest improvements unprompted, and genuinely care whether the product succeeds — not just whether the ticket is closed.</p>
+        <div class="testi-author">
+          <div class="testi-av">RT</div>
+          <div><div class="testi-name">Ravi Tata</div><div class="testi-role">CEO · VaultCo</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY FIVENODES COMPARISON -->
+<section class="cmp-sec">
+  <div class="container">
+    <div class="reveal" style="max-width:600px">
+      <span class="section-label">Why FiveNodes</span>
+      <h2 class="sec-h2">The smarter way to<br>build <em>serious software</em></h2>
+    </div>
+    <div class="cmp-wrap reveal">
+      <div class="cmp-table">
+        <div class="cmp-hd label" style="background:rgba(5,6,14,0.6)"></div>
+        <div class="cmp-hd">In-house hire</div>
+        <div class="cmp-hd">Freelancer</div>
+        <div class="cmp-hd hl">FiveNodes <span class="tag">Recommended</span></div>
+
+        <div class="cmp-cell label">Time to start</div>
+        <div class="cmp-cell"><i class="fas fa-times cmp-no"></i> 3–6 months</div>
+        <div class="cmp-cell"><i class="fas fa-minus cmp-mid"></i> 1–3 weeks</div>
+        <div class="cmp-cell hl"><i class="fas fa-check cmp-yes"></i> &lt;1 week</div>
+
+        <div class="cmp-cell label">Cost predictability</div>
+        <div class="cmp-cell"><i class="fas fa-times cmp-no"></i> High fixed overhead</div>
+        <div class="cmp-cell"><i class="fas fa-minus cmp-mid"></i> Variable</div>
+        <div class="cmp-cell hl"><i class="fas fa-check cmp-yes"></i> Fixed or retainer</div>
+
+        <div class="cmp-cell label">Architecture expertise</div>
+        <div class="cmp-cell"><i class="fas fa-minus cmp-mid"></i> Depends on hire</div>
+        <div class="cmp-cell"><i class="fas fa-times cmp-no"></i> Rarely full-stack</div>
+        <div class="cmp-cell hl"><i class="fas fa-check cmp-yes"></i> Senior team, always</div>
+
+        <div class="cmp-cell label">AI / LLM capability</div>
+        <div class="cmp-cell"><i class="fas fa-times cmp-no"></i> Hard to hire for</div>
+        <div class="cmp-cell"><i class="fas fa-times cmp-no"></i> Niche specialists only</div>
+        <div class="cmp-cell hl"><i class="fas fa-check cmp-yes"></i> Core practice</div>
+
+        <div class="cmp-cell label">Long-term accountability</div>
+        <div class="cmp-cell"><i class="fas fa-check cmp-yes"></i> High</div>
+        <div class="cmp-cell"><i class="fas fa-times cmp-no"></i> Low — they move on</div>
+        <div class="cmp-cell hl"><i class="fas fa-check cmp-yes"></i> Retainer-backed</div>
+
+        <div class="cmp-cell label">Scale up / down</div>
+        <div class="cmp-cell"><i class="fas fa-times cmp-no"></i> Very slow</div>
+        <div class="cmp-cell"><i class="fas fa-minus cmp-mid"></i> Limited</div>
+        <div class="cmp-cell hl" style="border-bottom:none"><i class="fas fa-check cmp-yes"></i> Flex team size</div>
+        <div class="cmp-cell label" style="border-bottom:none"></div>
+        <div class="cmp-cell" style="border-bottom:none"></div>
+        <div class="cmp-cell" style="border-bottom:none"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="container">
+    <div class="reveal" style="max-width:600px">
+      <span class="section-label">FAQ</span>
+      <h2 class="sec-h2">Questions we get<br>asked <em>every week</em></h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-q">How do you structure your pricing? <i class="fas fa-chevron-down faq-arrow"></i></button>
+        <div class="faq-a">We offer three models: <strong>fixed price</strong> for well-scoped projects, <strong>retainer</strong> for ongoing product teams (monthly, cancel anytime), and <strong>time &amp; materials</strong> for exploratory work. We share a detailed estimate after a free discovery call — no surprises.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How quickly can you get started? <i class="fas fa-chevron-down faq-arrow"></i></button>
+        <div class="faq-a">Typically within one week of signing. We run a 2-week discovery sprint before writing production code — this is non-negotiable and consistently the reason our projects don't go sideways later.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you work with early-stage startups? <i class="fas fa-chevron-down faq-arrow"></i></button>
+        <div class="faq-a">Yes — some of our best work has been pre-seed and seed-stage. We're comfortable working under NDA and adapting scope as your product direction evolves. We've helped teams raise Series A rounds on the strength of what we built together.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you sign NDAs? <i class="fas fa-chevron-down faq-arrow"></i></button>
+        <div class="faq-a">Always. We sign your NDA before any discovery calls, and all engineers on your project are bound by confidentiality. We've worked on sensitive healthcare data, fintech systems, and proprietary AI models — discretion is standard.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if we already have an in-house team? <i class="fas fa-chevron-down faq-arrow"></i></button>
+        <div class="faq-a">We work well alongside existing teams — either leading architecture and having your engineers execute, or augmenting specific capability gaps (AI, DevOps, data engineering). We adapt to your workflow, not the other way around.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens after launch? <i class="fas fa-chevron-down faq-arrow"></i></button>
+        <div class="faq-a">We offer ongoing retainer engagements post-launch — maintenance, performance tuning, feature development, and architectural guidance as you scale. Our longest client relationship is now in its third year. We don't disappear after go-live.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS & RECOGNITION -->
+<section style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07)">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Awards &amp; Recognition</span>
+      <h2 style="font-family:var(--fh);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#fff;margin-top:12px;margin-bottom:12px">Recognised by the industry</h2>
+      <p style="font-size:.9375rem;color:var(--muted);max-width:560px;margin:0 auto">These accolades reflect our dedication to quality, client success, and innovation. Acknowledgement by prestigious organisations highlights our commitment to providing high-quality, reliable solutions.</p>
+    </div>
+    <div class="reveal awards-grid">
+      <div style="background:#fff;border-radius:16px;padding:28px 24px;display:flex;align-items:center;justify-content:center;min-height:120px;transition:transform .2s,box-shadow .2s" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(200,241,53,0.12)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+        <img src="/images/awards/clutch-badge.png" alt="Award" style="max-height:80px;max-width:100%;object-fit:contain" loading="lazy">
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px 24px;display:flex;align-items:center;justify-content:center;min-height:120px;transition:transform .2s,box-shadow .2s" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(200,241,53,0.12)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+        <img src="/images/awards/goodfirms-badge.png" alt="Award" style="max-height:80px;max-width:100%;object-fit:contain" loading="lazy">
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px 24px;display:flex;align-items:center;justify-content:center;min-height:120px;transition:transform .2s,box-shadow .2s" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(200,241,53,0.12)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+        <img src="/images/awards/upcity-award.png" alt="Award" style="max-height:80px;max-width:100%;object-fit:contain" loading="lazy">
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px 24px;display:flex;align-items:center;justify-content:center;min-height:120px;transition:transform .2s,box-shadow .2s" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(200,241,53,0.12)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+        <img src="/images/awards/manifest-badge.png" alt="Award" style="max-height:80px;max-width:100%;object-fit:contain" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <span class="section-label">Get in touch</span>
+      <h2>Ready to build<br><em>together?</em></h2>
+      <p>Tell us what you are building. We respond the same day with honest architectural thoughts — no sales call required.</p>
+      <div class="cta-btns">
+        <a href="/contact/" class="btn btn-lime">Start a project <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+        <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline">Book a free call</a>
+      </div>
+      <div class="nl-sep">
+        <p class="nl-label">Or stay in the loop — monthly insights on SaaS architecture &amp; AI engineering</p>
+        <div class="nl-row">
+          <input type="email" class="nl-input" placeholder="your@email.com" id="nlEmail">
+          <button class="nl-btn" id="nlBtn">Subscribe</button>
+        </div>
+        <p class="nl-ok" id="nlOk"><i class="fas fa-check" style="margin-right:6px"></i>You're in — first issue lands next month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><img src="/images/logo.jpg" alt="FiveNodes" style="width:28px;height:28px;border-radius:4px;object-fit:cover;flex-shrink:0">FiveNodes</div>
+        <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(200,241,53,0.45);margin-bottom:8px;font-weight:600">Built to think. Built to scale.</p>
+        <p>Purpose-built AI &amp; software engineering for growing companies. Delivered across healthcare, logistics, edtech, and more — since 2021.</p>
+        <div class="f-social">
+          <a href="https://www.linkedin.com/company/5-nodes/" class="f-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61590206948945" class="f-social-btn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/five.nodes/" class="f-social-btn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="clutch-badge">
+          <span class="clutch-logo">Clutch</span>
+          <span class="clutch-stars">★★★★★</span>
+          <span class="clutch-text">Top Developer 2025</span>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul class="footer-links">
+        <li><a href="/services/saas-product-engineering/">SaaS Engineering</a></li>
+        <li><a href="/services/cloud-devops/">Cloud &amp; DevOps</a></li>
+        <li><a href="/services/api-integration/">API Integration</a></li>
+        <li><a href="/services/ui-ux-design/">UI/UX Design</a></li>
+        <li><a href="/services/data-analytics/">Data Engineering</a></li>
+        <li><a href="/services/maintenance-scaling/">Maintenance</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Industries</h4><ul class="footer-links">
+        <li><a href="/industries/healthcare/">Healthcare</a></li>
+        <li><a href="/industries/edtech/">EdTech</a></li>
+        <li><a href="/industries/logistics/">Logistics</a></li>
+        <li><a href="/industries/real-estate/">Real Estate</a></li>
+        <li><a href="/industries/hr-workforce/">HR Tech</a></li>
+        <li><a href="/industries/retail-ecommerce/">Retail</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links">
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/how-we-work/">How We Work</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/careers/">Careers</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul class="footer-links">
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li><a href="/legal/terms/">Terms of Service</a></li>
+        <li><a href="/legal/cookies/">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 FiveNodes. All rights reserved.</p>
+      <div class="footer-bot-links"><a href="/legal/privacy/">Privacy</a><a href="/legal/terms/">Terms</a><a href="/legal/cookies/">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+</div><!-- /wrap -->
+
+<!-- EXIT INTENT POPUP -->
+<div class="exit-popup" id="exitPopup">
+  <div class="exit-card">
+    <button class="exit-close" id="exitClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    <p class="exit-tag">Before you go</p>
+    <h3>Get a free 30-min<br>architecture review</h3>
+    <p>No pitch. No sales deck. Just an honest conversation about what you're building — and how to architect it for scale.</p>
+    <div class="exit-btns">
+      <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-lime" style="width:100%;justify-content:center">Book a free call <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+      <button class="exit-dismiss" id="exitDismiss">No thanks, I'll figure it out myself</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Cursor
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}
+lerpCursor();
+document.querySelectorAll('a,button,.svc-card,.ind-card,.testi-card,.p-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+});
+
+// Background particle network
+(function(){
+  const c=document.getElementById('bg-canvas');if(!c)return;
+  const ctx=c.getContext('2d');let W,H,pts=[];
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+  resize();window.addEventListener('resize',()=>{resize();init()},{passive:true});
+  function init(){pts=[];const n=Math.min(Math.floor((W*H)/28000),55);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.28,vy:(Math.random()-.5)*0.28,r:Math.random()*1.4+0.4});}
+  init();let mouseX=W/2,mouseY=H/2;
+  window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<110){const a=(1-d/140)*0.3;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,241,53,${a*0.28})`;ctx.lineWidth=0.5;ctx.stroke();}
+      }
+    }
+    for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,241,53,0.38)';ctx.fill();}
+    for(const p of pts){
+      const dx=mouseX-p.x,dy=mouseY-p.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<180){p.vx+=dx/d*0.008;p.vy+=dy/d*0.008;}
+      p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// 3D rotating logo
+function buildLogo(canvas,size,speed){
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');canvas.width=size;canvas.height=size;let rot=0;
+  const nodes=[{x:.6,y:-.7,z:.2},{x:.9,y:0,z:-.3},{x:.55,y:.75,z:.1},{x:-.55,y:.75,z:.1},{x:-.9,y:0,z:-.3},{x:0,y:-.25,z:.8},{x:.4,y:.2,z:-.7},{x:-.4,y:.2,z:-.7}];
+  const edges=[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5],[0,6],[1,6],[2,7],[3,7],[4,6],[5,6],[5,7],[6,7]];
+  function proj(x,y,z,ry){const cY=Math.cos(ry),sY=Math.sin(ry);const x1=x*cY+z*sY,z1=-x*sY+z*cY;const cX=Math.cos(.3),sX=Math.sin(.3);const y1=y*cX-z1*sX,z2=y*sX+z1*cX;const sc=2.5/(2.5+z2),r=size*.38;return{px:size/2+x1*r*sc,py:size/2+y1*r*sc,z:z2,sc};}
+  function draw(){ctx.clearRect(0,0,size,size);rot+=speed;const p=nodes.map(n=>proj(n.x,n.y,n.z,rot));
+    const se=[...edges].sort((a,b)=>(p[a[0]].z+p[a[1]].z)/2-(p[b[0]].z+p[b[1]].z)/2);
+    for(const[i,j]of se){const a=p[i],b=p[j];const alpha=Math.max(0,(0.8+(a.z+b.z)/2*0.4)*0.55);ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);ctx.strokeStyle=`rgba(200,241,53,${alpha})`;ctx.lineWidth=.8;ctx.stroke();}
+    for(const pt of p){const zN=(pt.z+1)/2,r=4.5*pt.sc*(.5+zN*.7);ctx.beginPath();ctx.arc(pt.px,pt.py,r,0,Math.PI*2);ctx.fillStyle=`rgba(200,241,53,${.6+zN*.4})`;ctx.fill();}
+    requestAnimationFrame(draw);}draw();
+}
+buildLogo(document.getElementById('logo-canvas-nav'),68,.008);
+buildLogo(document.getElementById('logo-canvas-footer'),56,.01);
+
+// Hero canvas — large 3D node network
+(function(){
+  const canvas=document.getElementById('hero-canvas');if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const S=420;canvas.width=S;canvas.height=S;
+  const nodes=[{x:.6,y:-.7,z:.2},{x:.9,y:0,z:-.3},{x:.55,y:.75,z:.1},{x:-.55,y:.75,z:.1},{x:-.9,y:0,z:-.3},{x:0,y:-.25,z:.8},{x:.4,y:.2,z:-.7},{x:-.4,y:.2,z:-.7},{x:.0,y:.6,z:.5},{x:.7,y:-.4,z:-.5}];
+  const edges=[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5],[0,6],[1,6],[2,7],[3,7],[4,6],[5,6],[5,7],[6,7],[0,8],[2,8],[5,8],[1,9],[0,9],[6,9]];
+  let rot=0;
+  function proj(x,y,z,ry){const cY=Math.cos(ry),sY=Math.sin(ry);const x1=x*cY+z*sY,z1=-x*sY+z*cY;const cX=Math.cos(.2),sX=Math.sin(.2);const y1=y*cX-z1*sX,z2=y*sX+z1*cX;const sc=3/(3+z2),r=S*.38;return{px:S/2+x1*r*sc,py:S/2+y1*r*sc,z:z2,sc};}
+  function draw(){ctx.clearRect(0,0,S,S);rot+=.005;const p=nodes.map(n=>proj(n.x,n.y,n.z,rot));
+    for(const[i,j]of edges){const a=p[i],b=p[j];const d=Math.sqrt((a.px-b.px)**2+(a.py-b.py)**2);const alpha=Math.max(0,(0.75+(a.z+b.z)/2*0.3)*0.5);ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);ctx.strokeStyle=`rgba(200,241,53,${alpha})`;ctx.lineWidth=.9;ctx.stroke();}
+    for(const pt of p){const zN=(pt.z+1)/2,r=7*pt.sc*(.5+zN*.6);ctx.beginPath();ctx.arc(pt.px,pt.py,r,0,Math.PI*2);ctx.fillStyle=`rgba(200,241,53,${.55+zN*.45})`;ctx.fill();}
+    requestAnimationFrame(draw);}draw();
+})();
+
+// Nav scroll
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+
+// Dropdown menus — robust open/close
+(function(){
+  var openEl=null, closeTimer=null;
+  function openDD(el){
+    if(closeTimer){clearTimeout(closeTimer);closeTimer=null;}
+    if(openEl&&openEl!==el){openEl.classList.remove('dd-open');}
+    el.classList.add('dd-open');
+    openEl=el;
+  }
+  function closeDD(){
+    closeTimer=setTimeout(function(){
+      if(openEl){openEl.classList.remove('dd-open');openEl=null;}
+    },350);
+  }
+  document.querySelectorAll('.nav-dropdown').forEach(function(el){
+    el.addEventListener('mouseenter',function(){openDD(el);});
+    el.addEventListener('mouseleave',function(){closeDD();});
+    var menu=el.querySelector('.dd-menu');
+    if(menu){
+      menu.addEventListener('mouseenter',function(){if(closeTimer){clearTimeout(closeTimer);closeTimer=null;}});
+      menu.addEventListener('mouseleave',function(){closeDD();});
+    }
+  });
+  document.addEventListener('click',function(e){
+    if(openEl&&!openEl.contains(e.target)){openEl.classList.remove('dd-open');openEl=null;}
+  });
+})();
+
+// Hamburger
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+document.addEventListener('click',e=>{if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}});
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Hero text cycling
+(function(){
+  const el=document.getElementById('hero-cycle');
+  if(!el)return;
+  const phrases=['AI Powered','Custom Software','SaaS Solutions','Web Applications'];
+  let idx=0,busy=false;
+  function cycle(){
+    if(busy)return;busy=true;
+    el.classList.add('exit');
+    setTimeout(()=>{
+      idx=(idx+1)%phrases.length;
+      el.textContent=phrases[idx];
+      el.classList.remove('exit');
+      el.classList.add('enter');
+      void el.offsetWidth;
+      el.classList.remove('enter');
+      setTimeout(()=>{busy=false;},460);
+    },460);
+  }
+  setInterval(cycle,3200);
+})();
+
+// Magnetic buttons
+document.querySelectorAll('.btn').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.2}px)`;});
+  btn.addEventListener('mouseleave',()=>btn.style.transform='');
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+
+// Newsletter
+(function(){
+  const btn=document.getElementById('nlBtn'),inp=document.getElementById('nlEmail'),ok=document.getElementById('nlOk');
+  if(!btn)return;
+  btn.addEventListener('click',()=>{
+    if(!inp.value||!inp.value.includes('@'))return;
+    fetch('/newsletter-handler.php',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'email='+encodeURIComponent(inp.value)});
+    inp.style.display='none';btn.style.display='none';ok.style.display='block';
+  });
+})();
+
+// Exit intent popup
+(function(){
+  if(sessionStorage.getItem('fn_exit_shown'))return;
+  const popup=document.getElementById('exitPopup');
+  if(!popup)return;
+  function close(){popup.classList.remove('show');sessionStorage.setItem('fn_exit_shown','1');}
+  document.getElementById('exitClose').addEventListener('click',close);
+  document.getElementById('exitDismiss').addEventListener('click',close);
+  popup.addEventListener('click',e=>{if(e.target===popup)close();});
+  let shown=false;
+  document.addEventListener('mouseleave',e=>{
+    if(e.clientY<=0&&!shown){shown=true;setTimeout(()=>popup.classList.add('show'),200);}
+  });
+  // Fallback: show after 90s of inactivity for mobile
+  setTimeout(()=>{if(!shown){shown=true;popup.classList.add('show');}},90000);
+})();
+</script>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0D0F1C;border-top:1px solid #1E2035;padding:1rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:'Inter',sans-serif;font-size:.85rem;color:#8B8FA8">
+  <span>We use cookies to improve your experience. <a href="/legal/cookies/" style="color:#C8F135;text-decoration:none">Learn more about our cookie policy</a></span>
+  <div style="display:flex;gap:.75rem">
+    <button onclick="dismissCookie(false)" style="background:transparent;border:1px solid #1E2035;color:#8B8FA8;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem">Decline</button>
+    <button onclick="dismissCookie(true)" style="background:#C8F135;border:none;color:#05060E;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem">Accept</button>
+  </div>
+</div>
+<!-- WHATSAPP -->
+<script>
+(function(){var b=document.getElementById('cookie-banner');if(b&&!localStorage.getItem('fn_cookie_choice')){b.style.display='flex'}})();
+function dismissCookie(a){localStorage.setItem('fn_cookie_choice',a?'accepted':'declined');var b=document.getElementById('cookie-banner');if(b)b.style.display='none'}
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

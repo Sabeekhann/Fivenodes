@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block internal/system files
+Disallow: /_inject.html
+Disallow: /contact-handler.php
+Disallow: /default.php
+
+# Sitemap
+Sitemap: https://5ivenodes.com/sitemap.xml

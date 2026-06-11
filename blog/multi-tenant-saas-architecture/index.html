@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Multi-Tenant SaaS: Shared Database vs. Database-per-Tenant | FiveNodes Blog</title>
+<meta name="description" content="The most consequential architecture decision in multi-tenant SaaS is often made too early, with too little information. Here's how to think through it properly."/>
+<meta property="og:title" content="Multi-Tenant SaaS: Shared Database vs. Database-per-Tenant"/>
+<meta property="og:description" content="Trade-offs, decision criteria, and when each model breaks down."/>
+<meta property="og:image" content="https://5ivenodes.com/images/og-default.png"/>
+<meta property="og:url" content="https://5ivenodes.com/blog/multi-tenant-saas-architecture/"/>
+<link rel="canonical" href="https://5ivenodes.com/blog/multi-tenant-saas-architecture/"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#05060E;--lime:#C8F135;--card:#0D0F1C;--border:#1E2035;--text:#E8EAF2;--muted:#8B8FA8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7}
+a{color:var(--lime);text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,6,14,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--lime)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-link{font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-link:hover{color:var(--text)}
+.nav-cta{background:var(--lime);color:#05060E;font-weight:700;padding:.5rem 1.25rem;border-radius:6px;font-size:.875rem}
+article{max-width:740px;margin:0 auto;padding:4rem 2rem 6rem}
+.back{font-size:.85rem;color:var(--muted);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.5rem;transition:color .2s}
+.back:hover{color:var(--lime)}
+.post-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
+h1{font-family:'Sora',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+.byline{color:var(--muted);font-size:.875rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+h2{font-family:'Sora',sans-serif;font-size:1.35rem;font-weight:700;margin:2.5rem 0 1rem}
+p{color:#C8CAD8;margin-bottom:1.25rem}
+ul,ol{color:#C8CAD8;margin:0 0 1.25rem 1.5rem}
+li{margin-bottom:.5rem}
+.callout{background:var(--card);border-left:3px solid var(--lime);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:2rem 0}
+.callout p{margin:0;color:var(--text)}
+table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.875rem}
+th{text-align:left;padding:.75rem 1rem;background:var(--card);color:var(--lime);font-weight:600;border-bottom:1px solid var(--border)}
+td{padding:.75rem 1rem;border-bottom:1px solid var(--border);color:#C8CAD8}
+tr:last-child td{border-bottom:none}
+.verdict{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;margin:1rem 0}
+.verdict-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:.4rem}
+.verdict h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.verdict p{margin:0;font-size:.9rem}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Multi-Tenant SaaS: Shared Database vs. Database-per-Tenant","description":"Trade-offs, decision criteria, and when each multi-tenancy model breaks down.","url":"https://5ivenodes.com/blog/multi-tenant-saas-architecture/","datePublished":"2025-03-15","dateModified":"2026-05-24","author":{"@type":"Organization","name":"FiveNodes Team"},"publisher":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com","logo":{"@type":"ImageObject","url":"https://5ivenodes.com/images/logo.jpg"}},"keywords":"multi-tenant SaaS, database architecture, row-level security","inLanguage":"en-US","mainEntityOfPage":{"@type":"WebPage","@id":"https://5ivenodes.com/blog/multi-tenant-saas-architecture/"}}</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" style="display:flex;align-items:center;gap:10px"><img src="/images/logo.jpg" alt="FiveNodes" style="height:36px;width:36px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</a>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="/">Home</a></li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link" href="/services/">Services</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/products/">Products</a></li>
+      <li><a class="nav-link" href="/blog/">Blog</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<article>
+  <a href="/blog/" class="back">← Back to Blog</a>
+  <div class="post-tag">SaaS</div>
+  <h1>Multi-Tenant SaaS: Shared Database vs. Database-per-Tenant</h1>
+  <div class="byline">By FiveNodes Team · March 2025 · 7 min read</div>
+
+  <p>The most consequential architecture decision in a multi-tenant SaaS product is often made in the first sprint, before the team has enough information to make it well. It gets baked into the data model, ORM configuration, and backup strategy — and by the time the trade-offs become painful, it's deeply structural.</p>
+
+  <p>There are three main tenancy models. We'll go through each, when they work, and when they break.</p>
+
+  <h2>The three models</h2>
+
+  <div class="verdict">
+    <div class="verdict-label">Model A</div>
+    <h3>Shared database, shared schema (row-level isolation)</h3>
+    <p>All tenants in the same tables. A <code>tenant_id</code> foreign key on every table. Application code filters by tenant on every query. This is the simplest to start with and the most common starting point for early-stage SaaS.</p>
+  </div>
+
+  <div class="verdict">
+    <div class="verdict-label">Model B</div>
+    <h3>Shared database, separate schemas</h3>
+    <p>All tenants on the same database server, but each tenant gets their own schema (or schema prefix). PostgreSQL schema search paths route queries to the correct tenant namespace. Stronger isolation than Model A without the operational overhead of Model C.</p>
+  </div>
+
+  <div class="verdict">
+    <div class="verdict-label">Model C</div>
+    <h3>Database-per-tenant</h3>
+    <p>Each tenant has a completely separate database instance. Maximum isolation. Maximum operational complexity. Typically only justified for enterprise, regulated, or high-value tenants.</p>
+  </div>
+
+  <h2>The trade-off matrix</h2>
+
+  <table>
+    <thead>
+      <tr><th>Factor</th><th>Shared (Row)</th><th>Shared (Schema)</th><th>DB-per-Tenant</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Setup complexity</td><td>Low</td><td>Medium</td><td>High</td></tr>
+      <tr><td>Operational overhead</td><td>Low</td><td>Medium</td><td>Very High</td></tr>
+      <tr><td>Tenant isolation risk</td><td>Medium (application layer)</td><td>Low</td><td>None</td></tr>
+      <tr><td>Compliance readiness</td><td>Harder</td><td>Moderate</td><td>Easiest</td></tr>
+      <tr><td>Performance at scale</td><td>Can degrade with hot tenants</td><td>Better isolation</td><td>Best isolation</td></tr>
+      <tr><td>Tenant data exports</td><td>Query all tables by tenant_id</td><td>Dump schema</td><td>Dump database</td></tr>
+      <tr><td>Schema migrations</td><td>One migration</td><td>Per-schema migration</td><td>N migrations</td></tr>
+      <tr><td>Cost</td><td>Lowest</td><td>Low–Medium</td><td>Scales linearly</td></tr>
+    </tbody>
+  </table>
+
+  <h2>When shared schema breaks down</h2>
+  <p>Model A (row-level isolation) has two failure modes that become critical at scale:</p>
+  <ul>
+    <li><strong>The noisy neighbour problem</strong> — one large tenant running heavy queries degrades performance for all other tenants on the same database. At small scale this is invisible. At scale it causes SLA violations for customers who shouldn't be affected.</li>
+    <li><strong>Data leakage risk</strong> — every query must correctly apply the tenant filter. A single missed WHERE clause exposes data across tenant boundaries. This is a real compliance risk, not theoretical. We've seen it in codebases that looked clean on the surface.</li>
+  </ul>
+
+  <div class="callout">
+    <p>If you're building for a regulated industry (healthcare, finance, legal) or selling to enterprise buyers, you should assume you'll need database-level isolation eventually. Design your provisioning layer for it from the start, even if you don't implement it immediately.</p>
+  </div>
+
+  <h2>When database-per-tenant is overkill</h2>
+  <p>Model C sounds appealing from a security standpoint but most early-stage SaaS products don't need it and can't operationally sustain it. Consider:</p>
+  <ul>
+    <li>Running schema migrations means running them N times — once per tenant database. With 500 tenants and a complex migration, this is a multi-hour operation that needs its own tooling.</li>
+    <li>Monitoring, backups, and failover must be configured per database. The operational surface area scales linearly with tenant count.</li>
+    <li>Cost scales directly with tenant count. At 1,000 tenants on managed database services, the infrastructure bill can be 50–100x a shared model.</li>
+  </ul>
+
+  <h2>Our default recommendation</h2>
+  <p>For most B2B SaaS products at the 0–500 tenant range: <strong>start with shared schema (Model A), but implement it with row-level security at the database layer</strong>, not just application code. PostgreSQL's RLS policies enforce tenant isolation even if application code has a bug.</p>
+  <p>Design your provisioning layer to support schema-per-tenant (Model B) without code changes. This gives you a migration path for compliance-sensitive enterprise customers without starting with the full complexity of Model C.</p>
+  <p>Specifically:</p>
+  <ol>
+    <li>Enable PostgreSQL row-level security on all tenant-scoped tables from day one</li>
+    <li>Pass tenant context to the database via a session variable (<code>SET app.tenant_id = '...'</code>) rather than in WHERE clauses in application code</li>
+    <li>Build a tenant provisioning service that abstracts the isolation model — so you can swap from row-level to schema-level for specific tenants without rewiring application code</li>
+  </ol>
+
+  <h2>The migration trap</h2>
+  <p>The most painful scenario we encounter is a product that started with shared schema and now has an enterprise customer requiring database-level isolation — with no provisioning abstraction in place. Retrofitting isolation models into a running multi-tenant product is genuinely hard work. The only way to avoid it is to design the abstraction layer at the start, even if you don't use it immediately.</p>
+
+  <p>If you're making this decision now or need help designing your multi-tenancy architecture, <a href="/contact/">let's talk</a>. This is something we've worked through on a lot of products.</p>
+</article>
+
+<footer>
+  <p>© 2026 FiveNodes LLC · Albuquerque, NM · <a href="/legal/privacy/">Privacy</a></p>
+</footer>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0D0F1C;border-top:1px solid #1E2035;padding:1rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:'Inter',sans-serif;font-size:.85rem;color:#8B8FA8">
+  <span>We use cookies to improve your experience. <a href="/legal/cookies/" style="color:#C8F135;text-decoration:none">Learn more</a></span>
+  <div style="display:flex;gap:.75rem">
+    <button onclick="dismissCookie(false)" style="background:transparent;border:1px solid #1E2035;color:#8B8FA8;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem">Decline</button>
+    <button onclick="dismissCookie(true)" style="background:#C8F135;border:none;color:#05060E;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem">Accept</button>
+  </div>
+</div>
+<!-- WHATSAPP BUTTON -->
+<script>
+(function(){
+  var b=document.getElementById('cookie-banner');
+  if(b&&!localStorage.getItem('fn_cookie_choice')){b.style.display='flex'}
+})();
+function dismissCookie(accepted){
+  localStorage.setItem('fn_cookie_choice',accepted?'accepted':'declined');
+  var b=document.getElementById('cookie-banner');
+  if(b)b.style.display='none';
+}
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

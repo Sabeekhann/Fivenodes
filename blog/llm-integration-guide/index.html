@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>The Practical Guide to Integrating LLMs into Production SaaS | FiveNodes Blog</title>
+<meta name="description" content="Most LLM integrations fail not because of the model — but because of the plumbing. Here's what we've learned shipping 18+ AI features into production SaaS products."/>
+<meta property="og:title" content="The Practical Guide to Integrating LLMs into Production SaaS"/>
+<meta property="og:description" content="What we've learned shipping 18+ AI features: prompt engineering, rate limiting, fallback strategies, cost management, and the monitoring you'll need at 3am."/>
+<meta property="og:image" content="https://5ivenodes.com/images/og-default.png"/>
+<meta property="og:url" content="https://5ivenodes.com/blog/llm-integration-guide/"/>
+<link rel="canonical" href="https://5ivenodes.com/blog/llm-integration-guide/"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#05060E;--lime:#C8F135;--card:#0D0F1C;--border:#1E2035;--text:#E8EAF2;--muted:#8B8FA8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7}
+a{color:var(--lime);text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,6,14,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;color:var(--lime)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-link{font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-link:hover{color:var(--text)}
+.nav-cta{background:var(--lime);color:#05060E;font-weight:700;padding:.5rem 1.25rem;border-radius:6px;font-size:.875rem}
+article{max-width:740px;margin:0 auto;padding:4rem 2rem 6rem}
+.back{font-size:.85rem;color:var(--muted);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.5rem;transition:color .2s}
+.back:hover{color:var(--lime)}
+.post-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
+h1{font-family:'Sora',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+.byline{color:var(--muted);font-size:.875rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+h2{font-family:'Sora',sans-serif;font-size:1.35rem;font-weight:700;margin:2.5rem 0 1rem}
+p{color:#C8CAD8;margin-bottom:1.25rem}
+ul,ol{color:#C8CAD8;margin:0 0 1.25rem 1.5rem}
+li{margin-bottom:.5rem}
+.callout{background:var(--card);border-left:3px solid var(--lime);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:2rem 0}
+.callout p{margin:0;color:var(--text)}
+.phase{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;margin:1rem 0}
+.phase-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:.4rem}
+.phase h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.phase p{margin:0;font-size:.9rem}
+code{background:rgba(200,241,53,.08);border:1px solid rgba(200,241,53,.15);border-radius:4px;padding:2px 7px;font-family:'Courier New',monospace;font-size:.82em;color:var(--lime)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FFZ8MQ4X1');
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Practical Guide to Integrating LLMs into Production SaaS","description":"What we've learned shipping 18+ AI features into production: prompt engineering, rate limiting, fallback strategies, cost management.","url":"https://5ivenodes.com/blog/llm-integration-guide/","datePublished":"2025-05-01","dateModified":"2026-05-24","author":{"@type":"Organization","name":"FiveNodes Team"},"publisher":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com","logo":{"@type":"ImageObject","url":"https://5ivenodes.com/images/logo.jpg"}},"keywords":"LLM integration, AI SaaS, production AI, prompt engineering","inLanguage":"en-US","mainEntityOfPage":{"@type":"WebPage","@id":"https://5ivenodes.com/blog/llm-integration-guide/"}}</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" style="display:flex;align-items:center;gap:10px"><img src="/images/logo.jpg" alt="FiveNodes" style="height:36px;width:36px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes</a>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="/">Home</a></li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link" href="/services/">Services</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+      <li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/products/">Products</a></li>
+      <li><a class="nav-link" href="/blog/">Blog</a></li>
+      <li><a class="nav-link" href="/contact/">Contact</a></li>
+    </ul>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<article>
+  <a href="/blog/" class="back">← Back to Blog</a>
+  <div class="post-tag">AI Engineering</div>
+  <h1>The Practical Guide to Integrating LLMs into Production SaaS</h1>
+  <div class="byline">By FiveNodes Team · May 2025 · 8 min read</div>
+
+  <p>Most LLM integrations fail not because of the model — but because of the plumbing. After shipping 18+ AI features into production SaaS products, we've seen the same failure modes repeat. Prompt hallucinations get the headlines. What actually kills AI features in production is missing rate-limit handling, no cost monitoring, no fallback when OpenAI goes down, and prompts that work in demos but degrade badly on edge-case user inputs.</p>
+
+  <p>This is what we've actually learned. Not theory — specific decisions and patterns drawn from real production deployments.</p>
+
+  <div class="callout">
+    <p>The model is a commodity. The integration layer — how you wrap, route, cache, monitor and fall back — is where AI features succeed or fail in production.</p>
+  </div>
+
+  <h2>1. Design a model-agnostic abstraction layer first</h2>
+  <p>Before writing a single prompt, build an abstraction layer. Every AI call in your codebase should go through a single internal service — not directly to OpenAI's SDK. This gives you:</p>
+  <ul>
+    <li><strong>Provider portability</strong> — swap OpenAI for Anthropic, Mistral, or a self-hosted model without touching product code</li>
+    <li><strong>Centralised observability</strong> — one place to log every request, latency, token count, and cost</li>
+    <li><strong>Fallback routing</strong> — if your primary provider is down, route to a backup automatically</li>
+    <li><strong>Rate-limit management</strong> — handle 429s, retries, and backoff in one place</li>
+  </ul>
+  <p>The interface should look like: <code>ai.complete({ prompt, model?, context?, maxTokens? })</code>. The caller doesn't know or care which model ran.</p>
+
+  <h2>2. Prompt engineering is software engineering</h2>
+  <p>Prompts are code. They need to be version-controlled, tested, and reviewed. We store all prompts in a <code>/prompts</code> directory as plain text files with semantic versioning. When a prompt changes, the old version is kept. Every deployment logs which prompt version produced each output.</p>
+  <p>Things that actually matter in production prompts:</p>
+  <ul>
+    <li><strong>System prompt discipline</strong> — be explicit about format, length, and what to do when the AI doesn't know something. "If you are uncertain, say so" prevents confident hallucinations.</li>
+    <li><strong>Output schemas</strong> — for anything parsed downstream, ask for JSON with a defined schema. Validate it. Never trust unstructured output from an LLM in a data pipeline.</li>
+    <li><strong>Negative examples</strong> — show the model what you don't want, not just what you want. This alone reduces format drift significantly.</li>
+    <li><strong>User input sanitisation</strong> — always strip or escape user-supplied content before it enters a prompt. Prompt injection is a real attack vector.</li>
+  </ul>
+
+  <h2>3. Cost management from day one</h2>
+  <p>AI API costs can scale 10x overnight if a feature gets unexpected usage. Build cost controls before you launch, not after you get an unexpected invoice.</p>
+
+  <div class="phase">
+    <div class="phase-label">Pattern 1</div>
+    <h3>Per-user token budgets</h3>
+    <p>Track token usage per user or tenant. Set soft limits (warn) and hard limits (graceful degradation). Surface usage back to the user so they understand the constraint.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label">Pattern 2</div>
+    <h3>Semantic caching</h3>
+    <p>Cache LLM responses for semantically similar inputs. A user asking "summarise this contract" and another asking "give me a summary of this contract" should hit the same cache entry. Use embedding similarity (cosine distance &lt; 0.05) to match. Reduces repeat calls by 30–60% in document-heavy apps.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label">Pattern 3</div>
+    <h3>Model tiering</h3>
+    <p>Not every task needs GPT-4. Use a smaller, cheaper model (GPT-4o-mini, Claude Haiku) for classification, tagging, and short-form generation. Reserve large models for complex reasoning tasks. A tiering strategy typically cuts AI costs by 40–70%.</p>
+  </div>
+
+  <h2>4. Fallback and resilience</h2>
+  <p>OpenAI's API has outages. All external APIs do. Your product should not go fully down when your AI provider does. Design for graceful degradation:</p>
+  <ul>
+    <li>Non-AI code paths for critical features — AI should enhance, not be the only path</li>
+    <li>Secondary provider fallback for high-priority requests (Anthropic as backup for OpenAI and vice versa)</li>
+    <li>Circuit breaker pattern — after N consecutive failures, stop sending requests and return a graceful error for a cooldown period</li>
+    <li>Retry with exponential backoff for 429 and 503 errors</li>
+  </ul>
+
+  <h2>5. Evaluation and monitoring</h2>
+  <p>You can't improve what you don't measure. Build an eval framework before you launch. For every AI feature, define: what does "good" output look like? How do you detect regressions when you change a prompt?</p>
+  <p>In production, monitor:</p>
+  <ul>
+    <li>Latency at p50, p95, p99 — LLM latency is high-variance. p99 matters enormously for UX.</li>
+    <li>Token counts per request — sudden spikes indicate prompt injection or user behaviour you didn't anticipate</li>
+    <li>Error rates by type (429, 500, timeout) — set alerts on these</li>
+    <li>Output quality signals — thumbs up/down, correction rates, abandonment after AI response</li>
+  </ul>
+
+  <div class="callout">
+    <p>The 3am alarm that wakes you up is never "model quality degraded." It's "AI costs are 40x normal" or "every AI call is timing out." Monitor cost and latency before you monitor quality.</p>
+  </div>
+
+  <h2>6. Security considerations specific to LLMs</h2>
+  <p>LLM integrations introduce attack surfaces that don't exist in traditional software:</p>
+  <ul>
+    <li><strong>Prompt injection</strong> — users can attempt to override your system prompt via their inputs. Never concatenate user input directly into system-level prompt strings. Use separate message roles (system, user, assistant) correctly.</li>
+    <li><strong>Data leakage via context</strong> — if you include other users' data in context windows (for RAG or few-shot examples), enforce strict tenant isolation. One user's documents must never appear in another user's AI context.</li>
+    <li><strong>PII in prompts</strong> — if prompts contain user PII, your AI provider's data retention policies apply. Know them. Some compliance contexts (HIPAA, GDPR) require zero-retention agreements.</li>
+  </ul>
+
+  <h2>The integration checklist before you go live</h2>
+  <ul>
+    <li>Abstraction layer in place — no direct SDK calls from product code</li>
+    <li>All prompts version-controlled and tested</li>
+    <li>Output validation for any structured response</li>
+    <li>Rate limit handling and retry logic</li>
+    <li>Per-user cost tracking and limits</li>
+    <li>Semantic caching implemented</li>
+    <li>Fallback provider or degraded mode for outages</li>
+    <li>Latency and cost alerting configured</li>
+    <li>Prompt injection protections in place</li>
+    <li>Data retention policy reviewed with your compliance requirements</li>
+  </ul>
+
+  <p>If you're building AI features into a SaaS product and want a second opinion on your integration architecture, <a href="/contact/">reach out</a>. We've seen what works and what gets engineers paged at 3am.</p>
+</article>
+
+<footer>
+  <p>© 2026 FiveNodes LLC · Albuquerque, NM · <a href="/legal/privacy/">Privacy</a></p>
+</footer>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0D0F1C;border-top:1px solid #1E2035;padding:1rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:'Inter',sans-serif;font-size:.85rem;color:#8B8FA8">
+  <span>We use cookies to improve your experience. <a href="/legal/cookies/" style="color:#C8F135;text-decoration:none">Learn more</a></span>
+  <div style="display:flex;gap:.75rem">
+    <button onclick="dismissCookie(false)" style="background:transparent;border:1px solid #1E2035;color:#8B8FA8;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem">Decline</button>
+    <button onclick="dismissCookie(true)" style="background:#C8F135;border:none;color:#05060E;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem">Accept</button>
+  </div>
+</div>
+<!-- WHATSAPP BUTTON -->
+<script>
+(function(){
+  var b=document.getElementById('cookie-banner');
+  if(b&&!localStorage.getItem('fn_cookie_choice')){b.style.display='flex'}
+})();
+function dismissCookie(accepted){
+  localStorage.setItem('fn_cookie_choice',accepted?'accepted':'declined');
+  var b=document.getElementById('cookie-banner');
+  if(b)b.style.display='none';
+}
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

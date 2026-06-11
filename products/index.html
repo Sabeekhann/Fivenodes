@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+  var mobile=window.matchMedia('(max-width:768px)').matches||window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  if(!mobile)return;
+  ['cursor','cursor-ring','bg-canvas'].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('vis');});
+})();
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58DLVPQF');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Products | FiveNodes</title>
+<meta name="description" content="Explore FiveNodes' own software products — HRM Prime and DG Expense — built to solve real business problems at scale.">
+<link rel="canonical" href="https://5ivenodes.com/products/">
+<meta property="og:title" content="Products | FiveNodes">
+<meta property="og:description" content="HRM Prime and DG Expense — enterprise-grade software products built by FiveNodes.">
+<meta property="og:image" content="https://5ivenodes.com/images/og-default.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#05060E;--bg2:#090B16;--card:#0D0F1C;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--lime:#C8F135;--lime2:#A8D420;--text:#E2E0F0;--muted:#6B6A80;--dim:#3A394A;--ff:'Inter',sans-serif;--fh:'Sora',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{cursor:none;border:none;background:none;font-family:inherit}
+#cursor{position:fixed;width:12px;height:12px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);mix-blend-mode:difference}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,241,53,0.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:all 0.12s ease}
+body.cursor-hover #cursor{width:20px;height:20px}
+body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,53,0.7)}
+.wrap{position:relative;z-index:1}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;transition:all .2s ease;cursor:none}
+.btn-lime{background:var(--lime);color:#05060E;font-weight:700}
+.btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
+.btn-outline{border:1px solid var(--border2);color:var(--text)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s}
+.nav.scrolled{background:rgba(5,6,14,0.92);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
+.nav-logo{display:flex;align-items:center;gap:12px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;cursor:none}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.nav-cta{background:var(--lime);color:#05060E;font-weight:700;padding:10px 22px;border-radius:8px;font-size:.875rem;cursor:none;transition:all .2s}
+.nav-cta:hover{background:var(--lime2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
+/* HERO */
+.page-hero{padding:140px 0 80px;text-align:center;border-bottom:1px solid var(--border)}
+.section-label{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.page-hero h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px}
+.page-hero h1 em{font-style:italic;font-weight:300;color:var(--lime)}
+.page-hero p{font-size:1.05rem;color:var(--muted);max-width:580px;margin:0 auto}
+/* PRODUCT SECTIONS */
+.product-sec{padding:100px 0;border-bottom:1px solid var(--border)}
+.product-sec:last-of-type{border-bottom:none}
+.prod-row{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.prod-row.reverse{direction:rtl}
+.prod-row.reverse > *{direction:ltr}
+.prod-content{}
+.prod-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:16px;font-family:'Courier New',monospace}
+.prod-content h2{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:8px}
+.prod-tagline{font-size:1rem;font-style:italic;color:rgba(200,241,53,.7);margin-bottom:20px;font-family:var(--fh)}
+.prod-content p{font-size:.9375rem;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.prod-features{margin:24px 0 32px;display:flex;flex-direction:column;gap:12px}
+.prod-feature{display:flex;align-items:flex-start;gap:12px}
+.prod-feat-icon{width:32px;height:32px;border-radius:8px;background:rgba(200,241,53,.08);border:1px solid rgba(200,241,53,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--lime);font-size:.75rem}
+.prod-feat-text h4{font-size:.875rem;font-weight:600;color:#fff;margin-bottom:2px}
+.prod-feat-text p{font-size:.8125rem;color:var(--muted);margin:0;line-height:1.5}
+.prod-actions{display:flex;gap:12px;flex-wrap:wrap}
+/* PRODUCT IMAGE */
+.prod-img-wrap{position:relative}
+.prod-img-wrap img{width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:0 40px 100px rgba(0,0,0,.5);display:block}
+.prod-img-glow{position:absolute;inset:-40px;background:radial-gradient(ellipse at center,rgba(200,241,53,.06) 0%,transparent 70%);pointer-events:none;border-radius:50%}
+/* BOTTOM CTA */
+.products-cta{padding:100px 0;text-align:center}
+.products-cta h2{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;color:#fff;margin-bottom:16px}
+.products-cta p{font-size:.9375rem;color:var(--muted);max-width:520px;margin:0 auto 36px}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.vis{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}
+/* FOOTER */
+footer{background:#030408;border-top:1px solid var(--border);padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.footer-logo-row{display:flex;align-items:center;gap:12px;font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:14px}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,.25);line-height:1.7;max-width:280px}
+.footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:18px}
+.footer-links li{margin-bottom:10px}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,.35);transition:color .2s;cursor:none}
+.footer-links a:hover{color:#fff}
+.footer-bot{padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bot p,.footer-bot a{font-size:.8rem;color:rgba(255,255,255,.18)}
+.footer-bot-links{display:flex;gap:20px}
+/* RESPONSIVE */
+@media(max-width:900px){.prod-row{grid-template-columns:1fr;gap:40px}.prod-row.reverse{direction:ltr}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta{display:none}.hamburger{display:flex}.page-hero{padding:110px 0 60px}.footer-grid{grid-template-columns:1fr}}
+
+/* Mobile reliability fixes */
+@media (max-width:768px),(hover:none) and (pointer:coarse){
+  body,button,a,.btn,.nav-link,.hamburger,.faq-q,.ind-card,.f-social-btn,.footer-links a,.exit-close,.exit-dismiss,.nl-btn,.nav-logo,.dd-item{cursor:auto!important;-webkit-tap-highlight-color:rgba(200,241,53,0.15)}
+  #cursor,#cursor-ring{display:none!important}
+  #bg-canvas,#hero-canvas,.hero-canvas-wrap{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:100px 0 60px}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3FFZ8MQ4X1');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Products | FiveNodes","url":"https://5ivenodes.com/products/","description":"FiveNodes software products — HRM Prime and DG Expense.","publisher":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com"}}</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '964144433261773');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=964144433261773&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DLVPQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="FiveNodes" style="width:34px;height:34px;border-radius:5px;object-fit:cover;flex-shrink:0">FiveNodes
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/services/" class="nav-link">Services</a>
+      <a href="/portfolio/" class="nav-link">Portfolio</a>
+      <a href="/products/" class="nav-link active">Products</a>
+      <a href="/case-studies/" class="nav-link">Case Studies</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+    </div>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Our Products</span>
+        <h1>Software we <em>built</em><br>and own</h1>
+        <p>Beyond client work — these are the enterprise-grade platforms we've designed, engineered, and launched ourselves to solve real business problems at scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 1: HRM Prime -->
+  <section class="product-sec" id="hrm-prime">
+    <div class="container">
+      <div class="prod-row reveal">
+        <div class="prod-content">
+          <div class="prod-eyebrow">Product 01 · HR Technology</div>
+          <h2>HRM Prime</h2>
+          <div class="prod-tagline">People-First HR. Performance-Driven Results.</div>
+          <p>Meet HRM Prime, the all-in-one human resource management platform by FiveNodes. Designed to simplify modern HR operations, HRM Prime covers everything from talent acquisition and onboarding to performance tracking, attendance, payroll, and analytics.</p>
+          <p>With an intuitive interface and powerful automation, HRM Prime helps organisations build strong workplace cultures, streamline HR workflows, and unlock the full potential of their workforce. Manage people smarter, boost engagement, and drive sustainable business growth.</p>
+          <div class="prod-features">
+            <div class="prod-feature">
+              <div class="prod-feat-icon"><i class="fas fa-users"></i></div>
+              <div class="prod-feat-text"><h4>Talent Acquisition &amp; Onboarding</h4><p>Streamlined hiring pipelines with automated onboarding workflows for new employees.</p></div>
+            </div>
+            <div class="prod-feature">
+              <div class="prod-feat-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="prod-feat-text"><h4>Performance &amp; Attendance Tracking</h4><p>Real-time performance reviews, goal tracking, and automated attendance management.</p></div>
+            </div>
+            <div class="prod-feature">
+              <div class="prod-feat-icon"><i class="fas fa-dollar-sign"></i></div>
+              <div class="prod-feat-text"><h4>Payroll &amp; Analytics</h4><p>Accurate payroll processing with deep HR analytics and workforce insights dashboards.</p></div>
+            </div>
+          </div>
+          <div class="prod-actions">
+            <a href="https://www.hrmprime.com/home" target="_blank" rel="noopener" class="btn btn-lime">Explore HRM Prime <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+            <a href="/contact/" class="btn btn-outline">Get a demo</a>
+          </div>
+        </div>
+        <div class="prod-img-wrap reveal reveal-d1">
+          <div class="prod-img-glow"></div>
+          <img src="/images/products/hrm-prime-snapshot.webp" alt="HRM Prime Dashboard" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 2: DG Expense -->
+  <section class="product-sec" id="dg-expense">
+    <div class="container">
+      <div class="prod-row reverse reveal">
+        <div class="prod-content">
+          <div class="prod-eyebrow">Product 02 · Financial Management</div>
+          <h2>DG Expense</h2>
+          <div class="prod-tagline">Smart Financial Management. Effortless Insights.</div>
+          <p>Discover DG Expense, a smart and streamlined financial management solution by FiveNodes. Built to modernise how businesses track, manage, and control expenses, DG Expense delivers real-time visibility into spending with minimal effort.</p>
+          <p>Through automated workflows, insightful dashboards, and seamless integrations, DG Expense eliminates manual spreadsheets and reduces errors. Stay compliant, make data-driven decisions, and empower your finance team with transparent, intelligent expense control.</p>
+          <div class="prod-features">
+            <div class="prod-feature">
+              <div class="prod-feat-icon"><i class="fas fa-eye"></i></div>
+              <div class="prod-feat-text"><h4>Real-Time Expense Visibility</h4><p>Live dashboards showing where every dollar is going across all departments and projects.</p></div>
+            </div>
+            <div class="prod-feature">
+              <div class="prod-feat-icon"><i class="fas fa-bolt"></i></div>
+              <div class="prod-feat-text"><h4>Automated Workflows</h4><p>Eliminate manual approvals with smart automation that routes, approves, and records expenses instantly.</p></div>
+            </div>
+            <div class="prod-feature">
+              <div class="prod-feat-icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="prod-feat-text"><h4>Compliance &amp; Integrations</h4><p>Stay audit-ready with built-in compliance checks and seamless integrations with your existing finance stack.</p></div>
+            </div>
+          </div>
+          <div class="prod-actions">
+            <a href="https://dgexpense.com/" target="_blank" rel="noopener" class="btn btn-lime">Explore DG Expense <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+            <a href="/contact/" class="btn btn-outline">Get a demo</a>
+          </div>
+        </div>
+        <div class="prod-img-wrap reveal reveal-d1">
+          <div class="prod-img-glow"></div>
+          <img src="/images/products/dg-expense-dashboard.png" alt="DG Expense Dashboard" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="products-cta">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Want something built?</span>
+        <h2>We build products like<br>these for our clients too</h2>
+        <p>Have a product idea or need enterprise software engineered from the ground up? Let's talk about what you're building.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a href="/contact/" class="btn btn-lime">Start a project <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+          <a href="/portfolio/" class="btn btn-outline">View client work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><img src="/images/logo.jpg" alt="FiveNodes" style="width:28px;height:28px;border-radius:4px;object-fit:cover;flex-shrink:0">FiveNodes</div>
+        <p>Purpose-built software engineering for growing companies. Delivered across healthcare, logistics, edtech, and more — since 2021.</p>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul class="footer-links">
+        <li><a href="#hrm-prime">HRM Prime</a></li>
+        <li><a href="#dg-expense">DG Expense</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links">
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul class="footer-links">
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li><a href="/legal/terms/">Terms of Service</a></li>
+        <li><a href="/legal/cookies/">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2026 FiveNodes LLC · Albuquerque, NM</p>
+      <div class="footer-bot-links"><a href="/legal/privacy/">Privacy</a><a href="/legal/terms/">Terms</a><a href="/legal/cookies/">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function lerpCursor(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerpCursor)}lerpCursor();
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'))});
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>40)});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0D0F1C;border-top:1px solid #1E2035;padding:1rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:'Inter',sans-serif;font-size:.85rem;color:#8B8FA8">
+  <span>We use cookies to improve your experience. <a href="/legal/cookies/" style="color:#C8F135;text-decoration:none">Learn more</a></span>
+  <div style="display:flex;gap:.75rem">
+    <button onclick="dismissCookie(false)" style="background:transparent;border:1px solid #1E2035;color:#8B8FA8;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem">Decline</button>
+    <button onclick="dismissCookie(true)" style="background:#C8F135;border:none;color:#05060E;padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-weight:700;font-size:.85rem">Accept</button>
+  </div>
+</div>
+<script>
+(function(){var b=document.getElementById('cookie-banner');if(b&&!localStorage.getItem('fn_cookie_choice')){b.style.display='flex'}})();
+function dismissCookie(accepted){localStorage.setItem('fn_cookie_choice',accepted?'accepted':'declined');var b=document.getElementById('cookie-banner');if(b)b.style.display='none'}
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/6a13397d0e89d01c34a570a6/1jpdhh4nl';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0)})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

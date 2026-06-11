@@ -1,0 +1,327 @@
+/* ═══════════════════════════════════════════════════════
+   FiveNodes — FUI Global Design System
+   Applied to all inner pages (about, services, blog, etc.)
+   ═══════════════════════════════════════════════════════ */
+
+/* ── FONTS ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
+/* ── TOKENS ────────────────────────────────────────── */
+:root {
+  --bg:      #05060E;
+  --bg2:     #020309;
+  --card:    #090B16;
+  --card2:   #0C0E1E;
+  --border:  rgba(200,241,53,0.08);
+  --border2: rgba(200,241,53,0.2);
+  --border3: rgba(200,241,53,0.38);
+  --lime:    #C8F135;
+  --lime2:   #A8D420;
+  --lime-bg: rgba(200,241,53,0.07);
+  --matrix:  #39FF8A;
+  --hud-txt: #5CFFA0;
+  --text:    #DCE0F5;
+  --muted:   #55566C;
+  --dim:     #282940;
+  --fm: 'JetBrains Mono','Fira Code',monospace;
+  --fh: 'Sora',sans-serif;
+  --ff: 'Inter',sans-serif;
+  --glow-s:  0 0 12px rgba(200,241,53,0.35);
+  --glow-m:  0 0 24px rgba(200,241,53,0.25), 0 0 60px rgba(200,241,53,0.08);
+}
+
+/* ── SCANLINES ─────────────────────────────────────── */
+.fui-scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10000;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(200,241,53,0.010) 2px,
+    rgba(200,241,53,0.010) 4px
+  );
+}
+
+/* ── HUD OVERLAY ───────────────────────────────────── */
+.hud-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+}
+.hud-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(200,241,53,0.4);
+  border-style: solid;
+  transition: border-color .3s;
+}
+.hud-corner.tl { top: 76px; left: 14px; border-width: 1.5px 0 0 1.5px; }
+.hud-corner.tr { top: 76px; right: 14px; border-width: 1.5px 1.5px 0 0; }
+.hud-corner.bl { bottom: 14px; left: 14px; border-width: 0 0 1.5px 1.5px; }
+.hud-corner.br { bottom: 14px; right: 14px; border-width: 0 1.5px 1.5px 0; }
+
+.hud-status {
+  position: absolute;
+  font-family: var(--fm);
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(200,241,53,0.35);
+  white-space: nowrap;
+}
+.hud-status-tl { top: 82px; left: 46px; display:flex;align-items:center;gap:8px }
+.hud-status-tr { top: 82px; right: 46px; }
+.hud-status-bl { bottom: 20px; left: 46px; }
+.hud-status-br { bottom: 20px; right: 46px; }
+.hud-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--matrix);
+  box-shadow: 0 0 8px var(--matrix);
+  flex-shrink: 0;
+  animation: hudBlink 2.2s ease infinite;
+}
+@keyframes hudBlink { 0%,100%{opacity:1}50%{opacity:.25} }
+
+/* ── NAV OVERRIDES (FUI) ───────────────────────────── */
+.nav-logo {
+  font-family: var(--fm) !important;
+  font-size: .95rem !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  color: var(--lime) !important;
+}
+.logo-bracket { color: rgba(200,241,53,0.35); font-weight: 300; }
+.logo-cursor {
+  display: inline-block;
+  width: 2px; height: 1em;
+  background: var(--lime);
+  margin-left: 2px;
+  animation: curBlink .9s step-end infinite;
+  vertical-align: text-bottom;
+}
+@keyframes curBlink { 0%,100%{opacity:1}50%{opacity:0} }
+
+.nav-link {
+  font-family: var(--fm) !important;
+  font-size: .78rem !important;
+  letter-spacing: .05em !important;
+  text-transform: uppercase !important;
+}
+.nav-link:hover { color: var(--lime) !important; }
+
+/* dropdown FUI */
+.dd-menu {
+  background: #0A0C18 !important;
+  border-color: var(--border2) !important;
+  box-shadow: 0 28px 64px rgba(0,0,0,.7), 0 0 40px rgba(200,241,53,.04) !important;
+}
+.dd-item {
+  font-family: var(--fm) !important;
+  font-size: .78rem !important;
+  letter-spacing: .03em !important;
+}
+.dd-item:hover { background: var(--lime-bg) !important; color: var(--lime) !important; }
+.dd-item strong { font-family: var(--fm) !important; text-transform: uppercase !important; letter-spacing: .05em !important; }
+.dd-icon { background: rgba(200,241,53,.07) !important; border: 1px solid var(--border) !important; }
+
+/* ── SECTION LABEL ─────────────────────────────────── */
+.section-label,
+.eyebrow {
+  font-family: var(--fm) !important;
+  font-size: .62rem !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: var(--lime) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 14px !important;
+}
+.section-label::before { content: '//'; opacity: .45; font-weight: 300; }
+
+/* ── BUTTONS FUI ───────────────────────────────────── */
+.btn, a.btn {
+  font-family: var(--fm) !important;
+  letter-spacing: .04em !important;
+  border-radius: 5px !important;
+  transition: all .2s ease !important;
+}
+.btn-lime, .btn-primary, .btn-fui-primary {
+  background: var(--lime) !important;
+  color: #05060E !important;
+  font-weight: 700 !important;
+  box-shadow: var(--glow-s) !important;
+}
+.btn-lime:hover, .btn-primary:hover, .btn-fui-primary:hover {
+  background: var(--lime2) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--glow-m) !important;
+}
+.btn-outline, .btn-sec, .btn-fui-ghost {
+  border: 1px solid var(--border2) !important;
+  color: var(--text) !important;
+  background: transparent !important;
+}
+.btn-outline:hover, .btn-sec:hover, .btn-fui-ghost:hover {
+  border-color: var(--border3) !important;
+  color: var(--lime) !important;
+  background: var(--lime-bg) !important;
+}
+
+/* ── CARDS ─────────────────────────────────────────── */
+.post-card, .model-card, .value, .job-card,
+[class*="-card"]:not(#cursor):not(.testi-card) {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  transition: border-color .25s, transform .25s, box-shadow .25s !important;
+}
+.post-card:hover, .model-card:hover, .job-card:hover {
+  border-color: rgba(200,241,53,0.22) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 24px 48px rgba(0,0,0,.5), 0 0 40px rgba(200,241,53,.05) !important;
+}
+
+/* Tech chips */
+.tech-chip {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  transition: border-color .2s, transform .2s !important;
+}
+.tech-chip:hover {
+  border-color: rgba(200,241,53,.28) !important;
+  transform: translateY(-2px) !important;
+}
+.tech-chip .tier { color: rgba(200,241,53,.55) !important; font-family: var(--fm) !important; }
+.tech-chip .name { font-family: var(--fm) !important; font-size: .8rem !important; letter-spacing:.03em !important; }
+
+/* Tags / pills */
+.job-tag, .panel-tag, .post-tag {
+  font-family: var(--fm) !important;
+  letter-spacing: .06em !important;
+}
+
+/* ── BLOG ARTICLE BODY ─────────────────────────────── */
+article h2 {
+  font-family: var(--fh) !important;
+  color: #fff !important;
+}
+article p, article li {
+  color: #C4C8DC !important;
+}
+.callout {
+  border-left-color: var(--lime) !important;
+  background: var(--card) !important;
+}
+.callout p { color: var(--text) !important; }
+.phase {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+}
+.phase-label { color: var(--lime) !important; font-family: var(--fm) !important; letter-spacing:.1em !important; }
+
+/* ── FOOTER ────────────────────────────────────────── */
+footer {
+  background: var(--bg2) !important;
+  border-top-color: var(--border) !important;
+}
+.footer-col h4 {
+  font-family: var(--fm) !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.18) !important;
+}
+.footer-links a {
+  font-size: .84rem !important;
+  color: rgba(255,255,255,.28) !important;
+  transition: color .2s !important;
+}
+.footer-links a:hover { color: var(--lime) !important; }
+.footer-bot p, .footer-bot a {
+  font-family: var(--fm) !important;
+  font-size: .6rem !important;
+  letter-spacing: .06em !important;
+  color: rgba(255,255,255,.15) !important;
+}
+
+/* ── CAREERS PAGE ──────────────────────────────────── */
+.perk-text strong { font-family: var(--fm) !important; font-size:.84rem !important; letter-spacing:.03em !important; }
+.perk-text span   { color: var(--muted) !important; }
+.apply-btn {
+  font-family: var(--fm) !important;
+  letter-spacing: .05em !important;
+  background: var(--lime) !important;
+  color: #05060E !important;
+  border-radius: 5px !important;
+  font-weight: 700 !important;
+}
+.apply-btn:hover { opacity: .85 !important; }
+
+/* ── HOW WE WORK PAGE ──────────────────────────────── */
+.model-card { border-radius: 12px !important; }
+.model-card.featured { border-color: rgba(200,241,53,.4) !important; }
+.model-tag {
+  font-family: var(--fm) !important;
+  letter-spacing: .1em !important;
+  color: var(--lime) !important;
+}
+.model-price { font-family: var(--fh) !important; }
+.step-num {
+  background: rgba(200,241,53,.08) !important;
+  border-color: rgba(200,241,53,.2) !important;
+  color: var(--lime) !important;
+  font-family: var(--fm) !important;
+}
+
+/* ── TECH STACK PAGE ───────────────────────────────── */
+.stack-section h2 {
+  font-family: var(--fh) !important;
+  color: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+.stack-section h2::after {
+  content: '' !important;
+  flex: 1 !important;
+  height: 1px !important;
+  background: var(--border) !important;
+}
+
+/* ── 404 PAGE ──────────────────────────────────────── */
+.err-code {
+  font-family: var(--fh) !important;
+  background: linear-gradient(135deg,var(--lime),#7ED321) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ── COOKIE BANNER FUI ─────────────────────────────── */
+#cookie-banner {
+  background: #090B16 !important;
+  border-top-color: rgba(200,241,53,.15) !important;
+  font-family: var(--fm) !important;
+  font-size: .72rem !important;
+  letter-spacing: .04em !important;
+  color: rgba(200,241,53,.45) !important;
+}
+#cookie-banner a { color: var(--lime) !important; }
+
+/* ── SCROLLBAR ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(200,241,53,.2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(200,241,53,.4); }
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media(max-width:680px){
+  .hud-corner { display: none; }
+  .hud-status-tl,.hud-status-bl { display: none; }
+}
