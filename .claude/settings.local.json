@@ -260,7 +260,16 @@
       "Bash(curl -s https://devsouq.com/projects/portfolio/)",
       "Bash(curl -sL \"https://devsouq.com/projects/portfolio/\" -o /tmp/devsouq_portfolio.html --max-time 30)",
       "Bash(curl -sL \"https://septemsystems.com/internet-of-things\" -o /tmp/septem_iot.html --max-time 30)",
-      "Bash(curl -sL \"https://synavos.com/projects/\" -o /tmp/synavos_projects.html --max-time 30)"
+      "Bash(curl -sL \"https://synavos.com/projects/\" -o /tmp/synavos_projects.html --max-time 30)",
+      "Bash(rm -rf /Users/macbookpro/Desktop/FiveNodes/images/portfolio/*)",
+      "Bash(curl -sL \"https://devsouq.com/portfolio/\" -o /tmp/devsouq.html)",
+      "Bash(curl -sL \"https://septemsystems.com/internet-of-things\" -o /tmp/septem.html)",
+      "Bash(curl -sL \"https://synavos.com/projects/\" -o /tmp/synavos.html)",
+      "Bash(sed -i '' 's|/images/portfolio/numerico\\\\.png|/images/portfolio/numerico.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/finqalab\\\\.png|/images/portfolio/finqalab.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/everest\\\\.png|/images/portfolio/everest.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/peace-coin\\\\.png|/images/portfolio/peace-coin.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/next-capital\\\\.png|/images/portfolio/next-capital.webp|g' portfolio/index.html)"
     ]
   }
 }
