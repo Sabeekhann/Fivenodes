@@ -269,7 +269,18 @@
       "Bash(sed -i '' 's|/images/portfolio/finqalab\\\\.png|/images/portfolio/finqalab.webp|g' portfolio/index.html)",
       "Bash(sed -i '' 's|/images/portfolio/everest\\\\.png|/images/portfolio/everest.webp|g' portfolio/index.html)",
       "Bash(sed -i '' 's|/images/portfolio/peace-coin\\\\.png|/images/portfolio/peace-coin.webp|g' portfolio/index.html)",
-      "Bash(sed -i '' 's|/images/portfolio/next-capital\\\\.png|/images/portfolio/next-capital.webp|g' portfolio/index.html)"
+      "Bash(sed -i '' 's|/images/portfolio/next-capital\\\\.png|/images/portfolio/next-capital.webp|g' portfolio/index.html)",
+      "Bash(cd /Users/macbookpro/Desktop/FiveNodes/images/portfolio *)",
+      "Bash(sed -i '' 's|/images/portfolio/dravis-studio\\\\.png|/images/portfolio/dravis-studio.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/esg-roadmap\\\\.png|/images/portfolio/esg-roadmap.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/pak-saudi-startup-hub\\\\.png|/images/portfolio/pak-saudi-startup-hub.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/sultan-impex\\\\.png|/images/portfolio/sultan-impex.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/tech-consultivo\\\\.png|/images/portfolio/tech-consultivo.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/screen-mirroring\\\\.png|/images/portfolio/screen-mirroring.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/smarty-men\\\\.png|/images/portfolio/smarty-men.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/speedo-meter\\\\.png|/images/portfolio/speedo-meter.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/syncona\\\\.png|/images/portfolio/syncona.webp|g' portfolio/index.html)",
+      "Bash(sed -i '' 's|/images/portfolio/tez-agents\\\\.png|/images/portfolio/tez-agents.webp|g' portfolio/index.html)"
     ]
   }
 }
