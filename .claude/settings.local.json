@@ -247,7 +247,20 @@
       "Bash(curl -s \"https://web.archive.org/web/20260609/https://devsouq.com/wp-content/uploads/2026/01/\")",
       "Bash(curl -s \"https://archive.org/wayback/available?url=devsouq.com/wp-content/uploads/2026/&output=json\")",
       "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" --max-time 10 https://septemsystems.com/internet-of-things)",
-      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" --max-time 10 https://devsouq.com/)"
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" --max-time 10 https://devsouq.com/)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} - numerico.png\\\\n\" --max-time 10 https://5ivenodes.com/images/clients/numerico.png)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} - clutch-badge.png\\\\n\" --max-time 10 https://5ivenodes.com/images/awards/clutch-badge.png)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} - homepage\\\\n\" --max-time 10 https://5ivenodes.com/)",
+      "Bash(curl -sL -o /dev/null -w \"HTTP %{http_code} - numerico.png loaded\\\\n\" --max-time 10 https://5ivenodes.com/images/clients/numerico.png)",
+      "Read(//Users/macbookpro/.vercel/**)",
+      "Bash(curl -s https://api.vercel.com/v13/deployments -H \"Authorization: Bearer $\\(cat ~/.vercel/token \\)\")",
+      "Bash(curl -X POST https://api.cloudflare.com/client/v4/zones/20ca70e833db76119f4f349d9a38edb2/purge_cache -H 'Authorization: Bearer pk_8b9f5f3e0e8c7d6a5' -H 'Content-Type: application/json' --data '{\"files\":[\"https://5ivenodes.com/images/clients/*\",\"https://5ivenodes.com/images/awards/*\"]}')",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" --max-time 10 https://devsouq.com/projects/portfolio/)",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" --max-time 10 https://synavos.com/projects/)",
+      "Bash(curl -s https://devsouq.com/projects/portfolio/)",
+      "Bash(curl -sL \"https://devsouq.com/projects/portfolio/\" -o /tmp/devsouq_portfolio.html --max-time 30)",
+      "Bash(curl -sL \"https://septemsystems.com/internet-of-things\" -o /tmp/septem_iot.html --max-time 30)",
+      "Bash(curl -sL \"https://synavos.com/projects/\" -o /tmp/synavos_projects.html --max-time 30)"
     ]
   }
 }
