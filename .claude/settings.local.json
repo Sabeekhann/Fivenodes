@@ -298,7 +298,13 @@
       "Bash(cp ticketlake.webp ullmanna.webp)",
       "Bash(cp wisentic.webp annebarge.webp)",
       "Bash(cp artisan.webp dravisstudio.webp)",
-      "Bash(cp simplysufi.webp esgroadmap.webp)"
+      "Bash(cp simplysufi.webp esgroadmap.webp)",
+      "Bash(curl -sL --max-time 30 -H 'User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36' -H 'Referer: https://devsouq.com/' https://devsouq.com/wp-content/uploads/2026/01/01-1.webp -o numerico.png)",
+      "Bash(ls -lh numerico.png)",
+      "Bash(export CLAUDE_CODE_TMPDIR=/tmp/claude_custom)",
+      "Bash(mkdir -p /tmp/claude_custom)",
+      "Bash(curl -sI --max-time 10 https://devsouq.com/wp-content/uploads/2026/01/01-1.webp)",
+      "Bash(curl -v --max-time 10 'https://devsouq.com/')"
     ]
   }
 }
