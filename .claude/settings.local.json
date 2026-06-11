@@ -243,7 +243,11 @@
       "Bash(curl -s https://5ivenodes.com)",
       "Bash(curl -s -L https://5ivenodes.com)",
       "Bash(curl -Ls https://5ivenodes.com)",
-      "Bash(timeout 10 curl -v https://5ivenodes.com)"
+      "Bash(timeout 10 curl -v https://5ivenodes.com)",
+      "Bash(curl -s \"https://web.archive.org/web/20260609/https://devsouq.com/wp-content/uploads/2026/01/\")",
+      "Bash(curl -s \"https://archive.org/wayback/available?url=devsouq.com/wp-content/uploads/2026/&output=json\")",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" --max-time 10 https://septemsystems.com/internet-of-things)",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" --max-time 10 https://devsouq.com/)"
     ]
   }
 }
