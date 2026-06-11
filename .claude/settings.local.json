@@ -304,7 +304,26 @@
       "Bash(export CLAUDE_CODE_TMPDIR=/tmp/claude_custom)",
       "Bash(mkdir -p /tmp/claude_custom)",
       "Bash(curl -sI --max-time 10 https://devsouq.com/wp-content/uploads/2026/01/01-1.webp)",
-      "Bash(curl -v --max-time 10 'https://devsouq.com/')"
+      "Bash(curl -v --max-time 10 'https://devsouq.com/')",
+      "Bash(curl -s --max-time 10 -o /dev/null -w \"%{http_code}\" https://devsouq.com/portfolio/)",
+      "Bash(curl -s --max-time 10 -o /dev/null -w \"%{http_code}\" https://synavos.com/projects/)",
+      "Bash(curl -s --max-time 10 -o /dev/null -w \"%{http_code}\" https://septemsystems.com/internet-of-things)",
+      "Bash(curl -s --max-time 15 \"https://devsouq.com/wp-json/wp/v2/pages?per_page=50&_fields=title,slug,content,featured_media,link\" -o /tmp/devsouq_api.json)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(curl -s --max-time 15 \"https://synavos.com/wp-json/wp/v2/posts?per_page=50&_fields=title,slug,featured_media,fimg_url\" -o /tmp/synavos_api.json)",
+      "Bash(curl -s --max-time 20 -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://synavos.com/projects/\" -o /tmp/synavos_full.html)",
+      "Bash(curl -s --max-time 20 -H 'Accept: text/html,application/xhtml+xml' -H 'Accept-Language: en-US,en;q=0.9' -H 'Cache-Control: no-cache' https://synavos.com/projects/ -o /tmp/synavos2.html)",
+      "Bash(curl -s --max-time 20 \"https://septemsystems.com/internet-of-things\" -o /tmp/septem2.html)",
+      "Bash(curl -s --max-time 15 \"https://web.archive.org/web/2026/https://devsouq.com/portfolio/\" -o /tmp/devsouq_wayback.html)",
+      "Bash(curl -s --max-time 15 \"https://devsouq.com/sitemap.xml\" -o /tmp/devsouq_sitemap.xml)",
+      "Bash(curl -s --max-time 10 -o /dev/null -w \"%{http_code} %{size_download}\" \"https://devsouq.com/wp-content/uploads/2026/01/01-1.webp\")",
+      "Bash(curl -s \"http://web.archive.org/cdx/search/cdx?url=synavos.com/projects/&output=json&limit=3&fl=timestamp,original\")",
+      "Bash(curl -s --max-time 20 -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' -H 'Connection: keep-alive' -b visited=1 https://synavos.com/projects/ -o /tmp/synavos_try2.html)",
+      "Bash(curl -s --max-time 20 -o /tmp/test_devsouq.webp \"https://devsouq.com/wp-content/uploads/2026/01/01-1.webp\")",
+      "Bash(curl -s --max-time 20 \"https://web.archive.org/web/20231220065934/https://synavos.com/projects/\" -o /tmp/synavos_wb.html)",
+      "Bash(curl -s \"http://web.archive.org/cdx/search/cdx?url=devsouq.com/portfolio/&output=json&limit=5&fl=timestamp\")",
+      "Bash(curl -s --max-time 20 \"https://web.archive.org/web/2026/https://devsouq.com/portfolio/\" -o /tmp/devsouq_wb.html)",
+      "Bash(curl -s --max-time 25 \"https://web.archive.org/web/20260216011458/https://devsouq.com/portfolio/\" -o /tmp/devsouq_wb2.html)"
     ]
   }
 }
