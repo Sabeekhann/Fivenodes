@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://5ivenodes.com/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,43 +12,49 @@
   <!-- Core Pages -->
   <url>
     <loc>https://5ivenodes.com/about/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/contact/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/portfolio/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://5ivenodes.com/products/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://5ivenodes.com/case-studies/</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://5ivenodes.com/how-we-work/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/careers/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://5ivenodes.com/products/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/how-we-work/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://5ivenodes.com/technologies/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -56,165 +62,201 @@
   <!-- Services -->
   <url>
     <loc>https://5ivenodes.com/services/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/services/saas-product-engineering/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://5ivenodes.com/services/api-integration/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/services/cloud-devops/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://5ivenodes.com/services/data-analytics/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://5ivenodes.com/services/api-integration/</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/services/ui-ux-design/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/services/data-analytics/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/services/maintenance-scaling/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
 
   <!-- Industries -->
   <url>
     <loc>https://5ivenodes.com/industries/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://5ivenodes.com/industries/healthcare/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://5ivenodes.com/industries/edtech/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://5ivenodes.com/industries/legaltech/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/industries/govtech/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://5ivenodes.com/industries/logistics/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://5ivenodes.com/industries/healthcare/</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://5ivenodes.com/industries/real-estate/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/industries/hr-workforce/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/industries/legaltech/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/industries/logistics/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/industries/real-estate/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/industries/retail-ecommerce/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Case Studies -->
+  <url>
+    <loc>https://5ivenodes.com/work/numerico/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/work/cheetay/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/work/recruitly/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/work/everest/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/work/neuraldesk/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/work/clinicflow/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Blog -->
   <url>
     <loc>https://5ivenodes.com/blog/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://5ivenodes.com/blog/multi-tenant-saas-architecture/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://5ivenodes.com/blog/vibe-coding-reality/</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/blog/ai-agents-production/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://5ivenodes.com/blog/rag-vs-fine-tuning/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/blog/llm-integration-guide/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/blog/saas-architecture-mistakes/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://5ivenodes.com/blog/choosing-tech-stack-2024/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://5ivenodes.com/blog/multi-tenant-saas-architecture/</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://5ivenodes.com/blog/architecture-first-approach/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://5ivenodes.com/blog/building-saas-mvp/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Legal -->
-  <url>
-    <loc>https://5ivenodes.com/legal/privacy/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://5ivenodes.com/legal/terms/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://5ivenodes.com/blog/choosing-tech-stack-2024/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://5ivenodes.com/legal/cookies/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://5ivenodes.com/blog/architecture-first-approach/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 
 </urlset>
