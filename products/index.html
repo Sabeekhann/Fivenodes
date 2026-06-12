@@ -51,7 +51,7 @@ body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,
 .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 48px;height:72px}
 .nav-logo{display:flex;align-items:center;gap:12px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;cursor:none}
 .nav-links{display:flex;align-items:center;gap:4px}
-.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-link{padding:7px 13px;font-size:.875rem;color:var(--muted);transition:color .18s,background .18s;border-radius:6px;cursor:none;letter-spacing:.005em;font-weight:450}
 .nav-link:hover,.nav-link.active{color:var(--text)}
 .nav-cta{background:var(--lime);color:#05060E;font-weight:700;padding:10px 22px;border-radius:8px;font-size:.875rem;cursor:none;transition:all .2s}
 .nav-cta:hover{background:var(--lime2)}
@@ -162,7 +162,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/blog/" class="nav-link">Blog</a>
       <a href="/contact/" class="nav-link">Contact</a>
     </div>
-    <a href="/contact/" class="nav-cta">Get a Quote</a>
+    
+    <div class="nav-ctas">
+      <a href="/contact/" class="nav-cta">Get a Quote</a>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>

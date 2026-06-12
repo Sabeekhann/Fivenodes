@@ -55,10 +55,14 @@ body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,
 .nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.03em;cursor:none}
 .logo-mark{width:34px;height:34px;position:relative;flex-shrink:0}
 .logo-mark canvas{position:absolute;inset:0}
-.nav-links{display:flex;align-items:center}
-.nav-link{padding:8px 16px;font-size:.875rem;color:var(--muted);transition:color .2s;border-radius:6px;cursor:none}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{padding:7px 13px;font-size:.875rem;color:var(--muted);transition:color .18s,background .18s;border-radius:6px;cursor:none;letter-spacing:.005em;font-weight:450}
 .nav-link:hover{color:var(--text)}
 .nav-dropdown{position:relative}
+.nav-dropdown>.nav-link{display:inline-flex;align-items:center;gap:5px}
+.nav-dropdown>.nav-link::after{content:'';width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;opacity:.45;transition:transform .2s,opacity .2s;margin-top:1px}
+.nav-dropdown.dd-open>.nav-link::after{transform:rotate(180deg);opacity:.8}
+.nav-ctas{display:flex;align-items:center;gap:8px;margin-left:16px;padding-left:16px;border-left:1px solid var(--border)}
 .dd-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#0D0F1C;border:1px solid var(--border2);border-radius:14px;padding:8px;min-width:280px;opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 32px 80px rgba(0,0,0,0.6);pointer-events:none}
 .nav-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
 .dd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:var(--muted);font-size:.875rem;transition:all .15s;cursor:none}
@@ -305,16 +309,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="/services/maintenance-scaling/" class="dd-item"><span class="dd-icon"><i class="fas fa-shield-halved"></i></span><div><strong>Maintenance</strong><small>Support &amp; scaling</small></div></a>
         </div>
       </li>
-      <li class="nav-dropdown"><a class="nav-link" href="/industries/">Industries</a>
-        <div class="dd-menu dd-2col" role="menu">
-          <a href="/industries/healthcare/" class="dd-item">Healthcare</a><a href="/industries/edtech/" class="dd-item">EdTech</a>
-          <a href="/industries/logistics/" class="dd-item">Logistics</a><a href="/industries/real-estate/" class="dd-item">Real Estate</a>
-          <a href="/industries/hr-workforce/" class="dd-item">HR Tech</a><a href="/industries/retail-ecommerce/" class="dd-item">Retail</a>
-          <a href="/industries/legaltech/" class="dd-item">LegalTech</a><a href="/industries/govtech/" class="dd-item">GovTech</a>
-        </div>
-      </li>
       <li><a class="nav-link" href="/about/">About</a></li>
-      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li><li><a class="nav-link" href="/products/">Products</a></li><li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
+      <li><a class="nav-link" href="/portfolio/">Portfolio</a></li><li><a class="nav-link" href="/case-studies/">Case Studies</a></li>
       <li><a class="nav-link" href="/contact/">Contact</a></li>
     </ul>
     <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
