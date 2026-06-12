@@ -355,7 +355,9 @@
       "Bash(curl -s \"https://web.archive.org/cdx/search/cdx?url=septemsystems.com/img/*klugar*&output=json&limit=5&fl=timestamp,original\")",
       "Bash(curl -s \"https://web.archive.org/cdx/search/cdx?url=septemsystems.com/img/*gtensor*&output=json&limit=5&fl=timestamp,original\")",
       "Bash(curl -s \"https://web.archive.org/cdx/search/cdx?url=synavos.com/*gamif*&output=json&limit=5&fl=timestamp,original\")",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(mkdir -p /Users/macbookpro/Desktop/FiveNodes-Profile && ls /Users/macbookpro/Desktop/FiveNodes-Profile)",
+      "Bash(npx serve *)"
     ]
   }
 }
