@@ -55,7 +55,7 @@ li{margin-bottom:.5rem}
 code{background:rgba(200,241,53,.08);border:1px solid rgba(200,241,53,.15);border-radius:4px;padding:2px 7px;font-family:'Courier New',monospace;font-size:.82em;color:var(--lime)}
 footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.8rem}
 @media(max-width:768px){article{padding:2rem 1.25rem 4rem}.nav-links,.nav-cta{display:none}body{cursor:auto!important}}
-</style>
+.aip-inline{background:linear-gradient(135deg,rgba(198,241,53,.06) 0%,rgba(198,241,53,.02) 100%);border:1px solid rgba(198,241,53,.22);border-radius:14px;padding:28px 32px;margin:2.5rem 0;position:relative;overflow:hidden}.aip-inline::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C6F135,rgba(198,241,53,.1))}.aip-inline-label{font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C6F135;margin-bottom:10px;display:flex;align-items:center;gap:6px}.aip-inline-label::before{content:'';width:5px;height:5px;border-radius:50%;background:#C6F135;display:inline-block;animation:aip-dot 1.8s ease-in-out infinite}@keyframes aip-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}.aip-inline h3{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 6px;line-height:1.3}.aip-inline p{color:#8892A4;font-size:.875rem;margin:0 0 16px;line-height:1.65}.aip-inline-btn{display:inline-flex;align-items:center;gap:8px;background:#C6F135;color:#05060E;font-weight:700;font-size:.875rem;padding:10px 20px;border-radius:8px;transition:all .2s;font-family:'Inter',sans-serif}.aip-inline-btn:hover{background:#b8e020;transform:translateY(-1px);box-shadow:0 6px 24px rgba(198,241,53,.3);color:#05060E}.aip-end{background:rgba(13,15,28,.9);border-top:1px solid rgba(198,241,53,.15);border-bottom:1px solid rgba(198,241,53,.15);padding:40px 32px;margin:3rem -2rem;text-align:center}.aip-end h3{font-family:'Sora',sans-serif;font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:8px}.aip-end p{color:#6B6A80;font-size:.9rem;margin-bottom:20px}.aip-end-btn{display:inline-flex;align-items:center;gap:9px;background:#C6F135;color:#05060E;font-weight:700;font-size:.9375rem;padding:13px 28px;border-radius:10px;transition:all .2s;font-family:'Inter',sans-serif;text-decoration:none}.aip-end-btn:hover{background:#b8e020;transform:translateY(-2px);box-shadow:0 8px 32px rgba(198,241,53,.35);color:#05060E}.aip-end-meta{margin-top:12px;font-size:.72rem;color:#3A394A}@media(max-width:768px){.aip-end{margin:3rem -1.25rem}.aip-inline{padding:22px 20px}}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3FFZ8MQ4X1');</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Building AI Agents That Actually Work in Production","description":"AI agents fail in production for predictable reasons. Here's how to build reliable, observable multi-step AI agents.","url":"https://5ivenodes.com/blog/ai-agents-production/","datePublished":"2026-05-01","dateModified":"2026-06-10","author":{"@type":"Organization","name":"FiveNodes Team"},"publisher":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com"},"keywords":"AI agents, agentic AI, LLM production, autonomous AI, tool calling","inLanguage":"en-US"}</script>
@@ -148,7 +148,16 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:v
   </ul>
   <p>We use LangSmith or a custom trace store. The key insight: when an agent produces a bad output, you need to replay the trace and see exactly where it went wrong. Without step-level logging you're debugging in the dark.</p>
 
-  <h2>5. Human-in-the-loop is an architectural pattern, not a UX afterthought</h2>
+  <div class="aip-inline">
+  <div class="aip-inline-label">FiveNodes AI Profile</div>
+  <h3>Have questions? Our AI can answer instantly</h3>
+  <p>Ask about our services, tech stack, process, or case studies — no forms, no waiting, no sales calls required.</p>
+  <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="aip-inline-btn">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Try the AI Profile
+  </a>
+</div>
+<h2>5. Human-in-the-loop is an architectural pattern, not a UX afterthought</h2>
   <p>For any agent that takes irreversible actions — sending emails, making payments, deleting data, publishing content — design a human approval step into the architecture from the start. Not as a patch, but as a first-class component.</p>
   <p>The pattern looks like: agent generates an action plan → system persists the plan → human reviews and approves → agent executes. This gives you the speed of automation with the safety of human oversight. The approval step can be progressively removed as confidence in the agent grows.</p>
 
