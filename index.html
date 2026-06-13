@@ -64,22 +64,39 @@ body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,
 .btn-ai-profile:hover{background:#b8e020;transform:translateY(-1px);box-shadow:0 6px 24px rgba(198,241,53,0.35);animation:none}
 @keyframes aipulse{0%,100%{box-shadow:0 0 0 0 rgba(198,241,53,0.4)}50%{box-shadow:0 0 0 7px rgba(198,241,53,0)}}
 /* AI PROFILE STRIP */
-.aip-strip{background:linear-gradient(100deg,#0c0f1e 0%,#0f1220 60%,#111828 100%);border-top:1px solid rgba(198,241,53,0.12);border-bottom:1px solid rgba(198,241,53,0.12);padding:52px 0;margin:80px 0 0;position:relative;overflow:hidden}
-.aip-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 180% at 80% 50%,rgba(198,241,53,0.055) 0%,transparent 65%);pointer-events:none}
-.aip-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;z-index:1}
-.aip-strip-left{flex:1;min-width:0}
-.aip-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C6F135;margin-bottom:14px}
-.aip-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#C6F135;animation:hdot 1.8s ease-in-out infinite}
-.aip-strip h2{font-family:var(--fh);font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.12;margin-bottom:10px}
+.aip-strip{background:#080b18;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:72px 0;margin:80px 0 0;position:relative;overflow:hidden}
+.aip-strip::before{content:'';position:absolute;top:-80px;right:-80px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(198,241,53,0.07) 0%,transparent 70%);pointer-events:none}
+.aip-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:64px;position:relative;z-index:1}
+.aip-strip-left{flex:1;min-width:0;max-width:520px}
+.aip-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(198,241,53,0.1);border:1px solid rgba(198,241,53,0.25);border-radius:100px;padding:5px 14px;font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C6F135;margin-bottom:20px}
+.aip-badge-dot{width:5px;height:5px;border-radius:50%;background:#C6F135;flex-shrink:0}
+.aip-strip h2{font-family:var(--fh);font-size:clamp(1.75rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.045em;color:#fff;line-height:1.1;margin-bottom:14px}
 .aip-strip h2 em{font-style:normal;color:#C6F135}
-.aip-strip p{font-size:.9375rem;color:var(--muted);max-width:500px;line-height:1.72}
-.aip-strip-right{display:flex;flex-direction:column;align-items:center;gap:12px;flex-shrink:0}
-.aip-cta{display:inline-flex;align-items:center;gap:10px;background:#C6F135;color:#05060E;font-weight:700;font-size:.9375rem;padding:15px 32px;border-radius:10px;transition:all .2s;white-space:nowrap;font-family:var(--ff);box-shadow:0 4px 28px rgba(198,241,53,0.25)}
-.aip-cta:hover{background:#b8e020;transform:translateY(-2px);box-shadow:0 8px 36px rgba(198,241,53,0.38)}
+.aip-strip-desc{font-size:.9375rem;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:28px;max-width:440px}
+.aip-features{display:flex;flex-direction:column;gap:9px;margin-bottom:32px}
+.aip-feature{display:flex;align-items:center;gap:10px;font-size:.84rem;color:rgba(255,255,255,0.6)}
+.aip-feature-icon{width:18px;height:18px;border-radius:50%;background:rgba(198,241,53,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.aip-feature-icon svg{color:#C6F135}
+.aip-cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.aip-cta{display:inline-flex;align-items:center;gap:9px;background:#C6F135;color:#05060E;font-weight:800;font-size:.9375rem;padding:14px 28px;border-radius:10px;transition:all .22s;white-space:nowrap;font-family:var(--ff);box-shadow:0 0 0 0 rgba(198,241,53,0.4);letter-spacing:-.01em}
+.aip-cta:hover{background:#d4f54a;transform:translateY(-2px);box-shadow:0 8px 32px rgba(198,241,53,0.32)}
 .aip-cta svg{flex-shrink:0}
-.aip-meta{font-size:.72rem;color:var(--dim);display:flex;align-items:center;gap:10px}
-.aip-meta span{display:flex;align-items:center;gap:4px}
-@media(max-width:860px){.aip-strip-inner{flex-direction:column;text-align:center}.aip-strip p{max-width:100%}.aip-cta{width:100%;justify-content:center}.aip-eyebrow{justify-content:center}}
+.aip-note{font-size:.75rem;color:rgba(255,255,255,0.3);letter-spacing:.02em}
+.aip-chat-preview{flex-shrink:0;width:340px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;backdrop-filter:blur(12px)}
+.aip-chat-header{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02)}
+.aip-chat-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#C6F135,#8db800);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.aip-chat-title{font-size:.78rem;font-weight:700;color:#fff}
+.aip-chat-status{font-size:.68rem;color:#C6F135;display:flex;align-items:center;gap:4px}
+.aip-chat-status::before{content:'';width:5px;height:5px;border-radius:50%;background:#C6F135;display:inline-block}
+.aip-chat-body{padding:16px;display:flex;flex-direction:column;gap:10px}
+.aip-msg{max-width:88%;font-size:.78rem;line-height:1.55;padding:9px 13px;border-radius:12px}
+.aip-msg.user{align-self:flex-end;background:rgba(198,241,53,0.12);color:rgba(255,255,255,0.85);border-bottom-right-radius:4px}
+.aip-msg.bot{align-self:flex-start;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.75);border-bottom-left-radius:4px}
+.aip-chat-input{display:flex;align-items:center;gap:8px;padding:12px 14px;border-top:1px solid rgba(255,255,255,0.06)}
+.aip-chat-input-field{flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:7px 12px;font-size:.74rem;color:rgba(255,255,255,0.3);font-family:var(--ff)}
+.aip-chat-send{width:28px;height:28px;border-radius:8px;background:#C6F135;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#05060E}
+@media(max-width:960px){.aip-chat-preview{display:none}}
+@media(max-width:680px){.aip-strip{padding:52px 0}.aip-strip-inner{flex-direction:column;text-align:center}.aip-strip-desc{max-width:100%}.aip-features{align-items:center}.aip-cta-row{justify-content:center}.aip-badge{align-self:center}}
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
 .nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
@@ -549,19 +566,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="aip-strip-inner">
       <div class="aip-strip-left">
-        <div class="aip-eyebrow"><span class="aip-eyebrow-dot"></span>Live now</div>
-        <h2>Not ready to fill a form?<br>Talk to our <em>AI instead</em></h2>
-        <p>Our AI guide knows everything about FiveNodes — services, case studies, tech stack, process, and pricing models. Get instant, honest answers any time of day.</p>
+        <div class="aip-badge"><span class="aip-badge-dot"></span>Live now</div>
+        <h2>Skip the form.<br>Talk to our <em>AI instead.</em></h2>
+        <p class="aip-strip-desc">Ask anything about FiveNodes and get real answers instantly. Services, process, case studies, tech stack — all in one conversation.</p>
+        <div class="aip-features">
+          <div class="aip-feature"><span class="aip-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>No forms, no waiting, no sales calls</div>
+          <div class="aip-feature"><span class="aip-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Trained on our actual work and process</div>
+          <div class="aip-feature"><span class="aip-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Available 24/7, completely free</div>
+        </div>
+        <div class="aip-cta-row">
+          <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="aip-cta">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Try the AI Profile
+          </a>
+          <span class="aip-note">Free · No sign-up required</span>
+        </div>
       </div>
-      <div class="aip-strip-right">
-        <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="aip-cta">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Try the AI Profile
-        </a>
-        <div class="aip-meta">
-          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No sign-up</span>
-          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Instant answers</span>
-          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Free</span>
+      <div class="aip-chat-preview" aria-hidden="true">
+        <div class="aip-chat-header">
+          <div class="aip-chat-avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#05060E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div>
+            <div class="aip-chat-title">FiveNodes AI</div>
+            <div class="aip-chat-status">Online</div>
+          </div>
+        </div>
+        <div class="aip-chat-body">
+          <div class="aip-msg user">What kind of projects do you build?</div>
+          <div class="aip-msg bot">We build SaaS platforms, AI-powered products, and mobile apps — end to end. From MVP in 8 weeks to full-scale engineering teams.</div>
+          <div class="aip-msg user">Do you work with early-stage startups?</div>
+          <div class="aip-msg bot">Yes, that's our sweet spot. We've taken 12+ startups from idea to live product. Want to walk through your idea?</div>
+        </div>
+        <div class="aip-chat-input">
+          <div class="aip-chat-input-field">Ask anything...</div>
+          <div class="aip-chat-send"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
         </div>
       </div>
     </div>
