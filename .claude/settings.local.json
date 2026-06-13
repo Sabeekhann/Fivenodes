@@ -387,7 +387,9 @@
       "Bash(npx --yes sharp-cli --version)",
       "Bash(node -e ' *)",
       "Bash(node -e \"require\\('puppeteer'\\)\")",
-      "Bash(node make-og.js)"
+      "Bash(node make-og.js)",
+      "Bash(which vercel *)",
+      "Bash(find ~/Library/pnpm ~/AppData ~/.config -name vercel 2>/dev/null | head -3; ls /usr/local/bin/vercel 2>/dev/null || ls /opt/homebrew/bin/vercel 2>/dev/null || echo \"not in standard paths\")"
     ]
   }
 }
