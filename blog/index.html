@@ -55,7 +55,7 @@ body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,
 .btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
 .btn-outline{border:1px solid var(--border2);color:var(--text)}
 .btn-outline:hover{border-color:rgba(255,255,255,0.3)}
-.btn-sm{padding:10px 20px;font-size:.8125rem}.btn-ai-profile{background:rgba(198,241,53,0.07);border:1px solid rgba(198,241,53,0.28);color:#C6F135;font-weight:600;letter-spacing:.01em}.btn-ai-profile:hover{background:rgba(198,241,53,0.14);border-color:rgba(198,241,53,0.55);transform:translateY(-1px)}
+.btn-sm{padding:10px 20px;font-size:.8125rem}.btn-ai-profile{background:#C6F135;color:#05060E;font-weight:700;border:none;animation:aipulse 2.5s ease-in-out infinite}.btn-ai-profile:hover{background:#b8e020;transform:translateY(-1px);box-shadow:0 6px 24px rgba(198,241,53,.35);animation:none}@keyframes aipulse{0%,100%{box-shadow:0 0 0 0 rgba(198,241,53,.4)}50%{box-shadow:0 0 0 7px rgba(198,241,53,0)}}
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
 .nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
@@ -222,8 +222,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <div class="nav-ctas">
       <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline btn-sm nav-book">Book a call <i class="far fa-calendar-alt" style="font-size:.7rem"></i></a>
-      <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-ai-profile"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>AI Profile</a>
-      <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+      
+      <a href="/contact/" class="btn btn-outline btn-sm nav-cta">Start a project</a><a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-ai-profile"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>AI Profile</a>
     </div>
     <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>

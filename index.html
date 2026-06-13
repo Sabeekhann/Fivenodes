@@ -59,21 +59,27 @@ body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,
 .btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
 .btn-outline{border:1px solid var(--border2);color:var(--text)}
 .btn-outline:hover{border-color:rgba(255,255,255,0.3)}
-.btn-sm{padding:10px 20px;font-size:.8125rem}
-.btn-ai-profile{background:rgba(198,241,53,0.07);border:1px solid rgba(198,241,53,0.28);color:#C6F135;font-weight:600;letter-spacing:.01em}
-.btn-ai-profile:hover{background:rgba(198,241,53,0.14);border-color:rgba(198,241,53,0.55);transform:translateY(-1px)}
-.ai-profile-banner{background:var(--card);border:1px solid rgba(198,241,53,0.2);border-radius:16px;padding:40px 52px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden;margin-top:60px}
-.ai-profile-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C6F135,rgba(198,241,53,0.15))}
-.ai-profile-banner::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 120% at 100% 50%,rgba(198,241,53,0.04),transparent 70%);pointer-events:none}
-.apb-left{position:relative;z-index:1}
-.apb-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(198,241,53,0.08);border:1px solid rgba(198,241,53,0.2);border-radius:100px;padding:4px 12px;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C6F135;margin-bottom:14px}
-.apb-tag-dot{width:5px;height:5px;border-radius:50%;background:#C6F135;animation:hdot 2s ease-in-out infinite}
-.apb-left h3{font-family:var(--fh);font-size:1.55rem;font-weight:700;letter-spacing:-.04em;color:#fff;margin-bottom:8px;line-height:1.15}
-.apb-left h3 em{font-style:normal;color:#C6F135}
-.apb-left p{font-size:.9rem;color:var(--muted);max-width:520px;line-height:1.7}
-.apb-right{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;position:relative;z-index:1}
-.apb-note{font-size:.72rem;color:var(--dim);text-align:center}
-@media(max-width:900px){.ai-profile-banner{flex-direction:column;padding:32px 28px;gap:24px;text-align:center}.apb-right{width:100%}.apb-left p{max-width:100%}}
+.btn-sm{padding:10px 18px;font-size:.8rem;border-radius:8px}
+.btn-ai-profile{background:#C6F135;color:#05060E;font-weight:700;border:none;animation:aipulse 2.5s ease-in-out infinite}
+.btn-ai-profile:hover{background:#b8e020;transform:translateY(-1px);box-shadow:0 6px 24px rgba(198,241,53,0.35);animation:none}
+@keyframes aipulse{0%,100%{box-shadow:0 0 0 0 rgba(198,241,53,0.4)}50%{box-shadow:0 0 0 7px rgba(198,241,53,0)}}
+/* AI PROFILE STRIP */
+.aip-strip{background:linear-gradient(100deg,#0c0f1e 0%,#0f1220 60%,#111828 100%);border-top:1px solid rgba(198,241,53,0.12);border-bottom:1px solid rgba(198,241,53,0.12);padding:52px 0;margin:80px 0 0;position:relative;overflow:hidden}
+.aip-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 180% at 80% 50%,rgba(198,241,53,0.055) 0%,transparent 65%);pointer-events:none}
+.aip-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;z-index:1}
+.aip-strip-left{flex:1;min-width:0}
+.aip-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C6F135;margin-bottom:14px}
+.aip-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#C6F135;animation:hdot 1.8s ease-in-out infinite}
+.aip-strip h2{font-family:var(--fh);font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1.12;margin-bottom:10px}
+.aip-strip h2 em{font-style:normal;color:#C6F135}
+.aip-strip p{font-size:.9375rem;color:var(--muted);max-width:500px;line-height:1.72}
+.aip-strip-right{display:flex;flex-direction:column;align-items:center;gap:12px;flex-shrink:0}
+.aip-cta{display:inline-flex;align-items:center;gap:10px;background:#C6F135;color:#05060E;font-weight:700;font-size:.9375rem;padding:15px 32px;border-radius:10px;transition:all .2s;white-space:nowrap;font-family:var(--ff);box-shadow:0 4px 28px rgba(198,241,53,0.25)}
+.aip-cta:hover{background:#b8e020;transform:translateY(-2px);box-shadow:0 8px 36px rgba(198,241,53,0.38)}
+.aip-cta svg{flex-shrink:0}
+.aip-meta{font-size:.72rem;color:var(--dim);display:flex;align-items:center;gap:10px}
+.aip-meta span{display:flex;align-items:center;gap:4px}
+@media(max-width:860px){.aip-strip-inner{flex-direction:column;text-align:center}.aip-strip p{max-width:100%}.aip-cta{width:100%;justify-content:center}.aip-eyebrow{justify-content:center}}
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
 .nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
@@ -387,8 +393,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </ul>
     <div class="nav-ctas">
       <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline btn-sm nav-book">Book a call</a>
-      <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-ai-profile"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>AI Profile</a>
-      <a href="/contact/" class="btn btn-lime btn-sm nav-cta">Start a project</a>
+      <a href="/contact/" class="btn btn-outline btn-sm nav-cta">Start a project</a>
+      <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-ai-profile">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        AI Profile
+      </a>
     </div>
     <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -488,22 +497,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <!-- AI Profile CTA Banner -->
-    <div class="ai-profile-banner reveal">
-      <div class="apb-left">
-        <div class="apb-tag"><span class="apb-tag-dot"></span>Interactive</div>
-        <h3>Meet our <em>AI Guide</em> — ask us anything</h3>
-        <p>Not ready to fill a form? Our AI knows everything about FiveNodes — services, process, case studies, tech stack. Ask it anything, anytime.</p>
-      </div>
-      <div class="apb-right">
-        <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="btn btn-lime btn-sm" style="white-space:nowrap;justify-content:center;min-width:190px">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          Launch AI Profile
-        </a>
-        <span class="apb-note">No sign-up &middot; Instant answers</span>
-      </div>
-    </div>
-
     <div class="svc-grid">
       <div class="svc-card reveal">
         <div class="svc-n">01</div>
@@ -546,6 +539,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Ongoing engineering support, performance tuning, security patching, and architectural evolution as your product grows.</p>
         <div class="svc-tags"><span class="svc-tag">Monitoring</span><span class="svc-tag">Performance</span><span class="svc-tag">Security</span></div>
         <a href="/services/maintenance-scaling/" class="svc-link">Learn more about Maintenance &amp; Scaling <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI PROFILE STRIP -->
+<section class="aip-strip reveal">
+  <div class="container">
+    <div class="aip-strip-inner">
+      <div class="aip-strip-left">
+        <div class="aip-eyebrow"><span class="aip-eyebrow-dot"></span>Live now</div>
+        <h2>Not ready to fill a form?<br>Talk to our <em>AI instead</em></h2>
+        <p>Our AI guide knows everything about FiveNodes — services, case studies, tech stack, process, and pricing models. Get instant, honest answers any time of day.</p>
+      </div>
+      <div class="aip-strip-right">
+        <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="aip-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Try the AI Profile
+        </a>
+        <div class="aip-meta">
+          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No sign-up</span>
+          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Instant answers</span>
+          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Free</span>
+        </div>
       </div>
     </div>
   </div>
