@@ -123,6 +123,24 @@ body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,
 .lang-check{margin-left:auto;color:#C6F135;font-size:.7rem;opacity:0}
 .lang-option.active .lang-check{opacity:1}
 #google_translate_element{display:none}
+/* RTL overrides for Arabic */
+[dir="rtl"]{font-family:'Cairo','Inter',sans-serif!important;direction:rtl}
+[dir="rtl"] .nav-inner{direction:rtl}
+[dir="rtl"] .nav-links{flex-direction:row-reverse}
+[dir="rtl"] .nav-ctas{flex-direction:row-reverse;border-left:none;border-right:1px solid var(--border);margin-left:0;margin-right:16px;padding-left:0;padding-right:16px}
+[dir="rtl"] .hero{text-align:right}
+[dir="rtl"] .hero h1,[dir="rtl"] .hero p,[dir="rtl"] .sec-hdr h2,[dir="rtl"] .sec-hdr p,[dir="rtl"] .proc-left h2,[dir="rtl"] .cta-inner h2{font-family:'Cairo',sans-serif!important;letter-spacing:0!important;font-style:normal}
+[dir="rtl"] .hero h1 em{font-style:normal}
+[dir="rtl"] .hero-ctas{flex-direction:row-reverse}
+[dir="rtl"] .hero-metrics{direction:rtl}
+[dir="rtl"] .footer-grid{direction:rtl;text-align:right}
+[dir="rtl"] .footer-links{text-align:right}
+[dir="rtl"] .sec-hdr{text-align:right}
+[dir="rtl"] .svc-card,.ind-card,.p-step,.p-card,.faq-item{text-align:right;direction:rtl}
+[dir="rtl"] .aip-strip-inner{direction:rtl}
+[dir="rtl"] .aip-cta-row{flex-direction:row-reverse}
+[dir="rtl"] .lang-dropdown{right:auto;left:0}
+[dir="rtl"] .nav-logo{flex-direction:row-reverse}
 .dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-6px);background:#0D0F1C;border:1px solid var(--border2);border-radius:14px;padding:8px;min-width:280px;opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease,visibility .2s ease;box-shadow:0 32px 80px rgba(0,0,0,0.6);pointer-events:none;padding-top:20px;margin-top:0}
 .dd-menu::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px}
 .nav-dropdown.dd-open .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
@@ -1151,6 +1169,14 @@ document.addEventListener('click',function(e){
 const SITE_LANG_LABELS={en:'EN',ar:'AR',fr:'FR',de:'DE',es:'ES','zh-CN':'中文',pt:'PT'};
 let siteLang=localStorage.getItem('fn-site-lang')||'en';
 
+function loadCairoFont(){
+  if(document.getElementById('cairo-font'))return;
+  const l=document.createElement('link');
+  l.id='cairo-font';l.rel='stylesheet';
+  l.href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap';
+  document.head.appendChild(l);
+}
+
 function translateSite(lang){
   siteLang=lang;
   localStorage.setItem('fn-site-lang',lang);
@@ -1160,11 +1186,17 @@ function translateSite(lang){
     const code=btn.getAttribute('onclick').match(/translateSite\('([^']+)'\)/)?.[1];
     btn.classList.toggle('active',code===lang);
   });
+
+  // RTL for Arabic
+  if(lang==='ar'){
+    document.documentElement.dir='rtl';
+    loadCairoFont();
+  } else {
+    document.documentElement.dir='ltr';
+  }
+
   if(lang==='en'){
-    // restore original — clear google translate cookie
-    const iframe=document.querySelector('.goog-te-banner-frame');
-    if(iframe){try{iframe.contentDocument.querySelector('.goog-te-button button').click();}catch(e){}}
-    // fallback: reload without translate
+    document.documentElement.dir='ltr';
     const c=document.cookie.split(';').find(x=>x.trim().startsWith('googtrans='));
     if(c){document.cookie='googtrans=;expires='+new Date(0).toUTCString()+';path=/;domain=.'+location.hostname;document.cookie='googtrans=;expires='+new Date(0).toUTCString()+';path=/';}
     location.reload();
@@ -1188,6 +1220,7 @@ function translateSite(lang){
       const code=btn.getAttribute('onclick').match(/translateSite\('([^']+)'\)/)?.[1];
       btn.classList.toggle('active',code===siteLang);
     });
+    if(siteLang==='ar'){document.documentElement.dir='rtl';loadCairoFont();}
   }
 })();
 </script>
