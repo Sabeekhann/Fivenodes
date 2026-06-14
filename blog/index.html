@@ -177,7 +177,30 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:80px 0 0
   .reveal{opacity:1!important;transform:none!important}
   .hero{min-height:auto;padding:100px 0 60px}
 }
-.footer-aip{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;margin-bottom:28px}.footer-aip-live{display:inline-flex;align-items:center;gap:6px;font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px}.footer-aip-live-dot{width:5px;height:5px;border-radius:50%;background:#C6F135;flex-shrink:0}.footer-aip h4{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Sora',sans-serif;letter-spacing:-.02em}.footer-aip p{font-size:.78rem;color:rgba(255,255,255,0.38);line-height:1.6;margin-bottom:14px}.footer-aip-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(198,241,53,0.1);color:#C6F135;font-weight:700;font-size:.78rem;padding:9px 16px;border-radius:8px;border:1px solid rgba(198,241,53,0.2);transition:all .2s;text-decoration:none;letter-spacing:-.01em}.footer-aip-btn:hover{background:rgba(198,241,53,0.18);border-color:rgba(198,241,53,0.4);transform:translateY(-1px)}</style>
+.footer-aip{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;margin-bottom:28px}.footer-aip-live{display:inline-flex;align-items:center;gap:6px;font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px}.footer-aip-live-dot{width:5px;height:5px;border-radius:50%;background:#C6F135;flex-shrink:0}.footer-aip h4{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Sora',sans-serif;letter-spacing:-.02em}.footer-aip p{font-size:.78rem;color:rgba(255,255,255,0.38);line-height:1.6;margin-bottom:14px}.footer-aip-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(198,241,53,0.1);color:#C6F135;font-weight:700;font-size:.78rem;padding:9px 16px;border-radius:8px;border:1px solid rgba(198,241,53,0.2);transition:all .2s;text-decoration:none;letter-spacing:-.01em}.footer-aip-btn:hover{background:rgba(198,241,53,0.18);border-color:rgba(198,241,53,0.4);transform:translateY(-1px)}
+.lang-wrap{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted);font-size:.75rem;font-weight:500;padding:6px 10px;border-radius:8px;cursor:pointer;transition:all .15s;font-family:var(--ff)}
+.lang-btn:hover{background:rgba(255,255,255,0.09);color:var(--text)}
+.lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:#0D0F1C;border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:6px;min-width:160px;z-index:200;box-shadow:0 20px 60px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s cubic-bezier(.4,0,.2,1)}
+.lang-dropdown.open{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-option{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:.8rem;color:var(--muted);transition:all .15s;width:100%;border:none;background:none;font-family:var(--ff);text-align:left;white-space:nowrap}
+.lang-option:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.lang-option.active{color:#C6F135}
+.lang-check{margin-left:auto;color:#C6F135;font-size:.7rem;opacity:0}
+.lang-option.active .lang-check{opacity:1}
+#google_translate_element{display:none}
+[dir="rtl"]{font-family:'Cairo','Inter',sans-serif!important;direction:rtl}
+[dir="rtl"] .nav-inner{direction:rtl}
+[dir="rtl"] .nav-links{flex-direction:row-reverse}
+[dir="rtl"] .nav-ctas{flex-direction:row-reverse;border-left:none;border-right:1px solid var(--border);margin-left:0;margin-right:16px;padding-left:0;padding-right:16px}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] h4{font-family:'Cairo',sans-serif!important;letter-spacing:0!important;font-style:normal}
+[dir="rtl"] .hero,[dir="rtl"] .sec-hdr,[dir="rtl"] .cta-inner,[dir="rtl"] section{text-align:right}
+[dir="rtl"] .hero h1 em{font-style:normal}
+[dir="rtl"] .footer-grid{direction:rtl;text-align:right}
+[dir="rtl"] .footer-links{text-align:right}
+[dir="rtl"] .lang-dropdown{right:auto;left:0}
+[dir="rtl"] .nav-logo{flex-direction:row-reverse}
+</style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
 <script>
@@ -221,6 +244,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a class="nav-link" href="/contact/">Contact</a></li></ul>
     
     <div class="nav-ctas">
+      <div class="lang-wrap">
+        <button class="lang-btn" id="siteLangBtn" onclick="toggleSiteLang()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          <span id="siteLangLabel">EN</span>
+        </button>
+        <div class="lang-dropdown" id="siteLangDropdown">
+          <button class="lang-option active" onclick="translateSite('en')"><span>🇺🇸</span>English<span class="lang-check">✓</span></button>
+          <button class="lang-option" onclick="translateSite('ar')"><span>🇸🇦</span>العربية<span class="lang-check">✓</span></button>
+          <button class="lang-option" onclick="translateSite('fr')"><span>🇫🇷</span>Français<span class="lang-check">✓</span></button>
+          <button class="lang-option" onclick="translateSite('de')"><span>🇩🇪</span>Deutsch<span class="lang-check">✓</span></button>
+          <button class="lang-option" onclick="translateSite('es')"><span>🇪🇸</span>Español<span class="lang-check">✓</span></button>
+          <button class="lang-option" onclick="translateSite('zh-CN')"><span>🇨🇳</span>中文<span class="lang-check">✓</span></button>
+          <button class="lang-option" onclick="translateSite('pt')"><span>🇧🇷</span>Português<span class="lang-check">✓</span></button>
+        </div>
+      </div>
       <a href="https://calendly.com/sabee-5ivenodes/30min" target="_blank" rel="noopener" class="btn btn-outline btn-sm nav-book">Book a call <i class="far fa-calendar-alt" style="font-size:.7rem"></i></a>
       
       <a href="/contact/" class="btn btn-outline btn-sm nav-cta">Start a project</a><a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-ai-profile"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>AI Profile</a>
@@ -528,5 +566,58 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<div id="google_translate_element"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element');
+}
+function toggleSiteLang(){document.getElementById('siteLangDropdown').classList.toggle('open');}
+document.addEventListener('click',function(e){
+  var w=document.querySelector('.lang-wrap');
+  if(w&&!w.contains(e.target))document.getElementById('siteLangDropdown').classList.remove('open');
+});
+var SITE_LANG_LABELS={en:'EN',ar:'AR',fr:'FR',de:'DE',es:'ES','zh-CN':'中文',pt:'PT'};
+var siteLang=localStorage.getItem('fn-site-lang')||'en';
+function loadCairoFont(){
+  if(document.getElementById('cairo-font'))return;
+  var l=document.createElement('link');l.id='cairo-font';l.rel='stylesheet';
+  l.href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap';
+  document.head.appendChild(l);
+}
+function translateSite(lang){
+  siteLang=lang;localStorage.setItem('fn-site-lang',lang);
+  document.getElementById('siteLangDropdown').classList.remove('open');
+  document.getElementById('siteLangLabel').textContent=SITE_LANG_LABELS[lang]||lang.toUpperCase();
+  document.querySelectorAll('#siteLangDropdown .lang-option').forEach(function(btn){
+    var code=(btn.getAttribute('onclick')||'').match(/translateSite\('([^']+)'\)/);
+    btn.classList.toggle('active',code&&code[1]===lang);
+  });
+  if(lang==='ar'){document.documentElement.dir='rtl';loadCairoFont();}
+  else document.documentElement.dir='ltr';
+  if(lang==='en'){
+    var c=document.cookie.split(';').find(function(x){return x.trim().startsWith('googtrans=');});
+    if(c){document.cookie='googtrans=;expires='+new Date(0).toUTCString()+';path=/;domain=.'+location.hostname;document.cookie='googtrans=;expires='+new Date(0).toUTCString()+';path=/';}
+    location.reload();return;
+  }
+  var sel=document.querySelector('.goog-te-combo');
+  if(sel){sel.value=lang;sel.dispatchEvent(new Event('change'));return;}
+  var d=location.hostname;
+  document.cookie='googtrans=/en/'+lang+';path=/;domain=.'+d;
+  document.cookie='googtrans=/en/'+lang+';path=/';
+  location.reload();
+}
+(function(){
+  if(siteLang&&siteLang!=='en'){
+    var el=document.getElementById('siteLangLabel');
+    if(el)el.textContent=SITE_LANG_LABELS[siteLang]||siteLang.toUpperCase();
+    document.querySelectorAll('#siteLangDropdown .lang-option').forEach(function(btn){
+      var code=(btn.getAttribute('onclick')||'').match(/translateSite\('([^']+)'\)/);
+      btn.classList.toggle('active',code&&code[1]===siteLang);
+    });
+    if(siteLang==='ar'){document.documentElement.dir='rtl';loadCairoFont();}
+  }
+})();
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
