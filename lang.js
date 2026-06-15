@@ -127,6 +127,19 @@
 
   // ── 8. INIT ON LOAD ──────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', function () {
+    // Only apply RTL if Google Translate is actually active for Arabic.
+    // Check the googtrans cookie — if it's not set to /en/ar, force LTR to
+    // prevent a stale localStorage value from mis-applying RTL layout on English pages.
+    var gtCookie = document.cookie.split(';').map(function(c){ return c.trim(); })
+      .find(function(c){ return c.startsWith('googtrans='); });
+    var isArabicActive = gtCookie && gtCookie.indexOf('/en/ar') !== -1;
+
+    if (currentLang === 'ar' && !isArabicActive) {
+      // Stale localStorage — reset to English so layout is never broken
+      currentLang = 'en';
+      localStorage.setItem('fn-site-lang', 'en');
+    }
+
     applyLangUI(currentLang);
   });
 
