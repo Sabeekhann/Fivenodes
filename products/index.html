@@ -377,57 +377,8 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 </script>
 <!--End of Tawk.to Script-->
 <div id="google_translate_element"></div>
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element');
-}
-function toggleSiteLang(){document.getElementById('siteLangDropdown').classList.toggle('open');}
-document.addEventListener('click',function(e){
-  var w=document.querySelector('.lang-wrap');
-  if(w&&!w.contains(e.target))document.getElementById('siteLangDropdown').classList.remove('open');
-});
-var SITE_LANG_LABELS={en:'EN',ar:'AR',fr:'FR',de:'DE',es:'ES','zh-CN':'中文',pt:'PT'};
-var siteLang=localStorage.getItem('fn-site-lang')||'en';
-function loadCairoFont(){
-  if(document.getElementById('cairo-font'))return;
-  var l=document.createElement('link');l.id='cairo-font';l.rel='stylesheet';
-  l.href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap';
-  document.head.appendChild(l);
-}
-function translateSite(lang){
-  siteLang=lang;localStorage.setItem('fn-site-lang',lang);
-  document.getElementById('siteLangDropdown').classList.remove('open');
-  document.getElementById('siteLangLabel').textContent=SITE_LANG_LABELS[lang]||lang.toUpperCase();
-  document.querySelectorAll('#siteLangDropdown .lang-option').forEach(function(btn){
-    var code=(btn.getAttribute('onclick')||'').match(/translateSite\('([^']+)'\)/);
-    btn.classList.toggle('active',code&&code[1]===lang);
-  });
-  if(lang==='ar'){document.documentElement.dir='rtl';loadCairoFont();}
-  else document.documentElement.dir='ltr';
-  if(lang==='en'){
-    var c=document.cookie.split(';').find(function(x){return x.trim().startsWith('googtrans=');});
-    if(c){document.cookie='googtrans=;expires='+new Date(0).toUTCString()+';path=/;domain=.'+location.hostname;document.cookie='googtrans=;expires='+new Date(0).toUTCString()+';path=/';}
-    location.reload();return;
-  }
-  var sel=document.querySelector('.goog-te-combo');
-  if(sel){sel.value=lang;sel.dispatchEvent(new Event('change'));return;}
-  var d=location.hostname;
-  document.cookie='googtrans=/en/'+lang+';path=/;domain=.'+d;
-  document.cookie='googtrans=/en/'+lang+';path=/';
-  location.reload();
-}
-(function(){
-  if(siteLang&&siteLang!=='en'){
-    var el=document.getElementById('siteLangLabel');
-    if(el)el.textContent=SITE_LANG_LABELS[siteLang]||siteLang.toUpperCase();
-    document.querySelectorAll('#siteLangDropdown .lang-option').forEach(function(btn){
-      var code=(btn.getAttribute('onclick')||'').match(/translateSite\('([^']+)'\)/);
-      btn.classList.toggle('active',code&&code[1]===siteLang);
-    });
-    if(siteLang==='ar'){document.documentElement.dir='rtl';loadCairoFont();}
-  }
-})();
-</script>
+
+<script src="/lang.js"></script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
