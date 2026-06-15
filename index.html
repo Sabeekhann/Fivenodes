@@ -377,7 +377,86 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:80px 0 0
   .reveal{opacity:1!important;transform:none!important}
   .hero{min-height:auto;padding:100px 0 60px}
 }
-.footer-aip{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;margin-bottom:28px}.footer-aip-live{display:inline-flex;align-items:center;gap:6px;font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px}.footer-aip-live-dot{width:5px;height:5px;border-radius:50%;background:#C6F135;flex-shrink:0}.footer-aip h4{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Sora',sans-serif;letter-spacing:-.02em}.footer-aip p{font-size:.78rem;color:rgba(255,255,255,0.38);line-height:1.6;margin-bottom:14px}.footer-aip-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(198,241,53,0.1);color:#C6F135;font-weight:700;font-size:.78rem;padding:9px 16px;border-radius:8px;border:1px solid rgba(198,241,53,0.2);transition:all .2s;text-decoration:none;letter-spacing:-.01em}.footer-aip-btn:hover{background:rgba(198,241,53,0.18);border-color:rgba(198,241,53,0.4);transform:translateY(-1px)}</style>
+.footer-aip{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;margin-bottom:28px}.footer-aip-live{display:inline-flex;align-items:center;gap:6px;font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px}.footer-aip-live-dot{width:5px;height:5px;border-radius:50%;background:#C6F135;flex-shrink:0}.footer-aip h4{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Sora',sans-serif;letter-spacing:-.02em}.footer-aip p{font-size:.78rem;color:rgba(255,255,255,0.38);line-height:1.6;margin-bottom:14px}.footer-aip-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(198,241,53,0.1);color:#C6F135;font-weight:700;font-size:.78rem;padding:9px 16px;border-radius:8px;border:1px solid rgba(198,241,53,0.2);transition:all .2s;text-decoration:none;letter-spacing:-.01em}.footer-aip-btn:hover{background:rgba(198,241,53,0.18);border-color:rgba(198,241,53,0.4);transform:translateY(-1px)}
+/* ── MEET ALEX ─── */
+.alex-sec{padding:110px 0 130px;background:linear-gradient(180deg,#05060E 0%,#060818 50%,#05060E 100%);position:relative;overflow:hidden}
+.alex-orb1{position:absolute;top:-180px;right:-180px;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle,rgba(198,241,53,0.045) 0%,transparent 65%);pointer-events:none}
+.alex-orb2{position:absolute;bottom:-140px;left:-200px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(80,100,255,0.04) 0%,transparent 65%);pointer-events:none}
+.alex-top{text-align:center;margin-bottom:72px}
+.alex-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(198,241,53,0.08);border:1px solid rgba(198,241,53,0.22);border-radius:100px;padding:6px 18px;font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C6F135;margin-bottom:22px}
+.alex-badge-dot{width:6px;height:6px;border-radius:50%;background:#C6F135;animation:hdot 2s ease-in-out infinite;flex-shrink:0}
+.alex-top h2{font-family:var(--fh);font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:800;letter-spacing:-.05em;color:#fff;line-height:1.05;margin-bottom:18px}
+.alex-top h2 em{font-style:normal;color:#C6F135}
+.alex-top-sub{font-size:1.0rem;color:rgba(255,255,255,0.42);max-width:500px;margin:0 auto;line-height:1.78}
+.alex-body{display:grid;grid-template-columns:420px 1fr;gap:72px;align-items:center;margin-bottom:80px}
+.alex-visual-col{display:flex;justify-content:center;position:relative}
+.alex-mascot-frame{position:relative;width:320px;height:320px}
+.alex-mascot-frame img{width:100%;height:100%;object-fit:contain;position:relative;z-index:2;animation:alexfloat 4.5s ease-in-out infinite;filter:drop-shadow(0 24px 64px rgba(198,241,53,0.25))}
+@keyframes alexfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.alex-glow-halo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(198,241,53,0.14) 0%,transparent 65%);animation:alexhalo 3.5s ease-in-out infinite;pointer-events:none;z-index:1}
+@keyframes alexhalo{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
+.alex-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:380px;height:380px;border-radius:50%;border:1px solid rgba(198,241,53,0.1);animation:alexring 4s ease-in-out infinite;pointer-events:none;z-index:1}
+@keyframes alexring{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5}50%{transform:translate(-50%,-50%) scale(1.06);opacity:.9}}
+.alex-bbl{position:absolute;background:rgba(10,12,26,0.92);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:9px 14px;font-size:.73rem;color:rgba(255,255,255,0.82);backdrop-filter:blur(10px);z-index:4;white-space:nowrap;box-shadow:0 8px 28px rgba(0,0,0,0.35)}
+.alex-bbl-1{top:-14px;right:-48px;animation:bbl1 9s ease-in-out infinite}
+.alex-bbl-2{bottom:24px;left:-64px;animation:bbl2 9s ease-in-out 3s infinite}
+.alex-bbl-3{top:60px;left:-70px;animation:bbl3 9s ease-in-out 6s infinite}
+@keyframes bbl1{0%,10%{opacity:0;transform:translateY(10px)}18%,42%{opacity:1;transform:translateY(0)}52%,100%{opacity:0;transform:translateY(-8px)}}
+@keyframes bbl2{0%,10%{opacity:0;transform:translateY(10px)}18%,42%{opacity:1;transform:translateY(0)}52%,100%{opacity:0;transform:translateY(-8px)}}
+@keyframes bbl3{0%,10%{opacity:0;transform:translateY(10px)}18%,42%{opacity:1;transform:translateY(0)}52%,100%{opacity:0;transform:translateY(-8px)}}
+.alex-content-col h3{font-family:var(--fh);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.04em;color:#fff;line-height:1.1;margin-bottom:14px}
+.alex-content-col h3 em{font-style:normal;color:#C6F135}
+.alex-desc{font-size:.9375rem;color:rgba(255,255,255,0.42);line-height:1.78;margin-bottom:32px}
+.alex-feats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px}
+.alex-feat{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:15px 16px;transition:all .22s}
+.alex-feat:hover{background:rgba(198,241,53,0.04);border-color:rgba(198,241,53,0.18);transform:translateY(-2px)}
+.alex-feat-ico{font-size:1.1rem;margin-bottom:7px;display:block}
+.alex-feat strong{display:block;font-size:.81rem;font-weight:600;color:#fff;margin-bottom:3px}
+.alex-feat span{font-size:.73rem;color:rgba(255,255,255,0.38);line-height:1.45}
+.alex-cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.alex-main-cta{display:inline-flex;align-items:center;gap:10px;background:#C6F135;color:#05060E;font-weight:800;font-size:.9375rem;padding:14px 28px;border-radius:10px;transition:all .22s;font-family:var(--ff);letter-spacing:-.01em;cursor:none}
+.alex-main-cta:hover{background:#d4f54a;transform:translateY(-2px);box-shadow:0 8px 36px rgba(198,241,53,0.32)}
+.alex-main-cta svg{flex-shrink:0}
+.alex-free-note{font-size:.74rem;color:rgba(255,255,255,0.28);letter-spacing:.02em}
+.alex-demo-sec{text-align:center;margin-bottom:16px}
+.alex-demo-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.2);font-weight:600;margin-bottom:20px}
+.alex-demo-wrap{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:20px;overflow:hidden;max-width:700px;margin:0 auto}
+.alex-demo-hdr{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02)}
+.alex-demo-av{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#0D0F1C}
+.alex-demo-info{}
+.alex-demo-name{font-size:.84rem;font-weight:700;color:#fff;margin-bottom:2px}
+.alex-demo-online{font-size:.67rem;color:#C6F135;display:flex;align-items:center;gap:5px}
+.alex-demo-online::before{content:'';width:5px;height:5px;border-radius:50%;background:#C6F135;display:inline-block}
+.alex-demo-body{padding:20px;min-height:120px;display:flex;flex-direction:column;gap:12px}
+.alex-msg{max-width:82%;font-size:.82rem;line-height:1.55;padding:10px 14px;border-radius:13px}
+.alex-msg.u{align-self:flex-end;background:rgba(198,241,53,0.13);color:rgba(255,255,255,0.88);border-bottom-right-radius:4px}
+.alex-msg.b{align-self:flex-start;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.75);border-bottom-left-radius:4px}
+.alex-typing{display:none;align-items:center;gap:5px;padding:10px 14px;background:rgba(255,255,255,0.07);border-radius:13px;border-bottom-left-radius:4px;width:fit-content}
+.alex-typing span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);animation:alextype .9s ease-in-out infinite}
+.alex-typing span:nth-child(2){animation-delay:.16s}
+.alex-typing span:nth-child(3){animation-delay:.32s}
+@keyframes alextype{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.alex-demo-inp{display:flex;align-items:center;gap:8px;padding:14px 20px;border-top:1px solid rgba(255,255,255,0.06)}
+.alex-demo-field{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:9px;padding:9px 14px;font-size:.78rem;color:rgba(255,255,255,0.22);font-family:var(--ff)}
+.alex-demo-send{width:32px;height:32px;border-radius:9px;background:#C6F135;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#05060E}
+.alex-demo-footer{text-align:center;margin-top:28px;font-size:.8rem;color:rgba(255,255,255,0.28)}
+.alex-demo-footer a{color:#C6F135;text-decoration:none;font-weight:600}
+.alex-demo-footer a:hover{text-decoration:underline}
+/* Hero pill */
+.hero-alex-pill{display:inline-flex;align-items:center;gap:9px;margin-top:14px;background:rgba(198,241,53,0.06);border:1px solid rgba(198,241,53,0.14);border-radius:100px;padding:7px 14px 7px 8px;font-size:.78rem;color:rgba(255,255,255,0.52);transition:all .22s;text-decoration:none;cursor:none}
+.hero-alex-pill:hover{background:rgba(198,241,53,0.1);border-color:rgba(198,241,53,0.3);color:rgba(255,255,255,0.82)}
+.hero-alex-pill img{width:24px;height:24px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#0D0F1C}
+/* Floating Alex button */
+.alex-float{position:fixed;bottom:28px;right:28px;z-index:8990;display:flex;align-items:center;gap:11px;background:#C6F135;color:#05060E;padding:10px 18px 10px 9px;border-radius:100px;font-weight:800;font-size:.84rem;text-decoration:none;box-shadow:0 8px 40px rgba(198,241,53,0.28);transition:opacity .4s,transform .4s,background .2s,box-shadow .2s;opacity:0;transform:translateY(24px);pointer-events:none;font-family:var(--ff);letter-spacing:-.01em;cursor:none}
+.alex-float.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.alex-float:hover{background:#d4f54a;box-shadow:0 14px 52px rgba(198,241,53,0.42)}
+.alex-float-av{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;background:#05060E;border:2px solid rgba(5,6,14,0.12)}
+.alex-float-av img{width:100%;height:100%;object-fit:cover}
+.alex-float-label{font-size:.84rem;font-weight:800;color:#05060E;line-height:1.1}
+.alex-float-sub{font-size:.64rem;font-weight:600;color:rgba(5,6,14,0.5);display:flex;align-items:center;gap:4px}
+.alex-float-sub::before{content:'';width:5px;height:5px;border-radius:50%;background:rgba(5,6,14,0.5);flex-shrink:0}
+@media(max-width:900px){.alex-body{grid-template-columns:1fr;gap:52px;text-align:center}.alex-visual-col{justify-content:center}.alex-feats{text-align:left}.alex-cta-row{justify-content:center}.alex-mascot-frame{width:240px;height:240px}.alex-glow-halo,.alex-ring{width:280px;height:280px}.alex-bbl{display:none}}
+@media(max-width:680px){.alex-sec{padding:72px 0 80px}.alex-feats{grid-template-columns:1fr}.alex-top h2{font-size:2.1rem}.alex-float{bottom:16px;right:16px;padding:9px 14px 9px 8px}.alex-float-av{width:30px;height:30px}}</style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FFZ8MQ4X1"></script>
 <script>
@@ -491,6 +570,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="/contact/" class="btn btn-lime">Start a project <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
           <a href="#services" class="btn btn-outline">Our services</a>
         </div>
+        <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="hero-alex-pill">
+          <img src="/images/bot-mascot.png" alt="Alex">
+          <span>Or ask Alex anything — instantly</span>
+          <i class="fas fa-arrow-right" style="font-size:.6rem;color:rgba(198,241,53,0.55)"></i>
+        </a>
       </div>
       <div class="hero-visual">
         <div class="hero-canvas-wrap">
@@ -605,47 +689,107 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- AI PROFILE STRIP -->
-<section class="aip-strip reveal">
+<!-- MEET ALEX -->
+<section class="alex-sec" id="meet-alex">
+  <div class="alex-orb1"></div>
+  <div class="alex-orb2"></div>
   <div class="container">
-    <div class="aip-strip-inner">
-      <div class="aip-strip-left">
-        <div class="aip-badge"><span class="aip-badge-dot"></span>Live now</div>
-        <h2>Skip the form.<br>Talk to our <em>AI instead.</em></h2>
-        <p class="aip-strip-desc">Ask anything about FiveNodes and get real answers instantly. Services, process, case studies, tech stack — all in one conversation.</p>
-        <div class="aip-features">
-          <div class="aip-feature"><span class="aip-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>No forms, no waiting, no sales calls</div>
-          <div class="aip-feature"><span class="aip-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Trained on our actual work and process</div>
-          <div class="aip-feature"><span class="aip-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Available 24/7, completely free</div>
-        </div>
-        <div class="aip-cta-row">
-          <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="aip-cta">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Try the AI Profile
-          </a>
-          <span class="aip-note">Free · No sign-up required</span>
+
+    <!-- Top heading -->
+    <div class="alex-top reveal">
+      <div class="alex-badge"><span class="alex-badge-dot"></span>Introducing Alex &nbsp;·&nbsp; Live Now</div>
+      <h2>Meet the AI that knows<br><em>everything about FiveNodes</em></h2>
+      <p class="alex-top-sub">No forms. No hold music. No sales rep. Just instant, honest answers — and a booking link when you're ready.</p>
+    </div>
+
+    <!-- Two-column: mascot + features -->
+    <div class="alex-body">
+
+      <!-- Mascot visual -->
+      <div class="alex-visual-col reveal">
+        <div class="alex-mascot-frame">
+          <div class="alex-glow-halo"></div>
+          <div class="alex-ring"></div>
+          <img src="/images/bot-mascot.png" alt="Alex — FiveNodes AI Assistant">
+          <div class="alex-bbl alex-bbl-1">💬 &nbsp;"What's your tech stack?"</div>
+          <div class="alex-bbl alex-bbl-2">🗓️ &nbsp;"Book a call for me" ✓</div>
+          <div class="alex-bbl alex-bbl-3">🎙️ &nbsp;"Just speak your question"</div>
         </div>
       </div>
-      <div class="aip-chat-preview" aria-hidden="true">
-        <div class="aip-chat-header">
-          <div class="aip-chat-avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#05060E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <div>
-            <div class="aip-chat-title">FiveNodes AI</div>
-            <div class="aip-chat-status">Online</div>
+
+      <!-- Content -->
+      <div class="alex-content-col reveal reveal-d1">
+        <h3>Your 24/7 guide to<br><em>everything FiveNodes</em></h3>
+        <p class="alex-desc">Alex is trained on every service, case study, process step, and pricing model we have. Ask in any language, speak instead of type, and watch Alex schedule a meeting with Sabee directly — no human middleman needed.</p>
+
+        <div class="alex-feats">
+          <div class="alex-feat">
+            <span class="alex-feat-ico">🧠</span>
+            <strong>Knows everything</strong>
+            <span>Trained on our real services, portfolio, process &amp; pricing</span>
+          </div>
+          <div class="alex-feat">
+            <span class="alex-feat-ico">🗓️</span>
+            <strong>Books meetings</strong>
+            <span>Say "book a call" and Alex handles it on the spot</span>
+          </div>
+          <div class="alex-feat">
+            <span class="alex-feat-ico">🎙️</span>
+            <strong>Voice enabled</strong>
+            <span>Speak your question — no typing required</span>
+          </div>
+          <div class="alex-feat">
+            <span class="alex-feat-ico">💾</span>
+            <strong>Remembers context</strong>
+            <span>Session memory keeps conversations seamless</span>
+          </div>
+          <div class="alex-feat">
+            <span class="alex-feat-ico">🌐</span>
+            <strong>7 languages</strong>
+            <span>English, Arabic, French, German, Spanish, Chinese, Portuguese</span>
+          </div>
+          <div class="alex-feat">
+            <span class="alex-feat-ico">⚡</span>
+            <strong>Always online</strong>
+            <span>24/7, completely free, zero sign-up required</span>
           </div>
         </div>
-        <div class="aip-chat-body">
-          <div class="aip-msg user">What kind of projects do you build?</div>
-          <div class="aip-msg bot">We build SaaS platforms, AI-powered products, and mobile apps — end to end. From MVP in 8 weeks to full-scale engineering teams.</div>
-          <div class="aip-msg user">Do you work with early-stage startups?</div>
-          <div class="aip-msg bot">Yes, that's our sweet spot. We've taken 12+ startups from idea to live product. Want to walk through your idea?</div>
-        </div>
-        <div class="aip-chat-input">
-          <div class="aip-chat-input-field">Ask anything...</div>
-          <div class="aip-chat-send"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+
+        <div class="alex-cta-row">
+          <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="alex-main-cta">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Talk to Alex now
+          </a>
+          <span class="alex-free-note">Free &nbsp;·&nbsp; No sign-up &nbsp;·&nbsp; Instant answers</span>
         </div>
       </div>
     </div>
+
+    <!-- Live demo chat -->
+    <div class="reveal">
+      <p class="alex-demo-label">See Alex in action</p>
+      <div class="alex-demo-wrap">
+        <div class="alex-demo-hdr">
+          <img src="/images/bot-mascot.png" alt="Alex" class="alex-demo-av">
+          <div class="alex-demo-info">
+            <div class="alex-demo-name">Alex &nbsp;·&nbsp; FiveNodes AI</div>
+            <div class="alex-demo-online">Online now</div>
+          </div>
+        </div>
+        <div class="alex-demo-body" id="alexDemoBody">
+          <div class="alex-msg u">What kind of projects do you build?</div>
+          <div class="alex-msg b">We build SaaS platforms, AI-powered products, and mobile apps — end to end. From MVP in 8 weeks to full-scale engineering teams. What are you building?</div>
+        </div>
+        <div class="alex-demo-inp">
+          <div class="alex-demo-field" id="alexDemoField">Ask me anything about FiveNodes...</div>
+          <div class="alex-demo-send" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+        </div>
+      </div>
+      <p class="alex-demo-footer">This is a live preview — <a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener">open the full AI Profile</a> to have a real conversation with Alex.</p>
+    </div>
+
   </div>
 </section>
 
@@ -1149,6 +1293,92 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<!-- FLOATING ALEX BUTTON -->
+<a href="https://five-nodes-profile.vercel.app" target="_blank" rel="noopener" class="alex-float" id="alexFloat" aria-label="Chat with Alex — FiveNodes AI">
+  <div class="alex-float-av"><img src="/images/bot-mascot.png" alt="Alex"></div>
+  <div>
+    <div class="alex-float-label">Chat with Alex</div>
+    <div class="alex-float-sub">Online now &nbsp;· &nbsp;Free</div>
+  </div>
+</a>
+
+<script>
+// Show floating button after 2.5s
+setTimeout(function(){
+  var btn=document.getElementById('alexFloat');
+  if(btn)btn.classList.add('show');
+},2500);
+
+// Alex demo chat cycling
+(function(){
+  var CONVOS=[
+    {q:'How much does an MVP cost?',a:'Fixed-price MVPs typically run $15k–$45k depending on scope. We detail everything in a free discovery call — no surprise invoices, ever.'},
+    {q:'Do you work with early-stage startups?',a:'That\'s our sweet spot. We\'ve taken 12+ startups from idea to live product. Pre-seed, seed, Series A — we adapt to your stage.'},
+    {q:'Can you book me a call with Sabee?',a:'Of course — you can book a 30-min slot at calendly.com/sabee-5ivenodes/30min. Want me to help you pick a time?'},
+    {q:'What AI / LLM work do you do?',a:'We build AI agents, RAG pipelines, voice assistants, and LLM-powered products. It\'s our fastest-growing practice. What are you trying to automate?'},
+    {q:'What\'s your tech stack?',a:'We\'re full-stack polyglots — React, Next.js, Node, Python, Go, AWS/GCP, and Anthropic Claude for AI. We pick what fits the problem.'},
+  ];
+  var idx=0;
+  var body=document.getElementById('alexDemoBody');
+  var field=document.getElementById('alexDemoField');
+  if(!body||!field)return;
+
+  function showConvo(i){
+    var c=CONVOS[i%CONVOS.length];
+    body.innerHTML='';
+
+    // User message
+    var um=document.createElement('div');
+    um.className='alex-msg u';
+    um.textContent=c.q;
+    body.appendChild(um);
+
+    // Typing indicator then bot reply
+    var typing=document.createElement('div');
+    typing.className='alex-typing';
+    typing.style.display='flex';
+    typing.innerHTML='<span></span><span></span><span></span>';
+    body.appendChild(typing);
+
+    setTimeout(function(){
+      typing.remove();
+      var bm=document.createElement('div');
+      bm.className='alex-msg b';
+      bm.textContent=c.a;
+      body.appendChild(bm);
+    },1400);
+  }
+
+  // Cycle every 5s starting after 4s
+  setTimeout(function(){
+    idx=1;
+    showConvo(idx);
+    setInterval(function(){
+      idx++;
+      showConvo(idx);
+    },5000);
+  },4000);
+
+  // Typewriter effect on placeholder
+  var QUESTIONS=['Ask about pricing...','Ask about our process...','Ask about AI services...','Book a call...','Ask in any language...'];
+  var qi=0,ci=0,deleting=false;
+  function typeQ(){
+    var q=QUESTIONS[qi%QUESTIONS.length];
+    if(!deleting){
+      ci++;
+      field.textContent=q.slice(0,ci);
+      if(ci>=q.length){deleting=true;setTimeout(typeQ,1600);return;}
+    } else {
+      ci--;
+      field.textContent=q.slice(0,ci);
+      if(ci<=0){deleting=false;qi++;setTimeout(typeQ,400);return;}
+    }
+    setTimeout(typeQ,deleting?40:70);
+  }
+  setTimeout(typeQ,2000);
+})();
+</script>
+
 <div id="google_translate_element"></div>
 
 <script src="/lang.js"></script>
