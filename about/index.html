@@ -207,8 +207,13 @@ footer{background:#030408;border-top:1px solid var(--border);padding:80px 0 0}
 .flip-hint{font-size:.6rem;color:rgba(200,241,53,.4);letter-spacing:.06em;margin-top:2px}
 @media(max-width:600px){
   .team-grid{grid-template-columns:1fr!important}
-  .flip-card{min-height:auto}
-  .flip-inner{min-height:280px}
+  .flip-card{min-height:auto;perspective:none}
+  .flip-inner{min-height:auto;transform-style:flat;transition:none}
+  .flip-card.flipped .flip-inner{transform:none}
+  .flip-front,.flip-back{position:static;backface-visibility:visible;-webkit-backface-visibility:visible;transform:none!important;border-radius:16px}
+  .flip-back{display:none}
+  .flip-card.flipped .flip-front{display:none}
+  .flip-card.flipped .flip-back{display:flex}
   .flip-back{padding:20px 18px;gap:12px}
   .flip-contact-val{font-size:.8rem;white-space:normal;overflow:visible;text-overflow:clip}
 }
