@@ -173,15 +173,15 @@ footer{background:#030408;border-top:1px solid var(--border);padding:80px 0 0}
 .team-card:hover{border-color:var(--border2);transform:translateY(-4px)}
 /* L1 — CEO: wider card, larger avatar, more padding */
 .team-tier-1 .team-card{max-width:480px;padding:36px 32px}
-.team-tier-1 .team-av{width:120px;height:120px}
+.team-tier-1 .team-av{width:120px!important;height:120px!important;min-width:120px;min-height:120px}
 .team-tier-1 .team-card h3{font-size:1.0625rem}
 /* L2 — Presidents: medium card */
 .team-tier-2 .team-card{max-width:400px;padding:28px 22px}
-.team-tier-2 .team-av{width:100px;height:100px}
+.team-tier-2 .team-av{width:100px!important;height:100px!important;min-width:100px;min-height:100px}
 .team-tier-2 .team-card h3{font-size:.9375rem}
 /* L3 — Directors: compact card */
 .team-tier-3 .team-card{max-width:320px;padding:22px 16px}
-.team-tier-3 .team-av{width:86px;height:86px}
+.team-tier-3 .team-av{width:86px!important;height:86px!important;min-width:86px;min-height:86px}
 .team-tier-3 .team-card h3{font-size:.875rem}
 /* ── Sabee flip card ── */
 .flip-card{background:transparent;border:none;padding:0;cursor:pointer;perspective:1200px;align-self:stretch}
@@ -212,8 +212,8 @@ footer{background:#030408;border-top:1px solid var(--border);padding:80px 0 0}
   .flip-back{padding:20px 18px;gap:12px}
   .flip-contact-val{font-size:.8rem;white-space:normal;overflow:visible;text-overflow:clip}
 }
-.team-av{width:110px;height:110px;border-radius:50%;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:1.4rem;font-weight:700;color:var(--lime);margin:0 auto 16px;border:2px solid rgba(200,241,53,0.18);overflow:hidden;flex-shrink:0}
-.team-av img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%}
+.team-av{border-radius:50%;background:rgba(200,241,53,0.08);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:1.4rem;font-weight:700;color:var(--lime);margin:0 auto 16px;border:2px solid rgba(200,241,53,0.18);overflow:hidden;flex-shrink:0;width:110px;height:110px;aspect-ratio:1/1}
+.team-av img{width:100%;height:100%;object-fit:cover;object-position:center center;border-radius:50%;display:block}
 .team-card h3{font-family:var(--fh);font-size:.9375rem;font-weight:600;color:#fff;margin-bottom:4px}
 .team-role{font-size:.75rem;font-family:'Courier New',monospace;color:var(--lime);letter-spacing:.06em;margin-bottom:12px}
 .team-card p{font-size:.8rem;color:var(--muted);line-height:1.6}
