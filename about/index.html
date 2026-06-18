@@ -166,9 +166,23 @@ footer{background:#030408;border-top:1px solid var(--border);padding:80px 0 0}
 .value-card h3{font-family:var(--fh);font-size:1rem;font-weight:600;color:#fff;margin-bottom:12px}
 .value-card p{font-size:.875rem;color:var(--muted);line-height:1.7}
 .value-bar{width:28px;height:2px;background:rgba(200,241,53,0.35);margin-bottom:20px}
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto;align-items:stretch}
-.team-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 16px;text-align:center;transition:all .25s}
+/* ── Team tier layout ── */
+.team-tiers{display:flex;flex-direction:column;gap:20px;max-width:1060px;margin:0 auto}
+.team-tier{display:flex;justify-content:center;gap:20px}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:16px;text-align:center;transition:all .25s;flex:1}
 .team-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+/* L1 — CEO: wider card, larger avatar, more padding */
+.team-tier-1 .team-card{max-width:480px;padding:36px 32px}
+.team-tier-1 .team-av{width:120px;height:120px}
+.team-tier-1 .team-card h3{font-size:1.0625rem}
+/* L2 — Presidents: medium card */
+.team-tier-2 .team-card{max-width:400px;padding:28px 22px}
+.team-tier-2 .team-av{width:100px;height:100px}
+.team-tier-2 .team-card h3{font-size:.9375rem}
+/* L3 — Directors: compact card */
+.team-tier-3 .team-card{max-width:320px;padding:22px 16px}
+.team-tier-3 .team-av{width:86px;height:86px}
+.team-tier-3 .team-card h3{font-size:.875rem}
 /* ── Sabee flip card ── */
 .flip-card{background:transparent;border:none;padding:0;cursor:pointer;perspective:1200px;align-self:stretch}
 .flip-card:hover{transform:none;border-color:transparent}
@@ -244,10 +258,15 @@ textarea.fc{min-height:130px;resize:vertical}
 .ps::before{content:attr(data-n);position:absolute;left:0;top:0;font-size:.65rem;font-family:'Courier New',monospace;color:var(--lime);letter-spacing:.06em}
 .ps h3{font-family:var(--fh);font-size:.875rem;font-weight:600;color:#fff;margin-bottom:4px}
 .ps p{font-size:.8rem;color:var(--muted);line-height:1.6}
-@media(max-width:1100px){.team-grid{grid-template-columns:repeat(3,1fr)!important}}
-@media(max-width:900px){.grid-2{grid-template-columns:1fr;gap:40px}.grid-3{grid-template-columns:1fr 1fr}.legal-layout{grid-template-columns:1fr}.legal-toc{display:none}.contact-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(3,1fr)!important}.values-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-grid .footer-brand{grid-column:1/-1}.form-row{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr 1fr}.proc-strip{grid-template-columns:1fr 1fr}}
-@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta,.nav-book,.btn-ai-profile{display:none}.hamburger{display:flex}.cta-band{padding:48px 28px}.footer-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr 1fr!important}.stat-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:420px){.team-grid{grid-template-columns:1fr!important}}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr;gap:40px}.grid-3{grid-template-columns:1fr 1fr}.legal-layout{grid-template-columns:1fr}.legal-toc{display:none}.contact-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-grid .footer-brand{grid-column:1/-1}.form-row{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr 1fr}.proc-strip{grid-template-columns:1fr 1fr}
+  .team-tier-2,.team-tier-3{flex-wrap:wrap}
+  .team-tier-2 .team-card,.team-tier-3 .team-card{max-width:calc(50% - 10px);min-width:240px}
+}
+@media(max-width:680px){.container{padding:0 24px}.nav-inner{padding:0 24px}.nav-links,.nav-cta,.nav-book,.btn-ai-profile{display:none}.hamburger{display:flex}.cta-band{padding:48px 28px}.footer-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr 1fr}
+  .team-tier{flex-direction:column;align-items:center}
+  .team-tier .team-card{max-width:440px!important;width:100%}
+  .team-tier-1 .team-av{width:100px;height:100px}
+}
 
 /* Mobile reliability fixes */
 @media (max-width:768px),(hover:none) and (pointer:coarse){
@@ -289,7 +308,7 @@ textarea.fc{min-height:130px;resize:vertical}
   gtag('js', new Date());
   gtag('config', 'G-3FFZ8MQ4X1');
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About FiveNodes","url":"https://5ivenodes.com/about/","description":"Meet the FiveNodes team \u2014 AI-powered software engineers building SaaS products from Albuquerque, NM.","mainEntity":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com","foundingDate":"2021","founders":[{"@type":"Person","name":"Sabee Ur Rehman","jobTitle":"CEO & Co-Founder"},{"@type":"Person","name":"Syed Daud Ghaznavi","jobTitle":"CTO & Co-Founder"}],"employee":[{"@type":"Person","name":"Sabee Ur Rehman","jobTitle":"CEO & Co-Founder"},{"@type":"Person","name":"Syed Daud Ghaznavi","jobTitle":"Co-Founder"},{"@type":"Person","name":"Abid Khan","jobTitle":"Chief Technology Officer"},{"@type":"Person","name":"Syeda Zahra Ghaznavi","jobTitle":"Chief Design Officer"},{"@type":"Person","name":"Amna Irshad","jobTitle":"Chief People Officer"},{"@type":"Person","name":"Muhammad Aqib Khan","jobTitle":"Chief Revenue Officer"}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About FiveNodes","url":"https://5ivenodes.com/about/","description":"Meet the FiveNodes leadership team \u2014 AI-powered software engineers building SaaS products from Albuquerque, NM.","mainEntity":{"@type":"Organization","name":"FiveNodes","url":"https://5ivenodes.com","foundingDate":"2021","founders":[{"@type":"Person","name":"Sabee Ur Rehman","jobTitle":"Chief Executive Officer"},{"@type":"Person","name":"Syed Daud Ghaznavi","jobTitle":"President & Co-Founder"}],"employee":[{"@type":"Person","name":"Sabee Ur Rehman","jobTitle":"Chief Executive Officer"},{"@type":"Person","name":"Syed Daud Ghaznavi","jobTitle":"President & Co-Founder"},{"@type":"Person","name":"Abid Khan","jobTitle":"Chief Technology Officer"},{"@type":"Person","name":"Syeda Zahra Ghaznavi","jobTitle":"Director of Growth & Marketing"},{"@type":"Person","name":"Muhammad Aqib Khan","jobTitle":"Director of Sales & Business Development"},{"@type":"Person","name":"Amna Irshad","jobTitle":"Director of People & Culture"}]}}</script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -392,51 +411,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="p-section" id="team">
   <div class="container">
     <div style="margin-bottom:60px" class="reveal"><span class="section-label">Leadership</span><h2 class="sec-h2">The people who <em>ship</em></h2></div>
-    <div class="team-grid">
-      <div class="team-card flip-card reveal" id="sabee-card" onclick="this.classList.toggle('flipped')" title="Click to flip">
-        <div class="flip-inner">
-          <div class="flip-front">
-            <div class="team-av"><img src="/images/team/sabee2.png" alt="Sabee Ur Rehman"></div>
-            <h3>Sabee Ur Rehman</h3>
-            <div class="team-role">CEO / Co-Founder</div>
-            <p style="font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:8px">10+ years in Technical Project Management and Software Architecture. Led delivery of complex, multi-stakeholder platforms from concept to production scale.</p>
-            <div class="flip-hint">↻ tap to see contact</div>
-          </div>
-          <div class="flip-back">
-            <div class="flip-back-name">Sabee Ur Rehman</div>
-            <div class="flip-back-role">CEO / Co-Founder</div>
-            <div class="flip-contact-list">
-              <div class="flip-contact-item">
-                <div class="flip-contact-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.94 13.68C1.1 10.36 1.63 6.33 4.1 3.6L5.6 5.1a6.5 6.5 0 00-1.17 7.06l-1.5 1.52zm14.12 0l-1.5-1.52A6.5 6.5 0 0014.4 5.1l1.5-1.5c2.47 2.73 3 6.76 1.16 10.08zM10 14a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"/><path d="M9 0h2v3H9zm0 17h2v3H9zM0 11V9h3v2zm17 0V9h3v2z"/></svg></div>
-                <div class="flip-contact-text">
-                  <div class="flip-contact-label">Email</div>
-                  <div class="flip-contact-val"><a href="mailto:Sabee@5ivenodes.com">Sabee@5ivenodes.com</a></div>
-                </div>
-              </div>
-              <div class="flip-contact-item">
-                <div class="flip-contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
-                <div class="flip-contact-text">
-                  <div class="flip-contact-label">Pakistan</div>
-                  <div class="flip-contact-val"><a href="tel:+923310431340">0331 043 134</a></div>
-                </div>
-              </div>
-              <div class="flip-contact-item">
-                <div class="flip-contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
-                <div class="flip-contact-text">
-                  <div class="flip-contact-label">USA</div>
-                  <div class="flip-contact-val"><a href="tel:+15126785641">+1 512 678 5641</a></div>
-                </div>
-              </div>
+    <div class="team-tiers">
+
+      <!-- L1 — CEO -->
+      <div class="team-tier team-tier-1">
+        <div class="team-card flip-card reveal" id="sabee-card" onclick="this.classList.toggle('flipped')" title="Click to flip">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="team-av"><img src="/images/team/sabee2.png" alt="Sabee Ur Rehman"></div>
+              <h3>Sabee Ur Rehman</h3>
+              <div class="team-role">Chief Executive Officer</div>
+              <p style="font-size:.825rem;color:var(--muted);line-height:1.65;margin-top:10px">10+ years leading technology ventures and enterprise software delivery. Drives FiveNodes' vision, client strategy, and global growth from the ground up.</p>
+              <div class="flip-hint">↻ tap to see contact</div>
             </div>
-            <div class="flip-hint">↻ tap to flip back</div>
+            <div class="flip-back">
+              <div class="flip-back-name">Sabee Ur Rehman</div>
+              <div class="flip-back-role">Chief Executive Officer</div>
+              <div class="flip-contact-list">
+                <div class="flip-contact-item">
+                  <div class="flip-contact-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.94 13.68C1.1 10.36 1.63 6.33 4.1 3.6L5.6 5.1a6.5 6.5 0 00-1.17 7.06l-1.5 1.52zm14.12 0l-1.5-1.52A6.5 6.5 0 0014.4 5.1l1.5-1.5c2.47 2.73 3 6.76 1.16 10.08zM10 14a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"/><path d="M9 0h2v3H9zm0 17h2v3H9zM0 11V9h3v2zm17 0V9h3v2z"/></svg></div>
+                  <div class="flip-contact-text">
+                    <div class="flip-contact-label">Email</div>
+                    <div class="flip-contact-val"><a href="mailto:Sabee@5ivenodes.com">Sabee@5ivenodes.com</a></div>
+                  </div>
+                </div>
+                <div class="flip-contact-item">
+                  <div class="flip-contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
+                  <div class="flip-contact-text">
+                    <div class="flip-contact-label">Pakistan</div>
+                    <div class="flip-contact-val"><a href="tel:+923310431340">0331 043 134</a></div>
+                  </div>
+                </div>
+                <div class="flip-contact-item">
+                  <div class="flip-contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
+                  <div class="flip-contact-text">
+                    <div class="flip-contact-label">USA</div>
+                    <div class="flip-contact-val"><a href="tel:+15126785641">+1 512 678 5641</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-hint">↻ tap to flip back</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="team-card reveal reveal-d1"><div class="team-av"><img src="/images/team/daud.png" alt="Syed Daud Ghaznavi"></div><h3>Syed Daud Ghaznavi</h3><div class="team-role">Co-Founder</div><p>12+ years building and scaling SaaS systems. Deep expertise in product strategy, backend architecture, and turning early-stage ideas into revenue-generating platforms.</p></div>
-      <div class="team-card reveal reveal-d2"><div class="team-av"><img src="/images/team/cto.png" alt="Abid Khan"></div><h3>Abid Khan</h3><div class="team-role">Chief Technology Officer</div><p>15+ years building enterprise software and leading engineering teams. Drives technical excellence, system architecture, and delivery across FiveNodes' most complex client engagements.</p></div>
-      <div class="team-card reveal reveal-d3"><div class="team-av"><img src="/images/team/amna.png" alt="Amna Irshad"></div><h3>Amna Irshad</h3><div class="team-role">Chief People Officer</div><p>Leads talent strategy, culture, and people operations at FiveNodes. Passionate about building high-performance teams and creating environments where great work thrives.</p></div>
-      <div class="team-card reveal reveal-d4"><div class="team-av"><img src="/images/team/zahra2.png" alt="Syeda Zahra Ghaznavi"></div><h3>Syeda Zahra Ghaznavi</h3><div class="team-role">Chief Design Officer</div><p>10+ years designing software systems and digital products. Crafts intuitive user experiences that balance visual precision with real-world usability at scale.</p></div>
-      <div class="team-card reveal reveal-d4"><div class="team-av"><img src="/images/team/aqib.png" alt="Muhammad Aqib Khan"></div><h3>Muhammad Aqib Khan</h3><div class="team-role">Chief Revenue Officer</div><p>15+ years driving revenue growth across SaaS and technology markets. Leads client acquisition, strategic partnerships, and go-to-market execution globally.</p></div>    </div>
+
+      <!-- L2 — President + CTO -->
+      <div class="team-tier team-tier-2">
+        <div class="team-card reveal reveal-d1">
+          <div class="team-av"><img src="/images/team/daud.png" alt="Syed Daud Ghaznavi"></div>
+          <h3>Syed Daud Ghaznavi</h3>
+          <div class="team-role">President &amp; Co-Founder</div>
+          <p>Co-founded FiveNodes and serves as President, overseeing business operations, client relationships, and strategic growth. Partners closely with the CEO to drive FiveNodes' expansion across US and global markets.</p>
+        </div>
+        <div class="team-card reveal reveal-d2">
+          <div class="team-av"><img src="/images/team/cto.png" alt="Abid Khan"></div>
+          <h3>Abid Khan</h3>
+          <div class="team-role">Chief Technology Officer</div>
+          <p>15+ years building enterprise software and leading engineering teams. Drives technical excellence, system architecture, and delivery across FiveNodes' most complex client engagements.</p>
+        </div>
+      </div>
+
+      <!-- L3 — Directors -->
+      <div class="team-tier team-tier-3">
+        <div class="team-card reveal reveal-d1">
+          <div class="team-av"><img src="/images/team/zahra2.png" alt="Syeda Zahra Ghaznavi"></div>
+          <h3>Syeda Zahra Ghaznavi</h3>
+          <div class="team-role">Director of Growth &amp; Marketing</div>
+          <p>Leads FiveNodes' go-to-market strategy, brand positioning, and outbound growth engine. Specializes in building pipeline and expanding presence across US and global markets.</p>
+        </div>
+        <div class="team-card reveal reveal-d2">
+          <div class="team-av"><img src="/images/team/aqib.png" alt="Muhammad Aqib Khan"></div>
+          <h3>Muhammad Aqib Khan</h3>
+          <div class="team-role">Director of Sales &amp; Business Development</div>
+          <p>15+ years driving revenue across SaaS and technology markets. Owns the full sales cycle — from prospecting to close — and builds long-term client relationships that generate repeat business.</p>
+        </div>
+        <div class="team-card reveal reveal-d3">
+          <div class="team-av"><img src="/images/team/amna.png" alt="Amna Irshad"></div>
+          <h3>Amna Irshad</h3>
+          <div class="team-role">Director of People &amp; Culture</div>
+          <p>Leads talent strategy, hiring, and people operations at FiveNodes. Passionate about building high-performance teams and creating an environment where great work thrives.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 <section class="p-section">
