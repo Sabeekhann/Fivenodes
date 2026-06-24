@@ -1,6 +1,5 @@
-// FiveNodes — language selector v4
-// Simple reliable approach: cookies + reload for all changes.
-// For English: skip GT initialization entirely so it can never re-apply.
+// FiveNodes — language selector v5
+// Reliable GT translation: cookie + cache-busting URL to prevent BFCache stale state.
 (function () {
   'use strict';
 
@@ -16,16 +15,48 @@
     if (document.body && document.body.style.top && document.body.style.top !== '0px') document.body.style.top = '0';
   }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
 
-  // ── FORCE-ENGLISH FLAG ───────────────────────────────────────────────────
-  // When user switches to English we reload with ?_nt=1.
-  // This flag is read before GT initializes — we then skip creating the
-  // TranslateElement entirely so GT cannot translate the page.
+  // ── URL PARAM FLAGS ──────────────────────────────────────────────────────
+  // ?_nt=1  → force English (skip GT init entirely)
+  // ?_gl=xx → set GT cookie for language xx, then clean URL
   var _params = new URLSearchParams(location.search);
   var _forceEN = _params.get('_nt') === '1';
-  if (_forceEN) {
+  var _glParam = _params.get('_gl');
+
+  function _cleanUrl() {
     _params.delete('_nt');
-    history.replaceState(null, '', location.pathname + (_params.toString() ? '?' + _params : '') + location.hash);
+    _params.delete('_gl');
+    var qs = _params.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+
+  if (_forceEN) {
+    _cleanUrl();
     localStorage.setItem('fn-site-lang', 'en');
+  } else if (_glParam) {
+    // Set the GT cookie from the URL param, then clean URL
+    _setGTCookie(_glParam);
+    localStorage.setItem('fn-site-lang', _glParam);
+    _cleanUrl();
+  }
+
+  function _setGTCookie(lang) {
+    var val = 'googtrans=/en/' + lang;
+    var exp = ';path=/';
+    document.cookie = val + exp + ';domain=.' + location.hostname;
+    document.cookie = val + exp;
+  }
+
+  function _clearGTState() {
+    // Clear cookies under all domain variants
+    ['', location.hostname, '.' + location.hostname, 'www.' + location.hostname].forEach(function (d) {
+      document.cookie = 'googtrans=;expires=' + new Date(0).toUTCString() + ';path=/' + (d ? ';domain=' + d : '');
+    });
+    // Clear any GT localStorage state
+    try {
+      Object.keys(localStorage).forEach(function (k) {
+        if (k.indexOf('googtrans') !== -1 || k.indexOf('goog-') !== -1) localStorage.removeItem(k);
+      });
+    } catch (e) {}
   }
 
   // ── STATE ────────────────────────────────────────────────────────────────
@@ -39,13 +70,6 @@
     l.id = 'cairo-font'; l.rel = 'stylesheet';
     l.href = 'https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap';
     document.head.appendChild(l);
-  }
-
-  function clearGTCookies() {
-    // Clear under every possible domain variant
-    ['', location.hostname, '.' + location.hostname, 'www.' + location.hostname].forEach(function (d) {
-      document.cookie = 'googtrans=;expires=' + new Date(0).toUTCString() + ';path=/' + (d ? ';domain=' + d : '');
-    });
   }
 
   function applyLangUI(lang) {
@@ -74,24 +98,27 @@
     var dd = document.getElementById('siteLangDropdown');
     if (dd) dd.classList.remove('open');
 
-    localStorage.setItem('fn-site-lang', lang);
-    clearGTCookies();
+    if (lang === currentLang) return; // already on this language
+
+    _clearGTState();
 
     if (lang === 'en') {
-      // Reload with ?_nt=1 — googleTranslateElementInit will be skipped on reload
+      localStorage.setItem('fn-site-lang', 'en');
+      // Use ?_nt=1 to skip GT init entirely on reload
       location.replace(location.pathname + '?_nt=1');
       return;
     }
 
-    // Set the googtrans cookie so GT translates on reload
-    document.cookie = 'googtrans=/en/' + lang + ';path=/;domain=.' + location.hostname;
-    document.cookie = 'googtrans=/en/' + lang + ';path=/';
-    location.reload();
+    localStorage.setItem('fn-site-lang', lang);
+    // Use ?_gl=xx URL param so the fresh page load picks up the language
+    // reliably regardless of BFCache. The param is cleaned up on load.
+    var cleanPath = location.pathname;
+    location.replace(cleanPath + '?_gl=' + encodeURIComponent(lang));
   };
 
   // ── GT INIT CALLBACK ─────────────────────────────────────────────────────
-  // When _forceEN is true we return immediately — GT widget is never created
-  // so it cannot translate the page regardless of any stored state.
+  // _forceEN → return immediately so GT never runs (English stays native).
+  // _glParam already set the cookie above; GT reads it and translates.
   window.googleTranslateElementInit = function () {
     if (_forceEN) return;
     new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
