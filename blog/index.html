@@ -53,9 +53,8 @@ body.cursor-hover #cursor-ring{width:60px;height:60px;border-color:rgba(200,241,
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-size:.875rem;font-weight:500;font-family:var(--ff);transition:all .2s ease;cursor:none}
 .btn-lime{background:var(--lime);color:#05060E;font-weight:600}
 .btn-lime:hover{background:var(--lime2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,241,53,0.25)}
-.btn-outline{border:1px solid var(--border2);color:var(--text)}
-.btn-outline:hover{border-color:rgba(255,255,255,0.3)}
-.btn-sm{padding:10px 20px;font-size:.8125rem}.btn-ai-profile{background:#C6F135;color:#05060E;font-weight:700;border:none;animation:aipulse 2.5s ease-in-out infinite}.btn-ai-profile:hover{background:#b8e020;transform:translateY(-1px);box-shadow:0 6px 24px rgba(198,241,53,.35);animation:none}@keyframes aipulse{0%,100%{box-shadow:0 0 0 0 rgba(198,241,53,.4)}50%{box-shadow:0 0 0 7px rgba(198,241,53,0)}}
+.btn-outline{border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.04)}.btn-outline:hover{border-color:rgba(255,255,255,0.28);color:#fff;background:rgba(255,255,255,0.08)}
+.btn-sm{padding:0 16px;font-size:.8rem;border-radius:8px;height:36px;display:inline-flex;align-items:center;gap:6px;font-weight:500;letter-spacing:.01em;white-space:nowrap}.btn-ai-profile{background:#C6F135;color:#05060E;font-weight:700;border:none;animation:aipulse 2.5s ease-in-out infinite}.btn-ai-profile:hover{background:#b8e020;transform:translateY(-1px);box-shadow:0 6px 24px rgba(198,241,53,.35);animation:none}@keyframes aipulse{0%,100%{box-shadow:0 0 0 0 rgba(198,241,53,.4)}50%{box-shadow:0 0 0 7px rgba(198,241,53,0)}}
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease}
 .nav.scrolled{background:rgba(5,6,14,0.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
@@ -179,7 +178,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:80px 0 0
 }
 .footer-aip{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;margin-bottom:28px}.footer-aip-live{display:inline-flex;align-items:center;gap:6px;font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px}.footer-aip-live-dot{width:5px;height:5px;border-radius:50%;background:#C6F135;flex-shrink:0}.footer-aip h4{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Sora',sans-serif;letter-spacing:-.02em}.footer-aip p{font-size:.78rem;color:rgba(255,255,255,0.38);line-height:1.6;margin-bottom:14px}.footer-aip-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(198,241,53,0.1);color:#C6F135;font-weight:700;font-size:.78rem;padding:9px 16px;border-radius:8px;border:1px solid rgba(198,241,53,0.2);transition:all .2s;text-decoration:none;letter-spacing:-.01em}.footer-aip-btn:hover{background:rgba(198,241,53,0.18);border-color:rgba(198,241,53,0.4);transform:translateY(-1px)}
 .lang-wrap{position:relative}
-.lang-btn{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted);font-size:.75rem;font-weight:500;padding:6px 10px;border-radius:8px;cursor:pointer;transition:all .15s;font-family:var(--ff)}
+.lang-btn{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.6);padding:0 12px;border-radius:8px;cursor:pointer;transition:all .15s;font-family:var(--ff);height:36px;font-size:.8rem;font-weight:500;letter-spacing:.01em;white-space:nowrap}
 .lang-btn:hover{background:rgba(255,255,255,0.09);color:var(--text)}
 .lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:#0D0F1C;border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:6px;min-width:160px;z-index:200;box-shadow:0 20px 60px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s cubic-bezier(.4,0,.2,1)}
 .lang-dropdown.open{opacity:1;visibility:visible;transform:translateY(0)}
